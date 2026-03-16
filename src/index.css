@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/Gotham/GothamBook_0.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/Gotham/GothamMedium_0.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("./assets/fonts/Gotham/GothamBold_0.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  --font-gotham: "Gotham", sans-serif;
+
+  /* FM Primary Colors */
+  --color-fm-green: #162f29;
+  --color-fm-yellow: #fcb44a;
+  --color-fm-yellow-200: #FEF0DB;
+  --color-fm-yellow-100: #FFF8ED;
+
+  /* FM Neutral Colors */
+  --color-fm-gray-100: #e0e2e3;
+  --color-fm-gray-200: #9a9ea0;
+  --color-fm-gray-300: #6c7075;
+  --color-fm-gray-400: #404041;
+}

@@ -1,7 +1,7 @@
 
 const AtAGlancePage = () => {
   return (
-    <div>AtAGlancePage</div>
+    <div>At A Glance Page</div>
   )
 }
 
