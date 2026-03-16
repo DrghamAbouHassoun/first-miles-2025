@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import MainLogo from "../../assets/logo/main-logo.svg";
 import SecondaryLogo from "../../assets/logo/secondary-logo.svg";
-import DownloadIcon from "../../assets/icons/download.svg";
 import { pages } from "../../router/Router";
 import { RouterContext } from "../../contexts/RouterProvider";
 import { SITE_NAME } from "../../config/constants";
