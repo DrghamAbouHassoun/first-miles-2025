@@ -46,7 +46,7 @@ const socialLinksData = [
 
 const SocialLinks = () => {
   return (
-    <div className="flex flex-col fixed left-2 top-1/2 -translate-y-1/2 bg-fm-yellow rounded-md py-2">
+    <div className="flex flex-col fixed z-10 left-2 top-1/2 -translate-y-1/2 bg-fm-yellow rounded-md py-2">
       {socialLinksData.map((link) => (
         <a href={link.href} target="_blank" key={link.name} className="flex items-center p-2 w-8.5 h-8.5">
           {link.icon}

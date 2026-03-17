@@ -15,7 +15,7 @@ const Navbar = () => {
   const { t } = useTranslation("common");
   const { toggleMenu } = useContext(MenuContext);
   return (
-    <div className="w-full absolute top-0">
+    <div className="w-full absolute top-0 z-10">
       <nav className="mx-auto w-full max-w-337.5 flex justify-between p-4">
         <button className="w-32 lg:w-24" onClick={() => navigate("Home")}>
           <img src={MainLogo} alt={SITE_NAME} className="hidden lg:block" />
