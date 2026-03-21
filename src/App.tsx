@@ -1,8 +1,8 @@
 import "./App.css";
-import Layout from "./components/layout/Layout";
-import LangProvider from "./contexts/LangProvider";
-import MenuProvider from "./contexts/MenuProvider";
-import RouterProvider from "./contexts/RouterProvider";
+import Layout from "./modules/common/components/layout/Layout";
+import LangProvider from "./modules/common/contexts/LangProvider";
+import MenuProvider from "./modules/common/contexts/MenuProvider";
+import RouterProvider from "./modules/common/contexts/RouterProvider";
 import Router from "./router/Router";
 
 function App() {

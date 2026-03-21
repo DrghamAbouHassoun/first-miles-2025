@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import MainLogo from "../../assets/logo/main-logo.svg";
-import SecondaryLogo from "../../assets/logo/secondary-logo.svg";
-import { pages } from "../../router/Router";
+import MainLogo from "../../../../assets/logo/main-logo.svg";
+import SecondaryLogo from "../../../../assets/logo/secondary-logo.svg";
+import { pages } from "../../../../router/Router";
 import { RouterContext } from "../../contexts/RouterProvider";
-import { SITE_NAME } from "../../config/constants";
+import { SITE_NAME } from "../../../../config/constants";
 import { useTranslation } from "../../hooks/useTranslation";
 import { useLocale } from "../../hooks/useLocale";
 import { Download, Grip } from "lucide-react";
@@ -15,7 +15,7 @@ const Navbar = () => {
   const { t } = useTranslation("common");
   const { toggleMenu } = useContext(MenuContext);
   return (
-    <div className="w-full absolute top-0 z-10">
+    <div key={currentRoute} className={`w-full absolute top-0 z-20 animate-fade-down ${currentRoute === "Home" || currentRoute === "" ? "animate-delay-6s" : ""}`}>
       <nav className="mx-auto w-full max-w-337.5 flex justify-between p-4">
         <button className="w-32 lg:w-24" onClick={() => navigate("Home")}>
           <img src={MainLogo} alt={SITE_NAME} className="hidden lg:block" />

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { RouterContext } from "../contexts/RouterProvider";
+import { RouterContext } from "../modules/common/contexts/RouterProvider";
 import AtAGlancePage from "../pages/AtAGlancePage";
 import OverviewPage from "../pages/OverviewPage";
 import StrategicReviewPage from "../pages/StrategicReviewPage";
