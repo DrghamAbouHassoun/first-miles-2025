@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { lang } = useLocale()
   return (
-    <div className={`w-full min-h-screen ${lang === "en" ? "font-gotham": ""} relative overflow-y-hidden`} dir={lang === "ar" ? "rtl" : "ltr"}>
+    <div className={`w-full min-h-screen ${lang === "en" ? "font-gotham": ""} relative`} dir={lang === "ar" ? "rtl" : "ltr"}>
       <Navbar />
       <Menu />
       <SocialLinks />

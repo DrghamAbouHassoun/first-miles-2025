@@ -7,8 +7,9 @@ import LinkedInIcon from "../../../../assets/icons/social/linkedin.svg?react";
 import YoutubeIcon from "../../../../assets/icons/social/youtube.svg?react";
 import { useContext } from "react";
 import { RouterContext } from "../../contexts/RouterProvider";
+import { useLocale } from "../../hooks/useLocale";
 
-const socialLinksData = [
+export const socialLinksData = [
   {
     name: "Global Community",
     icon: <CommunityIcon />,
@@ -48,9 +49,10 @@ const socialLinksData = [
 
 const SocialLinks = () => {
   const { currentRoute } = useContext(RouterContext);
+  const { lang } = useLocale();
   return (
-    <div className=" fixed z-10 left-2 top-1/2 -translate-y-1/2 ">
-      <div className={`hidden lg:flex flex-col bg-fm-yellow rounded-md py-2 animate-fade-right ${currentRoute === "Home" || currentRoute === "" ? "animate-delay-6s" : ""}`}>
+    <div className={`fixed z-30 top-1/2 ${lang === "ar" ? "right-4" : "left-4"} -translate-y-1/2`}>
+      <div className={`hidden lg:flex flex-col bg-fm-yellow rounded-md py-2 animate-fade-right ${(currentRoute === "Home" || currentRoute === "") ? "animate-delay-6s" : ""}`}>
         {socialLinksData.map((link) => (
           <a
             href={link.href}

@@ -1,11 +1,14 @@
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { SITE_NAME } from "../../../config/constants";
-import HomeHero from "../../../assets/images/home-hero.png";
+import HomeHero from "../../../assets/images/home/home-hero.png";
 import YellowSpike from "../../../assets/icons/spike-yellow.svg";
 import GrayGroupOfSpikes from "../../../assets/icons/gray-group-of-spikes.svg";
+import { HomeModalContext } from "../contexts/HomeModalProvider";
+import { useContext } from "react";
 
 const Hero = () => {
   const { t } = useTranslation("home");
+  const { toggleModel } = useContext(HomeModalContext)
   return (
     <>
       {/* Desktop Hero - Hidden on small screens */}
@@ -28,7 +31,7 @@ const Hero = () => {
               </p>
             </div>
             <div className="animate-fade-in animate-delay-5s">
-              <button className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-12">
+              <button onClick={() => toggleModel(true)} className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-12">
                 {t("hero.modalButton")}
               </button>
             </div>
@@ -101,13 +104,13 @@ const Hero = () => {
               </p>
             </div>
             <div className="animate-fade-in animate-delay-5s">
-              <button className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-6">
+              <button onClick={() => toggleModel(true)} className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-6">
                 {t("hero.modalButton")}
               </button>
             </div>
           </div>
           <div className="flex-1 flex w-full justify-end pb-24 pt-7">
-            <div className="rounded-3xl overflow-hidden w-full h-auto duration-500 max-w-[500px]">
+            <div className="rounded-3xl overflow-hidden w-full h-auto duration-500 max-w-125">
               <img
                 src={HomeHero}
                 alt={SITE_NAME}
