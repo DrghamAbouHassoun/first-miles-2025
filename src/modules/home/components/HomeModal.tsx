@@ -22,7 +22,7 @@ const HomeModal = () => {
         <X size={32} />
       </button>
       <div
-        className={`w-full max-w-335 h-full bg-fm-green ${isOpen ? "translate-x-0" : lang === "ar" ? "-translate-x-full" : "translate-x-full"} transition-transform duration-700`}
+        className={`w-full max-w-345 h-full bg-fm-green ${isOpen ? "translate-x-0" : lang === "ar" ? "-translate-x-full" : "translate-x-full"} transition-transform duration-700`}
       >
         <div className="flex flex-col lg:flex-row h-full w-full overflow-y-auto lg:overflow-y-hidden">
           <div className="py-16 px-4 lg:px-16 flex-1 lg:h-full lg:overflow-y-auto hidden-scrollbar">
