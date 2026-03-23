@@ -13,16 +13,16 @@ interface MainHeaderProps {
 const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
   const { lang } = useLocale();
   return (
-    <div className="w-full h-screen relative">
+    <div className="w-full h-screen relative overflow-y-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-10 ">
         <div className="absolute w-full h-full bg-[linear-gradient(to_bottom,#162f29,30%,#162f2900)]"></div>
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div
-        className={`absolute bottom-0 ${lang === "ar" ? "right-0 rounded-tl-2xl" : "left-0 rounded-tr-2xl"} z-20 bg-fm-green/60 flex items-center justify-center gap-8 w-full max-w-200 pt-8`}
+        className={`absolute bottom-0 flex flex-col-reverse sm:flex-row px-8 sm:px-0 ${lang === "ar" ? "right-0 rounded-tl-2xl" : "left-0 rounded-tr-2xl"} z-20 bg-fm-green/60 flex items-start sm:items-center justify-center gap-8 w-full max-w-200 pt-8`}
       >
-        <div className="relative flex items-end">
-          <div className="absolute bottom-4 left-4 z-0">
+        <div className="relative flex items-end w-full sm:w-auto justify-center sm:justify-start">
+          <div className="absolute bottom-4 sm:left-4 z-0">
             <img
               src={GrayGroupOfSpikes}
               alt={`Group of Spikes ${SITE_NAME}`}
@@ -57,12 +57,12 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
             </div>
           </div>
         </div>
-        <div>
-          <h1 className="text-[38px] font-bold text-white">{title}</h1>
+        <div className="w-full sm:w-auto max-w-70 sm:max-w-none">
+          <h1 className="text-[38px] font-bold text-white mx-4 sm:mx-0">{title}</h1>
           <div className="max-w-100 my-2">
             <img src={VerticalSpike} className="w-full h-auto object-contain" />
           </div>
-          <p>{subtitle}</p>
+          <p className="text-fm-yellow max-w-100">{subtitle}</p>
         </div>
       </div>
     </div>

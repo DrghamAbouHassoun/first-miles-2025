@@ -5,6 +5,7 @@ import YellowSpike from "../../../assets/icons/spike-yellow.svg";
 import GrayGroupOfSpikes from "../../../assets/icons/gray-group-of-spikes.svg";
 import { HomeModalContext } from "../contexts/HomeModalProvider";
 import { useContext } from "react";
+import MainButton from "../../common/components/buttons/MainButton";
 
 const Hero = () => {
   const { t } = useTranslation("home");
@@ -31,9 +32,9 @@ const Hero = () => {
               </p>
             </div>
             <div className="animate-fade-in animate-delay-5s">
-              <button onClick={() => toggleModel(true)} className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-12">
+              <MainButton onClick={() => toggleModel(true)} className="mt-12">
                 {t("hero.modalButton")}
-              </button>
+              </MainButton>
             </div>
           </div>
           <div className="flex-1 flex justify-end items-center h-full pt-10 translate-y-[3vh]">

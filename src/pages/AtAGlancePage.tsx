@@ -3,6 +3,8 @@ import { useTranslation } from "../modules/common/hooks/useTranslation";
 import AtAGlanceImage from "../assets/images/headers/at-a-glance.jpg";
 import Container from "../modules/common/components/Container/Container";
 import FinancialHighlights from "../modules/atAGlance/components/FinancialHighlights";
+import OperationalHighlights from "../modules/atAGlance/components/OperationalHighlights";
+import AwardsCertifications from "../modules/atAGlance/components/AwardsCertifications";
 
 const AtAGlancePage = () => {
   const { t } = useTranslation("at-a-glance");
@@ -17,6 +19,8 @@ const AtAGlancePage = () => {
         <p className="max-w-165 py-24">{t("intro.text")}</p>
         <FinancialHighlights />
       </Container>
+      <OperationalHighlights />
+      <AwardsCertifications />
     </div>
   )
 }
