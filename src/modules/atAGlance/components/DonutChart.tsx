@@ -21,7 +21,7 @@ const DonutChart = ({
 }) => {
   let cumulative = 0;
   return (
-    <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+    <div className="flex flex-row lg:flex-col items-center gap-3 xl:flex-row sm:items-center sm:gap-2 w-full">
       <div className="relative w-44 h-44 shrink-0">
         <svg viewBox="0 0 120 120" className="w-full h-full">
           {segments.map((seg) => {
@@ -57,7 +57,7 @@ const DonutChart = ({
           </span>
         </div>
       </div>
-      <ul className="flex flex-col gap-1.5 text-sm text-fm-green">
+      <ul className="flex flex-col h-44 flex-1 justify-end gap-1.5 text-xs text-fm-green">
         {segments.map((seg) => (
           <li key={seg.key} className="flex items-center gap-2">
             <span

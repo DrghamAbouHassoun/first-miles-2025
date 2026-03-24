@@ -30,9 +30,9 @@ const FinancialHighlights = () => {
           {t("financialHighlights.title")}
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Revenue Highlights */}
-          <div className="lg:w-40%">
+          <div className="lg:flex-1">
             <h3 className="text-2xl font-bold mb-2">
               {t("financialHighlights.revenueHighlights.title")}
             </h3>
@@ -89,11 +89,11 @@ const FinancialHighlights = () => {
           </div>
 
           {/* Revenue by Product Type */}
-          <div className="lg:rows-6">
+          <div className="lg:flex-1 lg:min-w-152.5">
             <h3 className="text-2xl font-bold mb-4">
               {t("financialHighlights.revenueByProduct.title")}
             </h3>
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-6 items-start">
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-6 items-start wl-full">
               {productRevenueData.map((d) => (
                 <DonutChart
                   key={d.year}

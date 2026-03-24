@@ -23,7 +23,7 @@
 
 @theme {
   --font-gotham: "Gotham", sans-serif;
-
+  --breakpoint-2xl: 1410px;
   /* FM Primary Colors */
   --color-fm-green: #162f29;
   --color-fm-yellow: #fcb44a;

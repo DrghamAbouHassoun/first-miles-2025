@@ -15,7 +15,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
   return (
     <div className="w-full h-screen relative overflow-y-hidden">
       <div className="absolute top-0 left-0 w-full h-full z-10 ">
-        <div className="absolute w-full h-full bg-[linear-gradient(to_bottom,#162f29,30%,#162f2900)]"></div>
+        <div className="absolute w-full h-full"></div>
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
+import Map from "./Map";
 
 const MARKET_KEYS = [
   "uae",
@@ -26,7 +27,7 @@ const GeographicPresence = () => {
 
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
-      <Container>
+      <Container className="pb-16">
         {/* Text block with dashed yellow border */}
         <div className="py-20 pb-10 px-4">
           <h2 className="text-xl font-bold text-fm-yellow mb-4">
@@ -85,6 +86,7 @@ const GeographicPresence = () => {
           </div>
         </div>
       </Container>
+      <Map />
     </div>
   );
 };

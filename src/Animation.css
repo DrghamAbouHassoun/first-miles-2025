@@ -1,318 +1,325 @@
-
 /* Animation */
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
 @keyframes SpikeWave {
-    0% {
-        transform: rotate(0);
-    }
-    50% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 .animate-spike-wave {
-    transform-origin: bottom;
-    animation: SpikeWave 4s ease-in-out infinite;
+  transform-origin: bottom;
+  animation: SpikeWave 4s ease-in-out infinite;
 }
 
 @keyframes FadeTop {
-    0% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes FadeDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes FadeRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-fade-right {
-    opacity: 0;
-    transform: translateX(-100%);
-    animation-fill-mode: forwards;
-    transform: translateX(-100%);
-    animation: FadeRight 1s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation-fill-mode: forwards;
+  transform: translateX(-100%);
+  animation: FadeRight 1s ease-out forwards;
 }
 
 .animate-fade-down {
-    transform: translateY(-100%);
-    animation: FadeDown 1s ease-out forwards;
+  transform: translateY(-100%);
+  animation: FadeDown 1s ease-out forwards;
 }
 
 .animate-fade-top {
-    transform: translateY(100%);
-    animation: FadeTop 1s ease-out forwards;
+  transform: translateY(100%);
+  animation: FadeTop 1s ease-out forwards;
 }
 
 @keyframes MoveUp {
-    0% {
-        transform: translateY(100%);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-move-up {
-    transform: translateY(100%);
-    animation: MoveUp 1s ease-out forwards;
+  transform: translateY(100%);
+  animation: MoveUp 1s ease-out forwards;
 }
 
 @keyframes FadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {
-    opacity: 0;
-    animation-fill-mode: forwards;
-    animation: FadeIn 1.5s ease-out forwards;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation: FadeIn 1.5s ease-out forwards;
 }
 
 @keyframes MoveLeft40 {
-    0% {
-        transform: translateX(calc(50% - 25vw + 8px));
-    }
-    100% {
-        transform: translateX(0%);
-    }
+  0% {
+    transform: translateX(calc(50% - 25vw + 8px));
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .animate-move-left-40 {
-    transform: translateX(calc(50% - 25vw));
-    animation: MoveLeft40 1s ease-out forwards;
+  transform: translateX(calc(50% - 25vw));
+  animation: MoveLeft40 1s ease-out forwards;
 }
 
 /* Animation Delays */
 .animate-delay-1s {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .animate-delay-1_2s {
-    animation-delay: 1.2s;
+  animation-delay: 1.2s;
 }
 
 .animate-delay-1_4s {
-    animation-delay: 1.4s;
+  animation-delay: 1.4s;
 }
 
 .animate-delay-1_6s {
-    animation-delay: 1.6s;
+  animation-delay: 1.6s;
 }
 
 .animate-delay-1_8s {
-    animation-delay: 1.8s;
+  animation-delay: 1.8s;
 }
 
 .animate-delay-2s {
-    animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .animate-delay-2_2s {
-    animation-delay: 2.2s;
+  animation-delay: 2.2s;
 }
 
 .animate-delay-2_4s {
-    animation-delay: 2.4s;
+  animation-delay: 2.4s;
 }
 
 .animate-delay-2_6s {
-    animation-delay: 2.6s;
+  animation-delay: 2.6s;
 }
 
 .animate-delay-2_8s {
-    animation-delay: 2.8s;
+  animation-delay: 2.8s;
 }
 
 .animate-delay-3s {
-    animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .animate-delay-3_2s {
-    animation-delay: 3.2s;
-}   
+  animation-delay: 3.2s;
+}
 
 .animate-delay-3_4s {
-    animation-delay: 3.4s;
+  animation-delay: 3.4s;
 }
 
 .animate-delay-3_6s {
-    animation-delay: 3.6s;
+  animation-delay: 3.6s;
 }
 
 .animate-delay-3_8s {
-    animation-delay: 3.8s;
+  animation-delay: 3.8s;
 }
 
 .animate-delay-4s {
-    animation-delay: 4s;
+  animation-delay: 4s;
 }
 
 .animate-delay-4_2s {
-    animation-delay: 4.2s;
+  animation-delay: 4.2s;
 }
 
 .animate-delay-4_4s {
-    animation-delay: 4.4s;
+  animation-delay: 4.4s;
 }
 
 .animate-delay-4_6s {
-    animation-delay: 4.6s;
+  animation-delay: 4.6s;
 }
 
 .animate-delay-4_8s {
-    animation-delay: 4.8s;
+  animation-delay: 4.8s;
 }
 
 .animate-delay-5s {
-    animation-delay: 5s;
+  animation-delay: 5s;
 }
 
 .animate-delay-6s {
-    animation-delay: 6s;
+  animation-delay: 6s;
 }
 
 .animate-delay-7s {
-    animation-delay: 7s;
+  animation-delay: 7s;
 }
 
 .animate-delay-8s {
-    animation-delay: 8s;
+  animation-delay: 8s;
 }
 
 .animate-delay-9s {
-    animation-delay: 9s;
+  animation-delay: 9s;
 }
 
 .animate-delay-10s {
-    animation-delay: 10s;
+  animation-delay: 10s;
 }
 
 /* animation duration */
 .animate-duration-0_2s {
-    animation-duration: 0.2s;
+  animation-duration: 0.2s;
 }
 
 .animate-duration-0_4s {
-    animation-duration: 0.4s;
+  animation-duration: 0.4s;
 }
 
 .animate-duration-0_6s {
-    animation-duration: 0.6s;
+  animation-duration: 0.6s;
 }
 
 .animate-duration-0_8s {
-    animation-duration: 0.8s;
+  animation-duration: 0.8s;
 }
 
 .animate-duration-1s {
-    animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .animate-duration-1_2s {
-    animation-duration: 1.2s;
+  animation-duration: 1.2s;
 }
 
 .animate-duration-1_4s {
-    animation-duration: 1.4s;
+  animation-duration: 1.4s;
 }
 
 .animate-duration-1_6s {
-    animation-duration: 1.6s;
+  animation-duration: 1.6s;
 }
 
 .animate-duration-1_8s {
-    animation-duration: 1.8s;
+  animation-duration: 1.8s;
 }
 
 .animate-duration-2s {
-    animation-duration: 2s;
+  animation-duration: 2s;
 }
 
 .animate-duration-2_2s {
-    animation-duration: 2.2s;
+  animation-duration: 2.2s;
 }
 
 .animate-duration-2_4s {
-    animation-duration: 2.4s;
+  animation-duration: 2.4s;
 }
 
 .animate-duration-2_6s {
-    animation-duration: 2.6s;
+  animation-duration: 2.6s;
 }
 
 .animate-duration-2_8s {
-    animation-duration: 2.8s;
+  animation-duration: 2.8s;
 }
 
 .animate-duration-3s {
-    animation-duration: 3s;
+  animation-duration: 3s;
 }
 
 .animate-duration-3_2s {
-    animation-duration: 3.2s;
+  animation-duration: 3.2s;
 }
 
 .animate-duration-3_4s {
-    animation-duration: 3.4s;
+  animation-duration: 3.4s;
 }
 
 .animate-duration-3_6s {
-    animation-duration: 3.6s;
+  animation-duration: 3.6s;
 }
 
 .animate-duration-3_8s {
-    animation-duration: 3.8s;
+  animation-duration: 3.8s;
 }
 
 .animate-duration-4s {
-    animation-duration: 4s;
+  animation-duration: 4s;
 }
 
 .animate-duration-4_2s {
-    animation-duration: 4.2s;
+  animation-duration: 4.2s;
 }
 
 .animate-duration-4_4s {
-    animation-duration: 4.4s;
+  animation-duration: 4.4s;
 }
 
 .animate-duration-4_6s {
-    animation-duration: 4.6s;
+  animation-duration: 4.6s;
 }
 
 .animate-duration-4_8s {
-    animation-duration: 4.8s;
+  animation-duration: 4.8s;
 }
 
 .animate-duration-5s {
-    animation-duration: 5s;
+  animation-duration: 5s;
 }

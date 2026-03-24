@@ -69,20 +69,21 @@ const YearInReview = () => {
   return (
     <div>
       {/* Intro text */}
-      <Container>
-        <div className="py-16">
-          <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
-            {t("yearInReviewContent.yearOfProgress.title")}
-          </h3>
-          <p className="max-w-160 mb-4">
-            {t("yearInReviewContent.yearOfProgress.p1")}
-          </p>
-          <p className="max-w-160">
-            {t("yearInReviewContent.yearOfProgress.p2")}
-          </p>
-        </div>
-      </Container>
-
+      <div className="bg-fm-yellow-100">
+        <Container>
+          <div className="py-16">
+            <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
+              {t("yearInReviewContent.yearOfProgress.title")}
+            </h3>
+            <p className="max-w-160 mb-4">
+              {t("yearInReviewContent.yearOfProgress.p1")}
+            </p>
+            <p className="max-w-160">
+              {t("yearInReviewContent.yearOfProgress.p2")}
+            </p>
+          </div>
+        </Container>
+      </div>
       {/* Scroll-driven slider */}
       <section
         ref={sectionRef}
@@ -91,11 +92,11 @@ const YearInReview = () => {
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           {/* Background image */}
-          <div className="absolute inset-0 scale-105">
+          <div className="absolute inset-0">
             <img
               src={YearInReviewBg}
               alt={SITE_NAME}
-              className="w-full h-full object-cover object-bottom"
+              className="w-full h-screen object-cover object-bottom"
             />
           </div>
           <div className="absolute inset-0" />
@@ -111,12 +112,16 @@ const YearInReview = () => {
                     className="shrink-0 w-[80vw] sm:w-[44vw] md:w-[32vw] lg:w-[22vw] me-2 last:me-0 flex flex-col"
                   >
                     {/* Month label + divider — outside card */}
-                    <div className='w-fit mb-4 max-w-45'>
+                    <div className="w-fit mb-4 max-w-45">
                       <h4 className="text-fm-yellow font-bold text-4xl mb-2 w-fit">
                         {t(`yearInReviewContent.slider.items.${key}.month`)}
                       </h4>
                       <div className="w-full">
-                        <img src={VerticalSpikeShort} alt={SITE_NAME} className="w-60 h-auto" />
+                        <img
+                          src={VerticalSpikeShort}
+                          alt={SITE_NAME}
+                          className="w-60 h-auto"
+                        />
                       </div>
                     </div>
 
@@ -144,7 +149,13 @@ const YearInReview = () => {
 
                       {/* Placeholder image */}
                       <div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
-                        <img src={JanuaryImage} alt={t(`yearInReviewContent.slider.items.${key}.month`)} className="w-full h-full object-cover" />
+                        <img
+                          src={JanuaryImage}
+                          alt={t(
+                            `yearInReviewContent.slider.items.${key}.month`,
+                          )}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                     </div>
                   </div>
