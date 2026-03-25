@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { pages } from "../../../../router/Router";
 import { RouterContext } from "../../contexts/RouterProvider";
 import { useTranslation } from "../../hooks/useTranslation";
@@ -7,9 +7,14 @@ import { X } from "lucide-react";
 import { socialLinksData } from "./SocialLinks";
 
 const Menu = () => {
-  const { navigate } = useContext(RouterContext);
+  const { navigate, currentRoute } = useContext(RouterContext);
   const { t } = useTranslation("common");
   const { isOpen, toggleMenu } = useContext(MenuContext);
+
+  useEffect(() => {
+    toggleMenu(false);
+  }, [currentRoute])
+
   return (
     <div className={`w-full h-screen overflow-y-auto fixed z-50 top-0 left-0 bg-fm-green flex flex-col justify-center items-center gap-8 ${isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"} transition-all duration-700`}>
       <button type="button" className="absolute top-4 right-4 text-white hover:text-fm-yellow transition-all duration-500 text-2xl" onClick={() => toggleMenu(false)}>
@@ -19,7 +24,7 @@ const Menu = () => {
         {pages.map((pge) => (
           <button
             key={pge.path}
-            className="text-white hover:text-fm-yellow transition-all duration-500 text-2xl"
+            className={`${currentRoute === pge.path ? "text-fm-yellow" : "text-white hover:text-fm-yellow"} transition-all duration-500 text-2xl`}
             onClick={() => navigate(pge.path)}
           >
             {t(`nav.${pge.path}`)}
