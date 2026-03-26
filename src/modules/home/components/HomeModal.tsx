@@ -32,7 +32,7 @@ const HomeModal = () => {
             <h4 className={`text-4xl text-white font-bold mt-4 animate-fade-in animate-delay-1s ${isOpen ? "block" : "hidden"}`}>
               {t("theme.subtitle1")} <br /> {t("theme.subtitle2")}
             </h4>
-            <div className="mt-8 text-white text-lg font-semibold space-y-4">
+            <div className="mt-8 text-white text-md font-semibold space-y-4">
               <p className={`animate-fade-in animate-duration-1_4s animate-delay-1_4s ${isOpen ? "block" : "hidden"}`}>{t("theme.p1")}</p>
               <p className={`animate-fade-in animate-duration-1_4s animate-delay-1_8s ${isOpen ? "block" : "hidden"}`}>{t("theme.p2")}</p>
               <p className={`animate-fade-in animate-duration-1_4s animate-delay-2_2s ${isOpen ? "block" : "hidden"}`}>{t("theme.p3")}</p>
@@ -43,7 +43,7 @@ const HomeModal = () => {
             <img
               src={ThemeOfTheYearImage}
               alt={`Theme of the Year ${SITE_NAME}`}
-              className={`w-full h-auto object-contain max-w-100 lg:max-w-auto animate-fade-in animate-delay-1s ${isOpen ? "block" : "hidden"}`}
+              className={`w-full h-auto object-contain max-w-150 lg:max-w-auto animate-fade-in animate-delay-1s ${isOpen ? "block" : "hidden"}`}
             />
           </div>
         </div>

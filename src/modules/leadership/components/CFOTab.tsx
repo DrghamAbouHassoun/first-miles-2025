@@ -21,7 +21,7 @@ const CFOTab = () => {
       <Container>
         <LeadershipHeader
           imageUrl={CFOImage}
-          imageScale={1.4}
+          imageScale={1.6}
           imageTranslateX={27}
           imageTranslateY={-50}
           title={data.name}
@@ -74,7 +74,7 @@ const CFOTab = () => {
           className={`absolute bottom-0 ${isRtl ? "left-4" : "right-4"} pointer-events-none opacity-80`}
           style={{ width: "160px" }}
         >
-          <img src={SpikeYellow} alt="" className="w-full h-auto" />
+          <img src={SpikeYellow} alt="" className="w-full h-auto opacity-30 xl:opacity-100" />
         </div>
       </div>
     </div>

@@ -25,9 +25,9 @@ const CEOTab = () => {
         <LeadershipHeader
           imageUrl={CEOImage}
           imageWidth={250}
-          imageScale={1.4}
-          imageTranslateX={33.5}
-          imageTranslateY={-44}
+          imageScale={1.6}
+          imageTranslateX={44.5}
+          imageTranslateY={-36.5}
           title={data.name}
           subtitle={data.title}
           quotation={data.quote}
@@ -106,7 +106,7 @@ const CEOTab = () => {
           className={`absolute bottom-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
           style={{ width: "160px" }}
         >
-          <img src={GroupOfSpikes} alt="" className="w-full h-auto" />
+          <img src={GroupOfSpikes} alt="" className="w-full h-auto opacity-30 xl:opacity-100" />
         </div>
       </div>
       <div className="w-full bg-fm-green h-16"></div>

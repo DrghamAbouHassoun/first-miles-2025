@@ -7,18 +7,19 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import VerticalSpikeShort from "../../../assets/icons/vertical-spike-short.svg";
 import JanuaryImage from "../../../assets/images/year-in-review-monthes/january.jpg";
+import SeptemberImage from "../../../assets/images/year-in-review-monthes/september.png";
 
 const TIMELINE_ITEMS = [
-  { key: "january", hasStat: false },
-  { key: "february", hasStat: false },
-  { key: "april", hasStat: true },
-  { key: "may", hasStat: false },
-  { key: "july", hasStat: false },
-  { key: "august", hasStat: false },
-  { key: "september", hasStat: false },
-  { key: "october", hasStat: false },
-  { key: "november", hasStat: false },
-  { key: "december", hasStat: false },
+  { key: "january", hasStat: false, image: JanuaryImage },
+  { key: "february", hasStat: false, image: undefined },
+  { key: "april", hasStat: true, image: undefined },
+  { key: "may", hasStat: false, image: undefined },
+  { key: "july", hasStat: false, image: undefined },
+  { key: "august", hasStat: false, image: undefined },
+  { key: "september", hasStat: false, image: SeptemberImage },
+  { key: "october", hasStat: false, image: undefined },
+  { key: "november", hasStat: false, image: undefined },
+  { key: "december", hasStat: false, image: undefined },
 ] as const;
 
 const SECTION_HEIGHT_VH = (TIMELINE_ITEMS.length - 1) * 80 + 100;
@@ -106,7 +107,7 @@ const YearInReview = () => {
             {/* Embla carousel */}
             <div ref={emblaRef} className="overflow-visible">
               <div className="flex">
-                {TIMELINE_ITEMS.map(({ key, hasStat }) => (
+                {TIMELINE_ITEMS.map(({ key, hasStat, image }) => (
                   <div
                     key={key}
                     className="shrink-0 w-[80vw] sm:w-[44vw] md:w-[32vw] lg:w-[22vw] me-2 last:me-0 flex flex-col"
@@ -148,15 +149,15 @@ const YearInReview = () => {
                       )}
 
                       {/* Placeholder image */}
-                      <div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
+                      {image && (<div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
                         <img
-                          src={JanuaryImage}
+                          src={image}
                           alt={t(
                             `yearInReviewContent.slider.items.${key}.month`,
                           )}
                           className="w-full h-full object-cover"
                         />
-                      </div>
+                      </div>)}
                     </div>
                   </div>
                 ))}

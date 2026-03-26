@@ -20,19 +20,19 @@ const ChairmanTab = () => {
   const secondHalf = sections.slice(midpoint);
 
   return (
-    <div className="w-full pt-32">
+    <div className="w-full pt-52">
       <Container>
         <LeadershipHeader
           imageUrl={ChairmanImage}
-          imageScale={1.8}
-          imageTranslateX={24}
-          imageTranslateY={-15.5}
+          imageScale={2.9}
+          imageTranslateX={28}
+          imageTranslateY={-23}
           title={data.name}
           subtitle={data.title}
           quotation={data.quote}
         />
       </Container>
-      <div className="">
+      <div className="pt-16">
         <Container>
           <div className="py-6">
             {/* Tagline */}
@@ -74,7 +74,7 @@ const ChairmanTab = () => {
 
       {/* Second half of sections with wheat decoration */}
       <div className="relative bg-white overflow-hidden">
-        <Container>
+        <Container className="">
           <div className=" max-w-4xl space-y-8 mb-6">
             {secondHalf.map(
               (
@@ -104,7 +104,7 @@ const ChairmanTab = () => {
           className={`absolute bottom-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
           style={{ width: "160px" }}
         >
-          <img src={GroupOfSpikes} alt="" className="w-full h-auto" />
+          <img src={GroupOfSpikes} alt="" className="w-full h-auto opacity-30 xl:opacity-100" />
         </div>
       </div>
       <div className="w-full bg-fm-green h-16"></div>

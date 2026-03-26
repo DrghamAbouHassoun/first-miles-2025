@@ -1,7 +1,15 @@
+import MainHeader from "../modules/common/components/MainHeader/MainHeader"
+import OperatingReviewHeader from "../assets/images/headers/at-a-glance.jpg"
 
 const OperatingReviewPage = () => {
   return (
-    <div>Operating Review Page</div>
+    <div>
+      <MainHeader
+        title="Operating Review"
+        subtitle=""
+        image={OperatingReviewHeader}
+      />
+    </div>
   )
 }
 
