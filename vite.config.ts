@@ -6,6 +6,9 @@ import svgr from 'vite-plugin-svgr'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/first-miles-2025/',
+  build: {
+    chunkSizeWarningLimit: 1200,
+  },
   plugins: [
     svgr(),
     react(),

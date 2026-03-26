@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
 import ChairmanImage from "../../../assets/images/leadership-people/chairman.png";
-import SpikeYellow from "../../../assets/icons/spike-yellow.svg";
 import LeadershipHeader from "./LeadershipHeader";
 import GroupOfSpikes from "../../../assets/vectors/group-of-spikes.svg";
 
