@@ -425,4 +425,32 @@ export default {
       },
     ],
   },
+  technologyInnovationContent: {
+    title: "Driving Business Value through Innovative Technologies",
+    description: "Technology and innovation remain essential enablers of First Mills’ corporate strategy. The Company was built as a digital-first operation, designed to reach customers more effectively and deliver an integrated, seamless experience across every touchpoint. This vision supports its ecosystem-based approach, making certain that technology strengthens value creation for customers, partners, employees and Stakeholders and enabling scale, efficiency and long-term competitiveness.",
+    subtitle: "Technology & Innovation Vision",
+    p1: "To be the First Mills’ business capability engine, powering solutions through connection, transformation and innovation.",
+    p2: "Technology and innovation are core enablers of First Mills’ corporate strategy. From its inception, the Company has been designed as a digital-first organization, enabling broader market reach and a seamless, integrated customer experience. This approach supports First Mills’ ecosystem-based business model and ensures technology consistently drives value creation for customers, partners, employees and Stakeholders.",
+    pillarsSectionTitle: "Technology and innovation strategy",
+    pillarsSectionDescription: "First Mills’ technology and innovation strategy reflects a commitment to using advanced tools and digital capabilities to modernize operations and support the Company’s ambition to build a fully integrated, future-ready ecosystem. The strategy is structured around four transformation pillars.",
+    pillarsSectionSubtitle: "Together, these pillars drive scalability, elevate customer experience and embed operational excellence across the organization.",
+    pillars: [
+      {
+        id: "pillar1",
+        content: "The Move to Cloud initiative represents the next generation of First Mills’ technology infrastructure. It establishes a secure, scalable and flexible foundation that supports current business requirements while preparing the organization for future growth. By consolidating applications and migrating core systems to an in-country private cloud environment, this initiative enhances performance, strengthens cybersecurity, improves cost efficiency and equips IT teams with modern tools to better support evolving business needs.",
+      },
+      {
+        id: "pillar2",
+        content: "RISE with SAP and SAP SuccessFactors represent one of the most significant transformation programs in First Mills’ history. These platforms harmonize processes, automate manual activities, improve data accuracy and accelerate digital deployment across core business functions including finance, human resources, operations and the supply chain. Together, they provide a unified digital backbone that enhances efficiency, enables faster decision-making and differentiates First Mills’ operational capabilities in the market.",
+      },
+      {
+        id: "pillar3",
+        content: "Moving IT Forward defines First Mills’ IT operating model and provides a standardized organizational framework for IT governance, policies and processes. This pillar guarantees consistency in how technology services are delivered, managed and optimized across the organization. Its success depends on fostering a unified IT culture that follows shared standards, adheres to best practices and supports continuous improvement in service delivery and operational effectiveness.",
+      },
+      {
+        id: "pillar4",
+        content: "The AI-Powered Virtual Workforce establishes the foundation for an intelligent, adaptive and increasingly automated enterprise. AI agents enable advanced analytics, predictive insight and the creation of a digital twin of First Mills’ operations. This transformation supports a model of working that delivers more outcomes faster, more intelligently, and with reduced reliance on manual intervention, while improving accuracy, consistency and responsiveness across the organization."
+      }
+    ]
+  }
 };

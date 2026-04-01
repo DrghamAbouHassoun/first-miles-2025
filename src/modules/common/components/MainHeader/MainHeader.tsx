@@ -4,6 +4,9 @@ import GrayGroupOfSpikes from "../../../../assets/icons/gray-group-of-spikes.svg
 import VerticalSpike from "../../../../assets/icons/vertical-spike.svg";
 import { SITE_NAME } from "../../../../config/constants";
 import Container from "../Container/Container";
+import SlideTopAnimation from "../animations/SlideTopAnimation";
+import SlideAsideAnimation from "../animations/SlideAsideAnimation";
+import SlideBottomAnimation from "../animations/SlideBottomAnimation";
 
 interface MainHeaderProps {
   image: string;
@@ -24,18 +27,30 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
       >
         <div className="w-full sm:w-full sm:max-w-140 lg:mt-[35%] h-fit ">
           <Container>
-            <h1 className="text-[38px] font-bold text-white lg:px-6">{title}</h1>
+            <SlideTopAnimation className="animate-delay-1s">
+              <h1 className="text-[30px] md:text-[38px] font-bold text-white lg:px-6">
+                {title}
+              </h1>
+            </SlideTopAnimation>
           </Container>
-          <div className="max-w-130 my-2 ">
-            <img
-              src={VerticalSpike}
-              className={`w-full h-auto object-contain ${lang === "ar" ? "rotate-y-180" : ""}`}
-            />
-          </div>
+          <SlideAsideAnimation
+            side={lang === "ar" ? "left" : "right"}
+            level="100"
+            className="w-full"
+          >
+            <div className="max-w-[90%] md:max-w-130 my-2 ">
+              <img
+                src={VerticalSpike}
+                className={`w-full h-auto object-contain ${lang === "ar" ? "rotate-y-180" : ""}`}
+              />
+            </div>
+          </SlideAsideAnimation>
           <Container>
-            <p className="text-fm-yellow max-w-100 min-h-12.5 lg:px-6">
-              {subtitle}
-            </p>
+            <SlideBottomAnimation className="animate-delay-1s" level="50">
+              <p className="text-fm-yellow max-w-100 min-h-12.5 lg:px-6">
+                {subtitle}
+              </p>
+            </SlideBottomAnimation>
           </Container>
         </div>
       </div>

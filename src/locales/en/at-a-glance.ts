@@ -13,12 +13,21 @@ export default {
       label: "No. of Plants",
     },
     alManarDescription: "Acquired <br /><strong>Al Manar Feed Co. Ltd, adding</strong>",
-    alManarHighlight: "450 tons",
+    alManarHighlight: {
+      value: "450",
+      suffix: "tons"
+    },
     alManarSuffix: "of daily feed production",
     productionCapacityDescription: "Production<br /> capacity<br /> utilization<br /> rates reached",
-    productionCapacityValue: "94%",
+    productionCapacityValue: {
+      value: "94",
+      suffix: "%"
+    },
     kenanStakeDescription: "Acquired a",
-    kenanStakeValue: "60%",
+    kenanStakeValue: {
+      value: "60",
+      suffix: "%"
+    },
     kenanStakeSuffix: "stake in Kenan Al-Arabia Trading Company",
     mills: {
       value: "15",
@@ -28,17 +37,17 @@ export default {
       title: "Capacities",
       silosStorage: {
         label: "Silos Total Storage Capacity",
-        value: "250,000",
+        value: "250000",
         unit: "tons",
       },
       dailyWheatMilling: {
         label: "Daily Wheat Milling Design Capacity:",
-        value: "5,150",
+        value: "5150",
         unit: "tons",
       },
       dailyFeedProduction: {
         label: "Daily Feed Production Capacity",
-        value: "1,350",
+        value: "1350",
         unit: "tons",
       },
       dailyDurumMilling: {
@@ -50,12 +59,18 @@ export default {
     marketShare: {
       title: "Market Share",
       description: "First Mills holds a leading position in Saudi Arabia's flour market",
-      value: "31%",
+      value: {
+        number: "31",
+        suffix: "%"
+      },
     },
     customers: {
       title: "Number of Customers",
       subtitle: "(Direct and Indirect)",
-      value: "+7,500",
+      value: {
+        number: "7500",
+        prefix: "+"
+      },
       label: "customers",
     },
     productSales: {
@@ -63,12 +78,18 @@ export default {
       flourSales: {
         label: "Flour Sales",
         sublabel: "in Cash",
-        value: "90%",
+        value: {
+          number: "90",
+          suffix: "%"
+        },
       },
       numberOfProducts: {
         label: "Number of Products",
         sublabel: "(main products)",
-        value: "+60",
+        value: {
+          number: "60",
+          prefix: "+"
+        },
       },
     },
   },

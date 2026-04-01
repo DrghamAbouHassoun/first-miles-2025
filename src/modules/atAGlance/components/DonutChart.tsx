@@ -1,4 +1,6 @@
 import { CIRCUMFERENCE, RADIUS } from "../data";
+import useInView from "../../common/hooks/useInView";
+import CounterAnimation from "../../common/components/animations/CounterAnimation";
 
 
 type Segment = { key: string; value: number; color: string };
@@ -19,12 +21,14 @@ const DonutChart = ({
   unit: string;
   labels: Record<string, string>;
 }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
   let cumulative = 0;
+
   return (
-    <div className="flex flex-row lg:flex-col items-center gap-3 xl:flex-row sm:items-center sm:gap-2 w-full">
+    <div className="flex flex-row lg:flex-col items-center gap-3 xl:flex-row sm:items-center sm:gap-2 w-full" ref={ref}>
       <div className="relative w-44 h-44 shrink-0">
         <svg viewBox="0 0 120 120" className="w-full h-full">
-          {segments.map((seg) => {
+          {segments.map((seg, i) => {
             const dashLength = (seg.value / total) * CIRCUMFERENCE;
             const gap = CIRCUMFERENCE - dashLength;
             const offset = -cumulative;
@@ -38,9 +42,12 @@ const DonutChart = ({
                 fill="none"
                 stroke={seg.color}
                 strokeWidth="14"
-                strokeDasharray={`${dashLength} ${gap}`}
                 strokeDashoffset={offset}
                 transform="rotate(-90 60 60)"
+                style={{
+                  strokeDasharray: inView ? `${dashLength} ${gap}` : `0 ${CIRCUMFERENCE}`,
+                  transition: `stroke-dasharray 0.8s ease-out ${i * 0.15}s`,
+                }}
               />
             );
           })}
@@ -50,7 +57,7 @@ const DonutChart = ({
             {totalLabel} {year}
           </span>
           <span className="text-base font-bold text-fm-yellow leading-tight">
-            {total.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            <CounterAnimation as="span" end={total} decimals={2} separator="," duration={1.5} />
           </span>
           <span className="text-[10px] text-fm-gray-300 leading-tight">
             ({unit})
@@ -66,7 +73,7 @@ const DonutChart = ({
             />
             <span className="font-medium">
               <span className="font-medium">
-                {seg.value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                <CounterAnimation as="span" end={seg.value} decimals={2} separator="," duration={1.5} />
               </span>{" "}
               | {labels[seg.key]}
             </span>
@@ -77,4 +84,4 @@ const DonutChart = ({
   );
 };
 
-export default DonutChart
+export default DonutChart;

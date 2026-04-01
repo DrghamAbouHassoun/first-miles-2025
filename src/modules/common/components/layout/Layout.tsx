@@ -1,6 +1,7 @@
 import { useLocale } from "../../hooks/useLocale"
 import Menu from "./Menu"
 import Navbar from "./Navbar"
+import NavigatorButtons from "./NavigatorButtons"
 import SocialLinks from "./SocialLinks"
 
 interface LayoutProps {
@@ -14,6 +15,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <Menu />
       <SocialLinks />
+      <NavigatorButtons />
       {children}
     </div>
   )

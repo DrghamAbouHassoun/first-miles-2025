@@ -8,6 +8,10 @@ import { LangContext } from "../../common/contexts/LangProvider";
 import VerticalSpikeShort from "../../../assets/icons/vertical-spike-short.svg";
 import JanuaryImage from "../../../assets/images/year-in-review-monthes/january.jpg";
 import SeptemberImage from "../../../assets/images/year-in-review-monthes/september.png";
+import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
+import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
+import CounterAnimation from "../../common/components/animations/CounterAnimation";
+import PopupAnimation from "../../common/components/animations/PopupAnimation";
 
 const TIMELINE_ITEMS = [
   { key: "january", hasStat: false, image: JanuaryImage },
@@ -73,15 +77,21 @@ const YearInReview = () => {
       <div className="bg-fm-yellow-100">
         <Container>
           <div className="py-16">
-            <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
-              {t("yearInReviewContent.yearOfProgress.title")}
-            </h3>
-            <p className="max-w-160 mb-4">
-              {t("yearInReviewContent.yearOfProgress.p1")}
-            </p>
-            <p className="max-w-160">
-              {t("yearInReviewContent.yearOfProgress.p2")}
-            </p>
+            <SlideTopAnimation>
+              <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
+                {t("yearInReviewContent.yearOfProgress.title")}
+              </h3>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <p className="max-w-160 mb-4">
+                {t("yearInReviewContent.yearOfProgress.p1")}
+              </p>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <p className="max-w-160">
+                {t("yearInReviewContent.yearOfProgress.p2")}
+              </p>
+            </SlideTopAnimation>
           </div>
         </Container>
       </div>
@@ -114,50 +124,76 @@ const YearInReview = () => {
                   >
                     {/* Month label + divider — outside card */}
                     <div className="w-fit mb-4 max-w-45">
-                      <h4 className="text-fm-yellow font-bold text-4xl mb-2 w-fit">
-                        {t(`yearInReviewContent.slider.items.${key}.month`)}
-                      </h4>
-                      <div className="w-full">
-                        <img
-                          src={VerticalSpikeShort}
-                          alt={SITE_NAME}
-                          className="w-60 h-auto"
-                        />
+                      <SlideTopAnimation>
+                        <h4 className="text-fm-yellow font-bold text-4xl mb-2 w-fit">
+                          {t(`yearInReviewContent.slider.items.${key}.month`)}
+                        </h4>
+                      </SlideTopAnimation>
+                      <div className="w-full overflow-y-hidden">
+                        <SlideAsideAnimation
+                          level="50"
+                          side={lang === "ar" ? "left" : "right"}
+                        >
+                          <img
+                            src={VerticalSpikeShort}
+                            alt={SITE_NAME}
+                            className="w-60 h-auto"
+                          />
+                        </SlideAsideAnimation>
                       </div>
                     </div>
 
                     {/* Card */}
                     <div className=" flex flex-col flex-1 max-w-70">
-                      <h3 className="text-white font-bold text-lg leading-snug mb-4">
-                        {t(`yearInReviewContent.slider.items.${key}.title`)}
-                      </h3>
-                      <p className="text-white text-base leading-relaxed">
-                        {t(`yearInReviewContent.slider.items.${key}.desc`)}
-                      </p>
+                      <SlideTopAnimation>
+                        <h3 className="text-white font-bold text-lg leading-snug mb-4">
+                          {t(`yearInReviewContent.slider.items.${key}.title`)}
+                        </h3>
+                      </SlideTopAnimation>
+                      <SlideTopAnimation>
+                        <p className="text-white text-base leading-relaxed">
+                          {t(`yearInReviewContent.slider.items.${key}.desc`)}
+                        </p>
+                      </SlideTopAnimation>
 
                       {hasStat && (
                         <div className="mt-4">
                           <p className="text-5xl font-bold text-white">
-                            {t(`yearInReviewContent.slider.items.${key}.stat`)}
+                            <CounterAnimation
+                              end={Number(
+                                t(
+                                  `yearInReviewContent.slider.items.${key}.stat.value`,
+                                ),
+                              )}
+                              suffix={t(
+                                `yearInReviewContent.slider.items.${key}.stat.suffix`,
+                              )}
+                            />
                           </p>
-                          <p className="text-fm-gray-100 text-xs mt-1">
-                            {t(
-                              `yearInReviewContent.slider.items.${key}.statLabel`,
-                            )}
-                          </p>
+                          <SlideTopAnimation>
+                            <p className="text-fm-gray-100 text-xs mt-1">
+                              {t(
+                                `yearInReviewContent.slider.items.${key}.statLabel`,
+                              )}
+                            </p>
+                          </SlideTopAnimation>
                         </div>
                       )}
 
                       {/* Placeholder image */}
-                      {image && (<div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
-                        <img
-                          src={image}
-                          alt={t(
-                            `yearInReviewContent.slider.items.${key}.month`,
-                          )}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>)}
+                      {image && (
+                        <div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
+                          <PopupAnimation>
+                            <img
+                              src={image}
+                              alt={t(
+                                `yearInReviewContent.slider.items.${key}.month`,
+                              )}
+                              className="w-full h-full object-cover"
+                            />
+                          </PopupAnimation>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

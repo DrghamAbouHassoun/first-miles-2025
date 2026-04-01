@@ -13,12 +13,21 @@ export default {
       label: "عدد المصانع",
     },
     alManarDescription: "استحوذت على شركة المنار للأعلاف، مضيفةً",
-    alManarHighlight: "450 طن",
+    alManarHighlight: {
+      value: "450",
+      suffix: "طن"
+    },
     alManarSuffix: "من إنتاج الأعلاف اليومي",
     productionCapacityDescription: "بلغت معدلات استغلال طاقة الإنتاج",
-    productionCapacityValue: "94%",
+    productionCapacityValue: {
+      value: "94",
+      suffix: "%"
+    },
     kenanStakeDescription: "استحوذت على حصة",
-    kenanStakeValue: "60%",
+    kenanStakeValue: {
+      value: "60",
+      suffix: "%"
+    },
     kenanStakeSuffix: "في شركة كنان العربية للتجارة",
     mills: {
       value: "15",
@@ -28,17 +37,17 @@ export default {
       title: "الطاقات الإنتاجية",
       silosStorage: {
         label: "إجمالي طاقة تخزين الصوامع",
-        value: "250,000",
+        value: "250000",
         unit: "طن",
       },
       dailyWheatMilling: {
         label: "الطاقة التصميمية لطحن القمح اليومية:",
-        value: "5,150",
+        value: "5150",
         unit: "طن",
       },
       dailyFeedProduction: {
         label: "طاقة إنتاج الأعلاف اليومية",
-        value: "1,350",
+        value: "1350",
         unit: "طن",
       },
       dailyDurumMilling: {
@@ -50,12 +59,18 @@ export default {
     marketShare: {
       title: "الحصة السوقية",
       description: "تحتل فرست ميلز مركزاً رائداً في سوق الدقيق السعودي",
-      value: "31%",
+      value: {
+        number: "31",
+        suffix: "%"
+      },
     },
     customers: {
       title: "عدد العملاء",
       subtitle: "(المباشرون وغير المباشرون)",
-      value: "+7,500",
+      value: {
+        number: "7500",
+        prefix: "+"
+      },
       label: "عميل",
     },
     productSales: {
@@ -63,12 +78,18 @@ export default {
       flourSales: {
         label: "مبيعات الدقيق",
         sublabel: "نقداً",
-        value: "90%",
+        value: {
+          number: "90",
+          suffix: "%"
+        },
       },
       numberOfProducts: {
         label: "عدد المنتجات",
         sublabel: "(المنتجات الرئيسية)",
-        value: "+60",
+        value: {
+          number: "60",
+          prefix: "+"
+        },
       },
     },
   },

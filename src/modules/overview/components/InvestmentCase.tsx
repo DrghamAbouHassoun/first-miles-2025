@@ -3,6 +3,8 @@ import Container from "../../common/components/Container/Container";
 import InvestmentSpike from "../../common/components/Vectors/InvestmentSpike";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
+import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
+import PopupAnimation from "../../common/components/animations/PopupAnimation";
 
 interface LeafFinancials {
   labels: string[];
@@ -71,12 +73,16 @@ const InvestmentCase = () => {
       <div className="py-20 bg-fm-yellow-100">
         <Container>
           <div>
-            <h2 className="text-fm-yellow mb-4 font-bold text-lg max-w-160">
-              {t("investmentCaseContent.title")}
-            </h2>
-            <p className="max-w-160 mb-4">
-              {t("investmentCaseContent.description")}
-            </p>
+            <SlideTopAnimation>
+              <h2 className="text-fm-yellow mb-4 font-bold text-lg max-w-160">
+                {t("investmentCaseContent.title")}
+              </h2>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <p className="max-w-160 mb-4">
+                {t("investmentCaseContent.description")}
+              </p>
+            </SlideTopAnimation>
           </div>
         </Container>
       </div>
@@ -87,51 +93,21 @@ const InvestmentCase = () => {
         >
           {/* Spike with transparent hover overlay */}
           <div className="lg:flex-1 relative max-w-125 lg:max-w-none">
-            <InvestmentSpike
-              className="w-full h-full object-contain"
-              activeItem={activeItem}
-              handleLeafHover={handleLeafHover}
-              handleLeafLeave={handleLeafLeave}
-            />
-
-            {/* Invisible overlay divs to detect per-leaf hover */}
-            {/* <div className="absolute inset-0 pointer-events-none"> */}
-            {/* Top-left leaf (index 0) */}
-            {/* <div
-                className="absolute cursor-pointer pointer-events-auto"
-                style={{ top: 0, left: 0, width: "50%", height: "56%" }}
-                onMouseEnter={() => handleLeafHover(0)}
-                onMouseLeave={handleLeafLeave}
-              /> */}
-            {/* Bottom-left leaf (index 1) */}
-            {/* <div
-                className="absolute cursor-pointer pointer-events-auto"
-                style={{ bottom: 0, left: 0, width: "50%", height: "62%" }}
-                onMouseEnter={() => handleLeafHover(1)}
-                onMouseLeave={handleLeafLeave}
-              /> */}
-            {/* Top-right leaf (index 2) */}
-            {/* <div
-                className="absolute cursor-pointer pointer-events-auto"
-                style={{ top: 0, right: 0, width: "50%", height: "56%" }}
-                onMouseEnter={() => handleLeafHover(2)}
-                onMouseLeave={handleLeafLeave}
+            <PopupAnimation>
+              <InvestmentSpike
+                className="w-full h-full object-contain"
+                activeItem={activeItem}
+                handleLeafHover={handleLeafHover}
+                handleLeafLeave={handleLeafLeave}
               />
-              {/* Bottom-right leaf (index 3) */}
-            {/* <div
-                className="absolute cursor-pointer pointer-events-auto"
-                style={{ bottom: 0, right: 0, width: "50%", height: "62%" }}
-                onMouseEnter={() => handleLeafHover(3)}
-                onMouseLeave={handleLeafLeave}
-              /> */}
-            {/* </div> */}
+            </PopupAnimation>
           </div>
 
           {/* Content panel */}
           <div className="flex-1 flex items-start py-8">
             {currentLeaf && (
               <div
-                className="text-white w-full transition-all duration-500 p-4 rounded-2xl bg-linear-90 from-fm-yellow/20 border border-fm-yellow animate-fade-top"
+                className="text-white w-full transition-all duration-500 p-4 rounded-2xl bg-linear-90 from-fm-yellow/20 border border-fm-yellow animation-slide-top-50 active"
                 dir={isRtl ? "rtl" : "ltr"}
                 key={currentLeaf.title}
               >

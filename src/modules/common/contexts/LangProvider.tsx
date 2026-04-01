@@ -19,6 +19,8 @@ import arStrategicReview from "../../../locales/ar/strategic-review";
 import arLeadership from "../../../locales/ar/leadership";
 import arOperatingReview from "../../../locales/ar/operating-review";
 import arSustainabilityReview from "../../../locales/ar/sustainability-review";
+import enDownloadCenter from "../../../locales/en/download-center";
+import arDownloadCenter from "../../../locales/ar/download-center";
 
 const translations = {
   en: {
@@ -30,6 +32,7 @@ const translations = {
     leadership: enLeadership,
     "operating-review": enOperatingReview,
     "sustainability-review": enSustainabilityReview,
+    "download-center": enDownloadCenter,
   },
   ar: {
     common: arCommon,
@@ -40,6 +43,7 @@ const translations = {
     leadership: arLeadership,
     "operating-review": arOperatingReview,
     "sustainability-review": arSustainabilityReview,
+    "download-center": arDownloadCenter,
   },
 };
 

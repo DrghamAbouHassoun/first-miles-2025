@@ -1,5 +1,6 @@
 import "./App.css";
 import "./Animation.css";
+import "./GlobalAnimations.css";
 import Layout from "./modules/common/components/layout/Layout";
 import LangProvider from "./modules/common/contexts/LangProvider";
 import MenuProvider from "./modules/common/contexts/MenuProvider";

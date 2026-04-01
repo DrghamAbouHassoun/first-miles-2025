@@ -22,8 +22,14 @@ export default {
     markets: {
       uae: {
         name: "UAE",
-        tons: "1,968 tons",
-        sar: "SAR 4,296,454",
+        tons: {
+          value: "1968",
+          suffix: " tons",
+        },
+        sar: {
+          value: "4296454",
+          suffix: " SAR",
+        },
         notes: [
           "Extra Milling Fine Pasta",
           "Semolina",
@@ -32,44 +38,86 @@ export default {
       },
       jordan: {
         name: "Jordan",
-        tons: "193 tons",
-        sar: "SAR 566,352",
+        tons: {
+          value: "193",
+          suffix: " tons",
+        },
+        sar: {
+          value: "566352",
+          suffix: " SAR",
+        },
         notes: ["Ram for repacking and packaging (Mixed Products)"],
       },
       qatar: {
         name: "Qatar",
-        tons: "288 tons",
-        sar: "SAR 678,764",
+        tons: {
+          value: "288",
+          suffix: " tons",
+        },
+        sar: {
+          value: "678764",
+          suffix: " SAR",
+        },
         notes: ["Pasta Semolina and Mixed Products"],
       },
       iraq: {
         name: "Iraq",
-        tons: "776 tons",
-        sar: "SAR 2,491,631",
+        tons: {
+          value: "776",
+          suffix: " tons",
+        },
+        sar: {
+          value: "2491631",
+          suffix: " SAR",
+        },
         notes: ["Including upcoming order"],
       },
       kuwait: {
         name: "Kuwait",
-        tons: "111 tons",
-        sar: "SAR 150,379",
+        tons: {
+          value: "111",
+          suffix: " tons",
+        },
+        sar: {
+          value: "150379",
+          suffix: " SAR",
+        },
         notes: ["Feed"],
       },
       djibouti: {
         name: "Djibouti",
-        tons: "46 tons",
-        sar: "SAR 86,250",
+        tons: {
+          value: "46",
+          suffix: " tons",
+        },
+        sar: {
+          value: "86250",
+          suffix: " SAR",
+        },
         notes: ["Durum"],
       },
       egypt: {
         name: "Egypt",
-        tons: "1,340 tons",
-        sar: "SAR 2,576,681",
+        tons: {
+          value: "1340",
+          suffix: " tons",
+        },
+        sar: {
+          value: "2576681",
+          suffix: " SAR",
+        },
         notes: ["Arabian Milling Only", "Including upcoming order"],
       },
       syria: {
         name: "Syria",
-        tons: "0.34 tons",
-        sar: "SAR 964,000",
+        tons: {
+          value: "0.34",
+          suffix: " tons",
+        },
+        sar: {
+          value: "964000",
+          suffix: " SAR",
+        },
         notes: ["Sampling only"],
       },
     },
@@ -149,7 +197,10 @@ export default {
           month: "April",
           title: "30 percent flour market share confirmed",
           desc: "We reaffirmed our leadership with a 30% market share in Saudi Arabia's flour market, as highlighted by the CEO in an interview with Argaam, referencing the latest GFSA data.",
-          stat: "30%",
+          stat: {
+            value: "30",
+            suffix: "%",
+          },
           statLabel: "market share in Saudi Arabia's flour market",
         },
         may: {

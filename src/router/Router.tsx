@@ -7,37 +7,50 @@ import LeadershipPage from "../pages/LeadershipPage";
 import OperatingReviewPage from "../pages/OperatingReviewPage";
 import SustainabilityReviewPage from "../pages/SustainabilityReviewPage";
 import Home from "../pages/Home";
+import DownloadCenter from "../pages/DownloadCenter";
 
 export const pages = [
   {
     path: "at-a-glance",
     name: "At A Glance",
-    component: <AtAGlancePage />
+    component: <AtAGlancePage />,
+    isNavVisible: true,
   },
   {
     path: "overview",
     name: "Overview",
-    component: <OverviewPage />
+    component: <OverviewPage />,
+    isNavVisible: true,
   },
   {
     path: "strategic-review",
     name: "Strategic Review",
-    component: <StrategicReviewPage />
+    component: <StrategicReviewPage />,
+    isNavVisible: true,
   },
   {
     path: "leadership",
     name: "Leadership",
-    component: <LeadershipPage />
+    component: <LeadershipPage />,
+    isNavVisible: true,
   },
   {
     path: "operating-review",
     name: "Operating Review",
-    component: <OperatingReviewPage />
+    component: <OperatingReviewPage />,
+    isNavVisible: true,
   },
   {
     path: "sustainability-review",
     name: "Sustainability Review",
-    component: <SustainabilityReviewPage />
+    component: <SustainabilityReviewPage />,
+    isNavVisible: true,
+  },
+  {
+    path: "download-center",
+    name: "Download Center",
+    component: <DownloadCenter />,
+    isNavVisible: false,
   }
 ]
 
@@ -56,6 +69,8 @@ const Router = () => {
       return <OperatingReviewPage />;
     case "sustainability-review":
       return <SustainabilityReviewPage />;
+    case "download-center":
+      return <DownloadCenter />;
     default:
       return <Home />;
   }

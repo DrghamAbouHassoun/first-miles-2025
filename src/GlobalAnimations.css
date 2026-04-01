@@ -1,0 +1,221 @@
+@keyframes SlideTop50 {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-top-50 {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(50%);
+  opacity: 0;
+}
+
+.animation-slide-top-50.active {
+  animation-name: SlideTop50;
+}
+
+@keyframes SlideTop100 {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-top-100 {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.animation-slide-top-100.active {
+  animation-name: SlideTop100;
+}
+
+@keyframes SlideBottom50 {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-bottom-50 {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.animation-slide-bottom-50.active {
+  animation-name: SlideBottom50;
+}
+
+@keyframes SlideBottom100 {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-bottom-100 {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.animation-slide-bottom-100.active {
+  animation-name: SlideBottom100;
+}
+
+@keyframes SlideLeft50 {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-left-50 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(50%);
+  opacity: 0;
+}
+
+.animation-slide-left-50.active {
+  animation-name: SlideLeft50;
+}
+
+@keyframes SlideLeft100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-left-100 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.animation-slide-left-100.active {
+  animation-name: SlideLeft100;
+}
+
+@keyframes SlideRight50 {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-right-50 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.animation-slide-right-50.active {
+  animation-name: SlideRight50;
+}
+
+
+@keyframes SlideRight100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-right-100 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.animation-slide-right-100.active {
+  animation-name: SlideRight100;
+}
+
+
+@keyframes Popup {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animation-popup {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.animation-popup.active {
+  animation-name: Popup;
+}
+
+@keyframes ImageScale {
+  from {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animation-image-scale {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transform: scale(1.05);
+  opacity: 0.5;
+}
+
+.animation-image-scale.active {
+  animation-name: ImageScale;
+}

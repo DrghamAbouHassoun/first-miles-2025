@@ -15,14 +15,21 @@ const Navbar = () => {
   const { t } = useTranslation("common");
   const { toggleMenu } = useContext(MenuContext);
   return (
-    <div key={currentRoute} className={`w-full absolute top-0 z-20 animate-fade-down ${currentRoute === "Home" || currentRoute === "" ? "animate-delay-6s" : ""}`}>
+    <div
+      key={currentRoute}
+      className={`w-full absolute top-0 z-20 animate-fade-down ${currentRoute === "Home" || currentRoute === "" ? "animate-delay-6s" : ""}`}
+    >
       <nav className="mx-auto w-full max-w-337.5 flex justify-between p-4">
         <button className="w-32 lg:w-24" onClick={() => navigate("Home")}>
           <img src={MainLogo} alt={SITE_NAME} className="hidden lg:block" />
-          <img src={SecondaryLogo} alt={SITE_NAME} className="block lg:hidden" />
+          <img
+            src={SecondaryLogo}
+            alt={SITE_NAME}
+            className="block lg:hidden"
+          />
         </button>
         <div className="hidden lg:flex items-center gap-6">
-          {pages.map((pge) => (
+          {pages.map((pge) => pge.isNavVisible && (
             <button
               key={pge.path}
               className={`text-sm hover:text-fm-yellow transition-all duration-500 ${currentRoute === pge.path ? "text-fm-yellow" : "text-white"}`}
@@ -39,10 +46,17 @@ const Navbar = () => {
           >
             {lang === "ar" ? "English" : "العربية"}
           </button>
-          <button className="text-white hover:text-fm-yellow transition-all duration-500">
+          <button
+            className="text-white hover:text-fm-yellow transition-all duration-500"
+            title="Download Center"
+            onClick={() => navigate("download-center")}
+          >
             <Download />
           </button>
-          <button className="text-white hover:text-fm-yellow transition-all duration-500 lg:hidden" onClick={() => toggleMenu(true)}>
+          <button
+            className="text-white hover:text-fm-yellow transition-all duration-500 lg:hidden"
+            onClick={() => toggleMenu(true)}
+          >
             <Grip size={32} />
           </button>
         </div>

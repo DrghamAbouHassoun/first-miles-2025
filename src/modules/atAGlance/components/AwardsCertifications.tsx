@@ -11,6 +11,7 @@ import IaommEAImg from "../../../assets/images/awards/iaommea.png";
 import IaomImg from "../../../assets/images/awards/iaom.png";
 import SaudiAgricultureImg from "../../../assets/images/awards/saudi-agriculture.png";
 import BgImage from "../../../assets/images/backgrounds/awards-bg.jpg";
+import PopupAnimation from "../../common/components/animations/PopupAnimation";
 
 const AWARDS = [
   { image: GFSIImg, key: "gfsi" },
@@ -60,7 +61,9 @@ const AwardsCertifications = () => {
       const container = emblaApi.containerNode();
       const viewport = container.parentElement as HTMLElement;
       const maxTranslate = container.scrollWidth - viewport.clientWidth;
-      const translateX = isRtl ? progress * maxTranslate : -progress * maxTranslate;
+      const translateX = isRtl
+        ? progress * maxTranslate
+        : -progress * maxTranslate;
       container.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
     };
 
@@ -86,8 +89,7 @@ const AwardsCertifications = () => {
         <div className="relative z-10 h-full flex flex-col justify-center px-4 md:px-32 py-12 ">
           {/* Section title */}
           <h2 className="text-3xl font-bold text-white mb-10">
-            {t("awards.title")}{" "}
-            <span className="text-fm-yellow">&</span>{" "}
+            {t("awards.title")} <span className="text-fm-yellow">&</span>{" "}
             {t("awards.certifications")}
           </h2>
 
@@ -95,26 +97,28 @@ const AwardsCertifications = () => {
           <div ref={emblaRef} className="overflow-visible">
             <div className="flex">
               {AWARDS.map(({ image, key }) => (
-                <div
-                  key={key}
-                  className="bg-fm-green/80 rounded-xl p-4 shrink-0 w-[80vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] pe-8 last:border-0 me-8 last:me-0"
-                >
-                  <div className="h-56 flex items-center justify-center mb-5">
-                    <img
-                      src={image}
-                      alt={t(`awards.items.${key}.title`)}
-                      className="max-h-full object-contain"
-                    />
+                <PopupAnimation key={key} className="shrink-0 w-[80vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] me-8 last:me-0">
+                  <div
+                    key={key}
+                    className="bg-fm-green/80 rounded-xl p-4  pe-8 last:border-0 w-full h-full "
+                  >
+                    <div className="h-56 flex items-center justify-center mb-5">
+                      <img
+                        src={image}
+                        alt={t(`awards.items.${key}.title`)}
+                        className="max-h-full object-contain"
+                      />
+                    </div>
+                    <div className="px-2">
+                      <h3 className="text-fm-yellow font-bold text-md leading-snug mb-3">
+                        {t(`awards.items.${key}.title`)}
+                      </h3>
+                      <p className="text-fm-gray-100 text-sm leading-relaxed">
+                        {t(`awards.items.${key}.desc`)}
+                      </p>
+                    </div>
                   </div>
-                  <div className="px-2">
-                  <h3 className="text-fm-yellow font-bold text-md leading-snug mb-3">
-                    {t(`awards.items.${key}.title`)}
-                  </h3>
-                  <p className="text-fm-gray-100 text-sm leading-relaxed">
-                    {t(`awards.items.${key}.desc`)}
-                  </p>
-                  </div>
-                </div>
+                </PopupAnimation>
               ))}
             </div>
           </div>

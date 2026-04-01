@@ -11,6 +11,8 @@ import CustomersIcon from "../../../../assets/icons/business-model/customers.svg
 import CommunitiesIcon from "../../../../assets/icons/business-model/communities.svg";
 import PartnersIcon from "../../../../assets/icons/business-model/partners.svg";
 import AccordionArrow from "../../../../assets/icons/accordion-arrow.svg";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
+import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 
 const stackholdersIcons = [
   {
@@ -49,15 +51,19 @@ const BusinessModelTab = () => {
     <div>
       <div className="bg-fm-yellow-100 py-24">
         <Container>
-          <h2 className="text-fm-yellow mb-2 font-bold text-2xl max-w-160">
-            {t("businessModelContent.title")}
-          </h2>
-          <p className="max-w-200">{t("businessModelContent.description")}</p>
+          <SlideTopAnimation>
+            <h2 className="text-fm-yellow mb-2 font-bold text-2xl max-w-160">
+              {t("businessModelContent.title")}
+            </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <p className="max-w-200">{t("businessModelContent.description")}</p>
+          </SlideTopAnimation>
         </Container>
       </div>
       <div className="relative">
-        <div className="sticky top-0 h-screen w-full inset-0 -z-10">
-          <img
+        <div className="sticky top-0 h-screen w-full inset-0 -z-10 overflow-y-hidden">
+          <ImageScaleAnimation
             src={BusinessModelBg}
             alt={SITE_NAME}
             className="w-full h-full object-cover object-center"
@@ -75,9 +81,15 @@ const BusinessModelTab = () => {
                   <h4 className="text-fm-yellow font-bold text-xl">
                     {t("businessModelContent.inputs.title")}
                   </h4>
-                  <img src={AccordionArrow} alt="" className={`w-6 h-6 transition-transform duration-300 ${openTab === "inputs" ? "rotate-180" : ""}`} />
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "inputs" ? "rotate-180" : ""}`}
+                  />
                 </button>
-                <div className={`grid transition-all duration-500 ease-in-out ${openTab === "inputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${openTab === "inputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
                   <div className="overflow-hidden">
                     <ul className="max-w-160 mt-4 list-disc list-inside px-4 pt-8 pb-4">
                       <li>{t("businessModelContent.inputs.items.0")}</li>
@@ -96,9 +108,15 @@ const BusinessModelTab = () => {
                   <h4 className="text-fm-yellow font-bold text-xl">
                     {t("businessModelContent.strengths.title")}
                   </h4>
-                  <img src={AccordionArrow} alt="" className={`w-6 h-6 transition-transform duration-300 ${openTab === "strengths" ? "rotate-180" : ""}`} />
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "strengths" ? "rotate-180" : ""}`}
+                  />
                 </button>
-                <div className={`grid transition-all duration-500 ease-in-out ${openTab === "strengths" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${openTab === "strengths" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
                   <div className="overflow-hidden">
                     <ul className="max-w-160 mt-4 list-disc list-inside px-4 pt-8 pb-4">
                       <li>{t("businessModelContent.strengths.items.0")}</li>
@@ -117,9 +135,15 @@ const BusinessModelTab = () => {
                   <h4 className="text-fm-yellow font-bold text-xl">
                     {t("businessModelContent.addedValue.title")}
                   </h4>
-                  <img src={AccordionArrow} alt="" className={`w-6 h-6 transition-transform duration-300 ${openTab === "addedValue" ? "rotate-180" : ""}`} />
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "addedValue" ? "rotate-180" : ""}`}
+                  />
                 </button>
-                <div className={`grid transition-all duration-500 ease-in-out ${openTab === "addedValue" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${openTab === "addedValue" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
                   <div className="overflow-hidden">
                     <ul className="mt-4 list-disc list-outside px-8 pt-8 pb-4">
                       <li>{t("businessModelContent.addedValue.items.0")}</li>
@@ -149,9 +173,15 @@ const BusinessModelTab = () => {
                   <h4 className="text-fm-yellow font-bold text-xl">
                     {t("businessModelContent.outputs.title")}
                   </h4>
-                  <img src={AccordionArrow} alt="" className={`w-6 h-6 transition-transform duration-300 ${openTab === "outputs" ? "rotate-180" : ""}`} />
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "outputs" ? "rotate-180" : ""}`}
+                  />
                 </button>
-                <div className={`grid transition-all duration-500 ease-in-out ${openTab === "outputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${openTab === "outputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
                   <div className="overflow-hidden">
                     <ul className="mt-4 list-disc list-outside px-8 pt-8">
                       <li>{t("businessModelContent.outputs.items.0")}</li>

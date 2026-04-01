@@ -21,7 +21,7 @@ const Menu = () => {
         <X size={32} />
       </button>
       <div className="flex justify-center items-center flex-col gap-6">
-        {pages.map((pge) => (
+        {pages.map((pge) => pge.isNavVisible && (
           <button
             key={pge.path}
             className={`${currentRoute === pge.path ? "text-fm-yellow" : "text-white hover:text-fm-yellow"} transition-all duration-500 text-2xl`}
