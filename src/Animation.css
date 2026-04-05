@@ -139,7 +139,7 @@
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(400px);
+    transform: translateY(80vh);
   }
 }
 

@@ -19,7 +19,7 @@ const Hero = () => {
     <>
       {/* Desktop Hero - Hidden on small screens */}
       <div className="bg-fm-green w-full h-screen overflow-hidden hidden lg:flex justify-center items-center relative px-4 lg:px-16 ">
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-0 left-0 w-full h-full animate-fade-in animate-delay-4s">
           <img
             src={HomeHeader}
             alt={SITE_NAME}
@@ -127,7 +127,7 @@ const Hero = () => {
 
       {/* Mobile Hero - Hidden on md and above */}
       <div className="relative w-full h-screen overflow-hidden bg-fm-green flex lg:hidden justify-center items-center pt-42">
-        <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-0 left-0 w-full h-full animate-fade-in animate-delay-4s">
           <img
             src={HomeMobileHeader}
             alt={SITE_NAME}
