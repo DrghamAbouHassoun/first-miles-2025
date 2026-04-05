@@ -8,6 +8,7 @@ import Pillar3Bg from "../../../../assets/images/kpis/pillar-3.jpg";
 import Pillar4Bg from "../../../../assets/images/kpis/pillar-4.jpg";
 import { useEffect, useRef, useState } from "react";
 import KpiPrint from "../prints/KpiPrint";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -20,7 +21,8 @@ const StrategyKPIsTab = () => {
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const activeItem = activePillar !== null ? activePillar : PILLAR_ORDER[stepIndex];
+  const activeItem =
+    activePillar !== null ? activePillar : PILLAR_ORDER[stepIndex];
 
   const handlePillarHover = (pillarIndex: number) => {
     setActivePillar(pillarIndex);
@@ -54,17 +56,31 @@ const StrategyKPIsTab = () => {
     <div>
       <div className="bg-fm-yellow-100 py-24">
         <Container>
-          <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
-            {t("strategyAndKPIsContent.title")}
-          </h2>
-          <p className="mb-4 font-semibold">
-            {t("strategyAndKPIsContent.description")}
-          </p>
-          <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
-            {t("strategyAndKPIsContent.subtitle")}
-          </h3>
-          <p className="mb-4 font-semibold">{t("strategyAndKPIsContent.p1")}</p>
-          <p className="mb-4 font-semibold">{t("strategyAndKPIsContent.p2")}</p>
+          <SlideTopAnimation>
+            <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
+              {t("strategyAndKPIsContent.title")}
+            </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <p className="mb-4 font-semibold">
+              {t("strategyAndKPIsContent.description")}
+            </p>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
+              {t("strategyAndKPIsContent.subtitle")}
+            </h3>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <p className="mb-4 font-semibold">
+              {t("strategyAndKPIsContent.p1")}
+            </p>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <p className="mb-4 font-semibold">
+              {t("strategyAndKPIsContent.p2")}
+            </p>
+          </SlideTopAnimation>
         </Container>
       </div>
       <div className="relative min-h-screen w-full">
@@ -131,18 +147,14 @@ const Achievement = ({
   <div className="py-2">
     <p className=" leading-relaxed">
       {prefix && <span>{prefix} </span>}
-      {highlight && (
-        <span className=" font-bold">{highlight} </span>
-      )}
+      {highlight && <span className=" font-bold">{highlight} </span>}
       {suffix && !large && <span>{suffix}</span>}
     </p>
     {large && (
       <p className="text-3xl mt-1">
         {large}
         {suffix && (
-          <span className="text-4xl font-normal text-white ms-2">
-            {suffix}
-          </span>
+          <span className="text-4xl font-normal text-white ms-2">{suffix}</span>
         )}
       </p>
     )}
@@ -160,10 +172,24 @@ const PillarContent = ({
   const p = `strategyAndKPIsContent.${pillar}`;
   return (
     <div className="lg:p-8 text-white">
-      <p className="pb-4 font-semibold border-b border-fm-yellow">{t(`${p}.description`)}</p>
-      <h4 className="py-4 text-lg text-fm-yellow font-bold">{t(`strategyAndKPIsContent.target`)}</h4>
-      <p className="pb-6 border-b border-fm-yellow">{t(`${p}.target`)}</p>
-      <h4 className="py-4 text-lg text-fm-yellow font-bold">{t(`strategyAndKPIsContent.successMetricsAndKPIs`)}</h4>
+      <SlideTopAnimation>
+        <p className="pb-4 font-semibold border-b border-fm-yellow">
+          {t(`${p}.description`)}
+        </p>
+      </SlideTopAnimation>
+      <SlideTopAnimation>
+        <h4 className="py-4 text-lg text-fm-yellow font-bold">
+          {t(`strategyAndKPIsContent.target`)}
+        </h4>
+      </SlideTopAnimation>
+      <SlideTopAnimation>
+        <p className="pb-6 border-b border-fm-yellow">{t(`${p}.target`)}</p>
+      </SlideTopAnimation>
+      <SlideTopAnimation>
+        <h4 className="py-4 text-lg text-fm-yellow font-bold">
+          {t(`strategyAndKPIsContent.successMetricsAndKPIs`)}
+        </h4>
+      </SlideTopAnimation>
       <ul className="mb-6 mx-4 list-disc list-outside space-y-1">
         {[0, 1, 2, 3].map((i) => {
           const kpi = t(`${p}.kpis.${i}`);
@@ -175,7 +201,9 @@ const PillarContent = ({
         })}
       </ul>
       <div className="h-[.5px] bg-fm-yellow" />
-      <h4 className="py-4 text-lg text-fm-yellow font-bold">{t(`strategyAndKPIsContent.achievements2025`)}</h4>
+      <h4 className="py-4 text-lg text-fm-yellow font-bold">
+        {t(`strategyAndKPIsContent.achievements2025`)}
+      </h4>
       <div className="grid grid-cols-1 gap-3">
         {Array.from({ length: achievementCount }, (_, i) => (
           <Achievement
