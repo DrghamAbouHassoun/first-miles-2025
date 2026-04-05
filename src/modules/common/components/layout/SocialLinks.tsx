@@ -51,7 +51,7 @@ const SocialLinks = () => {
   const { currentRoute } = useContext(RouterContext);
   const { lang } = useLocale();
   return (
-    <div className={`fixed z-30 top-1/2 ${lang === "ar" ? "right-4" : "left-4"} -translate-y-1/2`}>
+    <div className={`fixed z-30 top-1/2 ${lang === "ar" ? "left-4" : "right-4"} -translate-y-1/2`}>
       <div className={`hidden lg:flex flex-col bg-fm-yellow rounded-md py-2 animate-fade-right ${(currentRoute === "Home" || currentRoute === "") ? "animate-delay-6s" : ""}`}>
         {socialLinksData.map((link) => (
           <a

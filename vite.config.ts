@@ -14,4 +14,7 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    allowedHosts: ['treelined-sedulously-jaxen.ngrok-free.dev']
+  }
 })
