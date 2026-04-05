@@ -4,6 +4,8 @@ import TechInnovationBg from "../../../../assets/images/backgrounds/technology-r
 import { SITE_NAME } from "../../../../config/constants";
 import TechnologyPrint from "../prints/TechnologyPrint";
 import { useEffect, useRef, useState } from "react";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
+import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -51,30 +53,41 @@ const TechnologyInnovationTab = () => {
     <div>
       <Container>
         <div className=" py-24">
+          <SlideTopAnimation>
           <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
             {t("technologyInnovationContent.title")}
           </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
           <p className="mb-4 font-semibold">
             {t("technologyInnovationContent.description")}
           </p>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
           <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
             {t("technologyInnovationContent.subtitle")}
           </h3>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
           <p className="mb-4 font-semibold">
             {t("technologyInnovationContent.p1")}
           </p>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
           <p className="mb-4 font-semibold">
             {t("technologyInnovationContent.p2")}
           </p>
+          </SlideTopAnimation>
         </div>
       </Container>
       <div className="relative min-h-screen w-full">
-        <div className="sticky top-0 left-0 h-screen w-full -z-10">
-          <img
-            src={TechInnovationBg}
+        <div className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden">
+          <ImageScaleAnimation src={TechInnovationBg}
             alt={`Technology Innovation | ${SITE_NAME}`}
-            className="h-full w-full object-cover"
-          />
+            className="h-full w-full object-cover" />
+          {/* <img
+            
+          /> */}
         </div>
         <Container>
           <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">

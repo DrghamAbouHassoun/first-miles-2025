@@ -65,6 +65,24 @@
   animation: FadeRight 1s ease-out forwards;
 }
 
+@keyframes FadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-left {
+  opacity: 0;
+  transform: translateX(100%);
+  animation-fill-mode: forwards;
+  animation: FadeLeft 1s ease-out forwards;
+}
+
 .animate-fade-down {
   transform: translateY(-100%);
   animation: FadeDown 1s ease-out forwards;
@@ -161,7 +179,6 @@
 .animate-flower-two-rotate {
   transform-origin: bottom;
   transform: rotate(-30deg);
-  animation-name: FlowerTwoRotate;
   animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;

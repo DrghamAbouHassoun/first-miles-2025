@@ -3,7 +3,8 @@ import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
 import ChairmanImage from "../../../assets/images/leadership-people/chairman.png";
 import LeadershipHeader from "./LeadershipHeader";
-import GroupOfSpikes from "../../../assets/vectors/group-of-spikes.svg";
+import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
+import GroupOfSpikes from "./GroupOfSpikes";
 
 const ChairmanTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -36,14 +37,18 @@ const ChairmanTab = () => {
         <Container>
           <div className="py-6">
             {/* Tagline */}
-            <h2 className="text-fm-yellow font-bold text-lg md:text-2xl leading-snug mb-10 whitespace-pre-line">
-              {data.tagline}
-            </h2>
+            <SlideTopAnimation>
+              <h2 className="text-fm-yellow font-bold text-lg md:text-2xl leading-snug mb-10 whitespace-pre-line">
+                {data.tagline}
+              </h2>
+            </SlideTopAnimation>
 
             {/* Opening bold paragraph */}
-            <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
-              {data.opening}
-            </p>
+            <SlideTopAnimation>
+              <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
+                {data.opening}
+              </p>
+            </SlideTopAnimation>
 
             {/* First half of sections */}
             <div className="max-w-4xl space-y-6">
@@ -53,16 +58,17 @@ const ChairmanTab = () => {
                   i: number,
                 ) => (
                   <div key={i}>
-                    <h3 className="font-bold text-base mb-3">
-                      {section.heading}
-                    </h3>
+                    <SlideTopAnimation>
+                      <h3 className="font-bold text-base mb-3">
+                        {section.heading}
+                      </h3>
+                    </SlideTopAnimation>
                     {section.paragraphs.map((p: string, j: number) => (
-                      <p
-                        key={j}
-                        className="text-sm leading-relaxed mb-3 last:mb-0"
-                      >
-                        {p}
-                      </p>
+                      <SlideTopAnimation key={j}>
+                        <p className="text-sm leading-relaxed mb-3 last:mb-0">
+                          {p}
+                        </p>
+                      </SlideTopAnimation>
                     ))}
                   </div>
                 ),
@@ -74,37 +80,35 @@ const ChairmanTab = () => {
 
       {/* Second half of sections with wheat decoration */}
       <div className="relative bg-white overflow-hidden">
-        <Container className="">
-          <div className=" max-w-4xl space-y-8 mb-6">
+        <Container className=" z-10">
+          <div className=" max-w-4xl space-y-8 mb-6 z-10">
             {secondHalf.map(
               (
                 section: { heading: string; paragraphs: string[] },
                 i: number,
               ) => (
                 <div key={i}>
-                  <h3 className="font-bold text-base mb-3">
-                    {section.heading}
-                  </h3>
+                  <SlideTopAnimation key={i}>
+                    <h3 className="font-bold text-base mb-3">
+                      {section.heading}
+                    </h3>
+                  </SlideTopAnimation>
                   {section.paragraphs.map((p: string, j: number) => (
-                    <p
-                      key={j}
-                      className="text-sm leading-relaxed mb-3 last:mb-0"
-                    >
-                      {p}
-                    </p>
+                    <SlideTopAnimation key={j}>
+                      <p className="text-sm leading-relaxed mb-3 last:mb-0">
+                        {p}
+                      </p>
+                    </SlideTopAnimation>
                   ))}
                 </div>
               ),
             )}
           </div>
         </Container>
-
-        {/* Wheat decoration */}
         <div
-          className={`absolute bottom-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
-          style={{ width: "160px" }}
+          className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
         >
-          <img src={GroupOfSpikes} alt="" className="w-full h-auto opacity-30 xl:opacity-100" />
+          <GroupOfSpikes />
         </div>
       </div>
       <div className="w-full bg-fm-green h-16"></div>

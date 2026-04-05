@@ -76,16 +76,28 @@ const BusinessModelTab = () => {
               <div id="inputs">
                 <button
                   onClick={() => toggle("inputs")}
-                  className="bg-linear-90 from-fm-yellow/0 to-fm-yellow/80 w-full p-8 text-start cursor-pointer flex items-center justify-between"
+                  className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
-                  <h4 className="text-fm-yellow font-bold text-xl">
-                    {t("businessModelContent.inputs.title")}
-                  </h4>
-                  <img
-                    src={AccordionArrow}
-                    alt=""
-                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "inputs" ? "rotate-180" : ""}`}
-                  />
+                  {/* Base gradient */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+
+                  {/* Hover gradient (fades in) */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-between w-full">
+                    <h4 className="text-fm-yellow font-bold text-xl">
+                      {t("businessModelContent.inputs.title")}
+                    </h4>
+
+                    <img
+                      src={AccordionArrow}
+                      alt=""
+                      className={`w-6 h-6 transition-transform duration-300 ${
+                        openTab === "inputs" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
                 <div
                   className={`grid transition-all duration-500 ease-in-out ${openTab === "inputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
@@ -103,16 +115,28 @@ const BusinessModelTab = () => {
               <div id="strengths" className="mt-8">
                 <button
                   onClick={() => toggle("strengths")}
-                  className="bg-linear-90 from-fm-yellow/0 to-fm-yellow/80 w-full p-8 text-start cursor-pointer flex items-center justify-between"
+                  className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
-                  <h4 className="text-fm-yellow font-bold text-xl">
-                    {t("businessModelContent.strengths.title")}
-                  </h4>
-                  <img
-                    src={AccordionArrow}
-                    alt=""
-                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "strengths" ? "rotate-180" : ""}`}
-                  />
+                  {/* Base gradient */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+
+                  {/* Hover gradient (fades in) */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-between w-full">
+                    <h4 className="text-fm-yellow font-bold text-xl">
+                      {t("businessModelContent.strengths.title")}
+                    </h4>
+
+                    <img
+                      src={AccordionArrow}
+                      alt=""
+                      className={`w-6 h-6 transition-transform duration-300 ${
+                        openTab === "strengths" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
                 <div
                   className={`grid transition-all duration-500 ease-in-out ${openTab === "strengths" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
@@ -130,16 +154,28 @@ const BusinessModelTab = () => {
               <div id="addedValue" className="mt-8">
                 <button
                   onClick={() => toggle("addedValue")}
-                  className="bg-linear-90 from-fm-yellow/0 to-fm-yellow/80 w-full p-8 text-start cursor-pointer flex items-center justify-between"
+                  className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
-                  <h4 className="text-fm-yellow font-bold text-xl">
-                    {t("businessModelContent.addedValue.title")}
-                  </h4>
-                  <img
-                    src={AccordionArrow}
-                    alt=""
-                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "addedValue" ? "rotate-180" : ""}`}
-                  />
+                  {/* Base gradient */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+
+                  {/* Hover gradient (fades in) */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-between w-full">
+                    <h4 className="text-fm-yellow font-bold text-xl">
+                      {t("businessModelContent.addedValue.title")}
+                    </h4>
+
+                    <img
+                      src={AccordionArrow}
+                      alt=""
+                      className={`w-6 h-6 transition-transform duration-300 ${
+                        openTab === "addedValue" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
                 <div
                   className={`grid transition-all duration-500 ease-in-out ${openTab === "addedValue" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
@@ -168,16 +204,28 @@ const BusinessModelTab = () => {
               <div id="outputs" className="mt-4">
                 <button
                   onClick={() => toggle("outputs")}
-                  className="bg-linear-90 from-fm-yellow/0 to-fm-yellow/80 w-full p-8 text-start cursor-pointer flex items-center justify-between"
+                  className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
-                  <h4 className="text-fm-yellow font-bold text-xl">
-                    {t("businessModelContent.outputs.title")}
-                  </h4>
-                  <img
-                    src={AccordionArrow}
-                    alt=""
-                    className={`w-6 h-6 transition-transform duration-300 ${openTab === "outputs" ? "rotate-180" : ""}`}
-                  />
+                  {/* Base gradient */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+
+                  {/* Hover gradient (fades in) */}
+                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-between w-full">
+                    <h4 className="text-fm-yellow font-bold text-xl">
+                      {t("businessModelContent.outputs.title")}
+                    </h4>
+
+                    <img
+                      src={AccordionArrow}
+                      alt=""
+                      className={`w-6 h-6 transition-transform duration-300 ${
+                        openTab === "outputs" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
                 <div
                   className={`grid transition-all duration-500 ease-in-out ${openTab === "outputs" ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}

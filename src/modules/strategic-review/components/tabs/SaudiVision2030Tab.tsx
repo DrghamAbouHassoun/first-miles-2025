@@ -65,7 +65,7 @@ const SaudiVision2030Tab = () => {
                 />
               </button>
             </div>
-            <div key={activeTab} className="flex-1 animate-fade-top">
+            <div key={activeTab} className="flex-1 animation-slide-top-50 active">
               <div className="bg-fm-yellow-200 p-6">
                 <h3 className="text-lg font-bold text-fm-yellow">{t(`saudiVisionContent.tabs.${activeTab}.content.title`)}</h3>
                 {tArray(`saudiVisionContent.tabs.${activeTab}.content.paragrphs`).map((paragraph: string, index: number) => (
