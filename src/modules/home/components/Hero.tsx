@@ -1,16 +1,16 @@
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { SITE_NAME } from "../../../config/constants";
-import HomeHero from "../../../assets/images/home/home-hero.png";
 import YellowSpike from "../../../assets/icons/spike-yellow.svg";
 // import GrayGroupOfSpikes from "../../../assets/icons/gray-group-of-spikes.svg";
 import { HomeModalContext } from "../contexts/HomeModalProvider";
 import { useContext } from "react";
 import MainButton from "../../common/components/buttons/MainButton";
 import HomeHeader from "../../../assets/images/headers/home.jpg";
+import HomeMobileHeader from "../../../assets/images/headers/home-mobile.jpg";
 import HandImage from "../../../assets/images/home/hand.png";
-import GrainOneImage from "../../../assets/images/home/grain-1.png"
-import GrainTwoImage from "../../../assets/images/home/grain-2.png"
-import GrainThreeImage from "../../../assets/images/home/grain-3.png"
+import GrainOneImage from "../../../assets/images/home/grain-1.png";
+import GrainTwoImage from "../../../assets/images/home/grain-2.png";
+import GrainThreeImage from "../../../assets/images/home/grain-3.png";
 
 const Hero = () => {
   const { t } = useTranslation("home");
@@ -26,7 +26,7 @@ const Hero = () => {
             className="w-full h-full object-cover object-left"
           />
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90vh] animate-fade-in ">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90vh] animate-fade-in animate-delay-5s">
           <img
             src={HandImage}
             alt={SITE_NAME}
@@ -39,7 +39,7 @@ const Hero = () => {
               className="w-full h-full object-contain animate-fall-down"
             />
           </div>
-          <div className="absolute left-1/3 top-[40%] w-10 h-10 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute left-1/3 top-[48%] w-10 h-10 -translate-x-1/2 -translate-y-1/2">
             <img
               src={GrainTwoImage}
               alt={`Grain ${SITE_NAME}`}
@@ -127,8 +127,15 @@ const Hero = () => {
 
       {/* Mobile Hero - Hidden on md and above */}
       <div className="relative w-full h-screen overflow-hidden bg-fm-green flex lg:hidden justify-center items-center pt-42">
-        <div className="w-full  mx-auto max-w-337.5 max-h-screen flex flex-col items-center z-10 px-4">
-          <div className="text-white flex flex-col w-full h-[50%] flex-1">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <img
+            src={HomeMobileHeader}
+            alt={SITE_NAME}
+            className="w-full h-full object-cover object-left"
+          />
+        </div>
+        <div className="w-full  mx-auto max-w-337.5 max-h-screen flex flex-col items-center z-10 mb-4">
+          <div className="text-white flex flex-col w-full h-[50%] flex-1 px-4">
             <div className="overflow-hidden">
               <h1 className="text-lg font-thin animate-move-up animate-delay-3s">
                 {t("hero.title")}
@@ -153,12 +160,38 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="flex-1 flex w-full justify-end pb-24 pt-7">
-            <div className="rounded-3xl overflow-hidden w-full h-auto duration-500 max-w-125">
+          <div className="flex-1 flex w-full justify-end pb-24 pt-14 relative animate-fade-in animate-delay-5s">
+            {/* <div className="rounded-3xl overflow-hidden w-full h-auto duration-500 max-w-125">
               <img
                 src={HomeHero}
                 alt={SITE_NAME}
                 className="w-full h-auto object-cover animate-fade-in animate-delay-5s"
+              />
+            </div> */}
+            <img
+              src={HandImage}
+              alt={SITE_NAME}
+              className="w-full object-contain animate-bounce-up-down"
+            />
+            <div className="absolute left-1/2 top-[30%] w-5 sm:w-8 h-5 sm:h-8 -translate-x-1/2 -translate-y-1/2">
+              <img
+                src={GrainOneImage}
+                alt={`Grain ${SITE_NAME}`}
+                className="w-full h-full object-contain animate-fall-down"
+              />
+            </div>
+            <div className="absolute left-[25%] top-[45%] w-5 sm:w-8 h-5 sm:h-8 -translate-x-1/2 -translate-y-1/2">
+              <img
+                src={GrainTwoImage}
+                alt={`Grain ${SITE_NAME}`}
+                className="w-full h-full object-contain animate-fall-down animate-delay-1s"
+              />
+            </div>
+            <div className="absolute left-[65%] top-[60%] w-4 sm:w-8 h-4 sm:h-8 -translate-x-1/2 -translate-y-1/2">
+              <img
+                src={GrainThreeImage}
+                alt={`Grain ${SITE_NAME}`}
+                className="w-full h-full object-contain animate-fall-down animate-delay-2s"
               />
             </div>
           </div>
