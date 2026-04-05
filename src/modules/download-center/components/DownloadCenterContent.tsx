@@ -161,7 +161,7 @@ const DownloadCenterContent = () => {
 
             {/* Buttons */}
             <div
-              className={`flex flex-col sm:flex-row justify-end gap-3 shrink-0 w-full ${isAr ? "sm:flex-row-reverse lg:flex-col" : ""}`}
+              className={`flex flex-col sm:flex-row justify-end gap-3 shrink-0 w-full mt-8 mb-4 ${isAr ? "sm:flex-row-reverse lg:flex-col" : ""}`}
             >
               <button
                 onClick={handleDownloadSelected}
