@@ -1,4 +1,4 @@
-import YellowSpike from "../../../assets/icons/spike-yellow.svg";
+import YellowSpike from "../../../assets/icons/spike-yellow-2.svg";
 
 const GroupOfSpikes = () => {
   return (

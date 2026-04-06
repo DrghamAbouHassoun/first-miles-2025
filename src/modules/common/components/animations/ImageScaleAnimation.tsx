@@ -9,7 +9,7 @@ const ImageScaleAnimation = ({ ...props }: ImageScaleAnimationProps) => {
     <img
       {...props}
       ref={ref}
-      className={`animation-image-scale ${inView ? "active" : ""}`}
+      className={`animation-image-scale ${inView ? "active" : ""} ${props.className || ""}`}
     />
   );
 };

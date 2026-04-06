@@ -55,7 +55,7 @@ export const pages = [
 ]
 
 const Router = () => {
-  const { currentRoute } = useContext(RouterContext)
+  const { currentRoute, homeKey } = useContext(RouterContext)
   switch (currentRoute) {
     case "at-a-glance":
       return <AtAGlancePage />;
@@ -72,7 +72,7 @@ const Router = () => {
     case "download-center":
       return <DownloadCenter />;
     default:
-      return <Home />;
+      return <Home key={homeKey} />;
   }
 };
 

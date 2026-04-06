@@ -10,13 +10,14 @@ import { Download, Grip } from "lucide-react";
 import { MenuContext } from "../../contexts/MenuProvider";
 
 const Navbar = () => {
-  const { currentRoute, navigate } = useContext(RouterContext);
+  const { currentRoute, homeKey, navigate } = useContext(RouterContext);
+  const isHome = currentRoute === "Home" || currentRoute === "";
   const { lang, setLang } = useLocale();
   const { t } = useTranslation("common");
   const { toggleMenu } = useContext(MenuContext);
   return (
     <div
-      key={currentRoute}
+      key={isHome ? homeKey : currentRoute}
       className={`w-full absolute top-0 z-20 animate-fade-down ${currentRoute === "Home" || currentRoute === "" ? "animate-delay-6s" : ""}`}
     >
       <nav className="mx-auto w-full max-w-337.5 flex justify-between p-4">

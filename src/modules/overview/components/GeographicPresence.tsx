@@ -6,6 +6,7 @@ import Map from "./Map";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
+import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 
 const MARKET_KEYS = [
   "uae",
@@ -117,6 +118,9 @@ const GeographicPresence = () => {
         </div>
       </Container>
       <Map />
+      <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

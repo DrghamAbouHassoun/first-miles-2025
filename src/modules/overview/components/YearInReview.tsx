@@ -12,6 +12,7 @@ import SlideTopAnimation from "../../common/components/animations/SlideTopAnimat
 import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
+import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 
 const TIMELINE_ITEMS = [
   { key: "january", hasStat: false, image: JanuaryImage },
@@ -100,8 +101,9 @@ const YearInReview = () => {
         ref={sectionRef}
         style={{ height: `${SECTION_HEIGHT_VH}vh` }}
         dir={isRtl ? "rtl" : "ltr"}
+        className="-mb-px"
       >
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 h-screen overflow-hidden -mb-px">
           {/* Background image */}
           <div className="absolute inset-0">
             <img
@@ -115,7 +117,7 @@ const YearInReview = () => {
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col justify-center px-4 md:px-32 py-50">
             {/* Embla carousel */}
-            <div ref={emblaRef} className="overflow-visible">
+            <div ref={emblaRef} className="overflow-visible z-20">
               <div className="flex">
                 {TIMELINE_ITEMS.map(({ key, hasStat, image }) => (
                   <div
@@ -202,6 +204,9 @@ const YearInReview = () => {
           </div>
         </div>
       </section>
+      <div className="flex justify-end w-full h-auto bottom-0 right-0 z-10 bg-fm-green">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

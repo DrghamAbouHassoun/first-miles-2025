@@ -169,19 +169,23 @@
 
 @keyframes FlowerTwoRotate {
   0% {
-    transform: rotate(-30deg);
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(-20deg);
   }
 }
 
 .animate-flower-two-rotate {
   transform-origin: bottom;
-  transform: rotate(-30deg);
-  animation-duration: 2s;
-  animation-timing-function: ease-out;
+  transform: rotate(-20deg);
+  animation-duration: 6s;
+  animation-timing-function: ease;
   animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 .animate-flower-two-rotate.active {
@@ -192,19 +196,23 @@
 
 @keyframes FlowerOneRotate {
   0% {
-    transform: rotate(30deg);
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(20deg);
   }
 }
 
 .animate-flower-one-rotate {
   transform-origin: bottom left;
-  transform: rotate(30deg);
-  animation-duration: 2s;
+  transform: rotate(20deg);
+  animation-duration: 6s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 .animate-flower-one-rotate.active {

@@ -9,6 +9,7 @@ import Pillar4Bg from "../../../../assets/images/kpis/pillar-4.jpg";
 import { useEffect, useRef, useState } from "react";
 import KpiPrint from "../prints/KpiPrint";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
+import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -126,6 +127,9 @@ const StrategyKPIsTab = () => {
             </div>
           </div>
         </Container>
+      <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+        <GroupOfSpikes />
+      </div>
       </div>
     </div>
   );

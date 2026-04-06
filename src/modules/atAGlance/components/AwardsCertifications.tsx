@@ -12,6 +12,7 @@ import IaomImg from "../../../assets/images/awards/iaom.png";
 import SaudiAgricultureImg from "../../../assets/images/awards/saudi-agriculture.png";
 import BgImage from "../../../assets/images/backgrounds/awards-bg.jpg";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
+import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 
 const AWARDS = [
   { image: GFSIImg, key: "gfsi" },
@@ -77,6 +78,9 @@ const AwardsCertifications = () => {
       style={{ height: `${SECTION_HEIGHT_VH}vh` }}
       dir={isRtl ? "rtl" : "ltr"}
     >
+      <div className="flex justify-end absolute w-full h-auto bottom-0 z-10">
+        <GroupOfSpikes />
+      </div>
       <div className="sticky top-0 h-screen overflow-hidden">
         {/* Background image with dark overlay */}
         <div

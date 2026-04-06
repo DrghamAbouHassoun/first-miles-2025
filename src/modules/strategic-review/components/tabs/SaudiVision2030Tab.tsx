@@ -8,6 +8,7 @@ import TabIcon1 from "../../../../assets/icons/saudi-vision/icon-1.png";
 import TabIcon2 from "../../../../assets/icons/saudi-vision/icon-2.png";
 import TabIcon3 from "../../../../assets/icons/saudi-vision/icon-3.png";
 import { useTranslation } from "../../../common/hooks/useTranslation";
+import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 
 const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -65,14 +66,26 @@ const SaudiVision2030Tab = () => {
                 />
               </button>
             </div>
-            <div key={activeTab} className="flex-1 animation-slide-top-50 active">
+            <div
+              key={activeTab}
+              className="flex-1 animation-slide-top-50 active"
+            >
               <div className="bg-fm-yellow-200 p-6">
-                <h3 className="text-lg font-bold text-fm-yellow">{t(`saudiVisionContent.tabs.${activeTab}.content.title`)}</h3>
-                {tArray(`saudiVisionContent.tabs.${activeTab}.content.paragrphs`).map((paragraph: string, index: number) => (
-                  <p key={index} className="mt-4">{paragraph}</p>
+                <h3 className="text-lg font-bold text-fm-yellow">
+                  {t(`saudiVisionContent.tabs.${activeTab}.content.title`)}
+                </h3>
+                {tArray(
+                  `saudiVisionContent.tabs.${activeTab}.content.paragrphs`,
+                ).map((paragraph: string, index: number) => (
+                  <p key={index} className="mt-4">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </div>
+          </div>
+          <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+            <GroupOfSpikes />
           </div>
         </Container>
       </div>

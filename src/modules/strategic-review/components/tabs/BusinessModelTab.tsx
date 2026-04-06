@@ -13,6 +13,7 @@ import PartnersIcon from "../../../../assets/icons/business-model/partners.svg";
 import AccordionArrow from "../../../../assets/icons/accordion-arrow.svg";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
+import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 
 const stackholdersIcons = [
   {
@@ -276,6 +277,9 @@ const BusinessModelTab = () => {
               </div>
             </div>
           </Container>
+            <div className="flex justify-end items-end  w-full h-auto bottom-0 right-0 z-0">
+              <GroupOfSpikes />
+            </div>
         </div>
       </div>
     </div>

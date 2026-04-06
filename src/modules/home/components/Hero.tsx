@@ -26,7 +26,7 @@ const Hero = () => {
             className="w-full h-full object-cover object-left"
           />
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90vh] animate-fade-in animate-delay-5s">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90vh] animate-fade-left animate-duration animate-duration-1_6s animate-delay-5s">
           <img
             src={HandImage}
             alt={SITE_NAME}

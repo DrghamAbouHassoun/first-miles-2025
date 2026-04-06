@@ -6,6 +6,7 @@ import TechnologyPrint from "../prints/TechnologyPrint";
 import { useEffect, useRef, useState } from "react";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
+import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -54,37 +55,39 @@ const TechnologyInnovationTab = () => {
       <Container>
         <div className=" py-24">
           <SlideTopAnimation>
-          <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
-            {t("technologyInnovationContent.title")}
-          </h2>
+            <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
+              {t("technologyInnovationContent.title")}
+            </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-          <p className="mb-4 font-semibold">
-            {t("technologyInnovationContent.description")}
-          </p>
+            <p className="mb-4 font-semibold">
+              {t("technologyInnovationContent.description")}
+            </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-          <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
-            {t("technologyInnovationContent.subtitle")}
-          </h3>
+            <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
+              {t("technologyInnovationContent.subtitle")}
+            </h3>
           </SlideTopAnimation>
           <SlideTopAnimation>
-          <p className="mb-4 font-semibold">
-            {t("technologyInnovationContent.p1")}
-          </p>
+            <p className="mb-4 font-semibold">
+              {t("technologyInnovationContent.p1")}
+            </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-          <p className="mb-4 font-semibold">
-            {t("technologyInnovationContent.p2")}
-          </p>
+            <p className="mb-4 font-semibold">
+              {t("technologyInnovationContent.p2")}
+            </p>
           </SlideTopAnimation>
         </div>
       </Container>
       <div className="relative min-h-screen w-full">
         <div className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden">
-          <ImageScaleAnimation src={TechInnovationBg}
+          <ImageScaleAnimation
+            src={TechInnovationBg}
             alt={`Technology Innovation | ${SITE_NAME}`}
-            className="h-full w-full object-cover" />
+            className="h-full w-full object-cover"
+          />
           {/* <img
             
           /> */}
@@ -134,26 +137,37 @@ const TechnologyInnovationTab = () => {
             </div>
           </div>
           <div className="w-full flex-1 lg:hidden py-4">
-            {activeItem === 0 && <div
-              className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active`}
-            >
-              <p>{t("technologyInnovationContent.pillars.0.content")}</p>
-            </div>}
-            {activeItem === 1 && <div
-              className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active `}
-            >
-              <p>{t("technologyInnovationContent.pillars.1.content")}</p>
-            </div>}
-            {activeItem === 2 && <div
-              className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active `}
-            >
-              <p>{t("technologyInnovationContent.pillars.2.content")}</p>
-            </div>}
-            {activeItem === 3 && <div
-              className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active`}
-            >
-              <p>{t("technologyInnovationContent.pillars.3.content")}</p>
-            </div>}
+            {activeItem === 0 && (
+              <div
+                className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active`}
+              >
+                <p>{t("technologyInnovationContent.pillars.0.content")}</p>
+              </div>
+            )}
+            {activeItem === 1 && (
+              <div
+                className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active `}
+              >
+                <p>{t("technologyInnovationContent.pillars.1.content")}</p>
+              </div>
+            )}
+            {activeItem === 2 && (
+              <div
+                className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active `}
+              >
+                <p>{t("technologyInnovationContent.pillars.2.content")}</p>
+              </div>
+            )}
+            {activeItem === 3 && (
+              <div
+                className={`bg-fm-green text-white w-full p-4 transition-all duration-700 animation-slide-top-50 active`}
+              >
+                <p>{t("technologyInnovationContent.pillars.3.content")}</p>
+              </div>
+            )}
+          </div>
+          <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+            <GroupOfSpikes />
           </div>
         </Container>
       </div>
