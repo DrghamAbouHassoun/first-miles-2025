@@ -41,7 +41,7 @@ const LeadershipPage = () => {
           </MainButton>
         ))}
       </div>
-      <div className="mt-32">
+      <div className="mt-16">
         {activeTab === "chairman" && <ChairmanTab />}
         {activeTab === "ceo" && <CEOTab />}
         {activeTab === "cfo" && <CFOTab />}

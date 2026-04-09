@@ -95,9 +95,9 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
           />
         </div> */}
         <div
-          className={`${lang === "ar" ? "-translate-x-6" : "translate-x-6"} w-10 h-auto animate-spike-wave animate-delay-5s`}
+          className={`${lang === "ar" ? "-translate-x-6" : "translate-x-6"} w-10 h-auto animate-spike-wave`}
         >
-          <div className="w-10 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-10 h-auto animate-spike-wave">
             <img
               src={GraySpike}
               alt={`Spike ${SITE_NAME}`}
@@ -106,7 +106,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
           </div>
         </div>
         <div className="absolute -translate-x-5">
-          <div className="w-20 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-20 h-auto animate-spike-wave ">
             <img
               src={GraySpike}
               alt={`Spike ${SITE_NAME}`}
@@ -117,7 +117,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
         <div
           className={`${lang === "ar" ? "translate-x-4" : "translate-x-20"}`}
         >
-          <div className="w-10 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-10 h-auto animate-spike-wave">
             <img
               src={GraySpike}
               alt={`Spike ${SITE_NAME}`}
@@ -128,7 +128,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
         <div
           className={`${lang === "ar" ? "-translate-x-4" : "translate-x-4"} w-10 h-auto animate-spike-wave animate-delay-5s`}
         >
-          <div className="w-10 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-10 h-auto animate-spike-wave">
             <img
               src={YellowSpike}
               alt={`Spike ${SITE_NAME}`}
@@ -137,7 +137,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
           </div>
         </div>
         <div className="">
-          <div className="w-20 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-20 h-auto animate-spike-wave">
             <img
               src={YellowSpike}
               alt={`Spike ${SITE_NAME}`}
@@ -148,7 +148,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
         <div
           className={`${lang === "ar" ? "translate-x-4" : "-translate-x-4"}`}
         >
-          <div className="w-10 h-auto animate-spike-wave animate-delay-5s">
+          <div className="w-10 h-auto animate-spike-wave">
             <img
               src={YellowSpike}
               alt={`Spike ${SITE_NAME}`}

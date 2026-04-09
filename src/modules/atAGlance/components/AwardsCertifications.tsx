@@ -78,10 +78,10 @@ const AwardsCertifications = () => {
       style={{ height: `${SECTION_HEIGHT_VH}vh` }}
       dir={isRtl ? "rtl" : "ltr"}
     >
-      <div className="flex justify-end absolute w-full h-auto bottom-0 z-10">
-        <GroupOfSpikes />
-      </div>
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen min-h-150 overflow-hidden">
+        <div className="flex justify-end absolute w-full h-auto bottom-0 z-10">
+          <GroupOfSpikes />
+        </div>
         {/* Background image with dark overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
@@ -101,12 +101,15 @@ const AwardsCertifications = () => {
           <div ref={emblaRef} className="overflow-visible">
             <div className="flex">
               {AWARDS.map(({ image, key }) => (
-                <PopupAnimation key={key} className="shrink-0 w-[80vw] sm:w-[42vw] md:w-[30vw] lg:w-[20vw] me-8 last:me-0">
+                <PopupAnimation
+                  key={key}
+                  className="shrink-0 w-[80vw] sm:w-[42vw] md:w-[30vw] lg:w-[22vw] me-8 last:me-0"
+                >
                   <div
                     key={key}
                     className="bg-fm-green/80 rounded-xl p-4  pe-8 last:border-0 w-full h-full "
                   >
-                    <div className="h-56 flex items-center justify-center mb-5">
+                    <div className="h-46 flex items-center justify-center mb-5">
                       <img
                         src={image}
                         alt={t(`awards.items.${key}.title`)}

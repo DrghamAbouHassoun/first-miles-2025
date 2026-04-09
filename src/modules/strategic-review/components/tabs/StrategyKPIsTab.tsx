@@ -84,8 +84,8 @@ const StrategyKPIsTab = () => {
           </SlideTopAnimation>
         </Container>
       </div>
-      <div className="relative min-h-screen w-full">
-        <div className="sticky top-0 left-0 h-screen w-full -z-10 bg-fm-green">
+      <div className="relative w-full">
+        <div className="sticky top-0 left-0 h-screen w-full -z-10 bg-fm-green" style={{ marginBottom: "-100vh" }}>
           <img
             src={Pillar1Bg}
             alt="Pillar 1"
@@ -108,7 +108,7 @@ const StrategyKPIsTab = () => {
           />
         </div>
         <Container>
-          <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-4 z-20">
+          <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start gap-4 z-20 pt-24">
             <div className="flex-1">
               {activeItem === 0 && <Pillar1Content />}
               {activeItem === 1 && <Pillar2Content />}

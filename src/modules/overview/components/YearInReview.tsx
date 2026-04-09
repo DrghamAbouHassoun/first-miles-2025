@@ -202,11 +202,11 @@ const YearInReview = () => {
               </div>
             </div>
           </div>
+          <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 ">
+            <GroupOfSpikes />
+          </div>
         </div>
       </section>
-      <div className="flex justify-end w-full h-auto bottom-0 right-0 z-10 bg-fm-green">
-        <GroupOfSpikes />
-      </div>
     </div>
   );
 };

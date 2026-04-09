@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { RouterContext } from "../modules/common/contexts/RouterProvider";
-import AtAGlancePage from "../pages/AtAGlancePage";
 import OverviewPage from "../pages/OverviewPage";
 import StrategicReviewPage from "../pages/StrategicReviewPage";
 import LeadershipPage from "../pages/LeadershipPage";
@@ -10,12 +9,6 @@ import Home from "../pages/Home";
 import DownloadCenter from "../pages/DownloadCenter";
 
 export const pages = [
-  {
-    path: "at-a-glance",
-    name: "At A Glance",
-    component: <AtAGlancePage />,
-    isNavVisible: true,
-  },
   {
     path: "overview",
     name: "Overview",
@@ -57,8 +50,6 @@ export const pages = [
 const Router = () => {
   const { currentRoute, homeKey } = useContext(RouterContext)
   switch (currentRoute) {
-    case "at-a-glance":
-      return <AtAGlancePage />;
     case "overview":
       return <OverviewPage />;
     case "strategic-review":

@@ -63,14 +63,14 @@ const BusinessModelTab = () => {
         </Container>
       </div>
       <div className="relative">
-        <div className="sticky top-0 h-screen w-full inset-0 -z-10 overflow-y-hidden">
+        <div className="sticky top-0 h-screen w-full -z-10 overflow-hidden" style={{ marginBottom: "-100vh" }}>
           <ImageScaleAnimation
             src={BusinessModelBg}
             alt={SITE_NAME}
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="bg-fm-green/0 top-0 left-0 w-full z-20 text-white">
+        <div className="relative z-20 text-white">
           <Container className="py-24">
             <div id="tabs" className="flex flex-col">
               {/* Inputs */}
@@ -277,7 +277,7 @@ const BusinessModelTab = () => {
               </div>
             </div>
           </Container>
-            <div className="flex justify-end items-end  w-full h-auto bottom-0 right-0 z-0">
+            <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
               <GroupOfSpikes />
             </div>
         </div>

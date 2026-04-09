@@ -14,8 +14,8 @@ const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <div className="relative w-full min-h-screen">
-      <div className="sticky top-0 left-0 h-screen w-full -z-10">
+    <div className="relative w-full">
+      <div className="sticky top-0 left-0 h-screen w-full -z-10" style={{ marginBottom: "-100vh" }}>
         <img
           src={SaudiVisionBg}
           alt={`Saudi Vision 2030 | ${SITE_NAME}`}
@@ -24,7 +24,7 @@ const SaudiVision2030Tab = () => {
       </div>
       <div className="">
         <Container>
-          <div className="flex flex-col lg:flex-row gap-8 min-h-screen">
+          <div className="flex flex-col lg:flex-row gap-8 min-h-screen py-24">
             <div className="flex-1 w-full lg:max-w-75 flex flex-col gap-4">
               <button
                 key={t("saudiVisionContent.tabs.0.id")}

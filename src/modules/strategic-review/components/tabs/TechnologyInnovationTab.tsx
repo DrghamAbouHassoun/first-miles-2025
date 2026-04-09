@@ -81,8 +81,8 @@ const TechnologyInnovationTab = () => {
           </SlideTopAnimation>
         </div>
       </Container>
-      <div className="relative min-h-screen w-full">
-        <div className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden">
+      <div className="relative w-full">
+        <div className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden" style={{ marginBottom: "-100vh" }}>
           <ImageScaleAnimation
             src={TechInnovationBg}
             alt={`Technology Innovation | ${SITE_NAME}`}
@@ -92,7 +92,7 @@ const TechnologyInnovationTab = () => {
             
           /> */}
         </div>
-        <Container>
+        <Container className="py-24">
           <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
             {t("technologyInnovationContent.pillarsSectionTitle")}
           </h3>

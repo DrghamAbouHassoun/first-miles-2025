@@ -90,10 +90,10 @@ const InvestmentCase = () => {
 
       <div className="w-full min-h-screen bg-fm-green relative z-20">
         <Container
-          className={`flex items-center flex-col lg:flex-row gap-8 py-16 lg:min-h-200 z-30`}
+          className={`flex items-center flex-col lg:flex-row gap-8 pt-8 pb-16 lg:min-h-200 z-30`}
         >
           {/* Spike with transparent hover overlay */}
-          <div className="lg:flex-1 relative max-w-125 lg:max-w-none">
+          <div className="lg:flex-1 relative max-w-125 lg:max-w-none z-10">
             <PopupAnimation>
               <InvestmentSpike
                 className="w-full h-full object-contain"
@@ -171,9 +171,9 @@ const InvestmentCase = () => {
             )}
           </div>
         </Container>
-      </div>
-      <div className="flex justify-end w-full h-auto bottom-0 right-0 z-0 bg-fm-green">
-        <GroupOfSpikes />
+        <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 -z-10">
+          <GroupOfSpikes />
+        </div>
       </div>
     </div>
   );

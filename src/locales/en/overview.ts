@@ -5,6 +5,7 @@ export default {
       "First Mills holds a leading position in Saudi Arabia’s flour market.",
   },
   tabs: {
+    atAGlance: "At a Glance",
     yearInReview: "Year in Review",
     geographicPresence: "Geographic Presence",
     investmentCase: "Investment Case",

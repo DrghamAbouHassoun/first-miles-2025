@@ -5,6 +5,7 @@ export default {
       "تحتل شركة فيرست ميلز موقعًا رياديًا في سوق الدقيق في المملكة العربية السعودية.",
   },
   tabs: {
+    atAGlance: "نظرة عامة",
     yearInReview: "مراجعة العام",
     geographicPresence: "الحضور الجغرافي",
     investmentCase: "حالة الاستثمار",
