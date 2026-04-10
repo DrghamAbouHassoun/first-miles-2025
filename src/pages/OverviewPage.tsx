@@ -7,6 +7,7 @@ import YearInReview from "../modules/overview/components/YearInReview";
 import GeographicPresence from "../modules/overview/components/GeographicPresence";
 import InvestmentCase from "../modules/overview/components/InvestmentCase";
 import StakeholderEngagement from "../modules/overview/components/StakeholderEngagement";
+import ThemeOfTheYear from "../modules/overview/components/ThemeOfTheYear";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import FinancialHighlights from "../modules/atAGlance/components/FinancialHighlights";
 import OperationalHighlights from "../modules/atAGlance/components/OperationalHighlights";
@@ -14,7 +15,7 @@ import AwardsCertifications from "../modules/atAGlance/components/AwardsCertific
 import Container from "../modules/common/components/Container/Container";
 import SlideTopAnimation from "../modules/common/components/animations/SlideTopAnimation";
 
-type OverviewSubPage = "atAGlance" | "yearInReview" | "geographicPresence" | "investmentCase" | "stakeholderEngagement";
+type OverviewSubPage = "atAGlance" | "themeOfTheYear" | "yearInReview" | "geographicPresence" | "investmentCase" | "stakeholderEngagement";
 
 const OverviewPage = () => {
   const { t } = useTranslation("overview");
@@ -24,6 +25,7 @@ const OverviewPage = () => {
 
   const tabs: { key: OverviewSubPage; label: string }[] = [
     { key: "atAGlance", label: t("tabs.atAGlance") },
+    { key: "themeOfTheYear", label: t("tabs.themeOfTheYear") },
     { key: "yearInReview", label: t("tabs.yearInReview") },
     { key: "geographicPresence", label: t("tabs.geographicPresence") },
     { key: "investmentCase", label: t("tabs.investmentCase") },
@@ -65,6 +67,7 @@ const OverviewPage = () => {
             <AwardsCertifications />
           </>
         )}
+        {subPage === "themeOfTheYear" && <ThemeOfTheYear />}
         {subPage === "yearInReview" && <YearInReview />}
         {subPage === "geographicPresence" && <GeographicPresence />}
         {subPage === "investmentCase" && <InvestmentCase />}

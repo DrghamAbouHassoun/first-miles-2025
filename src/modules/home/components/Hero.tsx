@@ -71,11 +71,11 @@ const Hero = () => {
                 {t("hero.subtitle2")}
               </p>
             </div>
-            <div className="animate-fade-in animate-delay-5s">
+            {/* <div className="animate-fade-in animate-delay-5s">
               <MainButton onClick={() => toggleModel(true)} className="mt-12">
                 {t("hero.modalButton")}
               </MainButton>
-            </div>
+            </div> */}
           </div>
           <div className="flex-1 flex justify-end items-center h-full pt-10 translate-y-[3vh]">
             {/* <div className="rounded-3xl overflow-hidden w-fit h-[80vh] hover:scale-105 duration-500">

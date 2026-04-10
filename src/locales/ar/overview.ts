@@ -6,6 +6,7 @@ export default {
   },
   tabs: {
     atAGlance: "نظرة عامة",
+    themeOfTheYear: "موضوع العام",
     yearInReview: "مراجعة العام",
     geographicPresence: "الحضور الجغرافي",
     investmentCase: "حالة الاستثمار",

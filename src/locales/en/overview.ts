@@ -6,6 +6,7 @@ export default {
   },
   tabs: {
     atAGlance: "At a Glance",
+    themeOfTheYear: "Theme of the Year",
     yearInReview: "Year in Review",
     geographicPresence: "Geographic Presence",
     investmentCase: "Investment Case",
