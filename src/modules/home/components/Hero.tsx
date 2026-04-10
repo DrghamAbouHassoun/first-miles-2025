@@ -4,7 +4,7 @@ import YellowSpike from "../../../assets/icons/spike-yellow.svg";
 // import GrayGroupOfSpikes from "../../../assets/icons/gray-group-of-spikes.svg";
 import { HomeModalContext } from "../contexts/HomeModalProvider";
 import { useContext } from "react";
-import MainButton from "../../common/components/buttons/MainButton";
+// import MainButton from "../../common/components/buttons/MainButton";
 import HomeHeader from "../../../assets/images/headers/home.jpg";
 import HomeMobileHeader from "../../../assets/images/headers/home-mobile.jpg";
 import HandImage from "../../../assets/images/home/hand.png";
