@@ -143,13 +143,46 @@ export default {
     tagline: "Financial discipline.\nScaled performance.\nSustained value creation.",
     opening:
       "As Chief Financial Officer, I am pleased to report that the Company delivered strong financial performance while maintaining balance sheet resilience, strengthening cash generation, and investing to support long-term value creation. Our financial outcomes reflect a consistent approach. We expanded capacity where demand supported returns, strengthened portfolio mix toward higher-value products, and maintained cost discipline across operations. These actions reinforced profitability, enhanced cash flow generation, and positioned the Company for continued expansion in strategically important segments.",
+    table: {
+      title: "Statement of Profit or Loss",
+      unit: "SAR mn",
+      revenue: "Revenue",
+      costOfRevenue: "Cost of Revenue",
+      grossProfit: "Gross Profit",
+      gaExpenses: "Operating (selling and distribution) Expenses",
+      operatingProfit: "Operating Profit",
+      ebitda: "EBITDA",
+      netProfit: "Net Profit",
+    },
+    charts: {
+      revenue: "Revenues",
+      unit: "<i class='riyal-icon'></i> millions",
+      flour: "Flour",
+      feed: "Feed",
+      bran: "Bran",
+    },
     sections: [
       {
         heading: "Financial performance and profitability",
         paragraphs: [
-          "First Mills delivered solid financial results in 2025, reflecting both operational momentum and effective cost management. Total revenue for the year reached XX, supported by volume growth, product mix improvements, and expanded market reach across core and adjacent categories. Revenue performance was underpinned by steady demand across flour and feed segments, alongside continued portfolio diversification.",
-          "Profitability strengthened in line with operational scale and efficiency gains. EBITDA reached XX, reflecting improved operating leverage and disciplined cost control. EBIT totaled XX, while net profit reached XX for the full year, demonstrating the scalability of the Company's operating model and its ability to convert revenue growth into bottom-line performance. Gross margin stood at XX%, supported by stable direct costs, improved extraction efficiency, and enhanced operational performance across production facilities.",
+          "First Mills delivered solid financial results in 2025, reflecting both operational momentum and effective cost management. Total revenue for the year reached SAR 1,147.78 mn, supported by volume growth, product mix improvements, and expanded market reach across core and adjacent categories. Revenue performance was underpinned by steady demand across flour and feed segments, alongside continued portfolio diversification.",
+          "Profitability strengthened in line with operational scale and efficiency gains. EBITDA reached XX, reflecting improved operating leverage and disciplined cost control. EBIT totaled XX, while net profit reached SAR 275.48 mn for the full year, demonstrating the scalability of the Company's operating model and its ability to convert revenue growth into bottom-line performance. Gross margin stood at XX%, supported by stable direct costs, improved extraction efficiency, and enhanced operational performance across production facilities.",
           "Margin performance was further supported by portfolio optimization and higher capacity utilization, particularly in core milling operations and specialized product categories. These structural improvements reflect the ongoing benefits of scale, efficiency, and disciplined financial management.",
+        ],
+      },
+      {
+        heading: "Revenue drivers and operational performance",
+        paragraphs: [
+          "Financial performance in 2025 was supported by the Company's operating platform. Growth reflected a continuing evolution across the Company's core segments, improved product mix, and sustained demand across key customer segments.",
+          "Revenue expansion was supported by capacity additions, operational efficiency improvements, and continued demand for both staple and specialized products. Capacity utilization remained high across milling and feed facilities, enabling the Company to meet market demand while maintaining consistent product quality and cost discipline.",
+          "From a product perspective, continued diversification strengthened revenue resilience. Flour remained the primary contributor to overall revenues, while feed and value-added categories demonstrated higher-growth profiles. This balanced performance creates more stable revenue generation and reduces dependence on a single category.",
+        ],
+      },
+      {
+        heading: "Cash flow and working capital discipline",
+        paragraphs: [
+          "Operating cash flow translated strongly into earnings generation throughout the year. Operating cash flow reached XX, reflecting improved earnings performance and disciplined working capital management. Free cash flow totaled XX, supported by efficient production planning and reduced holding costs, while disciplined receivables management ensured timely cash collection.",
+          "Cash generation remains a central pillar of the Company's financial strategy, enabling continued investment in expansion while preserving balance sheet strength.",
         ],
       },
     ],

@@ -21,18 +21,32 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Riyal";
+  src: url("./assets/fonts/Riyal/Riyal.ttf") format("truetype");
+}
+
 @theme {
   --font-gotham: "Gotham", sans-serif;
+  --font-riyal: "Riyal", sans-serif;
   --breakpoint-2xl: 1410px;
   /* FM Primary Colors */
   --color-fm-green: #162f29;
   --color-fm-yellow: #fcb44a;
-  --color-fm-yellow-200: #FEF0DB;
-  --color-fm-yellow-100: #FFF8ED;
+  --color-fm-yellow-200: #fef0db;
+  --color-fm-yellow-100: #fff8ed;
 
   /* FM Neutral Colors */
   --color-fm-gray-100: #e0e2e3;
   --color-fm-gray-200: #9a9ea0;
   --color-fm-gray-300: #6c7075;
   --color-fm-gray-400: #404041;
+}
+
+.riyal-icon {
+  font-family: var(--font-riyal);
+}
+
+.riyal-icon::before {
+  content: "$";
 }

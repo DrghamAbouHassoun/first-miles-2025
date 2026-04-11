@@ -80,3 +80,42 @@ button {
 .border-gradient:hover::after {
   opacity: 1;
 }
+
+
+.border-gradient-reversed {
+  position: relative;
+}
+
+.border-gradient-reversed::before,
+.border-gradient-reversed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 16px;
+  pointer-events: none;
+
+  mask: linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+               linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+}
+
+/* Base gradient */
+.border-gradient-reversed::before {
+  background: linear-gradient(90deg, #fcb44a00, #fcb44a);
+}
+
+/* Hover gradient (hidden initially) */
+.border-gradient-reversed::after {
+  background: linear-gradient(90deg, #fcb44a, #e09e30);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Fade in */
+.border-gradient-reversed:hover::after {
+  opacity: 1;
+}

@@ -290,4 +290,330 @@ export default {
       },
     ],
   },
+  stakeholderEngagementContent: {
+    title:
+      "At First Mills, we believe our success is strengthened when our Stakeholders succeed alongside us.",
+    description:
+      "We actively engage our Shareholders, employees, suppliers, customers, communities and government partners through continuous dialogue, transparent communication and shared action. By listening to their priorities and aligning them with our strategic goals, we create mutual value, strengthen trust and support meaningful outcomes across our ecosystem. This approach enables us to maintain strong governance, elevate service and product quality, drive social and economic impact, and reinforce our role as a national food security champion whose progress benefits everyone we serve.",
+    groups: [
+      {
+        name: "Shareholders and Investors",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Annual General Meetings (AGM)",
+              "Earnings conference calls with analysts and investors",
+              "Regular investor meetings",
+              "Investor relations conferences and forums",
+              "Disclosure of financial statements, performance reports and material announcements",
+              "Investor Relations (IR) channels",
+              "Dividend distribution",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Financial results and performance",
+              "Dividends and payout decisions",
+              "Market developments and expansion",
+              "Corporate governance and regulatory compliance",
+              "Strategic direction and Shareholder value",
+              "Material disclosures",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Distributed dividends for H2 2024 and H1 of 2025",
+              "Ensured transparency and compliance with disclosure regulations",
+              "Strengthened relationships between Board and Shareholders",
+              "Enhanced investor communication channels (IR tools)",
+              "Shared financial updates via meetings and reports",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Strengthened trust and transparency",
+              "Timely and accurate information for investment decisions",
+              "Improved access to management and corporate strategy",
+              "Enhanced Shareholder confidence",
+              "Supported share performance and market reputation",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Employees",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Training and development programs",
+              "Workshops and skill-building courses",
+              "Employee stock purchase (ESP) plan",
+              "Employee support programs (psychological, family, educational)",
+              "Performance appraisals",
+              "Medical examinations at accredited health facilities",
+              "Rewards and recognition",
+              "Social event",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Ongoing throughout the year",
+              "Periodic training sessions",
+              "Regular performance reviews",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Employee well-being and satisfaction",
+              "Engagement and motivation",
+              "Career development and retention",
+              "Workplace safety",
+              "Anti-harassment and non-discrimination policies",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Provided +7,200 training hours",
+              "ESP plan to enhance retention",
+              "Delivered support programs for employees' well-being",
+              "Provided medical checks at workplace",
+              "Analyzing feedback to maintain a professional environment",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Improved employee retention and performance",
+              "Safer, healthier and more supportive work environment",
+              "Highly skilled and compliant workforce",
+              "Attraction of best market competencies",
+              "Diverse and inclusive professional environment",
+              "Compliance with women's empowerment goals",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Suppliers",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Strengthening relationships with suppliers and vendors",
+              "Contractual and legal compliance communications",
+              "Procurement coordination",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Regularly throughout the year",
+              "As required for supply chain and procurement cycles",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Procurement compliance",
+              "Pricing and delivery performance",
+              "Innovation and sustainability",
+              "Ethical and fair dealing",
+              "Supply quality and safety",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Positioning First Mills as the preferred partner for suppliers",
+              "Maintained compliance with legal and contractual obligations",
+              "Strengthened vendor partnerships",
+              "Improved supply chain reliability",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Reliable, high-quality supply of raw materials",
+              "Long-term supplier trust",
+              "Operational stability",
+              "Ethical and responsible sourcing supporting sustainability",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Customers",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Market research across Saudi Arabia",
+              "Customer segmentation targeting different regions and categories",
+              "Building strategic partnerships with key customers in each sales channel",
+              "Ongoing communication and service support",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Continuous throughout the year",
+              "Periodic customer alignment meetings",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Product quality and consistency",
+              "Pricing and availability",
+              "Customer satisfaction and expectations",
+              "Market share expansion",
+              "Service and delivery performance",
+              "Supply chain stability",
+              "Collaboration",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Strengthening relationships and partnerships with suppliers and vendors",
+              "Expanded customer reach across multiple regions",
+              "Enhanced customer service and responsiveness",
+              "Developed tailored strategies for major customer segments",
+              "Guaranteeing no prejudice to legal rights of any party",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Improved customer loyalty and satisfaction",
+              "Enhanced brand reputation",
+              "Expanded market presence and revenue growth",
+              "Strengthened long-term customer relationships",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Community",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Corporate social responsibility (CSR) programs",
+              "Environmental initiatives",
+              "Donation programs",
+              "Sustainability projects",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Throughout the year",
+              "Annual environmental and CSR initiatives",
+              "Periodic community events",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Employee well-being and satisfaction",
+              "Environmental responsibility",
+              "Social well-being",
+              "Health, safety, and nutrition awareness",
+              "Community development",
+              "Sustainability",
+              "Ethical sourcing",
+              "Energy and water conservation",
+              "Engagement and motivation",
+              "Career development and retention",
+              "Workplace safety",
+              "Anti-harassment and non-discrimination policies",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Reduced energy and water consumption through rationalization",
+              "Supported local communities through donations",
+              "Implementing CSR programs",
+              "Implementing heat treatment technology to reduce environmental impact of operations",
+              "Commitment to investing in the community",
+              "Maintaining ethical practices in material sourcing and responsible marketing",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Positive social impact",
+              "Increased environmental sustainability",
+              "Strong community relationships",
+              "Recognition for CSR excellence",
+              "Reduced environmental footprint",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Regulatory & Government Authorities",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Meetings and continuous cooperation with regulatory bodies (GFSA, SFDA, ZATCA, HRSD)",
+              "Compliance reporting and submissions",
+              "Alignment with quality and safety standards, including ISO",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Regularly throughout the year",
+              "As required by regulatory cycles and inspections",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Compliance requirements",
+              "Fair competition",
+              "Food safety standards",
+              "Economic development",
+              "Sustainability regulations",
+              "Best practice sharing",
+              "National goals",
+              "Food security",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Complying with all regulations from GFSA and SFDA",
+              "Adhering to GAC (General Authority for Competition) rules",
+              "Cooperation with the Ministry of Human Resources (HRSD) to support employment goals",
+              "Partnering with the Culinary Arts Commission and Monsha'at",
+              "Participating in numerous local and international events in cooperation with government entities",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Retained full regulatory compliance",
+              "Achieved recognition and certifications",
+              "Strengthened standing with authorities",
+              "Zero penalties or violations",
+              "Alignment with National Vision 2030",
+            ],
+          },
+        ],
+      },
+    ],
+  },
 };
