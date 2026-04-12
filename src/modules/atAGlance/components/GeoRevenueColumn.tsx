@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { LangContext } from "../../common/contexts/LangProvider";
 import { GEO_BAR_MAX, type geoData } from "../data";
 import useInView from "../../common/hooks/useInView";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
@@ -13,6 +15,8 @@ const GeoRevenueColumn = ({
   total: number;
   t: (key: string) => string;
 }) => {
+  const { lang } = useContext(LangContext);
+  const isRtl = lang === "ar";
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
@@ -26,11 +30,18 @@ const GeoRevenueColumn = ({
           const value = region.values[year as keyof typeof region.values];
           const pct = (value / GEO_BAR_MAX) * 100;
           return (
-            <div key={region.key} className="flex items-center gap-2">
-              <span className="w-16 text-md font-bold text-fm-green shrink-0 text-left">
+            <div
+              key={region.key}
+              className={`flex items-center gap-2 ${isRtl ? "flex-row-reverse" : ""}`}
+            >
+              <span
+                className={`w-16 text-md font-bold text-fm-green shrink-0 ${isRtl ? "text-right" : "text-left"}`}
+              >
                 {t(`geoRevenue.${region.key}`)}
               </span>
-              <div className="flex-1 relative h-6 flex">
+              <div
+                className={`flex-1 relative h-6 flex ${isRtl ? "flex-row-reverse" : ""}`}
+              >
                 <div
                   className="h-full"
                   style={{
@@ -45,14 +56,18 @@ const GeoRevenueColumn = ({
                   style={{ backgroundColor: "#e0e2e3" }}
                 />
               </div>
-              <span className="w-16 text-md font-bold text-fm-green shrink-0 text-right">
+              <span
+                className={`w-16 text-md font-bold text-fm-green shrink-0 flex gap-1 ${isRtl ? "text-left" : "text-right"}`}
+              >
                 <CounterAnimation as="span" end={value} decimals={2} separator="," duration={1.5} />
                 {region.hasFootnote ? t("geoRevenue.jeddahMark") : ""}
               </span>
             </div>
           );
         })}
-        <div className="mt-2 pt-2 flex justify-between items-center">
+        <div
+          className={`mt-2 pt-2 flex justify-between items-center ${isRtl ? "flex-row-reverse" : ""}`}
+        >
           <span className="text-sm font-bold text-fm-yellow">
             {t("geoRevenue.total")}
           </span>

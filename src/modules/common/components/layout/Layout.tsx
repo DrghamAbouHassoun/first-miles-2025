@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const { lang } = useLocale()
   return (
-    <div className={`w-full min-h-screen ${lang === "en" ? "font-gotham": ""} relative`} dir={lang === "ar" ? "rtl" : "ltr"}>
+    <div className={`w-full min-h-screen ${lang === "ar" ? "font-arabic" : "font-gotham"} relative`} dir={lang === "ar" ? "rtl" : "ltr"}>
       <Navbar />
       <Menu />
       <SocialLinks />

@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { LangContext } from "../../common/contexts/LangProvider";
 import useInView from "../../common/hooks/useInView";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
 
@@ -12,25 +14,41 @@ const ProfitBarGroup = ({
   unit: string;
   t: (key: string) => string;
 }) => {
+  const { lang } = useContext(LangContext);
+  const isRtl = lang === "ar";
   const max = Math.max(...rows.map((r) => r.value));
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
     <div className="flex flex-col gap-3">
       <div>
-        <p className="font-bold text-xl text-fm-green">{t(`profitCharts.${titleKey}`)}</p>
-        <p className="text-md font-thin text-fm-gray-300">({unit})</p>
-        <div className="h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)]"/>
+        <p className="font-bold text-xl text-fm-green">
+          {t(`profitCharts.${titleKey}`)}
+        </p>
+        <p
+          className="text-md font-thin text-fm-gray-300"
+          dangerouslySetInnerHTML={{ __html: `(${unit})` }}
+        ></p>
+        <div className="h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)]" />
       </div>
       <div className="flex flex-col gap-2" dir="ltr" ref={ref}>
         {rows.map(({ year, value, color, textColor }) => {
           const pct = (value / max) * 82;
           return (
-            <div key={year} className="flex items-center gap-2">
-              <span className="w-10 text-md font-thin text-fm-gray-2f00 shrink-0 text-left">{year}</span>
-              <div className="flex-1 relative h-7 flex">
+            <div
+              key={year}
+              className={`flex items-center gap-2 ${isRtl ? "flex-row-reverse" : ""}`}
+            >
+              <span
+                className={`w-10 text-md font-thin text-fm-gray-2f00 shrink-0 ${isRtl ? "text-right" : "text-left"}`}
+              >
+                {year}
+              </span>
+              <div
+                className={`flex-1 relative h-7 flex ${isRtl ? "flex-row-reverse" : ""}`}
+              >
                 <div
-                  className="h-full flex items-center justify-end pr-2 relative"
+                  className={`h-full flex items-center relative ${isRtl ? "justify-start pl-2" : "justify-end pr-2"}`}
                   style={{
                     width: inView ? `${pct}%` : "0%",
                     minWidth: inView ? "3rem" : "0",
@@ -42,10 +60,19 @@ const ProfitBarGroup = ({
                     className="text-xs font-bold whitespace-nowrap"
                     style={{ color: textColor }}
                   >
-                    <CounterAnimation as="span" end={value} decimals={2} separator="," duration={1.5} />
+                    <CounterAnimation
+                      as="span"
+                      end={value}
+                      decimals={2}
+                      separator=","
+                      duration={1.5}
+                    />
                   </span>
                 </div>
-                <div className="h-full flex-1" style={{ backgroundColor: "#e0e2e3" }} />
+                <div
+                  className="h-full flex-1"
+                  style={{ backgroundColor: "#e0e2e3" }}
+                />
               </div>
             </div>
           );

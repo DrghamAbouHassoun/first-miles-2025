@@ -155,7 +155,7 @@ const CFOTab = () => {
                 <CFOBarChart
                   labels={{
                     title: charts.revenue ?? "Revenues",
-                    unit: charts.unit ?? "SAR millions",
+                    unit: charts.unit ?? "<i class='riyal-icon'></i> million",
                     flour: charts.flour ?? "Flour",
                     feed: charts.feed ?? "Feed",
                     bran: charts.bran ?? "Bran",

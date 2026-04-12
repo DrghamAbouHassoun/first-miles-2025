@@ -1,7 +1,7 @@
 export default {
   nav: {
     "at-a-glance": "نظرة عامة",
-    "overview": "المراجعة",
+    "overview": "نظرة عامة",
     "strategic-review": "المراجعة الاستراتيجية",
     "leadership": "القيادة",
     "operating-review": "المراجعة التشغيلية",

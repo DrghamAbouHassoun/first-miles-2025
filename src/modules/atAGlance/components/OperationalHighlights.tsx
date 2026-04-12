@@ -266,9 +266,12 @@ const OperationalHighlights = () => {
                   />
                 </p>
                 <SlideTopAnimation>
-                  <p className="text-md text-fm-gray-100">
-                    {t(`operationalHighlights.capacities.${key}.unit`)}
-                  </p>
+                  <p
+                    className="text-md text-fm-gray-100"
+                    dangerouslySetInnerHTML={{
+                      __html: t(`operationalHighlights.capacities.${key}.unit`),
+                    }}
+                  ></p>
                 </SlideTopAnimation>
               </div>
             ))}
@@ -344,7 +347,7 @@ const OperationalHighlights = () => {
                   "operationalHighlights.productSales.flourSales.value.suffix",
                 ),
               }}
-              percentage={90}
+              percentage={65}
               label={t("operationalHighlights.productSales.flourSales.label")}
               sublabel={t(
                 "operationalHighlights.productSales.flourSales.sublabel",
@@ -359,7 +362,7 @@ const OperationalHighlights = () => {
                   "operationalHighlights.productSales.numberOfProducts.value.prefix",
                 ),
               }}
-              percentage={60}
+              percentage={90}
               label={t(
                 "operationalHighlights.productSales.numberOfProducts.label",
               )}

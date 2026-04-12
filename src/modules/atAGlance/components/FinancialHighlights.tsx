@@ -28,7 +28,8 @@ const FinancialHighlights = () => {
   const profitUnit = t("financialHighlights.profitCharts.unit");
   const geoUnit = t("financialHighlights.geoRevenue.unit");
 
-  const { ref: revenueBarsRef, inView: revenueBarsInView } = useInView<HTMLDivElement>();
+  const { ref: revenueBarsRef, inView: revenueBarsInView } =
+    useInView<HTMLDivElement>();
 
   const tProfit = (key: string) => t(`financialHighlights.${key}`);
   const tGeo = (key: string) => t(`financialHighlights.${key}`);
@@ -57,13 +58,25 @@ const FinancialHighlights = () => {
                   <p className="font-bold text-sm">
                     {t("financialHighlights.revenueHighlights.label")}
                   </p>
-                  <p className="text-xs text-fm-gray-300">
-                    ({t("financialHighlights.revenueHighlights.unit")})
-                  </p>
+                  <p
+                    className="text-xs text-fm-gray-300"
+                    dangerouslySetInnerHTML={{
+                      __html: `(${t("financialHighlights.revenueHighlights.unit")})`,
+                    }}
+                  ></p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="text-5xl font-bold text-fm-green">
-                    <CounterAnimation as="span" end={9.4} decimals={1} duration={2} suffix="%" prefix="+" />
+                  <div className="text-5xl font-bold text-fm-green flex">
+                    {lang === "ar" ? "+" : ""}
+
+                    <CounterAnimation
+                      as="span"
+                      end={9.3}
+                      decimals={1}
+                      duration={2}
+                      suffix={lang === "ar" ? "" : "%"}
+                      prefix={lang === "ar" ? "%" : "+"}
+                    />
                   </div>
                   <span
                     className="w-0 h-0 inline-block"
@@ -78,26 +91,49 @@ const FinancialHighlights = () => {
               </div>
 
               {/* Bars */}
-              <div className="flex flex-col gap-3" dir="ltr" ref={revenueBarsRef}>
+              <div
+                className="flex flex-col gap-3"
+                dir="ltr"
+                ref={revenueBarsRef}
+              >
                 {revenueData.map(({ year, value, color }) => {
                   const pct = (value / BAR_MAX) * 100;
+                  const isRtl = lang === "ar";
                   return (
-                    <div key={year} className="flex items-center gap-3">
-                      <span className="w-10 font-bold text-sm shrink-0 text-left">
+                    <div
+                      key={year}
+                      className={`flex items-center gap-3 ${isRtl ? "flex-row-reverse" : ""}`}
+                    >
+                      <span
+                        className={`w-10 font-bold text-sm shrink-0 ${isRtl ? "text-right" : "text-left"}`}
+                      >
                         {year}
                       </span>
-                      <div className="flex-1 flex overflow-hidden h-7">
+                      <div
+                        className={`flex-1 flex overflow-hidden h-7 ${isRtl ? "flex-row-reverse" : ""}`}
+                      >
                         <div
                           className="h-full transition-all duration-700"
-                          style={{ width: revenueBarsInView ? `${pct}%` : "0%", backgroundColor: color }}
+                          style={{
+                            width: revenueBarsInView ? `${pct}%` : "0%",
+                            backgroundColor: color,
+                          }}
                         />
                         <div
                           className="h-full flex-1"
                           style={{ backgroundColor: "#e0e2e3" }}
                         />
                       </div>
-                      <span className="w-20 text-right font-bold text-sm shrink-0">
-                        <CounterAnimation as="span" end={value} decimals={2} separator="," duration={1.5} />
+                      <span
+                        className={`w-20 font-bold text-sm shrink-0 ${isRtl ? "text-left" : "text-right"}`}
+                      >
+                        <CounterAnimation
+                          as="span"
+                          end={value}
+                          decimals={2}
+                          separator=","
+                          duration={1.5}
+                        />
                       </span>
                     </div>
                   );
@@ -148,7 +184,10 @@ const FinancialHighlights = () => {
         <h3 className="text-2xl font-bold mb-1">
           {t("financialHighlights.geoRevenue.title")}
         </h3>
-        <p className="text-md font-thin text-fm-gray-300 mb-6">({geoUnit})</p>
+        <p
+          className="text-md font-thin text-fm-gray-300 mb-6"
+          dangerouslySetInnerHTML={{ __html: `(${geoUnit})` }}
+        ></p>
         <div
           className={`flex flex-col sm:flex-row gap-10 sm:gap-12 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}
         >

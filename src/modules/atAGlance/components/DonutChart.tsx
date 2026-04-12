@@ -1,6 +1,7 @@
 import { CIRCUMFERENCE, RADIUS } from "../data";
 import useInView from "../../common/hooks/useInView";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
+import { useLocale } from "../../common/hooks/useLocale";
 
 
 type Segment = { key: string; value: number; color: string };
@@ -23,6 +24,7 @@ const DonutChart = ({
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
   let cumulative = 0;
+  const { lang } = useLocale();
 
   return (
     <div className="flex flex-row lg:flex-col items-center gap-3 xl:flex-row sm:items-center sm:gap-2 w-full" ref={ref}>
@@ -54,13 +56,13 @@ const DonutChart = ({
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-2">
           <span className="text-[14px] italic font-bold text-fm-green leading-tight">
-            {totalLabel} {year}
+            {totalLabel} {year}{lang === "ar" ? "م" : ""}
           </span>
           <span className="text-base font-bold text-fm-yellow leading-tight">
             <CounterAnimation as="span" end={total} decimals={2} separator="," duration={1.5} />
           </span>
-          <span className="text-[10px] text-fm-gray-300 leading-tight">
-            ({unit})
+          <span className="text-[10px] text-fm-gray-300 leading-tight" dangerouslySetInnerHTML={{ __html: `(${unit})`}}>
+            
           </span>
         </div>
       </div>

@@ -157,6 +157,24 @@ const YearInReview = () => {
                           {t(`yearInReviewContent.slider.items.${key}.desc`)}
                         </p>
                       </SlideTopAnimation>
+                      {t(`yearInReviewContent.slider.items.${key}.title2`) !==
+                        `yearInReviewContent.slider.items.${key}.title2` && (
+                        <SlideTopAnimation>
+                          <h3 className="text-white font-bold text-lg leading-snug mb-4">
+                            {t(
+                              `yearInReviewContent.slider.items.${key}.title2`,
+                            )}
+                          </h3>
+                        </SlideTopAnimation>
+                      )}
+                      {t(`yearInReviewContent.slider.items.${key}.desc2`) !==
+                        `yearInReviewContent.slider.items.${key}.desc2` && (
+                        <SlideTopAnimation>
+                          <p className="text-white text-base leading-relaxed">
+                            {t(`yearInReviewContent.slider.items.${key}.desc2`)}
+                          </p>
+                        </SlideTopAnimation>
+                      )}
 
                       {hasStat && (
                         <div className="mt-4">

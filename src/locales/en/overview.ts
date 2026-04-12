@@ -219,6 +219,8 @@ export default {
           month: "August",
           title: "Acquisition of Al Manar Feed Company",
           desc: "We completed the acquisition of Al Manar Feed Co. Ltd. for SAR 77 million, adding 450 tons of daily feed production capacity and expanding our portfolio and market reach.",
+          title2: "Two Silver Awards at the Employee Happiness Awards",
+          desc2: "We earned Silver Awards for Best Induction Program and Best Talent Acquisition Strategy, reflecting our strong commitment to building a high-performance, employee-centered workplace."
         },
         september: {
           month: "September",
@@ -239,6 +241,8 @@ export default {
           month: "December",
           title: "Hosting the 35th IAOM MEA Conference & Expo",
           desc: "We sponsored and welcomed the IAOM MEA Conference & Expo to Saudi Arabia for the first time, bringing global expertise, innovation, and industry collaboration to Jeddah.",
+          title2: "Completion of the Al-Kenan Al-Arabia acquisition",
+          desc2: "We finalized the acquisition of a 60 percent stake in Al-Kenan Al-Arabia Trading Company, completing regulatory approvals and strengthening our integrated feed operations."
         },
       },
     },

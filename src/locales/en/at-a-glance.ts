@@ -4,7 +4,7 @@ export default {
     subtitle: "Key highlights from the year.",
   },
   intro: {
-    text: "As of 2025, First Mills holds a leading position in Saudi Arabia’s flour market, with a market share of approximately 31% in terms of production volume. The Company also maintains a strong presence in the compound animal feed market, continually expanding its product offerings to meet the evolving needs of the industry for the region."
+    text: "As of 2025, First Mills holds a leading position in Saudi Arabia’s flour market, with a market share of approximately 31% in terms of production volume. The Company also maintains a strong presence in the compound animal feed market, continually expanding its product offerings to meet the evolving needs of the industry for the region.",
   },
   operationalHighlights: {
     title: "Operational Highlights",
@@ -12,21 +12,23 @@ export default {
       value: "5",
       label: "No. of Plants",
     },
-    alManarDescription: "Acquired <br /><strong>Al Manar Feed Co. Ltd, adding</strong>",
+    alManarDescription:
+      "Acquired <br /><strong>Al Manar Feed Co. Ltd, adding</strong>",
     alManarHighlight: {
       value: "450",
-      suffix: "tons"
+      suffix: "tons",
     },
     alManarSuffix: "of daily feed production",
-    productionCapacityDescription: "Production<br /> capacity<br /> utilization<br /> rates reached",
+    productionCapacityDescription:
+      "Production<br /> capacity<br /> utilization<br /> rates reached",
     productionCapacityValue: {
       value: "94",
-      suffix: "%"
+      suffix: "%",
     },
     kenanStakeDescription: "Acquired a",
     kenanStakeValue: {
       value: "60",
-      suffix: "%"
+      suffix: "%",
     },
     kenanStakeSuffix: "stake in Kenan Al-Arabia Trading Company",
     mills: {
@@ -58,10 +60,11 @@ export default {
     },
     marketShare: {
       title: "Market Share",
-      description: "First Mills holds a leading position in Saudi Arabia's flour market",
+      description:
+        "First Mills holds a leading position in Saudi Arabia's flour market",
       value: {
         number: "31",
-        suffix: "%"
+        suffix: "%",
       },
     },
     customers: {
@@ -69,28 +72,41 @@ export default {
       subtitle: "(Direct and Indirect)",
       value: {
         number: "7500",
-        prefix: "+"
+        prefix: "+",
       },
       label: "customers",
     },
     productSales: {
       title: "Product & Sales Overview",
       flourSales: {
-        label: "Flour Sales",
-        sublabel: "in Cash",
+        label: "Cash Sales",
+        sublabel: "",
         value: {
-          number: "90",
-          suffix: "%"
+          number: "65",
+          suffix: "%",
         },
       },
       numberOfProducts: {
         label: "Number of Products",
         sublabel: "(main products)",
         value: {
-          number: "60",
-          prefix: "+"
+          number: "90",
+          prefix: "+",
         },
       },
+    },
+  },
+  esgHighlights: {
+    title: "ESG Highlights",
+    items: {
+      pestControl:
+        "First-of-its-kind chemical-free pest control solution in Saudi Arabia",
+      solarProject:
+        "Signed a contract for a <br /><b class='text-fm-yellow '> 9.3 Mwp</b><br /> solar power project, with installation in Tabuk and Al-Ahsa scheduled for Q2–Q3 of 2026.",
+      communityInvestment:
+        "Invested approximately <br /><strong class='text-fm-yellow'><i class='riyal-icon'></i> 210,000</strong> in<br />  community initiatives",
+      employeeAwards:
+        "Recognized with two Silver Employee Happiness Awards for Best Induction Program and Best Recruitment Strategy",
     },
   },
   awards: {
@@ -135,21 +151,21 @@ export default {
     revenueHighlights: {
       title: "Revenue Highlights",
       label: "Revenue",
-      unit: "SAR million",
+      unit: "<i class='riyal-icon'></i> million",
     },
     revenueByProduct: {
       title: "Revenue by Product Type",
       total: "TOTAL",
     },
     profitCharts: {
-      unit: "SAR million",
+      unit: "<i class='riyal-icon'></i> million",
       grossProfit: "Gross Profit",
       operatingProfit: "Operating Profit",
       netProfit: "Net Profit",
     },
     geoRevenue: {
       title: "Revenue by Geographical Regions",
-      unit: "SAR million",
+      unit: "<i class='riyal-icon'></i> million",
       jeddah: "Jeddah",
       qassim: "Qassim",
       tabuk: "Tabuk",

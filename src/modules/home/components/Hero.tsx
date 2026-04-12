@@ -11,14 +11,16 @@ import HandImage from "../../../assets/images/home/hand.png";
 import GrainOneImage from "../../../assets/images/home/grain-1.png";
 import GrainTwoImage from "../../../assets/images/home/grain-2.png";
 import GrainThreeImage from "../../../assets/images/home/grain-3.png";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const Hero = () => {
   const { t } = useTranslation("home");
+  const { lang } = useLocale();
   const { toggleModel } = useContext(HomeModalContext);
   return (
     <>
       {/* Desktop Hero - Hidden on small screens */}
-      <div className="bg-fm-green w-full h-screen overflow-hidden hidden lg:flex justify-center items-center relative px-4 lg:px-16 ">
+      <div className={`bg-fm-green w-full h-screen overflow-hidden hidden lg:flex ${lang === "ar" ? "flex-row" : ""} justify-center items-center relative px-4 lg:px-16 `}>
         <div className="absolute top-0 left-0 w-full h-full animate-fade-in animate-delay-4s">
           <img
             src={HomeHeader}
@@ -54,20 +56,20 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div className=" w-full h-full mx-auto max-w-337.5 min-h-screen flex justify-center items-center animate-move-left-40 animate-delay-4s z-10">
-          <div className="text-white flex-1 flex flex-col">
+        <div className={` w-full h-full mx-auto max-w-337.5 min-h-screen flex ${lang === "ar" ? "flex-row-reverse" : ""} justify-center items-center animate-move-left-40 animate-delay-4s z-10`}>
+          <div className="text-white flex-1 flex flex-col max-w-90">
             <div className="overflow-hidden">
               <h1 className="text-2xl font-thin animate-move-up animate-delay-3s">
                 {t("hero.title")}
               </h1>
             </div>
             <div className="overflow-hidden">
-              <p className="text-5xl font-bold mt-4 animate-move-up animate-delay-3s">
+              <p className={`text-5xl font-bold mt-4 animate-move-up animate-delay-3s py-2 ${lang === "ar" ? "py-2" : ""}`}>
                 {t("hero.subtitle1")}
               </p>
             </div>
             <div className="overflow-hidden">
-              <p className="text-5xl font-bold animate-move-up animate-delay-3s">
+              <p className={`text-5xl font-bold animate-move-up animate-delay-3s  ${lang === "ar" ? "py-2" : ""}`}>
                 {t("hero.subtitle2")}
               </p>
             </div>

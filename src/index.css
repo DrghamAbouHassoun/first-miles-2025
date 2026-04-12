@@ -26,8 +26,16 @@
   src: url("./assets/fonts/Riyal/Riyal.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "TheSansArabic";
+  src: url("./assets/fonts/TheSansArabic/TheSansArabic_Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 @theme {
   --font-gotham: "Gotham", sans-serif;
+  --font-arabic: "TheSansArabic", sans-serif;
   --font-riyal: "Riyal", sans-serif;
   --breakpoint-2xl: 1410px;
   /* FM Primary Colors */
@@ -43,8 +51,15 @@
   --color-fm-gray-400: #404041;
 }
 
+@layer base {
+  [dir="rtl"] {
+    line-height: 1.75;
+  }
+}
+
 .riyal-icon {
   font-family: var(--font-riyal);
+  font-style: normal;
 }
 
 .riyal-icon::before {
