@@ -9,20 +9,20 @@ export const revenueData = [
 export const productRevenueData = [
   {
     year: 2025,
-    total: 1147.78,
+    total: 1146.4,
     segments: [
-      { key: "flour", value: 612.52, color: "#162f29" },
-      { key: "feed", value: 389.19, color: "#fcb44a" },
-      { key: "bran", value: 146.16, color: "#e0e2e3" },
+      { key: "flour", value: 651.8, color: "#162f29" },
+      { key: "feed", value: 351.7, color: "#fcb44a" },
+      { key: "bran", value: 142.9, color: "#e0e2e3" },
     ],
   },
   {
     year: 2024,
-    total: 1048.85,
+    total: 1048.9,
     segments: [
-      { key: "flour", value: 599.12, color: "#162f29" },
-      { key: "feed", value: 311.9, color: "#fcb44a" },
-      { key: "bran", value: 137.83, color: "#e0e2e3" },
+      { key: "flour", value: 311.9, color: "#162f29" },
+      { key: "feed", value: 599.1, color: "#fcb44a" },
+      { key: "bran", value: 137.8, color: "#e0e2e3" },
     ],
   },
 ];
@@ -31,25 +31,25 @@ export const profitData = [
   {
     key: "grossProfit",
     rows: [
-      { year: 2025, value: 476.34, color: "#162f29", textColor: "#ffffff" },
-      { year: 2024, value: 457.09, color: "#fcb44a", textColor: "#ffffff" },
-      { year: 2023, value: 413.14, color: "#9a9ea0", textColor: "#ffffff" },
+      { year: 2025, value: 482.2, color: "#162f29", textColor: "#ffffff" },
+      { year: 2024, value: 457.1, color: "#fcb44a", textColor: "#ffffff" },
+      { year: 2023, value: 413.1, color: "#9a9ea0", textColor: "#ffffff" },
     ],
   },
   {
     key: "operatingProfit",
     rows: [
-      { year: 2025, value: 338.31, color: "#162f29", textColor: "#ffffff" },
-      { year: 2024, value: 318.48, color: "#fcb44a", textColor: "#ffffff" },
-      { year: 2023, value: 286.96, color: "#9a9ea0", textColor: "#ffffff" },
+      { year: 2025, value: 339.7, color: "#162f29", textColor: "#ffffff" },
+      { year: 2024, value: 318.5, color: "#fcb44a", textColor: "#ffffff" },
+      { year: 2023, value: 287.0, color: "#9a9ea0", textColor: "#ffffff" },
     ],
   },
   {
     key: "netProfit",
     rows: [
-      { year: 2025, value: 275.48, color: "#162f29", textColor: "#ffffff" },
-      { year: 2024, value: 250.90, color: "#fcb44a", textColor: "#ffffff" },
-      { year: 2023, value: 220.21, color: "#9a9ea0", textColor: "#ffffff" },
+      { year: 2025, value: 277.4, color: "#162f29", textColor: "#ffffff" },
+      { year: 2024, value: 250.9, color: "#fcb44a", textColor: "#ffffff" },
+      { year: 2023, value: 220.2, color: "#9a9ea0", textColor: "#ffffff" },
     ],
   },
 ];
@@ -62,7 +62,7 @@ export const geoData = {
       color: "#162f29",
       textColor: "#ffffff",
       hasFootnote: true,
-      values: { 2025: 533.85, 2024: 472.41 },
+      values: { 2025: 532.41, 2024: 472.4 },
     },
     {
       key: "qassim",
@@ -76,17 +76,17 @@ export const geoData = {
       color: "#9a9ea0",
       textColor: "#ffffff",
       hasFootnote: false,
-      values: { 2025: 125.72, 2024: 117.85 },
+      values: { 2025: 125.7, 2024: 117.9 },
     },
     {
       key: "alAhsa",
       color: "#e0e2e3",
       textColor: "#162f29",
       hasFootnote: false,
-      values: { 2025: 124.17, 2024: 128.91 },
+      values: { 2025: 124.2, 2024: 128.9 },
     },
   ],
-  totals: { 2025: 1147.74, 2024: 1048.77 },
+  totals: { 2025: 1146.4, 2024: 1048.9 },
 };
 
 export const GEO_BAR_MAX = 580;

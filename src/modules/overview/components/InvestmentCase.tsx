@@ -116,55 +116,33 @@ const InvestmentCase = () => {
                   {currentLeaf.title}
                 </h3>
 
+                {currentLeaf.financials && (
+                  <div className="mb-6">
+                    <div className="grid grid-cols-3 gap-4 mb-4">
+                      {currentLeaf.financials.labels.map((label, i) => (
+                        <div key={i}>
+                          <p className="text-xs mb-1">{label}</p>
+                          <p
+                            className="text-fm-yellow font-bold text-lg"
+                            dangerouslySetInnerHTML={{
+                              __html: currentLeaf.financials!.values[i],
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 <ul className="space-y-4">
                   {currentLeaf.bullets.map((bullet, i) => (
-                    <>
-                      {i === 1 && currentLeaf.financials ? (
-                        <>
-                          <div className="mt-8">
-                            <div className="flex gap-6 flex-wrap mb-4">
-                              {currentLeaf.financials.labels.map((label, i) => (
-                                <div key={i} className="text-center min-w-12">
-                                  <p className="text-xs mb-1">{label}</p>
-                                  <p className="text-fm-yellow font-bold text-lg">
-                                    {currentLeaf.financials!.values[i]}
-                                  </p>
-                                </div>
-                              ))}
-                            </div>
-                            <div>
-                              <p className="text-xs mb-1">
-                                {isRtl ? "الرصيد النقدي" : "Cash balance"}
-                              </p>
-                              <p className="text-fm-yellow font-bold text-lg">
-                                {currentLeaf.financials.cashBalance}
-                              </p>
-                            </div>
-                          </div>
-                          <li
-                            key={i}
-                            className="flex gap-3 text-sm leading-relaxed"
-                          >
-                            <span className="text-fm-yellow mt-0.5 shrink-0">
-                              •
-                            </span>
-                            <span
-                              dangerouslySetInnerHTML={{ __html: bullet }}
-                            />
-                          </li>
-                        </>
-                      ) : (
-                        <li
-                          key={i}
-                          className="flex gap-3 text-sm leading-relaxed"
-                        >
-                          <span className="text-fm-yellow mt-0.5 shrink-0">
-                            •
-                          </span>
-                          <span dangerouslySetInnerHTML={{ __html: bullet }} />
-                        </li>
-                      )}
-                    </>
+                    <li
+                      key={i}
+                      className="flex gap-3 text-sm leading-relaxed"
+                    >
+                      <span className="text-fm-yellow mt-0.5 shrink-0">•</span>
+                      <span dangerouslySetInnerHTML={{ __html: bullet }} />
+                    </li>
                   ))}
                 </ul>
               </div>

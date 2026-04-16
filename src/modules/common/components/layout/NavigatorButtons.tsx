@@ -47,7 +47,7 @@ const NavigatorButtons = () => {
 
   return (
     <div
-      className={`fixed bottom-4 lg:bottom-8 ${lang === "ar" ? "left-4 lg:left-8" : "right-4 lg:right-8"} z-20 flex flex-col ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"} transition-all duration-500`}
+      className={`fixed bottom-4 lg:bottom-8 ${lang === "ar" ? "left-4 lg:left-8" : "right-4 lg:right-8"} z-40 flex flex-col ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"} transition-all duration-500`}
     >
       <div className="w-full flex items-center justify-center">
         <button
@@ -64,14 +64,14 @@ const NavigatorButtons = () => {
           className="w-10 h-10 flex justify-center items-center rounded-full text-fm-yellow bg-fm-yellow-100 border-2 border-fm-yellow transition-all duration-500 hover:scale-110"
           onClick={handleNavigatePreviousPage}
         >
-          <ArrowLeft size={24} />
+          {lang === "ar" ? <ArrowRight size={24} /> : <ArrowLeft size={24} />}
         </button>
         <button
           type="button"
           className="w-10 h-10 flex justify-center items-center rounded-full text-fm-yellow bg-fm-yellow-100 border-2 border-fm-yellow transition-all duration-500 hover:scale-110"
           onClick={handleNavigateNextPage}
         >
-          <ArrowRight size={24} />
+          {lang === "ar" ? <ArrowLeft size={24} /> : <ArrowRight size={24} />}
         </button>
       </div>
     </div>

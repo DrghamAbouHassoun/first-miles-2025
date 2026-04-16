@@ -79,7 +79,7 @@ const GeographicPresence = () => {
               return (
                 <div
                   key={key}
-                  className=" border border-fm-yellow rounded-lg p-4"
+                  className=" border border-fm-yellow rounded-lg p-4 py-16"
                 >
                   <PopupAnimation>
                     <p className="text-fm-yellow font-bold text-base mb-2">
@@ -92,7 +92,7 @@ const GeographicPresence = () => {
                       suffix={market.tons.suffix}
                     />
                   </p>
-                  <p className="text-fm-gray-400 font-bold text-xl leading-tight mb-3">
+                  {/* <p className="text-fm-gray-400 font-bold text-xl leading-tight mb-3">
                     <CounterAnimation
                       end={parseInt(market.sar.value)}
                       suffix={market.sar.suffix}
@@ -110,7 +110,7 @@ const GeographicPresence = () => {
                         </SlideTopAnimation>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </div>
               );
             })}

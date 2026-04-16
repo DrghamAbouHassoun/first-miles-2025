@@ -30,7 +30,7 @@ export default {
         },
         sar: {
           value: "4296454",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: [
           "Extra Milling Fine Pasta",
@@ -46,7 +46,7 @@ export default {
         },
         sar: {
           value: "566352",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Ram for repacking and packaging (Mixed Products)"],
       },
@@ -58,7 +58,7 @@ export default {
         },
         sar: {
           value: "678764",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Pasta Semolina and Mixed Products"],
       },
@@ -70,7 +70,7 @@ export default {
         },
         sar: {
           value: "2491631",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Including upcoming order"],
       },
@@ -82,7 +82,7 @@ export default {
         },
         sar: {
           value: "150379",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Feed"],
       },
@@ -94,7 +94,7 @@ export default {
         },
         sar: {
           value: "86250",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Durum"],
       },
@@ -106,7 +106,7 @@ export default {
         },
         sar: {
           value: "2576681",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Arabian Milling Only", "Including upcoming order"],
       },
@@ -118,7 +118,7 @@ export default {
         },
         sar: {
           value: "964000",
-          suffix: " SAR",
+          suffix: " <i class='riyal-icon'></i>",
         },
         notes: ["Sampling only"],
       },
@@ -148,6 +148,7 @@ export default {
         millingCapacity: "3,050 Ton/Day",
         feedCapacity: "300 Ton/Day",
         durumCapacity: "300 Tons/Day",
+        note: "*The pre-mix plant is located here with a capacity of 240 tons per day, plus 500 tons increase for Mill (C) and (A) combined and 150 tons for Pesa Mill.",
       },
       alManar: {
         name: "Al Manar Feed Plant",
@@ -188,7 +189,7 @@ export default {
         january: {
           month: "January",
           title: "Mill C announced at Al-Qassim Plant",
-          desc: "We approved the construction of a new flour milling unit, Mill C, at Al-Qassim plant with an investment of SAR 123 million, increasing daily wheat-milling capacity by 600 tons to reach a total of 1,500 tons.",
+          desc: "We approved the construction of a new flour milling unit, Mill C, at Al-Qassim plant with an investment of <i class='riyal-icon'></i> 123 million, increasing daily wheat-milling capacity by 600 tons to reach a total of 1,500 tons.",
         },
         february: {
           month: "February",
@@ -197,7 +198,7 @@ export default {
         },
         april: {
           month: "April",
-          title: "30 percent flour market share confirmed",
+          title: "30% flour market share confirmed",
           desc: "We reaffirmed our leadership with a 30% market share in Saudi Arabia's flour market, as highlighted by the CEO in an interview with Argaam, referencing the latest GFSA data.",
           stat: {
             value: "30",
@@ -218,31 +219,23 @@ export default {
         august: {
           month: "August",
           title: "Acquisition of Al Manar Feed Company",
-          desc: "We completed the acquisition of Al Manar Feed Co. Ltd. for SAR 77 million, adding 450 tons of daily feed production capacity and expanding our portfolio and market reach.",
+          desc: "We completed the acquisition of Al Manar Feed Co. Ltd. for <i class='riyal-icon'></i> 77 million, adding 450 tons of daily feed production capacity and expanding our portfolio and market reach.",
           title2: "Two Silver Awards at the Employee Happiness Awards",
-          desc2: "We earned Silver Awards for Best Induction Program and Best Talent Acquisition Strategy, reflecting our strong commitment to building a high-performance, employee-centered workplace."
+          desc2:
+            "We earned Silver Awards for Best Induction Program and Best Talent Acquisition Strategy, reflecting our strong commitment to building a high-performance, employee-centered workplace.",
         },
         september: {
           month: "September",
-          title: "Acquisition of 60 percent of Kenan Arabian Trading Company",
-          desc: "We signed a binding agreement to acquire a 60 percent stake in Kenan Arabian for SAR 48 million, strengthening our position in the feed sector through expanded trading and distribution capabilities.",
-        },
-        october: {
-          month: "October",
-          title: "Two Silver Awards at the Employee Happiness Awards",
-          desc: "We earned Silver Awards for Best Induction Program and Best Talent Acquisition Strategy, reflecting our strong commitment to building a high-performance, employee-centered workplace.",
-        },
-        november: {
-          month: "November",
-          title: "Completion of the Al-Kenan Al-Arabia acquisition",
-          desc: "We finalized the acquisition of a 60 percent stake in Al-Kenan Al-Arabia Trading Company, completing regulatory approvals and strengthening our integrated feed operations.",
+          title: "Acquisition of 60% of Kenan Arabian Trading Company",
+          desc: "We signed a binding agreement to acquire a 60% stake in Kenan Arabian for <i class='riyal-icon'></i> 36 million, strengthening our position in the feed sector through expanded trading and distribution capabilities.",
         },
         december: {
           month: "December",
-          title: "Hosting the 35th IAOM MEA Conference & Expo",
-          desc: "We sponsored and welcomed the IAOM MEA Conference & Expo to Saudi Arabia for the first time, bringing global expertise, innovation, and industry collaboration to Jeddah.",
+          title: "Hosting the 35th IAOM MEA Conference and Expo",
+          desc: "We sponsored and welcomed the IAOM MEA Conference and Expo to Saudi Arabia for the first time, bringing global expertise, innovation, and industry collaboration to Jeddah.",
           title2: "Completion of the Al-Kenan Al-Arabia acquisition",
-          desc2: "We finalized the acquisition of a 60 percent stake in Al-Kenan Al-Arabia Trading Company, completing regulatory approvals and strengthening our integrated feed operations."
+          desc2:
+            "We finalized the acquisition of a 60% stake in Al-Kenan Al-Arabia Trading Company, completing regulatory approvals and strengthening our integrated feed operations.",
         },
       },
     },
@@ -265,31 +258,48 @@ export default {
         title: "Efficient, technologically advanced operations",
         bullets: [
           "Our operations use advanced global milling and feed technologies that enhance efficiency, consistency and competitiveness.",
-          "We deploy modern digital solutions to improve production planning, manufacturing efficiency and quality control, with xx% of our operations digitalized in 2025.",
-          "Our strong fixed-asset base and logistics network, valued at more than <strong>SAR 680 MN</strong>, support scale and dependable market reach.",
-          "We apply robust risk management practices aligned with leading global standards.",
+          "We deploy modern digital solutions to improve production planning, manufacturing efficiency and quality control, with +90% of our operations digitalized in 2025.",
+          "Our strong fixed-asset base and logistics network, valued at more than <i class='riyal-icon'></i> 820.3 mln support scale and dependable market reach.",
+          "We apply robust risk management practices aligned with leading global standards",
         ],
       },
       {
         title: "Diversified, high-quality portfolio supported by innovation",
         bullets: [
-          "We offer more than <strong>60 products</strong> across flour, feed, bran, semolina, mixes and specialty categories under the First Mills, Aloula and Naffa’a brands, with a gross margin of 41.5% in 2025.",
-          "Our products meet the highest global quality standards and are backed by <strong>seven</strong> ISO certifications, with zero major quality incidents recorded in 2025 and an on-time delivery rate of xx%.",
-          "We maintain a disciplined product development program focused on quality, innovation and market needs, delivering notable program achievements in 2025.",
+          "We offer more than <strong>90 products</strong> across flour, feed, bran, semolina, mixes and specialty categories under the First Mills and Aloula brands, with a gross margin of 22% in 2025.",
+          "We operate the Kingdom’s only durum mill for semolina production, using advanced technology that strengthens our position in high-growth pasta and bakery markets.",
+          "Our products meet the highest global quality standards and are backed by <strong class='text-fm-yellow'>seven</strong> ISO certifications ,with zero major quality incidents recorded in 2025.",
+          "We maintain a disciplined product development program focused on quality, innovation and market needs, delivering notable program achievements in 2025"
         ],
       },
       {
         title: "Strong financial fundamentals and experienced leadership",
         bullets: [
-          "Our financial indicators reflect a solid position supported by efficient operations, strong liquidity and access to financing, as demonstrated by FY2025.",
-          "We generate high returns through disciplined execution and a resilient business model, supported by a dividend payout ratio of xx%.",
-          "Our management team brings more than <strong>200 years</strong> of combined experience across milling, manufacturing, supply chain and food industries.",
+          "Our financial indicators reflect a solid position supported by ecient operations, strong liquidity and access to financing, as demonstrated by FY2025:",
+          "We generate high returns through disciplined execution and a resilient business model, supported by a dividend payout ratio of 63%.",
+          "Our management team brings more than 200 years of combined experience across milling, manufacturing, supply chain and food industries.",
           "We operate in a supportive Saudi economic environment backed by rising demand, a growing population and diverse consumer preferences.",
         ],
         financials: {
-          labels: ["Revenue", "EBITDA", "Net Profit", "ROE", "CAPEX"],
-          values: ["XX", "XX", "XX", "XX", "XX"],
-          cashBalance: "XX",
+          labels: [
+            "Revenue",
+            "EBITDA",
+            "Net Profit",
+            "ROE",
+            "CAPEX",
+            "Cash balance",
+            "Operating cash flow",
+          ],
+          values: [
+            "1,146.4 mln <i class='riyal-icon'></i>",
+            "402.2 mln <i class='riyal-icon'></i>",
+            "277.4 mln <i class='riyal-icon'></i>",
+            "25.9%",
+            "(184.2) mln <i class='riyal-icon'></i>",
+            "93.3 mln <i class='riyal-icon'></i>",
+            "342.1 mln <i class='riyal-icon'></i>",
+          ],
+          cashBalance: "",
         },
       },
     ],
@@ -304,7 +314,7 @@ export default {
         name: "Shareholders and Investors",
         sections: [
           {
-            title: "How We Engage",
+            title: "How Often We Engage",
             bullets: [
               "Annual General Meetings (AGM)",
               "Earnings conference calls with analysts and investors",
@@ -352,7 +362,7 @@ export default {
         name: "Employees",
         sections: [
           {
-            title: "How We Engage",
+            title: "How Often We Engage",
             bullets: [
               "Training and development programs",
               "Workshops and skill-building courses",
@@ -409,7 +419,7 @@ export default {
         name: "Suppliers",
         sections: [
           {
-            title: "How We Engage",
+            title: "How Often We Engage",
             bullets: [
               "Strengthening relationships with suppliers and vendors",
               "Contractual and legal compliance communications",
@@ -457,7 +467,7 @@ export default {
         name: "Customers",
         sections: [
           {
-            title: "How We Engage",
+            title: "How Often We Engage",
             bullets: [
               "Market research across Saudi Arabia",
               "Customer segmentation targeting different regions and categories",
@@ -569,7 +579,7 @@ export default {
         name: "Regulatory & Government Authorities",
         sections: [
           {
-            title: "How We Engage",
+            title: "How Often We Engage",
             bullets: [
               "Meetings and continuous cooperation with regulatory bodies (GFSA, SFDA, ZATCA, HRSD)",
               "Compliance reporting and submissions",

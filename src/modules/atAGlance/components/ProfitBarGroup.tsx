@@ -29,7 +29,7 @@ const ProfitBarGroup = ({
           className="text-md font-thin text-fm-gray-300"
           dangerouslySetInnerHTML={{ __html: `(${unit})` }}
         ></p>
-        <div className="h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)]" />
+        <div className={`h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)] ${lang === "ar" ? "rotate-y-180" : ""}`} />
       </div>
       <div className="flex flex-col gap-2" dir="ltr" ref={ref}>
         {rows.map(({ year, value, color, textColor }) => {

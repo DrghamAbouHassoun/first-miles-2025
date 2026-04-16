@@ -63,7 +63,7 @@ export default {
       description:
         "First Mills holds a leading position in Saudi Arabia's flour market",
       value: {
-        number: "31",
+        number: "30",
         suffix: "%",
       },
     },
@@ -104,7 +104,7 @@ export default {
       solarProject:
         "Signed a contract for a <br /><b class='text-fm-yellow '> 9.3 Mwp</b><br /> solar power project, with installation in Tabuk and Al-Ahsa scheduled for Q2–Q3 of 2026.",
       communityInvestment:
-        "Invested approximately <br /><strong class='text-fm-yellow'><i class='riyal-icon'></i> 210,000</strong> in<br />  community initiatives",
+        "Invested approximately <br /><strong class='text-fm-yellow'><i class='riyal-icon'></i> 230,000</strong> in<br />  community initiatives",
       employeeAwards:
         "Recognized with two Silver Employee Happiness Awards for Best Induction Program and Best Recruitment Strategy",
     },

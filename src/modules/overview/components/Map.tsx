@@ -257,6 +257,13 @@ const Map = () => {
                       </span>
                     </li>
                   )}
+                  {t(`map.plants.${activePlant.id}.note`) !== `map.plants.${activePlant.id}.note` && (
+                    <li className="flex flex-col">
+                      <span className="text-white text-sm">
+                        {t(`map.plants.${activePlant.id}.note`)}
+                      </span>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>

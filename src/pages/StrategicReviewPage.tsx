@@ -2,7 +2,6 @@ import { useState } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import StrategicReviewHeader from "../assets/images/headers/strategic-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
-import { useLocale } from "../modules/common/hooks/useLocale";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import BusinessModelTab from "../modules/strategic-review/components/tabs/BusinessModelTab";
 import StrategyKPIsTab from "../modules/strategic-review/components/tabs/StrategyKPIsTab";
@@ -19,7 +18,6 @@ type StrategicReviewSubPage =
 
 const StrategicReviewPage = () => {
   const { t } = useTranslation("strategic-review");
-  const { lang } = useLocale();
   const [subPage, setSubPage] = useState<StrategicReviewSubPage>("businessModel");
 
   const tabs: { key: StrategicReviewSubPage; label: string }[] = [
@@ -38,17 +36,14 @@ const StrategicReviewPage = () => {
         image={StrategicReviewHeader}
       />
       <div
-        className={`flex flex-wrap w-full gap-4 justify-center items-center bg-fm-green p-6 ${
-          lang === "ar" ? "flex-row-reverse" : "flex-row"
-        } border-b border-fm-green/20`}
+        className={`flex flex-wrap w-full gap-4 justify-center items-center bg-fm-green p-6  border-b border-fm-green/20`}
       >
         {tabs.map((tab) => (
           <MainButton
             key={tab.key}
             onClick={() => setSubPage(tab.key)}
-            className={`w-full md:w-auto ${
-              subPage === tab.key ? "to-fm-yellow" : ""
-            }`}
+            isActive={subPage === tab.key}
+            className="w-full md:w-auto"
           >
             {tab.label}
           </MainButton>

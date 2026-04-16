@@ -1,0 +1,121 @@
+import CountUpModule, { type CountUpProps } from "react-countup";
+import type React from "react";
+import useInView from "../../common/hooks/useInView";
+
+const CountUp = ((CountUpModule as any).default ??
+  CountUpModule) as React.FC<CountUpProps>;
+
+const LE_DATA = [
+  { year: 2021, liabilities: 491.2, equity: 687.9, total: 1179.1 },
+  { year: 2022, liabilities: 1424.4, equity: 1002.0, total: 2426.4 },
+  { year: 2023, liabilities: 1470.8, equity: 999.9, total: 2470.7 },
+  { year: 2024, liabilities: 1495.5, equity: 1000.0, total: 2495.5 },
+  { year: 2025, liabilities: 1594.4, equity: 1004.5, total: 2598.9 },
+];
+
+const MAX_TOTAL = Math.max(...LE_DATA.map((d) => d.total));
+
+const LIAB_COLOR = "#162f29";
+const EQUITY_COLOR = "#fcb44a";
+
+interface CFOTotalLELabels {
+  totalLETitle: string;
+  totalLiabilities: string;
+  totalEquity: string;
+  financialUnit: string;
+}
+
+const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
+  return (
+    <div className="max-w-110 bg-fm-yellow-100 p-4">
+      <p className="font-bold text-base text-fm-green mb-1">
+        {labels.totalLETitle}{" "}
+        <span className="font-normal text-sm text-fm-gray-300">
+          ({labels.financialUnit})
+        </span>
+      </p>
+
+      {/* Legend */}
+      <div className="flex items-center gap-5 mt-2 mb-4 flex-wrap">
+        {[
+          { color: LIAB_COLOR, label: labels.totalLiabilities },
+          { color: EQUITY_COLOR, label: labels.totalEquity },
+        ].map(({ color, label }) => (
+          <div key={label} className="flex items-center gap-1.5">
+            <span
+              className="inline-block w-3.5 h-3.5 shrink-0"
+              style={{ backgroundColor: color }}
+            />
+            <span className="text-xs font-medium text-fm-green">{label}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Stacked horizontal bars */}
+      <div ref={ref} dir="ltr" className="space-y-2">
+        {LE_DATA.map((d) => {
+          const liabPct = (d.liabilities / d.total) * 100;
+          const equityPct = (d.equity / d.total) * 100;
+          const barWidthPct = (d.total / MAX_TOTAL) * 100;
+
+          return (
+            <div key={d.year} className="flex items-center gap-2">
+              {/* Year label */}
+              <span className="text-xs font-bold text-fm-green w-9 shrink-0 text-right">
+                {d.year}
+              </span>
+
+              {/* Bar container */}
+              <div className="flex-1 h-7 flex items-center">
+                <div
+                  className="h-full flex overflow-hidden"
+                  style={{
+                    width: inView ? `${barWidthPct}%` : "0%",
+                    transition: "width 0.8s ease-out 0s",
+                  }}
+                >
+                  {/* Liabilities segment */}
+                  <div
+                    className="h-full flex items-center justify-end overflow-hidden"
+                    style={{
+                      width: `${liabPct}%`,
+                      backgroundColor: LIAB_COLOR,
+                    }}
+                  >
+                    <span className="text-[9px] font-bold text-white px-1 whitespace-nowrap">
+                      {inView && (
+                        <CountUp
+                          end={d.liabilities}
+                          decimals={1}
+                          duration={1.5}
+                        />
+                      )}
+                    </span>
+                  </div>
+                  {/* Equity segment */}
+                  <div
+                    className="h-full flex items-center justify-end overflow-hidden"
+                    style={{
+                      width: `${equityPct}%`,
+                      backgroundColor: EQUITY_COLOR,
+                    }}
+                  >
+                    <span className="text-[9px] font-bold text-white px-1 whitespace-nowrap">
+                      {inView && (
+                        <CountUp end={d.total} decimals={1} duration={1.5} />
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default CFOTotalLEChart;

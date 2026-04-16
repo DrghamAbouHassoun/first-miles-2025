@@ -6,20 +6,56 @@ import LeadershipHeader from "./LeadershipHeader";
 import GroupOfSpikes from "./GroupOfSpikes";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import CFOBarChart from "./CFOBarChart";
+import CFOFinancialPositionChart from "./CFOFinancialPositionChart";
+import CFOTotalLEChart from "./CFOTotalLEChart";
+import CFOKeyIndicatorsChart from "./CFOKeyIndicatorsChart";
 
-const PL_YEARS = [2021, 2022, 2023, 2024, 2025, 2026];
+const PL_YEARS: (number | string)[] = [2021, 2022, 2023, 2024, 2025, "YoY %"];
 const PL_HIGHLIGHT_COL = 4; // 2025 column index
+const PL_YOY_COL = 5; // YoY % column index
 
 const PL_DATA = [
-  { key: "revenue",         values: ["801.01", "913.65", "964.26", "1,048.85", "XX", ""], bold: true  },
-  { key: "costOfRevenue",   values: ["-469.54", "-515.72", "-551.12", "-591.77", "XX", ""], bold: false },
-  { key: "grossProfit",     values: ["331.47", "397.93", "413.14", "457.09", "XX", ""], bold: true  },
-  { key: "gaExpenses",      values: ["-17.76", "-39.30", "-47.76", "-55.57", "XX", ""], bold: false },
-  { key: "operatingProfit", values: ["213.30", "255.61", "286.96", "318.48", "XX", ""], bold: true  },
-  { key: "ebitda",          values: ["XX", "XX", "XX", "XX", "XX", ""], bold: false },
-  { key: "netProfit",       values: ["198.48", "217.48", "220.21", "250.90", "XX", ""], bold: false },
+  {
+    key: "revenue",
+    values: ["801.0", "913.7", "964.3", "1,048.9", "1,146.4", "9.3%"],
+    bold: true,
+  },
+  {
+    key: "costOfRevenue",
+    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(684.2)", "12.2%"],
+    bold: false,
+  },
+  {
+    key: "grossProfit",
+    values: ["331.5", "397.9", "413.1", "457.1", "462.2", "5.5%"],
+    bold: true,
+  },
+  {
+    key: "generalAdminExpenses",
+    values: ["(33.9)", "(102.3)", "(78.1)", "(81.9)", "(75.0)", "8.4%"],
+    bold: false,
+  },
+  {
+    key: "gaExpenses",
+    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(63.8)", "22.1%"],
+    bold: false,
+  },
+  {
+    key: "operatingProfit",
+    values: ["213.3", "255.6", "287.0", "318.5", "339.7", "6.7%"],
+    bold: true,
+  },
+  {
+    key: "ebitda",
+    values: ["—", "—", "—", "—", "402.2", "7.5%"],
+    bold: false,
+  },
+  {
+    key: "netProfit",
+    values: ["198.5", "217.5", "220.2", "250.9", "277.4", "10.6%"],
+    bold: false,
+  },
 ] as const;
-
 
 const CFOTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -54,7 +90,7 @@ const CFOTab = () => {
         />
       </Container>
 
-      <div className="relative  overflow-hidden">
+      <div className="relative overflow-hidden">
         <Container>
           <div className="py-16">
             {/* Tagline */}
@@ -81,110 +117,204 @@ const CFOTab = () => {
                 </SlideTopAnimation>
                 {sections[0].paragraphs.map((p: string, j: number) => (
                   <SlideTopAnimation key={j}>
-                    <p className="text-sm leading-relaxed mb-3 last:mb-0">{p}</p>
+                    <p className="text-sm leading-relaxed mb-3 last:mb-0">
+                      {p}
+                    </p>
                   </SlideTopAnimation>
                 ))}
               </div>
             )}
 
             {/* Statement of Profit or Loss table */}
-            <SlideTopAnimation>
-              <div className="mb-10">
-                <h3 className="font-bold text-base mb-1">{table.title}</h3>
-                <p className="text-xs text-fm-gray-300 mb-4">({table.unit})</p>
-                <div className="overflow-x-auto">
-                  <table
-                    className="w-full min-w-150 text-sm border-collapse"
-                    dir="ltr"
-                  >
-                    <thead>
-                      <tr className="border-b-2 border-fm-green">
-                        <th className="text-left py-2 pr-4 font-bold text-fm-green w-56">
-                          {table.unit ?? "SAR"}
+            <div className="mb-10">
+              <h3 className="font-bold text-base mb-1">{table.title}</h3>
+              <p className="text-xs text-fm-gray-300 mb-4">({table.unit})</p>
+              <div className="overflow-x-auto">
+                <table
+                  className="w-full min-w-150 text-sm border-collapse"
+                  dir="ltr"
+                >
+                  <thead>
+                    <tr className="border-b-2 border-fm-green">
+                      <th className="text-left py-2 pr-4 font-bold text-fm-green w-56">
+                        {table.unit ?? "SAR"}
+                      </th>
+                      {PL_YEARS.map((y, yi) => (
+                        <th
+                          key={String(y)}
+                          className={`text-right py-2 px-3 font-bold whitespace-nowrap ${
+                            yi === PL_YOY_COL
+                              ? "text-fm-gray-300"
+                              : yi === PL_HIGHLIGHT_COL
+                                ? "bg-fm-yellow-100 text-fm-green"
+                                : "text-fm-green"
+                          }`}
+                        >
+                          {y}
                         </th>
-                        {PL_YEARS.map((y, yi) => (
-                          <th
-                            key={y}
-                            className={`text-right py-2 px-3 font-bold text-fm-green whitespace-nowrap ${yi === PL_HIGHLIGHT_COL ? "bg-fm-yellow-100" : ""}`}
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tableRows.map((row) => (
+                      <tr key={row.key} className="border-b border-fm-green/20">
+                        <td
+                          className={`py-2 pr-4 text-left ${row.bold ? "font-bold text-fm-green" : "text-fm-green/80"}`}
+                        >
+                          {row.label}
+                        </td>
+                        {row.values.map((val, vi) => (
+                          <td
+                            key={vi}
+                            className={`py-2 px-3 text-right whitespace-nowrap ${
+                              vi === PL_YOY_COL
+                                ? "text-fm-gray-300 font-medium"
+                                : vi === PL_HIGHLIGHT_COL
+                                  ? "bg-fm-yellow-100 font-bold text-fm-green"
+                                  : row.bold
+                                    ? "font-bold text-fm-green"
+                                    : "text-fm-green/80"
+                            }`}
                           >
-                            {y}
-                          </th>
+                            {val}
+                          </td>
                         ))}
                       </tr>
-                    </thead>
-                    <tbody>
-                      {tableRows.map((row) => (
-                        <tr
-                          key={row.key}
-                          className="border-b border-fm-green/20"
-                        >
-                          <td
-                            className={`py-2 pr-4 text-left ${row.bold ? "font-bold text-fm-green" : "text-fm-green/80"}`}
-                          >
-                            {row.label}
-                          </td>
-                          {row.values.map((val, vi) => (
-                            <td
-                              key={vi}
-                              className={`py-2 px-3 text-right whitespace-nowrap ${
-                                vi === PL_HIGHLIGHT_COL ? "bg-fm-yellow-100" : ""
-                              } ${
-                                vi === PL_HIGHLIGHT_COL && val === "XX"
-                                  ? "font-bold text-fm-green"
-                                  : val === "XX"
-                                  ? "text-fm-gray-300"
-                                  : row.bold
-                                  ? "font-bold text-fm-green"
-                                  : "text-fm-green/80"
-                              }`}
-                            >
-                              {val}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            </SlideTopAnimation>
+            </div>
 
             {/* Bar Chart – Revenue */}
-            <SlideTopAnimation>
-              <div className="mb-14">
-                <CFOBarChart
-                  labels={{
-                    title: charts.revenue ?? "Revenues",
-                    unit: charts.unit ?? "<i class='riyal-icon'></i> million",
-                    flour: charts.flour ?? "Flour",
-                    feed: charts.feed ?? "Feed",
-                    bran: charts.bran ?? "Bran",
-                  }}
-                />
-              </div>
-            </SlideTopAnimation>
-
-            {/* Remaining sections (Revenue drivers, Cash flow, …) */}
-            <div className="max-w-4xl space-y-8">
-              {sections.slice(1).map(
-                (section: { heading: string; paragraphs: string[] }, i: number) => (
-                  <div key={i + 1}>
-                    <SlideTopAnimation>
-                      <h3 className="font-bold text-base mb-3">
-                        {section.heading}
-                      </h3>
-                    </SlideTopAnimation>
-                    {section.paragraphs.map((p: string, j: number) => (
-                      <SlideTopAnimation key={j}>
-                        <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                          {p}
-                        </p>
-                      </SlideTopAnimation>
-                    ))}
-                  </div>
-                ),
-              )}
+            <div className="mb-14">
+              <CFOBarChart
+                labels={{
+                  title: charts.revenue ?? "Revenues",
+                  unit: charts.unit ?? "<i class='riyal-icon'></i> million",
+                  flour: charts.flour ?? "Flour",
+                  feed: charts.feed ?? "Feed",
+                  bran: charts.bran ?? "Bran",
+                }}
+              />
             </div>
+
+            {/* Sections 1 & 2 – Revenue drivers + Cash flow */}
+            <div className="max-w-4xl space-y-8 mb-14">
+              {sections
+                .slice(1, 3)
+                .map(
+                  (
+                    section: { heading: string; paragraphs: string[] },
+                    i: number,
+                  ) => (
+                    <div key={i + 1}>
+                      <SlideTopAnimation>
+                        <h3 className="font-bold text-base mb-3">
+                          {section.heading}
+                        </h3>
+                      </SlideTopAnimation>
+                      {section.paragraphs.map((p: string, j: number) => (
+                        <SlideTopAnimation key={j}>
+                          <p className="text-sm leading-relaxed mb-3 last:mb-0">
+                            {p}
+                          </p>
+                        </SlideTopAnimation>
+                      ))}
+                    </div>
+                  ),
+                )}
+            </div>
+
+            {/* Statement of Financial Position – Assets & Liabilities charts */}
+            <div className="mb-8">
+              <CFOFinancialPositionChart
+                labels={{
+                  financialPositionTitle:
+                    charts.financialPositionTitle ??
+                    "Statement of Financial Position",
+                  assetsTitle: charts.assetsTitle ?? "Assets",
+                  currentAssets: charts.currentAssets ?? "Current Assets",
+                  nonCurrentAssets:
+                    charts.nonCurrentAssets ?? "Non-Current Assets",
+                  totalAssets: charts.totalAssets ?? "Total Assets",
+                  liabilitiesTitle: charts.liabilitiesTitle ?? "Liabilities",
+                  currentLiabilities:
+                    charts.currentLiabilities ?? "Current Liabilities",
+                  nonCurrentLiabilities:
+                    charts.nonCurrentLiabilities ?? "Non-Current Liabilities",
+                  totalLiabilities:
+                    charts.totalLiabilities ?? "Total Liabilities",
+                  financialUnit: charts.financialUnit ?? "SAR mn",
+                }}
+              />
+            </div>
+
+            {/* Total Liabilities and Equity chart */}
+            <div className="mb-8">
+              <CFOTotalLEChart
+                labels={{
+                  totalLETitle:
+                    charts.totalLETitle ?? "Total Liabilities and Equity",
+                  totalLiabilities:
+                    charts.totalLiabilities ?? "Total Liabilities",
+                  totalEquity: charts.totalEquity ?? "Total Equity",
+                  financialUnit: charts.financialUnit ?? "SAR mn",
+                }}
+              />
+            </div>
+
+            {/* Key Balance Sheet Indicators chart */}
+            <div className="mb-14">
+              <CFOKeyIndicatorsChart
+                labels={{
+                  keyIndicatorsTitle:
+                    charts.keyIndicatorsTitle ?? "Key Balance Sheet Indicators",
+                  cashTitle: charts.cashTitle ?? "Cash & Cash Equivalents",
+                  loansTitle: charts.loansTitle ?? "Total Loans",
+                  financialUnit: charts.financialUnit ?? "SAR mn",
+                }}
+              />
+            </div>
+
+            {/* Sections 3–6 – Capital allocation, Shareholder returns, etc. */}
+            <div className="max-w-4xl space-y-8 mb-14">
+              {sections
+                .slice(3)
+                .map(
+                  (
+                    section: { heading: string; paragraphs: string[] },
+                    i: number,
+                  ) =>
+                    section.paragraphs.length > 0 ? (
+                      <div key={i + 3}>
+                        <SlideTopAnimation>
+                          <h3 className="font-bold text-base mb-3">
+                            {section.heading}
+                          </h3>
+                        </SlideTopAnimation>
+                        {section.paragraphs.map((p: string, j: number) => (
+                          <SlideTopAnimation key={j}>
+                            <p className="text-sm leading-relaxed mb-3 last:mb-0">
+                              {p}
+                            </p>
+                          </SlideTopAnimation>
+                        ))}
+                      </div>
+                    ) : null,
+                )}
+            </div>
+
+            {/* Closing tagline */}
+            {data.closingTagline && (
+              <SlideTopAnimation>
+                <p
+                  className={`font-bold text-xl md:text-2xl leading-snug text-fm-yellow max-w-3xl ${isRtl ? "text-right" : ""}`}
+                >
+                  {data.closingTagline}
+                </p>
+              </SlideTopAnimation>
+            )}
           </div>
         </Container>
 

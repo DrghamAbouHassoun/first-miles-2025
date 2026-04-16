@@ -23,7 +23,7 @@ const GeoRevenueColumn = ({
     <div className="flex-1 min-w-0">
       <div className="w-fit mb-3">
         <p className="text-xl font-bold text-fm-yellow ">{year}</p>
-        <div className="h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_70%,#FFFFFF_100%)]" />
+        <div className={`h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_70%,#FFFFFF_100%)] ${lang === "ar" ? "rotate-y-180" : ""}`} />
       </div>
       <div className="flex flex-col gap-2" dir="ltr" ref={ref}>
         {regions.map((region) => {

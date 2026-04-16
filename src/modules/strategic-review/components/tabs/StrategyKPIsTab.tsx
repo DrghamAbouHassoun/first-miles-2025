@@ -85,7 +85,10 @@ const StrategyKPIsTab = () => {
         </Container>
       </div>
       <div className="relative w-full">
-        <div className="sticky top-0 left-0 h-screen w-full -z-10 bg-fm-green" style={{ marginBottom: "-100vh" }}>
+        <div
+          className="sticky top-0 left-0 h-screen w-full -z-10 bg-fm-green"
+          style={{ marginBottom: "-100vh" }}
+        >
           <img
             src={Pillar1Bg}
             alt="Pillar 1"
@@ -127,9 +130,9 @@ const StrategyKPIsTab = () => {
             </div>
           </div>
         </Container>
-      <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
-        <GroupOfSpikes />
-      </div>
+        <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+          <GroupOfSpikes />
+        </div>
       </div>
     </div>
   );
@@ -150,15 +153,25 @@ const Achievement = ({
 }: AchievementProps) => (
   <div className="py-2">
     <p className=" leading-relaxed">
-      {prefix && <span>{prefix} </span>}
-      {highlight && <span className=" font-bold">{highlight} </span>}
-      {suffix && !large && <span>{suffix}</span>}
+      {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}{" "}
+      {highlight && (
+        <span
+          className=" font-bold"
+          dangerouslySetInnerHTML={{ __html: highlight }}
+        ></span>
+      )}
+      {suffix && !large && (
+        <span dangerouslySetInnerHTML={{ __html: suffix }}></span>
+      )}
     </p>
     {large && (
       <p className="text-3xl mt-1">
-        {large}
+        <span dangerouslySetInnerHTML={{ __html: large }}></span>{""}
         {suffix && (
-          <span className="text-4xl font-normal text-white ms-2">{suffix}</span>
+          <span
+            className="text-4xl font-normal text-white ms-2"
+            dangerouslySetInnerHTML={{ __html: suffix }}
+          ></span>
         )}
       </p>
     )}
@@ -198,9 +211,11 @@ const PillarContent = ({
         {[0, 1, 2, 3].map((i) => {
           const kpi = t(`${p}.kpis.${i}`);
           return kpi !== `${p}.kpis.${i}` ? (
-            <li key={i} className="text-sm">
-              {kpi}
-            </li>
+            <li
+              key={i}
+              className="text-sm"
+              dangerouslySetInnerHTML={{ __html: kpi }}
+            ></li>
           ) : null;
         })}
       </ul>

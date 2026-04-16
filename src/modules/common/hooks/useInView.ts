@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef, type RefObject } from "react";
 
-type InViewMode = "partial" | "full";
-
 interface UseInViewOptions {
-  mode?: InViewMode;
+  partial?: boolean;
   rootMargin?: string;
   root?: Element | null;
 }
@@ -16,7 +14,7 @@ interface UseInViewResult<T extends Element> {
 function useInView<T extends Element = Element>(
   options: UseInViewOptions = {}
 ): UseInViewResult<T> {
-  const { mode = "partial", rootMargin = "0px", root = null } = options;
+  const { partial = true, rootMargin = "0px", root = null } = options;
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -24,7 +22,7 @@ function useInView<T extends Element = Element>(
     const element = ref.current;
     if (!element) return;
 
-    const threshold = mode === "full" ? 1.0 : 0.0;
+    const threshold = partial ? 0.0 : 1.0;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -35,7 +33,7 @@ function useInView<T extends Element = Element>(
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [mode, rootMargin, root]);
+  }, [partial, rootMargin, root]);
 
   return { ref, inView };
 }

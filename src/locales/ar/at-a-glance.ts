@@ -63,7 +63,7 @@ export default {
       description:
         "تحتل المطاحن الأولى مكانة رائدة في سوق الدقيق في المملكة العربية السعودية",
       value: {
-        number: "31",
+        number: "30",
         suffix: "%",
       },
     },

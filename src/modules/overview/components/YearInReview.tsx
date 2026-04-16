@@ -22,8 +22,6 @@ const TIMELINE_ITEMS = [
   { key: "july", hasStat: false, image: undefined },
   { key: "august", hasStat: false, image: undefined },
   { key: "september", hasStat: false, image: SeptemberImage },
-  { key: "october", hasStat: false, image: undefined },
-  { key: "november", hasStat: false, image: undefined },
   { key: "december", hasStat: false, image: undefined },
 ] as const;
 
@@ -153,9 +151,14 @@ const YearInReview = () => {
                         </h3>
                       </SlideTopAnimation>
                       <SlideTopAnimation>
-                        <p className="text-white text-base leading-relaxed">
-                          {t(`yearInReviewContent.slider.items.${key}.desc`)}
-                        </p>
+                        <p
+                          className="text-white text-base leading-relaxed"
+                          dangerouslySetInnerHTML={{
+                            __html: t(
+                              `yearInReviewContent.slider.items.${key}.desc`,
+                            ),
+                          }}
+                        ></p>
                       </SlideTopAnimation>
                       {t(`yearInReviewContent.slider.items.${key}.title2`) !==
                         `yearInReviewContent.slider.items.${key}.title2` && (
@@ -170,9 +173,14 @@ const YearInReview = () => {
                       {t(`yearInReviewContent.slider.items.${key}.desc2`) !==
                         `yearInReviewContent.slider.items.${key}.desc2` && (
                         <SlideTopAnimation>
-                          <p className="text-white text-base leading-relaxed">
-                            {t(`yearInReviewContent.slider.items.${key}.desc2`)}
-                          </p>
+                          <p
+                            className="text-white text-base leading-relaxed"
+                            dangerouslySetInnerHTML={{
+                              __html: t(
+                                `yearInReviewContent.slider.items.${key}.desc2`,
+                              ),
+                            }}
+                          ></p>
                         </SlideTopAnimation>
                       )}
 

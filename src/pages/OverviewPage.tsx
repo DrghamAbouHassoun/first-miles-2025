@@ -45,9 +45,8 @@ const OverviewPage = () => {
           <MainButton
             key={tab.key}
             onClick={() => setSubPage(tab.key)}
-            className={`w-full md:w-auto ${
-              subPage === tab.key ? "to-fm-yellow" : ""
-            }`}
+            isActive={subPage === tab.key}
+            className="w-full md:w-auto"
           >
             {tab.label}
           </MainButton>

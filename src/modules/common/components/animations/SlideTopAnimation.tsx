@@ -6,7 +6,7 @@ interface SlideTopAnimationProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const SlideTopAnimation = ({ level = "50", ...props }: SlideTopAnimationProps) => {
-  const { inView, ref } = useInView<HTMLDivElement>();
+  const { inView, ref } = useInView<HTMLDivElement>({ partial: true });
 
   return (
     <div

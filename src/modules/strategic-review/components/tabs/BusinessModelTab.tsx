@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Container from "../../../common/components/Container/Container";
 import { useTranslation } from "../../../common/hooks/useTranslation";
+import { LangContext } from "../../../common/contexts/LangProvider";
 import BusinessModelBg from "../../../../assets/images/backgrounds/business-model.jpg";
 import { SITE_NAME } from "../../../../config/constants";
 
@@ -44,6 +45,8 @@ const stackholdersIcons = [
 
 const BusinessModelTab = () => {
   const { t } = useTranslation("strategic-review");
+  const { lang } = useContext(LangContext);
+  const isAr = lang === "ar";
   const [openTab, setOpenTab] = useState<string>("inputs");
 
   const toggle = (id: string) => setOpenTab((prev) => (prev === id ? "" : id));
@@ -80,10 +83,10 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -119,10 +122,10 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -158,10 +161,10 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -208,10 +211,10 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/0 to-fm-yellow/80"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className="absolute inset-0 bg-linear-to-r from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">

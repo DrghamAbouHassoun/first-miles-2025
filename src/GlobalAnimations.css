@@ -198,6 +198,25 @@
   animation-name: Popup;
 }
 
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-fade-in {
+  opacity: 0;
+  animation-duration: .7s;
+  animation-fill-mode: forwards;
+}
+
+.animation-fade-in.active {
+  animation-name: FadeIn;
+}
+
 @keyframes ImageScale {
   from {
     transform: scale(1.05);

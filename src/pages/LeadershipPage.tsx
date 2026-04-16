@@ -35,7 +35,8 @@ const LeadershipPage = () => {
           <MainButton
             key={tab.key}
             onClick={() => setActiveTab(tab.key)}
-            className={`w-full md:w-auto ${activeTab === tab.key ? "to-fm-yellow" : ""}`}
+            isActive={activeTab === tab.key}
+            className="w-full md:w-auto"
           >
             {tab.label}
           </MainButton>

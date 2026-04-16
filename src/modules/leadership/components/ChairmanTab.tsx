@@ -65,9 +65,10 @@ const ChairmanTab = () => {
                     </SlideTopAnimation>
                     {section.paragraphs.map((p: string, j: number) => (
                       <SlideTopAnimation key={j}>
-                        <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                          {p}
-                        </p>
+                        <p
+                          className="text-sm leading-relaxed mb-3 last:mb-0"
+                          dangerouslySetInnerHTML={{ __html: p }}
+                        ></p>
                       </SlideTopAnimation>
                     ))}
                   </div>
@@ -95,9 +96,10 @@ const ChairmanTab = () => {
                   </SlideTopAnimation>
                   {section.paragraphs.map((p: string, j: number) => (
                     <SlideTopAnimation key={j}>
-                      <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                        {p}
-                      </p>
+                      <p
+                        className="text-sm leading-relaxed mb-3 last:mb-0"
+                        dangerouslySetInnerHTML={{ __html: p }}
+                      ></p>
                     </SlideTopAnimation>
                   ))}
                 </div>

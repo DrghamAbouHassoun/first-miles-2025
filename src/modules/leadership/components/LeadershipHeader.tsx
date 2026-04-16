@@ -31,11 +31,16 @@ const LeadershipHeader = ({
   const { width: screenWidth } = useWindowDimensions();
   const { lang } = useLocale();
 
-  const { ref: flowerOneRef, inView: isFlowerOneInView } = useInView<HTMLImageElement>({});
-  const { ref: flowerTwoRef, inView: isFlowerTwoInView } = useInView<HTMLImageElement>({});
-  const { ref: imageRef, inView: isImageInView } = useInView<HTMLDivElement>({});
+  const { ref: flowerOneRef, inView: isFlowerOneInView } =
+    useInView<HTMLImageElement>({});
+  const { ref: flowerTwoRef, inView: isFlowerTwoInView } =
+    useInView<HTMLImageElement>({});
+  const { ref: imageRef, inView: isImageInView } = useInView<HTMLDivElement>(
+    {},
+  );
   const { ref: infoRef, inView: isInfoInView } = useInView<HTMLDivElement>({});
-  const { ref: quotationRef, inView: isQuotationInView } = useInView<HTMLDivElement>({});
+  const { ref: quotationRef, inView: isQuotationInView } =
+    useInView<HTMLDivElement>({});
 
   return (
     <div className="w-full bg-fm-green text-white flex flex-col lg:items-center lg:flex-row overflow-x-clip relative min-h-100 pb-4 lg:pb-0">
@@ -44,9 +49,9 @@ const LeadershipHeader = ({
         alt={SITE_NAME}
         className="absolute bottom-0 right-0 w-52 h-auto pointer-events-none select-none"
       /> */}
-      <div className="absolute w-62 h-full right-0 bottom-0 overflow-hidden">
+      <div className={`absolute w-62 h-full ${lang === "ar" ? "left-0" : "right-0"} bottom-0 overflow-hidden`}>
         <div
-          className={`w-50 h-auto absolute right-0 bottom-0 ${lang === "ar" ? "" : "rotate-y-180"}`}
+          className={`w-50 h-auto absolute bottom-0 ${lang === "ar" ? "left-0" : " right-0 rotate-y-180"}`}
         >
           <img
             ref={flowerOneRef}
@@ -55,7 +60,9 @@ const LeadershipHeader = ({
             className={`w-full h-auto object-contain animate-flower-one-rotate ${isFlowerOneInView ? "active" : ""} `}
           />
         </div>
-        <div className={`w-30 h-auto absolute right-0 bottom-0 ${lang === "ar" ? "" : "rotate-y-180"}`}>
+        <div
+          className={`w-30 h-auto absolute bottom-0 ${lang === "ar" ? "left-0" : " right-0 rotate-y-180"}`}
+        >
           <img
             ref={flowerTwoRef}
             src={FlowerTwoIcon}
@@ -64,26 +71,46 @@ const LeadershipHeader = ({
           />
         </div>
       </div>
-      <div ref={imageRef} className={` flex relative max-w-100 lg:max-w-none justify-center lg:justify-start lg:w-110 animation-slide-right-50 ${isImageInView ? "active" : ""}`}>
-        <img
-          src={imageUrl}
-          alt={`${title} | ${SITE_NAME}`}
-          style={{
-            width: screenWidth > 1024 ? imageWidth : "100%",
-            transform:
-              screenWidth > 1024
-                ? `scale(${imageScale}) translateX(${imageTranslateX}px) translateY(${imageTranslateY}px)`
-                : "translateX(-16px)",
-          }}
-          className="w-full h-auto object-contain"
-        />
+      <div
+        ref={imageRef}
+        className={` flex relative max-w-100 lg:max-w-none justify-center lg:justify-start lg:w-110 ${lang === "ar" ? "animation-slide-left-50" : "animation-slide-right-50"} ${isImageInView ? "active" : ""}`}
+      >
+        <div className={`${lang === "ar" ? "rotate-y-180" : ""}`}>
+          <img
+            src={imageUrl}
+            alt={`${title} | ${SITE_NAME}`}
+            style={{
+              width: screenWidth > 1024 ? imageWidth : "100%",
+              transform:
+                screenWidth > 1024
+                  ? `scale(${imageScale}) translateX(${imageTranslateX}px) translateY(${imageTranslateY}px)`
+                  : "translateX(-16px)",
+            }}
+            className="w-full h-auto object-contain"
+          />
+        </div>
       </div>
       <div className="flex-1 flex w-full flex-col lg:items-center gap-4 xl:gap-0 xl:flex-row lg:px-16 pt-16 xl:pt-0 px-4 ">
-        <div ref={infoRef} className="xl:flex-1 flex flex-col justify-center lg:items-center lg:text-center max-w-150">
-          <h2 className={`text-lg font-bold text-fm-yellow animation-slide-top-50 animate-delay-1s ${isInfoInView ? "active" : ""}`}>{title}</h2>
-          <p className={`animation-slide-top-50 animate-delay-1s ${isInfoInView ? "active" : ""}`}>{subtitle}</p>
-          <div className="w-full overflow-y-hidden">
-          <img src={VerticalSpike} alt={SITE_NAME} className={`animation-slide-right-100 ${isInfoInView ? "active" : ""}`} />
+        <div
+          ref={infoRef}
+          className="xl:flex-1 flex flex-col justify-center lg:items-center lg:text-center max-w-150"
+        >
+          <h2
+            className={`text-lg font-bold text-fm-yellow animation-slide-top-50 animate-delay-1s ${isInfoInView ? "active" : ""}`}
+          >
+            {title}
+          </h2>
+          <p
+            className={`animation-slide-top-50 animate-delay-1s ${isInfoInView ? "active" : ""}`}
+          >
+            {subtitle}
+          </p>
+          <div className={`w-full overflow-hidden ${lang === "ar" ? "rotate-y-180" : ""}`}>
+            <img
+              src={VerticalSpike}
+              alt={SITE_NAME}
+              className={`${lang === "ar" ? "animation-slide-right-100": "animation-slide-right-100"} ${isInfoInView ? "active" : ""}`}
+            />
           </div>
         </div>
         <div className="flex-1 flex lg:justify-center items-center pr-4 text-lg">
@@ -93,7 +120,11 @@ const LeadershipHeader = ({
               alt={SITE_NAME}
               className={`w-8 h-auto xl:mb-4 animation-popup ${isQuotationInView ? "active" : ""}`}
             />
-            <p className={`font-bold animation-slide-top-50 ${isQuotationInView ? "active" : ""}`}>{quotation}</p>
+            <p
+              className={`font-bold animation-slide-top-50 ${isQuotationInView ? "active" : ""}`}
+            >
+              {quotation}
+            </p>
           </div>
         </div>
       </div>
