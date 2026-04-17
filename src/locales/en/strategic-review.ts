@@ -262,18 +262,18 @@ export default {
             prefix: "Revenue growth by",
             highlight: "9%",
             suffix: "to reach",
-            large: "SAR 1,147.78 MN",
+            large: "<i class='riyal-icon'></i> 1,147.78 MN",
           },
           {
             prefix: "Acquired Al Manar Feed Co. Ltd, adding",
-            large: "SAR 450 tons",
+            large: "<i class='riyal-icon'></i> 450 tons",
             suffix: "of daily feed production",
           },
           {
             prefix: "Net profit grew by",
             highlight: "9.8%",
             suffix: "to reach",
-            large: "SAR 275 MlN",
+            large: "<i class='riyal-icon'></i> 275 MlN",
           },
           {
             prefix:

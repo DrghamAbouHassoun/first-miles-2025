@@ -32,9 +32,10 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
     <div className="max-w-110 bg-fm-yellow-100 p-4">
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.totalLETitle}{" "}
-        <span className="font-normal text-sm text-fm-gray-300">
-          ({labels.financialUnit})
-        </span>
+        <span
+          className="font-normal text-sm text-fm-gray-300"
+          dangerouslySetInnerHTML={{ __html: `(${labels.financialUnit})` }}
+        ></span>
       </p>
 
       {/* Legend */}

@@ -206,34 +206,85 @@ export default {
       {
         heading: "Capital allocation and investment strategy",
         paragraphs: [
-          "Capital allocation in 2025 remained focused on projects that enhance long-term productive capacity, strengthen market positioning and advance the Company's diversification initiatives. Capital expenditure for the year totalled <i class='riyal-icon'></i> 85.1 mn, reflecting targeted deployment across growth and maintenance initiatives.",
-          "Major investments included continued development of Mill C at Al-Qassim and the strategic acquisitions of Al-Manar Feed Company and a 60% stake in Al-Kenan Al-Arabia Trading Company (AATC). These investments are expected to enhance production capability, distribution reach and vertical integration across the feed value chain.",
-          "Capital deployment decisions continue to be guided by return on equity remaining a key performance metric. ROE for the year stood at 26.9%, reflecting effective use of capital toward high-impact initiatives and the scalability of the operating model.",
+          "Capital allocation in 2025 remained focused on projects that enhance long-term productive capacity, improve efficiency and strengthen market positioning. Capital expenditure for the year totaled <i class='riyal-icon'></i> 85.1 million, directed primarily toward capacity, including the ongoing construction of Mill C at Al-Qassim, as well as operational modernization and technology deployment",
+          "Major investments included continued development of Mill C and the strategic acquisitions of Al-Manar Feed Company and a 60% stake in AATC, designed to scale the Company's integrated feed platform. These investments are expected to enhance production capability, strengthen vertical integration and support long-term revenue growth.",
+          "Capital deployment decisions continue to be guided by return discipline, with return on equity remaining a key performance metric. ROE for the year stood at 25.9%, reflecting effective allocation of capital toward high-impact initiatives and the scalability of the operating model.",
         ],
       },
       {
         heading: "Shareholder returns and dividend policy",
         paragraphs: [
-          "Delivering consistent value to Shareholders remains a central objective of the Company's financial strategy. In line with its approved dividend policy, First Mills continued to distribute dividends to shareholders representing 43% of attributable profits.",
-          "Dividend distribution for the year totalled <i class='riyal-icon'></i> XX mn attributable to shareholders. This approach balances the delivery of Shareholder returns with the need to reinvest in growth opportunities and maintain financial flexibility. First Mills remained committed to sustainable and predictable distributions supported by long-term earnings capacity.",
+          "Delivering consistent value to Shareholders remains a central objective of the Company’s financial strategy. In line with its approved dividend policy, First Mills continued to distribute cash dividends reflecting strong earnings performance and healthy cash flow generation.",
+          "Dividend distributions for the year totaled <i class='riyal-icon'></i> 174 million, representing 63% of net profit attributable to shareholders. This approach balances the delivery of Shareholder returns with the need to reinvest in growth opportunities and maintain financial flexibility. First Mills remains committed to sustainable and predictable distributions supported by long-term earnings capacity.",
         ],
       },
       {
         heading: "Financial discipline, governance and risk management",
         paragraphs: [
-          "First Mills continued to strengthen financial governance, risk management and internal control frameworks. The Company continued to strengthen financial oversight, enhance reporting transparency and improve risk monitoring across operational and financial activities.",
-          "Internal audit and compliance programme continue to support financial integrity and accountability across the organisation. Maintaining strong financial governance remains essential to supporting sustainable growth and long-term stakeholder confidence.",
+          "Financial performance in 2025 was supported by robust governance, risk management and internal control frameworks. The Company continued to strengthen financial oversight, enhance reporting transparency and improve risk monitoring across operational and financial activities.",
+          "Enterprise risk management tools provide visibility across supply chain exposures, market dynamics and operational risks, enabling proactive mitigation and informed decision-making. Internal audit and compliance programs continue to support financial integrity and accountability across the organization. Maintaining strong financial governance remains essential to preserving Stakeholder confidence and supporting sustainable growth.",
         ],
       },
       {
         heading: "Outlook and priorities for 2026",
         paragraphs: [
-          "We enter 2026 with strong financial momentum, a resilient balance sheet and a well-defined investment roadmap. We will continue to prioritise capacity utilisation, margin improvement and disciplined working capital management to sustain profitability.",
-          "Key financial priorities include pursuing profitability growth, strengthening cash generation, maintaining balance sheet resilience and optimising returns on invested capital. Continued investment in automation, digitalization and operational optimisation will support further efficiency gains, while strategic expansion initiatives are expected to enhance long-term earnings quality.",
+          "Looking ahead, First Mills enters 2026 with strong financial momentum, a resilient balance sheet and a well-defined investment roadmap. We will continue to prioritize capacity expansion, operational efficiency and portfolio diversification, supported by disciplined capital allocation and prudent financial management. Strategic initiatives over the next three years are expected to further strengthen our competitive positioning and long-term earnings trajectory.",
+          "Key financial priorities include sustaining profitability growth, strengthening cash generation, maintaining balance sheet resilience and optimizing returns on invested capital. Continued investment in automation, digitalization and operational optimization will support further efficiency gains, while strategic expansion initiatives are expected to enhance long-term earnings potential.",
         ],
       },
     ],
     closingTagline:
       "With a strong financial foundation, scalable operating platform and disciplined approach to capital deployment, First Mills is well positioned to deliver sustained financial performance and long-term value creation.",
+    qualitySection: {
+      subtitle: "Quality and Assurance at the Core",
+      title: "Raising the Bar",
+      paragraph1:
+        "First Milling Company continued to advance its quality and food safety platform, maintaining multi-standard ISO certifications across all four plants and embedding Good Manufacturing Practices (GMP) and HACCP standards at every stage of production. A dedicated Quality and Safety Sector – supported by advanced laboratories and ongoing capability-building – underpins a robust, science-based control environment that safeguards product integrity and consumer trust.",
+      paragraph2:
+        "During the year, the Company strengthened its quality management system by standardizing procedures across plants, tightening supplier qualification and audit processes and using laboratory insight to support faster, more accurate decision-making. Continuous monitoring, corrective action programs and cross-functional quality reviews helped to reduce non-conformities and ensure every product meets First Mills' stringent quality and food safety requirements.",
+      highlightsLabel: "Quality and Assurance Highlights (2025)",
+      stats: {
+        plants: {
+          number: "05",
+          label: "plants certified",
+          desc: "ISO 45001, ISO 9001, ISO 14001 and ISO 22000, plus FSSC 22000 V6 Certification, and HACCP and Halal",
+        },
+        physicalTests: {
+          number: "598",
+          label: "physical tests carried out per day",
+          desc: "(avg.)",
+        },
+        trainingCourses: {
+          number: "09",
+          label: "specialized quality training courses",
+          highlight: "delivered",
+        },
+        qualityTests: {
+          number: "893,520",
+          label: "quality tests conducted",
+          desc: "across materials and finished goods",
+        },
+        employees: {
+          number: "171",
+          label: "employees",
+          desc: "trained in quality and food safety disciplines",
+        },
+        safeHours: {
+          number: "1,200,728",
+          label: "safe operating hours recorded during the year,",
+          highlight: "with 6 accidents and injuries compared to 9 last year",
+        },
+        microbiological: {
+          number: "ONE\nHUNDRED",
+          label: "microbiological tests completed",
+          highlight: "during the year",
+        },
+        chemicalTests: {
+          number: "1,750",
+          label: "chemical tests carried out per day",
+          desc: "(avg.)",
+        },
+      },
+    },
   },
 };

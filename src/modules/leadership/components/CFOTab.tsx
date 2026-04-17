@@ -9,6 +9,7 @@ import CFOBarChart from "./CFOBarChart";
 import CFOFinancialPositionChart from "./CFOFinancialPositionChart";
 import CFOTotalLEChart from "./CFOTotalLEChart";
 import CFOKeyIndicatorsChart from "./CFOKeyIndicatorsChart";
+import CFOQualitySection from "./CFOQualitySection";
 
 const PL_YEARS: (number | string)[] = [2021, 2022, 2023, 2024, 2025, "YoY %"];
 const PL_HIGHLIGHT_COL = 4; // 2025 column index
@@ -59,7 +60,6 @@ const PL_DATA = [
 
 const CFOTab = () => {
   const { lang, translations } = useContext(LangContext);
-  const isRtl = lang === "ar";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data = (translations as any)[lang]?.leadership?.cfo;
 
@@ -102,9 +102,10 @@ const CFOTab = () => {
 
             {/* Opening bold paragraph */}
             <SlideTopAnimation>
-              <p className="font-bold text-base leading-relaxed mb-10 max-w-4xl">
-                {data.opening}
-              </p>
+              <p
+                className="font-bold text-base leading-relaxed mb-10 max-w-4xl"
+                dangerouslySetInnerHTML={{ __html: data.opening }}
+              ></p>
             </SlideTopAnimation>
 
             {/* Section 0 – Financial performance and profitability */}
@@ -117,9 +118,10 @@ const CFOTab = () => {
                 </SlideTopAnimation>
                 {sections[0].paragraphs.map((p: string, j: number) => (
                   <SlideTopAnimation key={j}>
-                    <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                      {p}
-                    </p>
+                    <p
+                      className="text-sm leading-relaxed mb-3 last:mb-0"
+                      dangerouslySetInnerHTML={{ __html: p }}
+                    ></p>
                   </SlideTopAnimation>
                 ))}
               </div>
@@ -128,7 +130,10 @@ const CFOTab = () => {
             {/* Statement of Profit or Loss table */}
             <div className="mb-10">
               <h3 className="font-bold text-base mb-1">{table.title}</h3>
-              <p className="text-xs text-fm-gray-300 mb-4">({table.unit})</p>
+              <p
+                className="text-xs text-fm-gray-300 mb-4"
+                dangerouslySetInnerHTML={{ __html: `${table.unit}` }}
+              ></p>
               <div className="overflow-x-auto">
                 <table
                   className="w-full min-w-150 text-sm border-collapse"
@@ -136,9 +141,12 @@ const CFOTab = () => {
                 >
                   <thead>
                     <tr className="border-b-2 border-fm-green">
-                      <th className="text-left py-2 pr-4 font-bold text-fm-green w-56">
-                        {table.unit ?? "SAR"}
-                      </th>
+                      <th
+                        className="text-left py-2 pr-4 font-bold text-fm-green w-56"
+                        dangerouslySetInnerHTML={{
+                          __html: table.unit ?? "SAR",
+                        }}
+                      ></th>
                       {PL_YEARS.map((y, yi) => (
                         <th
                           key={String(y)}
@@ -216,9 +224,10 @@ const CFOTab = () => {
                       </SlideTopAnimation>
                       {section.paragraphs.map((p: string, j: number) => (
                         <SlideTopAnimation key={j}>
-                          <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                            {p}
-                          </p>
+                          <p
+                            className="text-sm leading-relaxed mb-3 last:mb-0"
+                            dangerouslySetInnerHTML={{ __html: p }}
+                          ></p>
                         </SlideTopAnimation>
                       ))}
                     </div>
@@ -295,8 +304,7 @@ const CFOTab = () => {
                         </SlideTopAnimation>
                         {section.paragraphs.map((p: string, j: number) => (
                           <SlideTopAnimation key={j}>
-                            <p className="text-sm leading-relaxed mb-3 last:mb-0">
-                              {p}
+                            <p className="text-sm leading-relaxed mb-3 last:mb-0" dangerouslySetInnerHTML={{ __html: p }}>
                             </p>
                           </SlideTopAnimation>
                         ))}
@@ -309,7 +317,7 @@ const CFOTab = () => {
             {data.closingTagline && (
               <SlideTopAnimation>
                 <p
-                  className={`font-bold text-xl md:text-2xl leading-snug text-fm-yellow max-w-3xl ${isRtl ? "text-right" : ""}`}
+                  className={`font-bold text-xl md:text-2xl leading-snug text-fm-yellow max-w-3xl ${lang === "ar" ? "text-right" : ""}`}
                 >
                   {data.closingTagline}
                 </p>
@@ -319,11 +327,13 @@ const CFOTab = () => {
         </Container>
 
         <div
-          className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+          className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
         >
           <GroupOfSpikes />
         </div>
       </div>
+
+      {data.qualitySection && <CFOQualitySection data={data.qualitySection} />}
     </div>
   );
 };
