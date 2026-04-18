@@ -93,8 +93,8 @@ const AwardsCertifications = () => {
         <div className="relative z-10 h-full flex flex-col justify-center px-4 md:px-32 py-12 ">
           {/* Section title */}
           <h2 className="text-3xl font-bold text-white mb-10">
-            {t("awards.title")} <span className="text-fm-yellow">&</span>{" "}
-            {t("awards.certifications")}
+            {t("awards.title")} {lang === "en" ? <span className="text-fm-yellow">&</span> : ""}{" "}
+            <span className="text-fm-yellow">{t("awards.certifications")}</span>
           </h2>
 
           {/* Embla carousel */}

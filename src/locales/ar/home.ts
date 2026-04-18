@@ -2,8 +2,8 @@ export default {
   hero: {
     title: "التقرير السنوي 2025",
     subtitle: "نموّنا.<br /> التزامنا.",
-    subtitle1:"نموٌّ يعزّز الأسس.",
-    subtitle2: "والتزامٌ يصنع الأثر.",
+    subtitle1:"نموٌّ يعزّز الأسس",
+    subtitle2: "والتزامٌ يصنع الأثر",
     modalButton: "موضوع العام"
   },
   theme: {

@@ -105,9 +105,9 @@ const FinancialHighlights = () => {
                       className={`flex items-center gap-3 ${isRtl ? "flex-row-reverse" : ""}`}
                     >
                       <span
-                        className={`w-10 font-bold text-sm shrink-0 ${isRtl ? "text-right" : "text-left"}`}
+                        className={`w-10 font-bold text-sm shrink-0 flex flex-row-reverse ${isRtl ? "text-right" : "text-left"}`}
                       >
-                        {year}
+                        <span>{year}</span>{lang === "ar" ? <span>م</span> : ""}
                       </span>
                       <div
                         className={`flex-1 flex overflow-hidden h-7 ${isRtl ? "flex-row-reverse" : ""}`}

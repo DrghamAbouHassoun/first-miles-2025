@@ -73,7 +73,7 @@ const DonutChart = ({
               className="inline-block w-3.5 h-3.5 shrink-0"
               style={{ backgroundColor: seg.color }}
             />
-            <span className="font-medium">
+            <span className="font-medium flex gap-1">
               <span className="font-medium">
                 <CounterAnimation as="span" end={seg.value} decimals={2} separator="," duration={1.5} />
               </span>{" "}

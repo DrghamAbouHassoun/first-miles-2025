@@ -35,7 +35,7 @@ const GeoRevenueColumn = ({
               className={`flex items-center gap-2 ${isRtl ? "flex-row-reverse" : ""}`}
             >
               <span
-                className={`w-16 text-md font-bold text-fm-green shrink-0 ${isRtl ? "text-right" : "text-left"}`}
+                className={`w-23 text-md font-bold text-fm-green shrink-0 ${isRtl ? "text-right" : "text-left"}`}
               >
                 {t(`geoRevenue.${region.key}`)}
               </span>

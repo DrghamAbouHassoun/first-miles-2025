@@ -13,6 +13,7 @@ import SlideTopAnimation from "../../common/components/animations/SlideTopAnimat
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import useInView from "../../common/hooks/useInView";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const DONUT_RADIUS = 45;
 const DONUT_CIRCUMFERENCE = 2 * Math.PI * DONUT_RADIUS;
@@ -33,11 +34,12 @@ const CircularStat = ({
   sublabel: string;
 }) => {
   const { ref, inView } = useInView<SVGSVGElement>();
+  const { lang } = useLocale();
   const dashLength = (percentage / 100) * DONUT_CIRCUMFERENCE;
   const gap = DONUT_CIRCUMFERENCE - dashLength;
   return (
     <div className="flex items-center gap-5">
-      <div className="flex-1 lg:flex-auto">
+      <div className="">
         <PopupAnimation>
           <p className="font-bold text-white text-md leading-tight">{label}</p>
         </PopupAnimation>
@@ -73,8 +75,8 @@ const CircularStat = ({
           <span className="text-[38px] font-bold text-fm-green">
             <CounterAnimation
               end={Number(value.number)}
-              prefix={value.prefix}
-              suffix={value.suffix}
+              prefix={lang === "ar" ? value.suffix : value.prefix}
+              suffix={lang === "ar" ? value.prefix : value.suffix}
             />
           </span>
         </div>
@@ -161,7 +163,7 @@ const OperationalHighlights = () => {
             </div>
 
             {/* Production capacity */}
-            <div className="flex items-center lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
+            <div className="flex items-start lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
               <p className="text-sm text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation level="50" className="mb-0">
                   <span
@@ -186,7 +188,7 @@ const OperationalHighlights = () => {
             </div>
 
             {/* Kenan stake */}
-            <div className="flex items-center lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
+            <div className="flex items-start lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
               <p className="text-sm text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation>
                   {t("operationalHighlights.kenanStakeDescription")}
@@ -249,7 +251,7 @@ const OperationalHighlights = () => {
                   <img
                     src={icon}
                     alt=""
-                    className="w-fit h-20 object-contain"
+                    className={`w-fit h-20 object-contain ${lang === "ar" ? "rotate-y-180" : ""}`}
                   />
                 </PopupAnimation>
                 <SlideTopAnimation>
