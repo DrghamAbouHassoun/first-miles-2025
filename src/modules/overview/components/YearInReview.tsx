@@ -1,5 +1,4 @@
-import { useEffect, useRef, useContext } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { useContext } from "react";
 import YearInReviewBg from "../../../assets/images/backgrounds/year-in-review.jpg";
 import { SITE_NAME } from "../../../config/constants";
 import Container from "../../common/components/Container/Container";
@@ -11,64 +10,24 @@ import SeptemberImage from "../../../assets/images/year-in-review-monthes/septem
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
-import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
+import TimelineGalleryItem from "./TimelineGalleryItem";
 
 const TIMELINE_ITEMS = [
-  { key: "january", hasStat: false, image: JanuaryImage },
-  { key: "february", hasStat: false, image: undefined },
-  { key: "april", hasStat: true, image: undefined },
-  { key: "may", hasStat: false, image: undefined },
-  { key: "july", hasStat: false, image: undefined },
-  { key: "august", hasStat: false, image: undefined },
-  { key: "september", hasStat: false, image: SeptemberImage },
-  { key: "december", hasStat: false, image: undefined },
+  { key: "january",   hasStat: false, image: JanuaryImage,   offsetX: -15 },
+  { key: "february",  hasStat: false, image: undefined,      offsetX: -5  },
+  { key: "april",     hasStat: true,  image: undefined,      offsetX:  8  },
+  { key: "may",       hasStat: false, image: undefined,      offsetX: 18  },
+  { key: "july",      hasStat: false, image: undefined,      offsetX: 10  },
+  { key: "august",    hasStat: false, image: undefined,      offsetX:  0  },
+  { key: "september", hasStat: false, image: SeptemberImage, offsetX: -10 },
+  { key: "december",  hasStat: false, image: undefined,      offsetX: -5  },
 ] as const;
-
-const SECTION_HEIGHT_VH = (TIMELINE_ITEMS.length - 1) * 80 + 100;
 
 const YearInReview = () => {
   const { t } = useTranslation("overview");
   const { lang } = useContext(LangContext);
   const isRtl = lang === "ar";
-
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    axis: "x",
-    direction: isRtl ? "rtl" : "ltr",
-    dragFree: false,
-    containScroll: "trimSnaps",
-  });
-
-  useEffect(() => {
-    if (emblaApi) {
-      emblaApi.reInit({ direction: isRtl ? "rtl" : "ltr" });
-    }
-  }, [lang, emblaApi]);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section || !emblaApi) return;
-
-    const onScroll = () => {
-      const rect = section.getBoundingClientRect();
-      const scrollable = section.offsetHeight - window.innerHeight;
-      const scrolledIn = Math.max(0, -rect.top);
-      const progress = Math.min(1, Math.max(0, scrolledIn / scrollable));
-
-      const container = emblaApi.containerNode();
-      const viewport = container.parentElement as HTMLElement;
-      const maxTranslate = container.scrollWidth - viewport.clientWidth;
-      const translateX = isRtl
-        ? progress * maxTranslate
-        : -progress * maxTranslate;
-      container.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [emblaApi, isRtl]);
 
   return (
     <div>
@@ -94,143 +53,123 @@ const YearInReview = () => {
           </div>
         </Container>
       </div>
-      {/* Scroll-driven slider */}
+
+      {/* Parallax stack gallery */}
       <section
-        ref={sectionRef}
-        style={{ height: `${SECTION_HEIGHT_VH}vh` }}
         dir={isRtl ? "rtl" : "ltr"}
-        className="-mb-px"
+        className="relative py-32 overflow-hidden -mb-px"
       >
-        <div className="sticky top-0 h-screen overflow-hidden -mb-px">
-          {/* Background image */}
-          <div className="absolute inset-0">
-            <img
-              src={YearInReviewBg}
-              alt={SITE_NAME}
-              className="w-full h-screen object-cover object-bottom"
-            />
-          </div>
-          <div className="absolute inset-0" />
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={YearInReviewBg}
+            alt={SITE_NAME}
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
 
-          {/* Content */}
-          <div className="relative z-10 h-full flex flex-col justify-center px-4 md:px-32 py-50">
-            {/* Embla carousel */}
-            <div ref={emblaRef} className="overflow-visible z-20">
-              <div className="flex">
-                {TIMELINE_ITEMS.map(({ key, hasStat, image }) => (
-                  <div
-                    key={key}
-                    className="shrink-0 w-[80vw] sm:w-[44vw] md:w-[32vw] lg:w-[22vw] me-2 last:me-0 flex flex-col"
+        {/* Gallery track — items flow naturally, each self-animates via its own useScroll */}
+        <div className="relative z-10 w-full">
+          {TIMELINE_ITEMS.map(({ key, hasStat, image, offsetX }) => (
+            <TimelineGalleryItem
+              key={key}
+              image={image}
+              imageAlt={t(`yearInReviewContent.slider.items.${key}.month`)}
+              offsetX={offsetX}
+              isRtl={isRtl}
+            >
+              {/* Month label + divider */}
+              <div className="w-fit mb-4 max-w-45">
+                <SlideTopAnimation>
+                  <h4 className="text-fm-yellow font-bold text-4xl mb-2 w-fit">
+                    {t(`yearInReviewContent.slider.items.${key}.month`)}
+                  </h4>
+                </SlideTopAnimation>
+                <div className="w-full overflow-y-hidden">
+                  <SlideAsideAnimation
+                    level="50"
+                    side={lang === "ar" ? "left" : "right"}
                   >
-                    {/* Month label + divider — outside card */}
-                    <div className="w-fit mb-4 max-w-45">
-                      <SlideTopAnimation>
-                        <h4 className="text-fm-yellow font-bold text-4xl mb-2 w-fit">
-                          {t(`yearInReviewContent.slider.items.${key}.month`)}
-                        </h4>
-                      </SlideTopAnimation>
-                      <div className="w-full overflow-y-hidden">
-                        <SlideAsideAnimation
-                          level="50"
-                          side={lang === "ar" ? "left" : "right"}
-                        >
-                          <img
-                            src={VerticalSpikeShort}
-                            alt={SITE_NAME}
-                            className="w-60 h-auto"
-                          />
-                        </SlideAsideAnimation>
-                      </div>
-                    </div>
-
-                    {/* Card */}
-                    <div className=" flex flex-col flex-1 max-w-70">
-                      <SlideTopAnimation>
-                        <h3 className="text-white font-bold text-lg leading-snug mb-4">
-                          {t(`yearInReviewContent.slider.items.${key}.title`)}
-                        </h3>
-                      </SlideTopAnimation>
-                      <SlideTopAnimation>
-                        <p
-                          className="text-white text-base leading-relaxed"
-                          dangerouslySetInnerHTML={{
-                            __html: t(
-                              `yearInReviewContent.slider.items.${key}.desc`,
-                            ),
-                          }}
-                        ></p>
-                      </SlideTopAnimation>
-                      {t(`yearInReviewContent.slider.items.${key}.title2`) !==
-                        `yearInReviewContent.slider.items.${key}.title2` && (
-                        <SlideTopAnimation>
-                          <h3 className="text-white font-bold text-lg leading-snug mb-4">
-                            {t(
-                              `yearInReviewContent.slider.items.${key}.title2`,
-                            )}
-                          </h3>
-                        </SlideTopAnimation>
-                      )}
-                      {t(`yearInReviewContent.slider.items.${key}.desc2`) !==
-                        `yearInReviewContent.slider.items.${key}.desc2` && (
-                        <SlideTopAnimation>
-                          <p
-                            className="text-white text-base leading-relaxed"
-                            dangerouslySetInnerHTML={{
-                              __html: t(
-                                `yearInReviewContent.slider.items.${key}.desc2`,
-                              ),
-                            }}
-                          ></p>
-                        </SlideTopAnimation>
-                      )}
-
-                      {hasStat && (
-                        <div className="mt-4">
-                          <p className="text-5xl font-bold text-white">
-                            <CounterAnimation
-                              end={Number(
-                                t(
-                                  `yearInReviewContent.slider.items.${key}.stat.value`,
-                                ),
-                              )}
-                              suffix={t(
-                                `yearInReviewContent.slider.items.${key}.stat.suffix`,
-                              )}
-                            />
-                          </p>
-                          <SlideTopAnimation>
-                            <p className="text-fm-gray-100 text-xs mt-1">
-                              {t(
-                                `yearInReviewContent.slider.items.${key}.statLabel`,
-                              )}
-                            </p>
-                          </SlideTopAnimation>
-                        </div>
-                      )}
-
-                      {/* Placeholder image */}
-                      {image && (
-                        <div className="mt-5 h-46 overflow-hidden flex items-center justify-center">
-                          <PopupAnimation>
-                            <img
-                              src={image}
-                              alt={t(
-                                `yearInReviewContent.slider.items.${key}.month`,
-                              )}
-                              className="w-full h-full object-cover"
-                            />
-                          </PopupAnimation>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                    <img
+                      src={VerticalSpikeShort}
+                      alt={SITE_NAME}
+                      className="w-60 h-auto"
+                    />
+                  </SlideAsideAnimation>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 ">
-            <GroupOfSpikes />
-          </div>
+
+              {/* Card content */}
+              <div className="flex flex-col max-w-150">
+                <SlideTopAnimation>
+                  <h3 className="text-white font-bold text-lg leading-snug mb-4">
+                    {t(`yearInReviewContent.slider.items.${key}.title`)}
+                  </h3>
+                </SlideTopAnimation>
+                <SlideTopAnimation>
+                  <p
+                    className="text-white text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t(
+                        `yearInReviewContent.slider.items.${key}.desc`,
+                      ),
+                    }}
+                  />
+                </SlideTopAnimation>
+
+                {t(`yearInReviewContent.slider.items.${key}.title2`) !==
+                  `yearInReviewContent.slider.items.${key}.title2` && (
+                  <SlideTopAnimation>
+                    <h3 className="text-white font-bold text-lg leading-snug mt-4 mb-4">
+                      {t(`yearInReviewContent.slider.items.${key}.title2`)}
+                    </h3>
+                  </SlideTopAnimation>
+                )}
+                {t(`yearInReviewContent.slider.items.${key}.desc2`) !==
+                  `yearInReviewContent.slider.items.${key}.desc2` && (
+                  <SlideTopAnimation>
+                    <p
+                      className="text-white text-base leading-relaxed"
+                      dangerouslySetInnerHTML={{
+                        __html: t(
+                          `yearInReviewContent.slider.items.${key}.desc2`,
+                        ),
+                      }}
+                    />
+                  </SlideTopAnimation>
+                )}
+
+                {hasStat && (
+                  <div className="mt-4">
+                    <p className="text-5xl font-bold text-white">
+                      <CounterAnimation
+                        end={Number(
+                          t(
+                            `yearInReviewContent.slider.items.${key}.stat.value`,
+                          ),
+                        )}
+                        suffix={t(
+                          `yearInReviewContent.slider.items.${key}.stat.suffix`,
+                        )}
+                      />
+                    </p>
+                    <SlideTopAnimation>
+                      <p className="text-fm-gray-100 text-xs mt-1">
+                        {t(
+                          `yearInReviewContent.slider.items.${key}.statLabel`,
+                        )}
+                      </p>
+                    </SlideTopAnimation>
+                  </div>
+                )}
+              </div>
+            </TimelineGalleryItem>
+          ))}
+        </div>
+
+        <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 pointer-events-none">
+          <GroupOfSpikes />
         </div>
       </section>
     </div>
