@@ -73,11 +73,19 @@ const CircularStat = ({
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-[38px] font-bold text-fm-green">
-            <CounterAnimation
-              end={Number(value.number)}
-              prefix={lang === "ar" ? value.suffix : value.prefix}
-              suffix={lang === "ar" ? value.prefix : value.suffix}
-            />
+            {value.prefix ==="%" || value.suffix === "%" ? (
+              <CounterAnimation
+                end={Number(value.number)}
+                prefix={lang === "ar" ? value.suffix : value.prefix}
+                suffix={lang === "ar" ? value.prefix : value.suffix}
+              />
+            ) : (
+              <CounterAnimation
+                end={Number(value.number)}
+                prefix={value.prefix}
+                suffix={value.suffix}
+              />
+            )}
           </span>
         </div>
       </div>
@@ -179,9 +187,12 @@ const OperationalHighlights = () => {
                     end={Number(
                       t("operationalHighlights.productionCapacityValue.value"),
                     )}
-                    suffix={t(
+                    suffix={lang === "ar" ? "" : t(
                       "operationalHighlights.productionCapacityValue.suffix",
                     )}
+                    prefix={lang === "ar" ? t(
+                      "operationalHighlights.productionCapacityValue.suffix",
+                    ) : ""}
                   />
                 </span>
               </p>
@@ -198,7 +209,8 @@ const OperationalHighlights = () => {
                     end={Number(
                       t("operationalHighlights.kenanStakeValue.value"),
                     )}
-                    suffix={t("operationalHighlights.kenanStakeValue.suffix")}
+                    suffix={lang === "ar" ? "" : t("operationalHighlights.kenanStakeValue.suffix")}
+                    prefix={lang === "ar" ? t("operationalHighlights.kenanStakeValue.suffix") : ""}
                   />
                 </span>
                 <SlideTopAnimation>
@@ -300,7 +312,8 @@ const OperationalHighlights = () => {
                   end={Number(
                     t("operationalHighlights.marketShare.value.number"),
                   )}
-                  suffix={t("operationalHighlights.marketShare.value.suffix")}
+                  suffix={lang === "ar" ? "" : t("operationalHighlights.marketShare.value.suffix")}
+                  prefix={lang === "ar" ? t("operationalHighlights.marketShare.value.suffix") : ""}
                 />
               </p>
             </div>

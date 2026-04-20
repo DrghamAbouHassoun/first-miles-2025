@@ -80,6 +80,7 @@ type RegionKey = keyof typeof regionColors;
 
 const RevenueContributionChart = () => {
   const { t } = useTranslation("overview");
+  const { lang } = useContext(LangContext);
   let cumulativeLength = 0;
 
   const regionKeys = Object.keys(regionColors) as RegionKey[];
@@ -155,7 +156,7 @@ const RevenueContributionChart = () => {
                 style={{ backgroundColor: regionColors[key] }}
               />
               <span className="min-w-11 lg:min-w-13">
-                {regionValues[key].toString().padStart(2, "0")}%
+                {lang === "ar" ? "%" : ""}{regionValues[key].toString().padStart(2, "0")}{lang === "eng" ? "%" : ""}
               </span>
               <span
                 className="h-3.5 w-px shrink-0 lg:h-5"

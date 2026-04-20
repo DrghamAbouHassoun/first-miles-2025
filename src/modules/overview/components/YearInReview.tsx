@@ -154,9 +154,12 @@ const YearInReview = () => {
                               `yearInReviewContent.slider.items.${key}.stat.value`,
                             ),
                           )}
-                          suffix={t(
+                          suffix={lang === "en" ? t(
                             `yearInReviewContent.slider.items.${key}.stat.suffix`,
-                          )}
+                          ) : ""}
+                          prefix={lang === "ar" ? t(
+                            `yearInReviewContent.slider.items.${key}.stat.suffix`,
+                          ) : ""}
                         />
                       </p>
                       <SlideTopAnimation>

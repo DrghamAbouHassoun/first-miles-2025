@@ -15,48 +15,49 @@ const PL_YEARS: (number | string)[] = [2021, 2022, 2023, 2024, 2025, "YoY %"];
 const PL_HIGHLIGHT_COL = 4; // 2025 column index
 const PL_YOY_COL = 5; // YoY % column index
 
-const PL_DATA = [
+const PL_DATA = (lang: string) => {
+  return ([
   {
     key: "revenue",
-    values: ["801.0", "913.7", "964.3", "1,048.9", "1,146.4", "9.3%"],
+    values: ["801.0", "913.7", "964.3", "1,048.9", "1,146.4", lang === "en" ? "9.3%" : "%9.3"],
     bold: true,
   },
   {
     key: "costOfRevenue",
-    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(684.2)", "12.2%"],
+    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(684.2)", lang === "en" ? "12.2%" : "%12.2"],
     bold: false,
   },
   {
     key: "grossProfit",
-    values: ["331.5", "397.9", "413.1", "457.1", "462.2", "5.5%"],
+    values: ["331.5", "397.9", "413.1", "457.1", "462.2", lang === "en" ? "5.5%" : "%5.5"],
     bold: true,
   },
   {
     key: "generalAdminExpenses",
-    values: ["(33.9)", "(102.3)", "(78.1)", "(81.9)", "(75.0)", "8.4%"],
+    values: ["(33.9)", "(102.3)", "(78.1)", "(81.9)", "(75.0)", lang === "en" ? "8.4%" : "%8.4"],
     bold: false,
   },
   {
     key: "gaExpenses",
-    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(63.8)", "22.1%"],
+    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(63.8)", lang === "en" ? "22.1%" : "%22.1"],
     bold: false,
   },
   {
     key: "operatingProfit",
-    values: ["213.3", "255.6", "287.0", "318.5", "339.7", "6.7%"],
+    values: ["213.3", "255.6", "287.0", "318.5", "339.7", lang === "en" ? "6.7%" : "%6.7"],
     bold: true,
   },
   {
     key: "ebitda",
-    values: ["—", "—", "—", "—", "402.2", "7.5%"],
+    values: ["—", "—", "—", "—", "402.2", lang === "en" ? "7.5%" : "%7.5"],
     bold: false,
   },
   {
     key: "netProfit",
-    values: ["198.5", "217.5", "220.2", "250.9", "277.4", "10.6%"],
+    values: ["198.5", "217.5", "220.2", "250.9", "277.4", lang === "en" ? "10.6%" : "%10.6"],
     bold: false,
   },
-] as const;
+]) as const; };
 
 const CFOTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -71,7 +72,7 @@ const CFOTab = () => {
   const table = data.table ?? {};
   const charts = data.charts ?? {};
 
-  const tableRows = PL_DATA.map((row) => ({
+  const tableRows = PL_DATA(lang).map((row) => ({
     ...row,
     label: table[row.key] ?? row.key,
   }));
@@ -137,12 +138,12 @@ const CFOTab = () => {
               <div className="overflow-x-auto">
                 <table
                   className="w-full min-w-150 text-sm border-collapse"
-                  dir="ltr"
+                  dir={lang === "ar" ? "rtl" : "ltr"}
                 >
                   <thead>
                     <tr className="border-b-2 border-fm-green">
                       <th
-                        className="text-left py-2 pr-4 font-bold text-fm-green w-56"
+                        className={`${lang === "ar" ? "text-right pl-4" : "text-left pr-4"} py-2 font-bold text-fm-green w-56`}
                         dangerouslySetInnerHTML={{
                           __html: table.unit ?? "SAR",
                         }}
@@ -167,7 +168,7 @@ const CFOTab = () => {
                     {tableRows.map((row) => (
                       <tr key={row.key} className="border-b border-fm-green/20">
                         <td
-                          className={`py-2 pr-4 text-left ${row.bold ? "font-bold text-fm-green" : "text-fm-green/80"}`}
+                          className={`py-2 ${lang === "ar" ? "pl-4 text-right" : "pr-4 text-left"} ${row.bold ? "font-bold text-fm-green" : "text-fm-green/80"}`}
                         >
                           {row.label}
                         </td>

@@ -70,11 +70,11 @@ const TimelineGalleryItem = ({
       style={{ clipPath, opacity, scale, x }}
     >
       {image && (
-        <div className="relative w-auto aspect-video overflow-hidden mb-6">
+        <div className="relative w-full max-w-72 md:max-w-96 lg:max-w-110 aspect-video overflow-hidden mb-6">
           <motion.img
             src={image}
             alt={imageAlt ?? ""}
-            className="absolute inset-0 max-w-120 w-full h-full object-cover origin-center"
+            className="absolute inset-0 w-full h-full object-cover origin-center"
             style={{ scale: imageScale, y: imageY }}
           />
         </div>

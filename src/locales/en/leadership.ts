@@ -41,7 +41,7 @@ export default {
         heading: "Investing for scale, integration, and resilience",
         paragraphs: [
           "Capital investment and selective acquisitions were central to our progress in 2025. In the feed sector, we completed the acquisition of 100% of Al-Manar Feed Company, adding meaningful daily production capacity and strengthening our reach in the Western region. We also completed the acquisition of a 60% majority stake in Al-Kenan Al-Arabia Trading Company, enhancing distribution capabilities and supporting vertical integration across the feed value chain.",
-          "In flour milling, we advanced the construction of Mill C at our Al-Qassim site, a & 123 million investment that will significantly expand capacity upon completion in 2026. Mill C will add 600 tons of daily milling capacity. To support these initiatives, we secured a & 150 million financing facility, reflecting strong institutional confidence in our strategy. Together, these investments position First Mills to scale efficiently while maintaining operational resilience.",
+          "In flour milling, we advanced the construction of Mill C at our Al-Qassim site, a & 123 million investment that will significantly expand capacity upon completion in 2026. Mill C will add 600 tons of daily milling capacity. To support these initiatives, we secured a <i class='riyal-icon'></i> 150 million financing facility, reflecting strong institutional confidence in our strategy. Together, these investments position First Mills to scale efficiently while maintaining operational resilience.",
         ],
       },
       {

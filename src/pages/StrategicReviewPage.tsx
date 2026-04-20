@@ -7,14 +7,12 @@ import BusinessModelTab from "../modules/strategic-review/components/tabs/Busine
 import StrategyKPIsTab from "../modules/strategic-review/components/tabs/StrategyKPIsTab";
 import SaudiVision2030Tab from "../modules/strategic-review/components/tabs/SaudiVision2030Tab";
 import TechnologyInnovationTab from "../modules/strategic-review/components/tabs/TechnologyInnovationTab";
-import MarketOverviewTab from "../modules/strategic-review/components/tabs/MarketOverviewTab";
 
 type StrategicReviewSubPage =
   | "businessModel"
   | "strategyKPIs"
   | "saudiVision2030"
-  | "technologyInnovation"
-  | "marketOverview";
+  | "technologyInnovation";
 
 const StrategicReviewPage = () => {
   const { t } = useTranslation("strategic-review");
@@ -25,7 +23,6 @@ const StrategicReviewPage = () => {
     { key: "strategyKPIs", label: t("tabs.strategyKPIs") },
     { key: "saudiVision2030", label: t("tabs.saudiVision2030") },
     { key: "technologyInnovation", label: t("tabs.technologyInnovation") },
-    { key: "marketOverview", label: t("tabs.marketOverview") },
   ];
 
   return (
@@ -54,7 +51,6 @@ const StrategicReviewPage = () => {
         {subPage === "strategyKPIs" && <StrategyKPIsTab />}
         {subPage === "saudiVision2030" && <SaudiVision2030Tab />}
         {subPage === "technologyInnovation" && <TechnologyInnovationTab />}
-        {subPage === "marketOverview" && <MarketOverviewTab />}
       </div>
     </div>
   );

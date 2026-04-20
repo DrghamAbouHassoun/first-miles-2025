@@ -66,7 +66,10 @@ const BusinessModelTab = () => {
         </Container>
       </div>
       <div className="relative">
-        <div className="sticky top-0 h-screen w-full -z-10 overflow-hidden" style={{ marginBottom: "-100vh" }}>
+        <div
+          className="sticky top-0 h-screen w-full -z-10 overflow-hidden"
+          style={{ marginBottom: "-100vh" }}
+        >
           <ImageScaleAnimation
             src={BusinessModelBg}
             alt={SITE_NAME}
@@ -83,10 +86,14 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}
+                  ></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  ></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -122,10 +129,14 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}
+                  ></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  ></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -161,10 +172,14 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}
+                  ></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  ></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -211,10 +226,14 @@ const BusinessModelTab = () => {
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
                 >
                   {/* Base gradient */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/0 to-fm-yellow/80`}
+                  ></div>
 
                   {/* Hover gradient (fades in) */}
-                  <div className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}></div>
+                  <div
+                    className={`absolute inset-0 ${isAr ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow/60 to-fm-yellow/80 opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                  ></div>
 
                   {/* Content */}
                   <div className="relative z-10 flex items-center justify-between w-full">
@@ -236,19 +255,71 @@ const BusinessModelTab = () => {
                 >
                   <div className="overflow-hidden">
                     <ul className="mt-4 list-disc list-outside px-8 pt-8">
-                      <li>{t("businessModelContent.outputs.items.0")}</li>
-                      <li>{t("businessModelContent.outputs.items.1")}</li>
-                      <li>{t("businessModelContent.outputs.items.2")}</li>
-                      <li>{t("businessModelContent.outputs.items.3")}</li>
-                      <li>{t("businessModelContent.outputs.items.4")}</li>
-                      <li>{t("businessModelContent.outputs.items.5")}</li>
-                      <li>{t("businessModelContent.outputs.items.6")}</li>
-                      <li>{t("businessModelContent.outputs.items.7")}</li>
-                      <li>{t("businessModelContent.outputs.items.8")}</li>
-                      <li>{t("businessModelContent.outputs.items.9")}</li>
-                      <li>{t("businessModelContent.outputs.items.10")}</li>
-                      <li>{t("businessModelContent.outputs.items.11")}</li>
-                      <li>{t("businessModelContent.outputs.items.12")}</li>
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.0"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.1"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.2"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.3"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.4"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.5"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.6"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.7"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.8"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.9"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.10"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.11"),
+                        }}
+                      />
+                      <li
+                        dangerouslySetInnerHTML={{
+                          __html: t("businessModelContent.outputs.items.12"),
+                        }}
+                      />
                     </ul>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-4 pb-4">
                       {stackholdersIcons.map((icon, i) => {
@@ -268,9 +339,12 @@ const BusinessModelTab = () => {
                               </div>
                               {t(`${itemKey}.title`)}
                             </div>
-                            <p className="mt-2 text-sm">
-                              {t(`${itemKey}.description`)}
-                            </p>
+                            <p
+                              className="mt-2 text-sm"
+                              dangerouslySetInnerHTML={{
+                                __html: t(`${itemKey}.description`),
+                              }}
+                            />
                           </div>
                         );
                       })}
@@ -280,9 +354,9 @@ const BusinessModelTab = () => {
               </div>
             </div>
           </Container>
-            <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
-              <GroupOfSpikes />
-            </div>
+          <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+            <GroupOfSpikes />
+          </div>
         </div>
       </div>
     </div>

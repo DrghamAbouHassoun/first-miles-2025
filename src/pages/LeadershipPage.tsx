@@ -2,7 +2,6 @@ import { useState } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import LeadershipHeader from "../assets/images/headers/leadership.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
-import { useLocale } from "../modules/common/hooks/useLocale";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import ChairmanTab from "../modules/leadership/components/ChairmanTab";
 import CEOTab from "../modules/leadership/components/CEOTab";
@@ -12,7 +11,6 @@ type LeadershipTab = "chairman" | "ceo" | "cfo";
 
 const LeadershipPage = () => {
   const { t } = useTranslation("leadership");
-  const { lang } = useLocale();
   const [activeTab, setActiveTab] = useState<LeadershipTab>("chairman");
 
   const tabs: { key: LeadershipTab; label: string }[] = [
@@ -29,7 +27,7 @@ const LeadershipPage = () => {
         subtitle=""
       />
       <div
-        className={`flex flex-wrap w-full gap-4 justify-center items-center bg-fm-green p-6 ${lang === "ar" ? "flex-row-reverse" : "flex-row"} border-b border-fm-green/20`}
+        className={`flex flex-wrap w-full gap-4 justify-center items-center bg-fm-green p-6 flex-row border-b border-fm-green/20`}
       >
         {tabs.map((tab) => (
           <MainButton
