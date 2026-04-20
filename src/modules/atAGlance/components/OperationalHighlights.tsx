@@ -14,6 +14,7 @@ import CounterAnimation from "../../common/components/animations/CounterAnimatio
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import useInView from "../../common/hooks/useInView";
 import { useLocale } from "../../common/hooks/useLocale";
+import HoriLine from "../../common/components/Vectors/HoriLine";
 
 const DONUT_RADIUS = 45;
 const DONUT_CIRCUMFERENCE = 2 * Math.PI * DONUT_RADIUS;
@@ -73,7 +74,7 @@ const CircularStat = ({
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-[38px] font-bold text-fm-green">
-            {value.prefix ==="%" || value.suffix === "%" ? (
+            {value.prefix === "%" || value.suffix === "%" ? (
               <CounterAnimation
                 end={Number(value.number)}
                 prefix={lang === "ar" ? value.suffix : value.prefix}
@@ -123,30 +124,34 @@ const OperationalHighlights = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 items-start">
             {/* Plants */}
-            <div className="flex flex-col gap-2 h-full lg:border-e border-fm-yellow pe-4 lg:pe-6">
-              <div className="flex gap-2 items-start">
-                <PopupAnimation>
-                  <img
-                    src={NoOfPlantsIcon}
-                    alt=""
-                    className="w-18 h-18 object-contain"
-                  />
-                </PopupAnimation>
-                <span className="text-7xl font-bold text-white">
-                  <CounterAnimation
-                    end={Number(t("operationalHighlights.plants.value"))}
-                  />
-                </span>
+            <div className="relative flex h-full pe-4 lg:pe-6">
+              <div className="flex flex-col items-start gap-2 h-full">
+                <div className="flex gap-2 items-start">
+                  <PopupAnimation>
+                    <img
+                      src={NoOfPlantsIcon}
+                      alt=""
+                      className="w-18 h-18 object-contain"
+                    />
+                  </PopupAnimation>
+                  <span className="text-7xl font-bold text-white">
+                    <CounterAnimation
+                      end={Number(t("operationalHighlights.plants.value"))}
+                    />
+                  </span>
+                </div>
+                <SlideTopAnimation level="50">
+                  <span className="text-lg font-medium text-white">
+                    {t("operationalHighlights.plants.label")}
+                  </span>
+                </SlideTopAnimation>
               </div>
-              <SlideTopAnimation level="50">
-                <span className="text-lg font-medium text-white">
-                  {t("operationalHighlights.plants.label")}
-                </span>
-              </SlideTopAnimation>
+              <div className="absolute inset-e-0 top-0 bottom-0 hidden lg:block">
+                <HoriLine />
+              </div>
             </div>
-
             {/* Al Manar description */}
-            <div className="flex items-start lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
+            <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
               <p className="text-sm text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation level="50" className="mb-0">
                   <span
@@ -168,10 +173,13 @@ const OperationalHighlights = () => {
                   {t("operationalHighlights.alManarSuffix")}
                 </SlideTopAnimation>
               </p>
+              <div className="absolute inset-e-0 top-0 bottom-0 hidden lg:block">
+                <HoriLine />
+              </div>
             </div>
 
             {/* Production capacity */}
-            <div className="flex items-start lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
+            <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
               <p className="text-sm text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation level="50" className="mb-0">
                   <span
@@ -187,19 +195,30 @@ const OperationalHighlights = () => {
                     end={Number(
                       t("operationalHighlights.productionCapacityValue.value"),
                     )}
-                    suffix={lang === "ar" ? "" : t(
-                      "operationalHighlights.productionCapacityValue.suffix",
-                    )}
-                    prefix={lang === "ar" ? t(
-                      "operationalHighlights.productionCapacityValue.suffix",
-                    ) : ""}
+                    suffix={
+                      lang === "ar"
+                        ? ""
+                        : t(
+                            "operationalHighlights.productionCapacityValue.suffix",
+                          )
+                    }
+                    prefix={
+                      lang === "ar"
+                        ? t(
+                            "operationalHighlights.productionCapacityValue.suffix",
+                          )
+                        : ""
+                    }
                   />
                 </span>
               </p>
+              <div className="absolute inset-e-0 top-0 bottom-0 hidden lg:block">
+                <HoriLine />
+              </div>
             </div>
 
             {/* Kenan stake */}
-            <div className="flex items-start lg:col-span-1 h-full lg:border-e border-fm-yellow lg:px-12">
+            <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
               <p className="text-sm text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation>
                   {t("operationalHighlights.kenanStakeDescription")}
@@ -209,14 +228,25 @@ const OperationalHighlights = () => {
                     end={Number(
                       t("operationalHighlights.kenanStakeValue.value"),
                     )}
-                    suffix={lang === "ar" ? "" : t("operationalHighlights.kenanStakeValue.suffix")}
-                    prefix={lang === "ar" ? t("operationalHighlights.kenanStakeValue.suffix") : ""}
+                    suffix={
+                      lang === "ar"
+                        ? ""
+                        : t("operationalHighlights.kenanStakeValue.suffix")
+                    }
+                    prefix={
+                      lang === "ar"
+                        ? t("operationalHighlights.kenanStakeValue.suffix")
+                        : ""
+                    }
                   />
                 </span>
                 <SlideTopAnimation>
                   {t("operationalHighlights.kenanStakeSuffix")}
                 </SlideTopAnimation>
               </p>
+              <div className="absolute inset-e-0 top-0 bottom-0 hidden lg:block">
+                <HoriLine />
+              </div>
             </div>
 
             {/* Mills */}
@@ -254,10 +284,10 @@ const OperationalHighlights = () => {
             </h2>
           </SlideTopAnimation>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {capacityItems.map(({ key, icon }) => (
+            {capacityItems.map(({ key, icon }, index) => (
               <div
                 key={key}
-                className="flex flex-col lg:border-e last-of-type:border-0 border-fm-yellow lg:px-12 first-of-type:px-0"
+                className={`relative flex flex-col items-start h-full ${index === 0 ? "lg:pe-12" : "lg:px-12"}`}
               >
                 <PopupAnimation className="w-fit h-20">
                   <img
@@ -283,10 +313,17 @@ const OperationalHighlights = () => {
                   <p
                     className="text-md text-fm-gray-100"
                     dangerouslySetInnerHTML={{
-                      __html: t(`operationalHighlights.capacities.${key}.unit`),
+                      __html: t(
+                        `operationalHighlights.capacities.${key}.unit`,
+                      ),
                     }}
                   ></p>
                 </SlideTopAnimation>
+                {index < capacityItems.length - 1 && (
+                  <div className="absolute inset-e-0 top-0 bottom-0 hidden lg:block">
+                    <HoriLine />
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -312,8 +349,16 @@ const OperationalHighlights = () => {
                   end={Number(
                     t("operationalHighlights.marketShare.value.number"),
                   )}
-                  suffix={lang === "ar" ? "" : t("operationalHighlights.marketShare.value.suffix")}
-                  prefix={lang === "ar" ? t("operationalHighlights.marketShare.value.suffix") : ""}
+                  suffix={
+                    lang === "ar"
+                      ? ""
+                      : t("operationalHighlights.marketShare.value.suffix")
+                  }
+                  prefix={
+                    lang === "ar"
+                      ? t("operationalHighlights.marketShare.value.suffix")
+                      : ""
+                  }
                 />
               </p>
             </div>
