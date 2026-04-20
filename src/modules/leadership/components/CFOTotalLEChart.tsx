@@ -1,6 +1,8 @@
 import CountUpModule, { type CountUpProps } from "react-countup";
 import type React from "react";
 import useInView from "../../common/hooks/useInView";
+import { LangContext } from "../../common/contexts/LangProvider";
+import { useContext } from "react";
 
 const CountUp = ((CountUpModule as any).default ??
   CountUpModule) as React.FC<CountUpProps>;
@@ -27,9 +29,10 @@ interface CFOTotalLELabels {
 
 const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const { lang } = useContext(LangContext);
 
   return (
-    <div className="max-w-110 bg-fm-yellow-100 p-4">
+    <div dir={lang === "ar" ? "rtl" : "ltr"} className="max-w-150 bg-fm-yellow-100 p-4">
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.totalLETitle}{" "}
         <span
@@ -49,7 +52,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
               className="inline-block w-3.5 h-3.5 shrink-0"
               style={{ backgroundColor: color }}
             />
-            <span className="text-xs font-medium text-fm-green">{label}</span>
+            <span className="text-sm font-medium text-fm-green">{label}</span>
           </div>
         ))}
       </div>
@@ -62,9 +65,9 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
           const barWidthPct = (d.total / MAX_TOTAL) * 100;
 
           return (
-            <div key={d.year} className="flex items-center gap-2">
+            <div dir={lang === "ar" ? "rtl" : "ltr"} key={d.year} className="flex items-center gap-2">
               {/* Year label */}
-              <span className="text-xs font-bold text-fm-green w-9 shrink-0 text-right">
+              <span className=" font-bold text-fm-green w-8 shrink-0 text-right">
                 {d.year}
               </span>
 
@@ -85,7 +88,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                       backgroundColor: LIAB_COLOR,
                     }}
                   >
-                    <span className="text-[9px] font-bold text-white px-1 whitespace-nowrap">
+                    <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap">
                       {inView && (
                         <CountUp
                           end={d.liabilities}
@@ -103,7 +106,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                       backgroundColor: EQUITY_COLOR,
                     }}
                   >
-                    <span className="text-[9px] font-bold text-white px-1 whitespace-nowrap">
+                    <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap">
                       {inView && (
                         <CountUp end={d.total} decimals={1} duration={1.5} />
                       )}

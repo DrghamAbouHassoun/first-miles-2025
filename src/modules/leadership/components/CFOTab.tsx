@@ -24,12 +24,12 @@ const PL_DATA = (lang: string) => {
   },
   {
     key: "costOfRevenue",
-    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(684.2)", lang === "en" ? "12.2%" : "%12.2"],
+    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(664.2)", lang === "en" ? "12.2%" : "%12.2"],
     bold: false,
   },
   {
     key: "grossProfit",
-    values: ["331.5", "397.9", "413.1", "457.1", "462.2", lang === "en" ? "5.5%" : "%5.5"],
+    values: ["331.5", "397.9", "413.1", "457.1", "482.2", lang === "en" ? "5.5%" : "%5.5"],
     bold: true,
   },
   {
@@ -39,7 +39,7 @@ const PL_DATA = (lang: string) => {
   },
   {
     key: "gaExpenses",
-    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(63.8)", lang === "en" ? "22.1%" : "%22.1"],
+    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(67.8)", lang === "en" ? "22.1%" : "%22.1"],
     bold: false,
   },
   {
@@ -49,7 +49,7 @@ const PL_DATA = (lang: string) => {
   },
   {
     key: "ebitda",
-    values: ["—", "—", "—", "—", "402.2", lang === "en" ? "7.5%" : "%7.5"],
+    values: ["—", "—", "—", "374.2", "402.2", lang === "en" ? "7.5%" : "%7.5"],
     bold: false,
   },
   {
@@ -84,7 +84,7 @@ const CFOTab = () => {
           imageUrl={CFOImage}
           imageScale={1.6}
           imageTranslateX={27}
-          imageTranslateY={-50}
+          imageTranslateY={-60}
           title={data.name}
           subtitle={data.title}
           quotation={data.quote}
@@ -128,6 +128,8 @@ const CFOTab = () => {
               </div>
             )}
 
+            
+
             {/* Statement of Profit or Loss table */}
             <div className="mb-10">
               <h3 className="font-bold text-base mb-1">{table.title}</h3>
@@ -153,13 +155,13 @@ const CFOTab = () => {
                           key={String(y)}
                           className={`text-right py-2 px-3 font-bold whitespace-nowrap ${
                             yi === PL_YOY_COL
-                              ? "text-fm-gray-300"
+                              ? "text-black font-bold "
                               : yi === PL_HIGHLIGHT_COL
                                 ? "bg-fm-yellow-100 text-fm-green"
                                 : "text-fm-green"
                           }`}
                         >
-                          {y}
+                          {yi === PL_YOY_COL && lang === 'ar' ? <span>التغير على <br />أساس سنوي %</span> : y}
                         </th>
                       ))}
                     </tr>
@@ -177,7 +179,7 @@ const CFOTab = () => {
                             key={vi}
                             className={`py-2 px-3 text-right whitespace-nowrap ${
                               vi === PL_YOY_COL
-                                ? "text-fm-gray-300 font-medium"
+                                ? "text-black font-bold"
                                 : vi === PL_HIGHLIGHT_COL
                                   ? "bg-fm-yellow-100 font-bold text-fm-green"
                                   : row.bold
@@ -193,6 +195,34 @@ const CFOTab = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
+
+            {/* Section 1 – Revenue drivers and cost management */}
+            <div className="max-w-4xl space-y-8 mb-14">
+              {sections
+                .slice(1, 2)
+                .map(
+                  (
+                    section: { heading: string; paragraphs: string[] },
+                    i: number,
+                  ) => (
+                    <div key={i + 1}>
+                      <SlideTopAnimation>
+                        <h3 className="font-bold text-base mb-3">
+                          {section.heading}
+                        </h3>
+                      </SlideTopAnimation>
+                      {section.paragraphs.map((p: string, j: number) => (
+                        <SlideTopAnimation key={j}>
+                          <p
+                            className="text-sm leading-relaxed mb-3 last:mb-0"
+                            dangerouslySetInnerHTML={{ __html: p }}
+                          ></p>
+                        </SlideTopAnimation>
+                      ))}
+                    </div>
+                  ),
+                )}
             </div>
 
             {/* Bar Chart – Revenue */}
@@ -211,7 +241,7 @@ const CFOTab = () => {
             {/* Sections 1 & 2 – Revenue drivers + Cash flow */}
             <div className="max-w-4xl space-y-8 mb-14">
               {sections
-                .slice(1, 3)
+                .slice(2, 3)
                 .map(
                   (
                     section: { heading: string; paragraphs: string[] },
@@ -275,7 +305,7 @@ const CFOTab = () => {
             </div>
 
             {/* Key Balance Sheet Indicators chart */}
-            <div className="mb-14">
+            <div className="mb-14 w-full max-w-150">
               <CFOKeyIndicatorsChart
                 labels={{
                   keyIndicatorsTitle:

@@ -245,41 +245,49 @@ export default {
       highlightsLabel: "Quality and Assurance Highlights (2025)",
       stats: {
         plants: {
+          prefix: "",
           number: "05",
           label: "plants certified",
-          desc: "ISO 45001, ISO 9001, ISO 14001 and ISO 22000, plus FSSC 22000 V6 Certification, and HACCP and Halal",
+          desc: "<b>ISO 45001, ISO 9001, ISO 14001 and ISO 22000</b>, plus FSSC 22000 V6 Certification, and HACCP and Halal",
         },
         physicalTests: {
+          prefix: "",
           number: "598",
           label: "physical tests carried out per day",
           desc: "(avg.)",
         },
         trainingCourses: {
+          prefix: "",
           number: "09",
           label: "specialized quality training courses",
           highlight: "delivered",
         },
         qualityTests: {
+          prefix: "",
           number: "893,520",
           label: "quality tests conducted",
           desc: "across materials and finished goods",
         },
         employees: {
+          prefix: "",
           number: "171",
           label: "employees",
           desc: "trained in quality and food safety disciplines",
         },
         safeHours: {
+          prefix: "",
           number: "1,200,728",
           label: "safe operating hours recorded during the year,",
           highlight: "with 6 accidents and injuries compared to 9 last year",
         },
         microbiological: {
+          prefix: "",
           number: "ONE\nHUNDRED",
           label: "microbiological tests completed",
           highlight: "during the year",
         },
         chemicalTests: {
+          prefix: "",
           number: "1,750",
           label: "chemical tests carried out per day",
           desc: "(avg.)",

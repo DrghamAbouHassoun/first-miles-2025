@@ -222,7 +222,7 @@ const CFOFinancialPositionChart = ({
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.financialPositionTitle}{" "}
         <span className="font-normal text-sm text-fm-gray-300" dangerouslySetInnerHTML={{ __html: `(${labels.financialUnit})`}}>
-          
+
         </span>
       </p>
 
