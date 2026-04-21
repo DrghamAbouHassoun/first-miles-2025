@@ -9,55 +9,112 @@ import CFOBarChart from "./CFOBarChart";
 import CFOFinancialPositionChart from "./CFOFinancialPositionChart";
 import CFOTotalLEChart from "./CFOTotalLEChart";
 import CFOKeyIndicatorsChart from "./CFOKeyIndicatorsChart";
-import CFOQualitySection from "./CFOQualitySection";
+// import CFOQualitySection from "./CFOQualitySection";
 
 const PL_YEARS: (number | string)[] = [2021, 2022, 2023, 2024, 2025, "YoY %"];
 const PL_HIGHLIGHT_COL = 4; // 2025 column index
 const PL_YOY_COL = 5; // YoY % column index
 
 const PL_DATA = (lang: string) => {
-  return ([
-  {
-    key: "revenue",
-    values: ["801.0", "913.7", "964.3", "1,048.9", "1,146.4", lang === "en" ? "9.3%" : "%9.3"],
-    bold: true,
-  },
-  {
-    key: "costOfRevenue",
-    values: ["(469.5)", "(515.7)", "(551.1)", "(591.8)", "(664.2)", lang === "en" ? "12.2%" : "%12.2"],
-    bold: false,
-  },
-  {
-    key: "grossProfit",
-    values: ["331.5", "397.9", "413.1", "457.1", "482.2", lang === "en" ? "5.5%" : "%5.5"],
-    bold: true,
-  },
-  {
-    key: "generalAdminExpenses",
-    values: ["(33.9)", "(102.3)", "(78.1)", "(81.9)", "(75.0)", lang === "en" ? "8.4%" : "%8.4"],
-    bold: false,
-  },
-  {
-    key: "gaExpenses",
-    values: ["(17.8)", "(39.3)", "(47.8)", "(55.6)", "(67.8)", lang === "en" ? "22.1%" : "%22.1"],
-    bold: false,
-  },
-  {
-    key: "operatingProfit",
-    values: ["213.3", "255.6", "287.0", "318.5", "339.7", lang === "en" ? "6.7%" : "%6.7"],
-    bold: true,
-  },
-  {
-    key: "ebitda",
-    values: ["—", "—", "—", "374.2", "402.2", lang === "en" ? "7.5%" : "%7.5"],
-    bold: false,
-  },
-  {
-    key: "netProfit",
-    values: ["198.5", "217.5", "220.2", "250.9", "277.4", lang === "en" ? "10.6%" : "%10.6"],
-    bold: false,
-  },
-]) as const; };
+  return [
+    {
+      key: "revenue",
+      values: [
+        "801.0",
+        "913.7",
+        "964.3",
+        "1,048.9",
+        "1,146.4",
+        lang === "en" ? "9.3%" : "%9.3",
+      ],
+      bold: true,
+    },
+    {
+      key: "costOfRevenue",
+      values: [
+        "(469.5)",
+        "(515.7)",
+        "(551.1)",
+        "(591.8)",
+        "(664.2)",
+        lang === "en" ? "12.2%" : "%12.2",
+      ],
+      bold: false,
+    },
+    {
+      key: "grossProfit",
+      values: [
+        "331.5",
+        "397.9",
+        "413.1",
+        "457.1",
+        "482.2",
+        lang === "en" ? "5.5%" : "%5.5",
+      ],
+      bold: true,
+    },
+    {
+      key: "generalAdminExpenses",
+      values: [
+        "(33.9)",
+        "(102.3)",
+        "(78.1)",
+        "(81.9)",
+        "(75.0)",
+        lang === "en" ? "8.4%" : "%8.4",
+      ],
+      bold: false,
+    },
+    {
+      key: "gaExpenses",
+      values: [
+        "(17.8)",
+        "(39.3)",
+        "(47.8)",
+        "(55.6)",
+        "(67.8)",
+        lang === "en" ? "22.1%" : "%22.1",
+      ],
+      bold: false,
+    },
+    {
+      key: "operatingProfit",
+      values: [
+        "213.3",
+        "255.6",
+        "287.0",
+        "318.5",
+        "339.7",
+        lang === "en" ? "6.7%" : "%6.7",
+      ],
+      bold: true,
+    },
+    {
+      key: "ebitda",
+      values: [
+        "—",
+        "—",
+        "—",
+        "374.2",
+        "402.2",
+        lang === "en" ? "7.5%" : "%7.5",
+      ],
+      bold: false,
+    },
+    {
+      key: "netProfit",
+      values: [
+        "198.5",
+        "217.5",
+        "220.2",
+        "250.9",
+        "277.4",
+        lang === "en" ? "10.6%" : "%10.6",
+      ],
+      bold: false,
+    },
+  ] as const;
+};
 
 const CFOTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -128,15 +185,13 @@ const CFOTab = () => {
               </div>
             )}
 
-            
-
             {/* Statement of Profit or Loss table */}
             <div className="mb-10">
               <h3 className="font-bold text-base mb-1">{table.title}</h3>
-              <p
+              {/* <p
                 className="text-xs text-fm-gray-300 mb-4"
                 dangerouslySetInnerHTML={{ __html: `${table.unit}` }}
-              ></p>
+              ></p> */}
               <div className="overflow-x-auto">
                 <table
                   className="w-full min-w-150 text-sm border-collapse"
@@ -155,13 +210,20 @@ const CFOTab = () => {
                           key={String(y)}
                           className={`text-right py-2 px-3 font-bold whitespace-nowrap ${
                             yi === PL_YOY_COL
-                              ? "text-black font-bold "
+                              ? "text-black font-bold"
                               : yi === PL_HIGHLIGHT_COL
-                                ? "bg-fm-yellow-100 text-fm-green"
+                                ? "text-fm-green"
                                 : "text-fm-green"
                           }`}
                         >
-                          {yi === PL_YOY_COL && lang === 'ar' ? <span>التغير على <br />أساس سنوي %</span> : y}
+                          {yi === PL_YOY_COL && lang === "ar" ? (
+                            <span>
+                              التغير على <br />
+                              أساس سنوي %
+                            </span>
+                          ) : (
+                            y
+                          )}
                         </th>
                       ))}
                     </tr>
@@ -179,12 +241,10 @@ const CFOTab = () => {
                             key={vi}
                             className={`py-2 px-3 text-right whitespace-nowrap ${
                               vi === PL_YOY_COL
-                                ? "text-black font-bold"
+                                ? "text-black font-bold bg-fm-yellow-100"
                                 : vi === PL_HIGHLIGHT_COL
                                   ? "bg-fm-yellow-100 font-bold text-fm-green"
-                                  : row.bold
-                                    ? "font-bold text-fm-green"
-                                    : "text-fm-green/80"
+                                  : "text-fm-green/80"
                             }`}
                           >
                             {val}
@@ -335,8 +395,10 @@ const CFOTab = () => {
                         </SlideTopAnimation>
                         {section.paragraphs.map((p: string, j: number) => (
                           <SlideTopAnimation key={j}>
-                            <p className="text-sm leading-relaxed mb-3 last:mb-0" dangerouslySetInnerHTML={{ __html: p }}>
-                            </p>
+                            <p
+                              className="text-sm leading-relaxed mb-3 last:mb-0"
+                              dangerouslySetInnerHTML={{ __html: p }}
+                            ></p>
                           </SlideTopAnimation>
                         ))}
                       </div>
@@ -364,7 +426,7 @@ const CFOTab = () => {
         </div>
       </div>
 
-      {data.qualitySection && <CFOQualitySection data={data.qualitySection} />}
+      {/* {data.qualitySection && <CFOQualitySection data={data.qualitySection} />} */}
     </div>
   );
 };

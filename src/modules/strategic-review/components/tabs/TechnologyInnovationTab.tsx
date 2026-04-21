@@ -7,12 +7,14 @@ import { useEffect, useRef, useState } from "react";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
+import { useLocale } from "../../../common/hooks/useLocale";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
 
 const TechnologyInnovationTab = () => {
   const { t } = useTranslation("strategic-review");
+  const { lang } = useLocale();
   const [activePillar, setActivePillar] = useState<number | null>(0);
   const [isHovering, setIsHovering] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
@@ -103,15 +105,15 @@ const TechnologyInnovationTab = () => {
             {t("technologyInnovationContent.pillarsSectionSubtitle")}
           </h4>
         </Container>
-        <Container className="flex flex-col lg:flex-row gap-2 min-h-screen lg:min-h-180 h-fit mt-16">
+        <Container className={`flex flex-col ${lang === "ar" ? "lg:flex-row-reverse" : "lg:flex-row"} gap-2 min-h-screen lg:min-h-180 h-fit mt-16`}>
           <div className="flex-1 hidden lg:block">
             <div
-              className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-38 transition-all duration-700 ${activeItem === 2 ? "opacity-100" : "opacity-0"}`}
+              className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-24 transition-all duration-700 ${activeItem === 2 ? "opacity-100" : "opacity-0"}`}
             >
               <p>{t("technologyInnovationContent.pillars.2.content")}</p>
             </div>
             <div
-              className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-5 transition-all duration-700 ${activeItem === 3 ? "opacity-100" : "opacity-0"}`}
+              className={`bg-fm-green text-white w-full max-w-100 p-4 -translate-y-4 transition-all duration-700 ${activeItem === 3 ? "opacity-100" : "opacity-0"}`}
             >
               <p>{t("technologyInnovationContent.pillars.3.content")}</p>
             </div>
@@ -126,12 +128,12 @@ const TechnologyInnovationTab = () => {
           </div>
           <div className="flex-1 hidden lg:block">
             <div
-              className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-18 transition-all duration-700 ${activeItem === 0 ? "opacity-100" : "opacity-0"}`}
+              className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-8 transition-all duration-700 ${activeItem === 0 ? "opacity-100" : "opacity-0"}`}
             >
               <p>{t("technologyInnovationContent.pillars.2.content")}</p>
             </div>
             <div
-              className={`bg-fm-green text-white w-full max-w-100 p-4 -translate-y-16 transition-all duration-700 ${activeItem === 1 ? "opacity-100" : "opacity-0"}`}
+              className={`bg-fm-green text-white w-full max-w-100 p-4 -translate-y-24 transition-all duration-700 ${activeItem === 1 ? "opacity-100" : "opacity-0"}`}
             >
               <p>{t("technologyInnovationContent.pillars.3.content")}</p>
             </div>
