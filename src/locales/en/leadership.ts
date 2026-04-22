@@ -145,7 +145,7 @@ export default {
       "As Chief Financial Officer, I am pleased to report that the Company delivered strong financial performance while maintaining balance sheet resilience, strengthening cash generation, and investing to support long-term value creation. Our financial outcomes reflect a consistent approach. We expanded capacity where demand supported returns, strengthened portfolio mix toward higher-value products, and maintained cost discipline across operations. These actions reinforced profitability, enhanced cash flow generation, and positioned the Company for continued expansion in strategically important segments.",
     table: {
       title: "Statement of Profit or Loss",
-      unit: "<i class='riyal-icon'></i> mn",
+      unit: "<i class='riyal-icon'></i> million",
       revenue: "Revenue",
       costOfRevenue: "Cost of Revenue",
       grossProfit: "Gross Profit",
@@ -175,14 +175,14 @@ export default {
       keyIndicatorsTitle: "Key Balance Sheet Indicators",
       cashTitle: "Cash & Cash Equivalents",
       loansTitle: "Total Loans",
-      financialUnit: "<i class='riyal-icon'></i> mn",
+      financialUnit: "<i class='riyal-icon'></i> million",
     },
     sections: [
       {
         heading: "Financial performance and profitability",
         paragraphs: [
-          "First Mills delivered solid financial results in 2025, reflecting both operational momentum and effective cost management. Total revenue for the year reached <i class='riyal-icon'></i> 1,146.4 mn, an increase of 9.3% year-on-year, supported by volume growth, product mix improvements, and expanded market reach across core and adjacent categories. Revenue performance was underpinned by steady demand across flour and feed segments, alongside continued portfolio diversification.<br /><br />",
-          "Profitability strengthened in line with operational scale and efficiency gains. EBITDA reached <i class='riyal-icon'></i> 402.2 mn, up 7.5% year-on-year, reflecting improved operating leverage and disciplined cost control. Operating profit totalled <i class='riyal-icon'></i> 339.7 mn, while net profit attributable to shareholders reached <i class='riyal-icon'></i> 277.4 mn for the full year, an increase of 10.6%, demonstrating the scalability of the Company's operating model and its ability to convert revenue growth into bottom-line performance. Gross margin stood at 42.1%, supported by stable direct costs, improved extraction efficiency and enhanced operational performance across production facilities.<br /><br />",
+          "First Mills delivered solid financial results in 2025, reflecting both operational momentum and effective cost management. Total revenue for the year reached <i class='riyal-icon'></i> 1,146.4 million, an increase of 9.3% year-on-year, supported by volume growth, product mix improvements, and expanded market reach across core and adjacent categories. Revenue performance was underpinned by steady demand across flour and feed segments, alongside continued portfolio diversification.<br /><br />",
+          "Profitability strengthened in line with operational scale and efficiency gains. EBITDA reached <i class='riyal-icon'></i> 402.2 million, up 7.5% year-on-year, reflecting improved operating leverage and disciplined cost control. Operating profit totalled <i class='riyal-icon'></i> 339.7 million, while net profit attributable to shareholders reached <i class='riyal-icon'></i> 277.4 million for the full year, an increase of 10.6%, demonstrating the scalability of the Company's operating model and its ability to convert revenue growth into bottom-line performance. Gross margin stood at 42.1%, supported by stable direct costs, improved extraction efficiency and enhanced operational performance across production facilities.<br /><br />",
           "Margin performance was further supported by portfolio optimization and higher capacity utilization, particularly in core milling operations and specialized product categories. These structural improvements continue to reinforce profitability resilience across market cycles.",
         ],
       },
@@ -190,7 +190,7 @@ export default {
         heading: "Revenue drivers and operational performance",
         paragraphs: [
           "Revenue growth in 2025 was supported by strong execution across the Company's operating platform. Growth reflected a combination of increased production volumes, improved product mix and sustained demand across key customer segments.<br /><br />",
-          "In the flour segment, revenue was driven primarily by volume and mix expansion of 9.3%, with Flour contributing 25.3%. The Feed segment achieved 9.6% volume growth of <i class='riyal-icon'></i> 351.7 mn (30.7% of revenue), reflecting strategic investment in higher-growth segments including the Al-Manar and AATC acquisitions that sized the Company's integrated feed platform. Bran revenues fell to <i class='riyal-icon'></i> 143 mn. This balanced product mix supports more stable revenue generation and reduces dependence on any single category.<br /><br />",
+          "In the flour segment, revenue was driven primarily by volume and mix expansion of 9.3%, with Flour contributing 25.3%. The Feed segment achieved 9.6% volume growth of <i class='riyal-icon'></i> 351.7 million (30.7% of revenue), reflecting strategic investment in higher-growth segments including the Al-Manar and AATC acquisitions that sized the Company's integrated feed platform. Bran revenues fell to <i class='riyal-icon'></i> 143 million. This balanced product mix supports more stable revenue generation and reduces dependence on any single category.<br /><br />",
           "Our 9.3% revenue growth was driven primarily by volume and mix expansion of 9.1%, with pricing contributing 0.2%. The Flour segment achieved 8.6% volume growth despite a 0.6% pricing headwind, while Durum products delivered an exceptional 57.9% sales growth (+56.1% volume/mix), reinforcing their strategic importance. The Feed segment posted a robust 12.8% growth (+13.0% volume/mix, -0.3% pricing), supported by the Al-Manar and <br />Al-Kenan Al-Arabia Trading Company (AATC) acquisitions. Bran volumes declined 0.4% as we strategically prioritized higher-margin feed production, demonstrating disciplined portfolio optimization.<br /><br />",
           "Revenue expansion was supported by capacity additions, operational efficiency improvements and continued demand for both staple and specialized products. Production utilization remained high across milling and feed facilities, enabling the Company to meet market demand while maintaining consistent product quality and cost discipline.<br /><br />",
         ],

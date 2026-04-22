@@ -67,7 +67,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
           return (
             <div dir={lang === "ar" ? "rtl" : "ltr"} key={d.year} className="flex items-center gap-2">
               {/* Year label */}
-              <span className=" font-bold text-fm-green w-8 shrink-0 text-right">
+              <span className=" font-bold text-fm-green w-10 shrink-0 text-right">
                 {d.year}
               </span>
 

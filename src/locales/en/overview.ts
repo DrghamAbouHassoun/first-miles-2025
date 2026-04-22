@@ -314,15 +314,26 @@ export default {
         name: "Shareholders and Investors",
         sections: [
           {
-            title: "How Often We Engage",
+            title: "How We Engage",
             bullets: [
-              "Annual General Meetings (AGM)",
-              "Earnings conference calls with analysts and investors",
+              "Annual General Meetings (AGM) ",
+              "Earnings conference calls with analysts and investors ",
               "Regular investor meetings",
               "Investor relations conferences and forums",
               "Disclosure of financial statements, performance reports and material announcements",
               "Investor Relations (IR) channels",
               "Dividend distribution",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Annual General Meeting (AGM) ",
+              "Quarterly earnings calls",
+              "Periodic and Financial Results",
+              "Investor meetings throughout the year ",
+              "Annual investor relations conferences",
+              "Dividend distribution"
             ],
           },
           {
@@ -362,7 +373,7 @@ export default {
         name: "Employees",
         sections: [
           {
-            title: "How Often We Engage",
+            title: "How We Engage",
             bullets: [
               "Training and development programs",
               "Workshops and skill-building courses",
@@ -416,58 +427,10 @@ export default {
         ],
       },
       {
-        name: "Suppliers",
-        sections: [
-          {
-            title: "How Often We Engage",
-            bullets: [
-              "Strengthening relationships with suppliers and vendors",
-              "Contractual and legal compliance communications",
-              "Procurement coordination",
-            ],
-          },
-          {
-            title: "How Often We Engage",
-            bullets: [
-              "Regularly throughout the year",
-              "As required for supply chain and procurement cycles",
-            ],
-          },
-          {
-            title: "Key Topics Discussed",
-            bullets: [
-              "Procurement compliance",
-              "Pricing and delivery performance",
-              "Innovation and sustainability",
-              "Ethical and fair dealing",
-              "Supply quality and safety",
-            ],
-          },
-          {
-            title: "Key Actions",
-            bullets: [
-              "Positioning First Mills as the preferred partner for suppliers",
-              "Maintained compliance with legal and contractual obligations",
-              "Strengthened vendor partnerships",
-              "Improved supply chain reliability",
-            ],
-          },
-          {
-            title: "Value Created",
-            bullets: [
-              "Reliable, high-quality supply of raw materials",
-              "Long-term supplier trust",
-              "Operational stability",
-              "Ethical and responsible sourcing supporting sustainability",
-            ],
-          },
-        ],
-      },
-      {
         name: "Customers",
         sections: [
           {
-            title: "How Often We Engage",
+            title: "How We Engage",
             bullets: [
               "Market research across Saudi Arabia",
               "Customer segmentation targeting different regions and categories",
@@ -538,29 +501,24 @@ export default {
           {
             title: "Key Topics Discussed",
             bullets: [
-              "Employee well-being and satisfaction",
               "Environmental responsibility",
               "Social well-being",
-              "Health, safety, and nutrition awareness",
+              "Health, safety and nutrition awareness",
               "Community development",
               "Sustainability",
               "Ethical sourcing",
-              "Energy and water conservation",
-              "Engagement and motivation",
-              "Career development and retention",
-              "Workplace safety",
-              "Anti-harassment and non-discrimination policies",
+              "Energy and water conservation"
             ],
           },
           {
             title: "Key Actions",
             bullets: [
-              "Reduced energy and water consumption through rationalization",
-              "Supported local communities through donations",
-              "Implementing CSR programs",
-              "Implementing heat treatment technology to reduce environmental impact of operations",
-              "Commitment to investing in the community",
-              "Maintaining ethical practices in material sourcing and responsible marketing",
+              "Reduced energy and water use through rationalization",
+              "Supported local communities via donations",
+              "Implemented CSR programs",
+              "Adopted heat-treatment technology to cut operational environmental impact",
+              "Commitment to community investment",
+              "Upheld ethical material sourcing and responsible marketing"
             ],
           },
           {
@@ -624,6 +582,54 @@ export default {
               "Strengthened standing with authorities",
               "Zero penalties or violations",
               "Alignment with National Vision 2030",
+            ],
+          },
+        ],
+      },
+      {
+        name: "Suppliers",
+        sections: [
+          {
+            title: "How We Engage",
+            bullets: [
+              "Strengthening relationships with suppliers and vendors",
+              "Contractual and legal compliance communications",
+              "Procurement coordination",
+            ],
+          },
+          {
+            title: "How Often We Engage",
+            bullets: [
+              "Regularly throughout the year",
+              "As required for supply chain and procurement cycles",
+            ],
+          },
+          {
+            title: "Key Topics Discussed",
+            bullets: [
+              "Procurement compliance",
+              "Pricing and delivery performance",
+              "Innovation and sustainability",
+              "Ethical and fair dealing",
+              "Supply quality and safety",
+            ],
+          },
+          {
+            title: "Key Actions",
+            bullets: [
+              "Positioning First Mills as the preferred partner for suppliers",
+              "Maintained compliance with legal and contractual obligations",
+              "Strengthened vendor partnerships",
+              "Improved supply chain reliability",
+            ],
+          },
+          {
+            title: "Value Created",
+            bullets: [
+              "Reliable, high-quality supply of raw materials",
+              "Long-term supplier trust",
+              "Operational stability",
+              "Ethical and responsible sourcing supporting sustainability",
             ],
           },
         ],

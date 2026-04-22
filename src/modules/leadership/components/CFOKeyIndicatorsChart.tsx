@@ -53,7 +53,7 @@ const HorizontalBarPanel = ({
       <div className="space-y-2">
         {data.map((d) => (
           <div key={d.year} className="flex items-center gap-0">
-            <span className="font-bold text-fm-green w-10 shrink-0 text-start">
+            <span className="font-bold text-fm-green w-12 shrink-0 text-start">
               {d.year}
             </span>
             <div className="flex-1 h-6 flex items-center ">
