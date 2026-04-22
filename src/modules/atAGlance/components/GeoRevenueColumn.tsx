@@ -3,6 +3,7 @@ import { LangContext } from "../../common/contexts/LangProvider";
 import { GEO_BAR_MAX, type geoData } from "../data";
 import useInView from "../../common/hooks/useInView";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
+import { useTranslation } from "../../common/hooks/useTranslation";
 
 const GeoRevenueColumn = ({
   year,
@@ -15,6 +16,7 @@ const GeoRevenueColumn = ({
   total: number;
   t: (key: string) => string;
 }) => {
+  const { t: translate } = useTranslation("at-a-glance");
   const { lang } = useContext(LangContext);
   const isRtl = lang === "ar";
   const { ref, inView } = useInView<HTMLDivElement>();
@@ -22,11 +24,16 @@ const GeoRevenueColumn = ({
   return (
     <div className="flex-1 min-w-0">
       <div className="w-fit mb-3">
-        <p className="text-xl font-bold text-fm-yellow ">{year}</p>
-        <div className={`h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_70%,#FFFFFF_100%)] ${lang === "ar" ? "rotate-y-180" : ""}`} />
+        <p className="text-xl font-bold text-fm-yellow ">
+          {year}
+          {lang === "ar" ? "م" : ""}
+        </p>
+        <div
+          className={`h-1 mt-1 mb-3 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_70%,#FFFFFF_100%)] ${lang === "ar" ? "rotate-y-180" : ""}`}
+        />
       </div>
       <div className="flex flex-col gap-2" dir="ltr" ref={ref}>
-        {regions.map((region) => {
+        {regions.map((region, index) => {
           const value = region.values[year as keyof typeof region.values];
           const pct = (value / GEO_BAR_MAX) * 100;
           return (
@@ -59,7 +66,13 @@ const GeoRevenueColumn = ({
               <span
                 className={`w-16 text-md font-bold text-fm-green shrink-0 flex gap-1 ${isRtl ? "text-left" : "text-right"}`}
               >
-                <CounterAnimation as="span" end={value} decimals={2} separator="," duration={1.5} />
+                <CounterAnimation
+                  as="span"
+                  end={value}
+                  decimals={index === 0 && value === 532.41 ? 2 : 1}
+                  separator=","
+                  duration={1.5}
+                />
                 {region.hasFootnote ? t("geoRevenue.jeddahMark") : ""}
               </span>
             </div>
@@ -72,10 +85,21 @@ const GeoRevenueColumn = ({
             {t("geoRevenue.total")}
           </span>
           <span className="text-sm font-bold text-fm-green">
-            <CounterAnimation as="span" end={total} decimals={2} separator="," duration={1.5} />
+            <CounterAnimation
+              as="span"
+              end={total}
+              decimals={2}
+              separator=","
+              duration={1.5}
+            />
           </span>
         </div>
       </div>
+      {year === 2025 && (
+        <p className="text-xs text-end font-thin text-fm-gray-300 mt-4">
+          {translate("financialHighlights.geoRevenue.jeddahFootnote")}
+        </p>
+      )}
     </div>
   );
 };

@@ -70,17 +70,17 @@ const regionColors = {
 } as const;
 
 const regionValues = {
-  westernSouthern: 47,
-  central: 34,
-  eastern: 9,
-  northern: 10,
+  westernSouthern: 46,
+  central: 32,
+  eastern: 11,
+  northern: 11,
 } as const;
 
 type RegionKey = keyof typeof regionColors;
 
 const RevenueContributionChart = () => {
   const { t } = useTranslation("overview");
-  const { lang } = useContext(LangContext);
+  // const { lang } = useContext(LangContext);
   let cumulativeLength = 0;
 
   const regionKeys = Object.keys(regionColors) as RegionKey[];
@@ -109,22 +109,42 @@ const RevenueContributionChart = () => {
               const dashGap = CHART_CIRCUMFERENCE - dashLength;
               const dashOffset = -cumulativeLength;
 
+              const startAngle = (cumulativeLength / CHART_CIRCUMFERENCE) * 360 - 92;
+              const midAngleRad = ((startAngle + (value / 100) * 180) * Math.PI) / 180;
+              const lx = 70 + CHART_RADIUS * Math.cos(midAngleRad);
+              const ly = 70 + CHART_RADIUS * Math.sin(midAngleRad);
+
               cumulativeLength += dashLength;
 
               return (
-                <circle
-                  key={key}
-                  cx="70"
-                  cy="70"
-                  r={CHART_RADIUS}
-                  fill="none"
-                  stroke={regionColors[key]}
-                  strokeWidth="16"
-                  strokeDasharray={`${dashLength} ${dashGap}`}
-                  strokeDashoffset={dashOffset}
-                  strokeLinecap="butt"
-                  transform="rotate(-92 70 70)"
-                />
+                <g key={key}>
+                  <circle
+                    cx="70"
+                    cy="70"
+                    r={CHART_RADIUS}
+                    fill="none"
+                    stroke={regionColors[key]}
+                    strokeWidth="16"
+                    strokeDasharray={`${dashLength} ${dashGap}`}
+                    strokeDashoffset={dashOffset}
+                    strokeLinecap="butt"
+                    transform="rotate(-92 70 70)"
+                  />
+                  <text
+                    x={lx}
+                    y={ly}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontSize="7.5"
+                    fontWeight="normal"
+                    fill={value === 46 ? "black" :"white"}
+                    // stroke="#1a3a30"
+                    strokeWidth="0.4"
+                    paintOrder="stroke"
+                  >
+                    {value}%
+                  </text>
+                </g>
               );
             })}
           </svg>
@@ -148,7 +168,7 @@ const RevenueContributionChart = () => {
           </div>
         </div>
 
-        <ul className="space-y-1.5 text-xs text-white">
+        {/* <ul className="space-y-1.5 text-xs text-white">
           {regionKeys.map((key) => (
             <li key={key} className="flex items-center gap-2">
               <span
@@ -167,7 +187,7 @@ const RevenueContributionChart = () => {
               </span>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

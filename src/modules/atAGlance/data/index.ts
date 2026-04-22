@@ -2,8 +2,8 @@
 export const BAR_MAX = 1400;
 
 export const revenueData = [
-  { year: 2025, value: 1147.78, color: "#162f29" },
-  { year: 2024, value: 1048.85, color: "#fcb44a" },
+  { year: 2025, value: 1146.4, color: "#162f29" },
+  { year: 2024, value: 1048.9, color: "#fcb44a" },
 ];
 
 export const productRevenueData = [
@@ -73,14 +73,14 @@ export const geoData = {
     },
     {
       key: "tabuk",
-      color: "#9a9ea0",
+      color: "#6c7175",
       textColor: "#ffffff",
       hasFootnote: false,
       values: { 2025: 125.7, 2024: 117.9 },
     },
     {
       key: "alAhsa",
-      color: "#e0e2e3",
+      color: "#9a9ea0",
       textColor: "#162f29",
       hasFootnote: false,
       values: { 2025: 124.2, 2024: 128.9 },

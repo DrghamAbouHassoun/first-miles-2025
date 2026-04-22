@@ -26,5 +26,14 @@ export function useTranslation(namespace: string) {
     return Array.isArray(result) ? (result as string[]) : [];
   }
 
-  return { t, tArray };
+  function tRaw<T = unknown>(key: string): T | undefined {
+    const parts = key.split(".");
+    let result: unknown = dict;
+    for (const part of parts) {
+      result = (result as Record<string, unknown>)?.[part];
+    }
+    return result as T | undefined;
+  }
+
+  return { t, tArray, tRaw };
 }

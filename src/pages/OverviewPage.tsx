@@ -20,11 +20,11 @@ type OverviewSubPage =
 
 const OverviewPage = () => {
   const { t } = useTranslation("overview");
-  const [subPage, setSubPage] = useState<OverviewSubPage>("atAGlance");
+  const [subPage, setSubPage] = useState<OverviewSubPage>("themeOfTheYear");
 
   const tabs: { key: OverviewSubPage; label: string }[] = [
-    { key: "atAGlance", label: t("tabs.atAGlance") },
     { key: "themeOfTheYear", label: t("tabs.themeOfTheYear") },
+    { key: "atAGlance", label: t("tabs.atAGlance") },
     { key: "yearInReview", label: t("tabs.yearInReview") },
     { key: "geographicPresence", label: t("tabs.geographicPresence") },
     { key: "investmentCase", label: t("tabs.investmentCase") },
@@ -53,8 +53,8 @@ const OverviewPage = () => {
         ))}
       </div>
       <div>
-        {subPage === "atAGlance" && <AtAGlanceTab />}
         {subPage === "themeOfTheYear" && <ThemeOfTheYear />}
+        {subPage === "atAGlance" && <AtAGlanceTab />}
         {subPage === "yearInReview" && <YearInReview />}
         {subPage === "geographicPresence" && <GeographicPresence />}
         {subPage === "investmentCase" && <InvestmentCase />}

@@ -63,7 +63,7 @@ const ProfitBarGroup = ({
                     <CounterAnimation
                       as="span"
                       end={value}
-                      decimals={2}
+                      decimals={1}
                       separator=","
                       duration={1.5}
                     />

@@ -130,6 +130,28 @@
   animation-name: SlideLeft100;
 }
 
+@keyframes SlideLeft20 {
+  from {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-left-20 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(20%);
+  opacity: 0;
+}
+
+.animation-slide-left-20.active {
+  animation-name: SlideLeft20;
+}
+
 @keyframes SlideRight50 {
   from {
     transform: translateX(-50%);
@@ -175,6 +197,27 @@
   animation-name: SlideRight100;
 }
 
+@keyframes SlideRight20 {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-slide-right-20 {
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transform: translateX(-20%);
+  opacity: 0;
+}
+
+.animation-slide-right-20.active {
+  animation-name: SlideRight20;
+}
 
 @keyframes Popup {
   from {

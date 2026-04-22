@@ -130,7 +130,7 @@ const FinancialHighlights = () => {
                         <CounterAnimation
                           as="span"
                           end={value}
-                          decimals={2}
+                          decimals={1}
                           separator=","
                           duration={1.5}
                         />
@@ -189,9 +189,10 @@ const FinancialHighlights = () => {
           dangerouslySetInnerHTML={{ __html: `(${geoUnit})` }}
         ></p>
         <div
-          className={`flex flex-col sm:flex-row gap-10 sm:gap-12 ${lang === "ar" ? "sm:flex-row-reverse" : ""}`}
+          className={`flex flex-col sm:flex-row gap-10 sm:gap-12 `}
         >
           {geoData.years.map((year) => (
+            <>
             <GeoRevenueColumn
               key={year}
               year={year}
@@ -199,11 +200,12 @@ const FinancialHighlights = () => {
               total={geoData.totals[year as keyof typeof geoData.totals]}
               t={tGeo}
             />
+            </>
           ))}
         </div>
-        <p className="text-xs font-thin text-fm-gray-300 mt-4">
+        {/* <p className="text-xs text-end font-thin text-fm-gray-300 mt-4">
           {t("financialHighlights.geoRevenue.jeddahFootnote")}
-        </p>
+        </p> */}
       </div>
     </section>
   );

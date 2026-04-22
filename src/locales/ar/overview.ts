@@ -5,8 +5,8 @@ export default {
       "تتبوأ المطاحن الأولى موقعاً محورياً ضمن منظومة الغذاء في المملكة العربية السعودية، مستندة إلى انتشار واسع على مستوى المملكة، وأصول متنوعة، وثقافة مؤسسية ترتكز على الجودة.",
   },
   tabs: {
-    atAGlance: "لمحة عامة",
-    themeOfTheYear: "موضوع العام",
+    atAGlance: "النتائج والإنجازات",
+    themeOfTheYear: "شعار العام",
     yearInReview: "مراجعة العام",
     geographicPresence: "الحضور الجغرافي",
     investmentCase: "مزايا الاستثمار",
@@ -82,18 +82,18 @@ export default {
         },
         notes: ["أعلاف"],
       },
-      djibouti: {
-        name: "جيبوتي",
-        tons: {
-          value: "46",
-          suffix: " طن",
-        },
-        sar: {
-          value: "86250",
-          suffix: " <i class='riyal-icon'></i>",
-        },
-        notes: ["دوروم"],
-      },
+      // djibouti: {
+      //   name: "جيبوتي",
+      //   tons: {
+      //     value: "46",
+      //     suffix: " طن",
+      //   },
+      //   sar: {
+      //     value: "86250",
+      //     suffix: " <i class='riyal-icon'></i>",
+      //   },
+      //   notes: ["دوروم"],
+      // },
       egypt: {
         name: "مصر",
         tons: {
@@ -109,7 +109,7 @@ export default {
       syria: {
         name: "سوريا",
         tons: {
-          value: "0.34",
+          value: "34",
           suffix: " طن",
         },
         sar: {

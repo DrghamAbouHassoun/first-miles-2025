@@ -14,7 +14,7 @@ const MARKET_KEYS = [
   "qatar",
   "iraq",
   "kuwait",
-  "djibouti",
+  // "djibouti",
   "egypt",
   "syria",
 ] as const;

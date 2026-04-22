@@ -1,0 +1,77 @@
+import { SITE_NAME } from "../../../config/constants";
+import PopupAnimation from "../../common/components/animations/PopupAnimation";
+import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
+import Container from "../../common/components/Container/Container";
+import { useLocale } from "../../common/hooks/useLocale";
+
+interface ORHeaderProps {
+  title: string;
+  subtitle: string;
+  desc: string;
+  bgImage: string;
+  brandImage: string;
+}
+
+const ORHeader = ({
+  title,
+  subtitle,
+  desc,
+  bgImage,
+  brandImage,
+}: ORHeaderProps) => {
+  const { lang } = useLocale();
+  return (
+    <div className="w-full relative">
+      <div className="absolute inset-0 -z-10 w-full h-full top-0 left-0">
+        <img
+          src={bgImage}
+          alt="Operating Review Header"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="w-full h-full bg-fm-green/70 py-32">
+        <Container>
+          <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-4 text-white">
+            <div className="flex-1">
+              <SlideAsideAnimation
+                level="20"
+                side={lang === "ar" ? "left" : "right"}
+              >
+                <h2
+                  className="text-3xl text-fm-yellow font-bold mb-4"
+                  dangerouslySetInnerHTML={{ __html: title }}
+                ></h2>
+              </SlideAsideAnimation>
+              <SlideAsideAnimation
+                level="20"
+                side={lang === "ar" ? "left" : "right"}
+              >
+                <h3 className="text-base font-bold">{subtitle}</h3>
+              </SlideAsideAnimation>
+              <SlideAsideAnimation
+                level="20"
+                side={lang === "ar" ? "left" : "right"}
+              >
+                <p
+                  className="mt-4"
+                  dangerouslySetInnerHTML={{ __html: desc }}
+                ></p>
+              </SlideAsideAnimation>
+            </div>
+            <div className="flex-1 flex justify-center items-center">
+              <PopupAnimation>
+                <img
+                  src={brandImage}
+                  alt={`${title} | ${SITE_NAME}`}
+                  className="w-full h-auto object-contain max-w-120"
+                />
+              </PopupAnimation>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
+  );
+};
+
+export default ORHeader;

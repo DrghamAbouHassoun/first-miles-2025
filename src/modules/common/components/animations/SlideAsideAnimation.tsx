@@ -3,7 +3,7 @@ import useInView from "../../hooks/useInView";
 
 interface SlideAsideAnimationProps extends HTMLAttributes<HTMLDivElement> {
   side: "left" | "right";
-  level: "50" | "100";
+  level: "50" | "100" | "20";
 }
 
 const SlideAsideAnimation = ({ side, level, ...props }: SlideAsideAnimationProps) => {

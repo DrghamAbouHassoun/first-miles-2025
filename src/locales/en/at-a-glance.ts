@@ -102,7 +102,7 @@ export default {
       pestControl:
         "First-of-its-kind chemical-free pest control solution in Saudi Arabia",
       solarProject:
-        "Signed a contract for a <br /><b class='text-fm-yellow '> 9.3 Mwp</b><br /> solar power project, with installation in Tabuk and Al-Ahsa scheduled for Q2–Q3 of 2026.",
+        "Signed a contract for a <br /><b class='text-fm-yellow '> 9.3 MWp</b><br /> solar power project, with installation in Tabuk and Al-Ahsa scheduled for Q2–Q3 of 2026.",
       communityInvestment:
         "Invested approximately <br /><strong class='text-fm-yellow'><i class='riyal-icon'></i> 230,000</strong> in<br />  community initiatives",
       employeeAwards:
@@ -127,7 +127,7 @@ export default {
       },
       meira: {
         title: "Best Investor Relations Film – 2nd place",
-        desc: "Awarded by the Middle East Investor Relations Association, recognizing the company's investor-communication film as the region's runner-up.",
+        desc: "Awarded by the Middle East Investor Relations Association.",
       },
       iaommea: {
         title: "Appreciation Award – Local Host and Platinum Sponsor",
@@ -138,8 +138,8 @@ export default {
         desc: "Acknowledged by the International Association of Operative Millers (IAOM) – Middle East & Africa Region, for significant contribution to the planning and execution of the 35th IAOM MEA Conference & Expo, Jeddah.",
       },
       saudiAgriculture: {
-        title: "Saudi Agriculture Conference – Participation Award",
-        desc: "Recognized at the Saudi Agriculture Conference for active participation and contribution to advancing the agricultural and food industry in the Kingdom.",
+        title: "Industry Awards and Recognitions",
+        desc: "Awarded by Saudi Agricultural Expo, a sector-level commendation highlighting excellence in feed and animal nutrition products.",
       },
     },
   },

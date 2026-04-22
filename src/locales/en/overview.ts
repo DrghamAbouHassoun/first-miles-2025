@@ -86,18 +86,18 @@ export default {
         },
         notes: ["Feed"],
       },
-      djibouti: {
-        name: "Djibouti",
-        tons: {
-          value: "46",
-          suffix: " tons",
-        },
-        sar: {
-          value: "86250",
-          suffix: " <i class='riyal-icon'></i>",
-        },
-        notes: ["Durum"],
-      },
+      // djibouti: {
+      //   name: "Djibouti",
+      //   tons: {
+      //     value: "46",
+      //     suffix: " tons",
+      //   },
+      //   sar: {
+      //     value: "86250",
+      //     suffix: " <i class='riyal-icon'></i>",
+      //   },
+      //   notes: ["Durum"],
+      // },
       egypt: {
         name: "Egypt",
         tons: {
@@ -113,7 +113,7 @@ export default {
       syria: {
         name: "Syria",
         tons: {
-          value: "0.34",
+          value: "34",
           suffix: " tons",
         },
         sar: {
@@ -128,32 +128,32 @@ export default {
     plants: {
       tabuk: {
         name: "Tabuk Plant",
-        silosStorage: "10,000 Metric Tons",
-        millingCapacity: "600 Ton/Day",
+        silosStorage: "10,000 metric tons",
+        millingCapacity: "600 tons/Day",
       },
       alQassim: {
         name: "Al Qassim Plant",
-        silosStorage: "60,000 Metric Tons",
-        millingCapacity: "900 Ton/Day",
-        feedCapacity: "600 Ton/Day",
+        silosStorage: "60,000 metric tons",
+        millingCapacity: "900 tons/Day",
+        feedCapacity: "600 tons/Day",
       },
       alAhsa: {
         name: "Al Ahsa Plant",
-        silosStorage: "30,000 Metric Tons",
-        millingCapacity: "600 Ton/Day",
+        silosStorage: "30,000 metric tons",
+        millingCapacity: "600 tons/Day",
       },
       jeddah: {
         name: "Jeddah Plant",
-        silosStorage: "120,000 Metric Tons",
-        millingCapacity: "3,050 Ton/Day",
-        feedCapacity: "300 Ton/Day",
-        durumCapacity: "300 Tons/Day",
+        silosStorage: "120,000 metric tons",
+        millingCapacity: "3,050 tons/Day",
+        feedCapacity: "300 tons/Day",
+        durumCapacity: "300 tons/Day",
         note: "*The pre-mix plant is located here with a capacity of 240 tons per day, plus 500 tons increase for Mill (C) and (A) combined and 150 tons for Pesa Mill.",
       },
       alManar: {
         name: "Al Manar Feed Plant",
-        silosStorage: "30,000 Metric Tons",
-        feedCapacity: "450 Tons/Day",
+        silosStorage: "30,000 metric tons",
+        feedCapacity: "450 tons/Day",
       },
     },
     labels: {
@@ -181,7 +181,7 @@ export default {
       title:
         "A year of progress shaped by scale, discipline, and strategic ambition",
       p1: "First Mills advanced its growth agenda through disciplined execution, targeted investments, and continued leadership across flour, feed, and value-added categories. ",
-      p2: "The year brought meaningful steps forward in capacity expansion, portfolio diversification, customer engagement, and organizational excellence, supported by a strengthened market position and a clear commitment to sustainable value creation for all stakeholders.",
+      p2: "The year brought meaningful steps forward in capacity expansion, portfolio diversification, customer engagement, and organizational excellence, supported by a strengthened market position and a clear commitment to sustainable value creation for all Stakeholders.",
     },
     slider: {
       title: "Year in Review",
@@ -248,8 +248,8 @@ export default {
       {
         title: "Market leadership with nationwide scale",
         bullets: [
-          "We hold a leading share of the Saudi flour milling market at around 31% of flour production and sales, with FY2025 flour volumes increasing by xx% year-on-year.",
-          "We operate five mills across all major regions, enabling broad national coverage and reliable supply, with total daily wheat milling capacity of 5,159 and daily feed capacity of 1,350, and a capacity utilization rate of 94% in 2025.",
+          "We hold a leading share of the Saudi flour milling market at around 30% of flour production and sales, with FY2025 flour volumes increasing by 9% year-on-year.",
+          "We operate five mills across all major regions, enabling broad national coverage and reliable supply, with total daily wheat milling capacity of 5,150 and daily feed capacity of 1,350 and a capacity utilization rate of 94% in 2025.",
           "We serve more than <strong>7,500</strong> direct and indirect customers across industrial, food service, trade and retail channels.",
           "We are the only Saudi milling company with dedicated production capability for durum semolina and related durum-based products.",
         ],
@@ -275,7 +275,7 @@ export default {
       {
         title: "Strong financial fundamentals and experienced leadership",
         bullets: [
-          "Our financial indicators reflect a solid position supported by ecient operations, strong liquidity and access to financing, as demonstrated by FY2025:",
+          "Our financial indicators reflect a solid position supported by effcient operations, strong liquidity and access to financing, as demonstrated by FY2025:",
           "We generate high returns through disciplined execution and a resilient business model, supported by a dividend payout ratio of 63%.",
           "Our management team brings more than 200 years of combined experience across milling, manufacturing, supply chain and food industries.",
           "We operate in a supportive Saudi economic environment backed by rising demand, a growing population and diverse consumer preferences.",
@@ -291,13 +291,13 @@ export default {
             "Operating cash flow",
           ],
           values: [
-            "1,146.4 mln <i class='riyal-icon'></i>",
-            "402.2 mln <i class='riyal-icon'></i>",
-            "277.4 mln <i class='riyal-icon'></i>",
+            "<i class='riyal-icon'></i> 1,146.4 mln",
+            "<i class='riyal-icon'></i>402.2 mln",
+            "<i class='riyal-icon'></i> 277.4 mln",
             "25.9%",
-            "(184.2) mln <i class='riyal-icon'></i>",
-            "93.3 mln <i class='riyal-icon'></i>",
-            "342.1 mln <i class='riyal-icon'></i>",
+            "<i class='riyal-icon'></i> (184.2) mln",
+            "<i class='riyal-icon'></i> 93.3 mln",
+            "<i class='riyal-icon'></i>342.1 mln",
           ],
           cashBalance: "",
         },

@@ -55,7 +55,7 @@ const DonutChart = ({
           })}
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-2">
-          <span className="text-[14px] italic font-bold text-fm-green leading-tight">
+          <span className="text-[14px] font-bold text-fm-green leading-tight">
             {totalLabel} {year}{lang === "ar" ? "م" : ""}
           </span>
           <span className="text-base font-bold text-fm-yellow leading-tight">
@@ -75,7 +75,7 @@ const DonutChart = ({
             />
             <span className="font-medium flex gap-1">
               <span className="font-medium">
-                <CounterAnimation as="span" end={seg.value} decimals={2} separator="," duration={1.5} />
+                <CounterAnimation as="span" end={seg.value} decimals={1} separator="," duration={1.5} />
               </span>{" "}
               | {labels[seg.key]}
             </span>

@@ -1,3 +1,4 @@
+import ContactModal from "../../../home/components/ContactModal"
 import { useLocale } from "../../hooks/useLocale"
 import Menu from "./Menu"
 import Navbar from "./Navbar"
@@ -12,6 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
   const { lang } = useLocale()
   return (
     <div className={`w-full min-h-screen ${lang === "ar" ? "font-arabic" : "font-gotham"} relative`} dir={lang === "ar" ? "rtl" : "ltr"}>
+      <ContactModal />
       <Navbar />
       <Menu />
       <SocialLinks />

@@ -2,8 +2,6 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { SITE_NAME } from "../../../config/constants";
 import YellowSpike from "../../../assets/icons/spike-yellow.svg";
 // import GrayGroupOfSpikes from "../../../assets/icons/gray-group-of-spikes.svg";
-import { HomeModalContext } from "../contexts/HomeModalProvider";
-import { useContext } from "react";
 // import MainButton from "../../common/components/buttons/MainButton";
 import HomeHeader from "../../../assets/images/headers/home.jpg";
 import HomeMobileHeader from "../../../assets/images/headers/home-mobile.jpg";
@@ -16,7 +14,6 @@ import { useLocale } from "../../common/hooks/useLocale";
 const Hero = () => {
   const { t } = useTranslation("home");
   const { lang } = useLocale();
-  const { toggleModel } = useContext(HomeModalContext);
   return (
     <>
       {/* Desktop Hero - Hidden on small screens */}
@@ -153,14 +150,14 @@ const Hero = () => {
                 {t("hero.subtitle2")}
               </p>
             </div>
-            <div className="animate-fade-in animate-delay-5s">
+            {/* <div className="animate-fade-in animate-delay-5s">
               <button
                 onClick={() => toggleModel(true)}
                 className="bg-linear-to-r from-fm-yellow to-fm-green hover:to-fm-yellow transition-colors duration-500 text-white w-fit px-4 py-1 text-lg font-bold rounded-tl-md mt-6"
               >
                 {t("hero.modalButton")}
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="flex-1 flex w-full justify-end pb-24 pt-14 relative animate-fade-in animate-delay-5s">
             {/* <div className="rounded-3xl overflow-hidden w-full h-auto duration-500 max-w-125">

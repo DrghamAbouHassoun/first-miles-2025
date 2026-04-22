@@ -11,4 +11,11 @@ export default {
     "download": "تحميل",
     "language": "English",
   },
+  contact: {
+    "investors": "قسم علاقات المستثمرين",
+    "address": "العنوان",
+    "phone": "الهاتف",
+    "po_box": "ص.ب",
+    "email": "البريد الإلكتروني",
+  }
 };

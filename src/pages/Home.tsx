@@ -1,12 +1,10 @@
 import Hero from "../modules/home/components/Hero";
-import HomeModal from "../modules/home/components/HomeModal";
-import HomeModalProvider from "../modules/home/contexts/HomeModalProvider";
+import HomeModalProvider from "../modules/home/contexts/ContactModalProvider";
 
 
 const Home = () => {
   return (
     <HomeModalProvider>
-      <HomeModal />
       <Hero />
     </HomeModalProvider>
   );
