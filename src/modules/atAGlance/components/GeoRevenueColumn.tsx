@@ -64,7 +64,7 @@ const GeoRevenueColumn = ({
                 />
               </div>
               <span
-                className={`w-16 text-md font-bold text-fm-green shrink-0 flex gap-1 ${isRtl ? "text-left" : "text-right"}`}
+                className={`w-16 text-md font-bold text-fm-green shrink-0 flex gap-1 ${isRtl ? "text-left flex-row-reverse" : "text-right"}`}
               >
                 <CounterAnimation
                   as="span"
@@ -73,7 +73,7 @@ const GeoRevenueColumn = ({
                   separator=","
                   duration={1.5}
                 />
-                {region.hasFootnote ? t("geoRevenue.jeddahMark") : ""}
+                {region.hasFootnote && value === 532.4 ? t("geoRevenue.jeddahMark") : ""}
               </span>
             </div>
           );
