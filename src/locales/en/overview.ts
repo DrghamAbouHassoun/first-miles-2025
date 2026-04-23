@@ -177,6 +177,7 @@ export default {
     },
   },
   yearInReviewContent: {
+    pageTitle: "Year in Review",
     yearOfProgress: {
       title:
         "A year of progress shaped by scale, discipline, and strategic ambition",
@@ -241,6 +242,7 @@ export default {
     },
   },
   investmentCaseContent: {
+    pageTitle: "Investment Case",
     title: "A resilient growth platform in Saudi Arabia’s food ecosystem",
     description:
       "First Mills offers a compelling investment opportunity built on scale, quality and consistent value creation. Our nationwide footprint, diversified portfolio, resilient operating model and strong financial fundamentals position us to capture long-term growth in a strategically important sector for Saudi Arabia. We continue to expand capacity, advance technology and strengthen our leadership across flour, feed and value-added products, creating a balanced platform with enduring competitive advantages.",

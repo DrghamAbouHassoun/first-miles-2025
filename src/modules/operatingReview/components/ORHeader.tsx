@@ -63,7 +63,7 @@ const ORHeader = ({
                 <img
                   src={brandImage}
                   alt={`${title} | ${SITE_NAME}`}
-                  className="w-full h-auto object-contain max-w-120"
+                  className="w-full h-auto object-contain max-w-120 animate-bounce"
                 />
               </PopupAnimation>
             </div>

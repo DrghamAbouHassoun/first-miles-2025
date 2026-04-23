@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
-import SustainabilityReviewHeader from "../assets/images/headers/at-a-glance.jpg";
+import SustainabilityReviewHeader from "../assets/images/headers/sustainability-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import Approach from "../modules/sustainability/Approach";

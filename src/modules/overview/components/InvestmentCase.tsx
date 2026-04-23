@@ -71,9 +71,12 @@ const InvestmentCase = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="py-20 bg-fm-yellow-100">
+      <div className="py-16 bg-fm-yellow-100">
         <Container>
           <div>
+            <SlideTopAnimation>
+              <h1 className="text-2xl font-bold text-fm-green mb-6">{t("investmentCaseContent.pageTitle")}</h1>
+            </SlideTopAnimation>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow mb-4 font-bold text-lg max-w-160">
                 {t("investmentCaseContent.title")}

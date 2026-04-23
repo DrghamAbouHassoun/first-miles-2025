@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
-import OperatingReviewHeader from "../assets/images/headers/at-a-glance.jpg";
+import OperatingReviewHeader from "../assets/images/headers/operating-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import FirstMillsBrandTab from "../modules/operatingReview/components/FirstMillsBrandTab";

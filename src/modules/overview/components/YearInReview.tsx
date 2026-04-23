@@ -36,6 +36,9 @@ const YearInReview = () => {
         <Container>
           <div className="py-16">
             <SlideTopAnimation>
+              <h1 className="text-2xl font-bold text-fm-green mb-6">{t("yearInReviewContent.pageTitle")}</h1>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
               <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
                 {t("yearInReviewContent.yearOfProgress.title")}
               </h3>

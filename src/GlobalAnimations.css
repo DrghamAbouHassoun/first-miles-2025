@@ -281,3 +281,22 @@
 .animation-image-scale.active {
   animation-name: ImageScale;
 }
+
+@keyframes Bounce {
+  0% {
+    transform: translateY(-16px);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
+
+.animate-bounce {
+  transform: translateY(-16px);
+  animation-name: Bounce;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
