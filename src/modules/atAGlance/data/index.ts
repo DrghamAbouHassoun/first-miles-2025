@@ -20,8 +20,8 @@ export const productRevenueData = [
     year: 2024,
     total: 1048.9,
     segments: [
-      { key: "flour", value: 311.9, color: "#162f29" },
-      { key: "feed", value: 599.1, color: "#fcb44a" },
+      { key: "flour", value: 599.1, color: "#162f29" },
+      { key: "feed", value: 311.9, color: "#fcb44a" },
       { key: "bran", value: 137.8, color: "#e0e2e3" },
     ],
   },
