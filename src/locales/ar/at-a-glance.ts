@@ -16,20 +16,20 @@ export default {
       "الاستحواذ <b>على شركة المنار للأعلاف المحدودة</b> ورفع الطاقة الإنتاجية اليومية للأعلاف بمقدار",
     alManarHighlight: {
       value: "450",
-      suffix: "طن",
+      suffix: "طناَ",
     },
     alManarSuffix: "",
-    productionCapacityDescription: "بلغت معدلات استغلال السعة الإنتاجية حاجز",
+    productionCapacityDescription: "بلوغ معدلات استغلال السعة الإنتاجية حاجز",
     productionCapacityValue: {
       value: "94",
       suffix: "%",
     },
-    kenanStakeDescription: "استحوذت على حصة",
+    kenanStakeDescription: "الاستحواذ على نسبة",
     kenanStakeValue: {
       value: "60",
       suffix: "%",
     },
-    kenanStakeSuffix: "في شركة كنان العربية للتجارة",
+    kenanStakeSuffix: "في شركة الكنان العربية للتجارة",
     mills: {
       value: "15",
       label: "عدد المطاحن",
@@ -38,7 +38,7 @@ export default {
       title: "السعة الإنتاجية",
       silosStorage: {
         label:
-          "الاستحواذ على شركة المنار للأعلاف المحدودة ورفع الطاقة الإنتاجية اليومية للأعلاف بمقدار",
+          "السعة التخزينية الإجمالية للصوامع",
         value: "250000",
         unit: "طن",
       },

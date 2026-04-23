@@ -74,7 +74,7 @@ export default {
         number: "7500",
         prefix: "+",
       },
-      label: "customers",
+      label: "",
     },
     productSales: {
       title: "Product & Sales Overview",

@@ -62,7 +62,7 @@ export const geoData = {
       color: "#162f29",
       textColor: "#ffffff",
       hasFootnote: true,
-      values: { 2025: 532.41, 2024: 472.4 },
+      values: { 2025: 532.4, 2024: 472.4 },
     },
     {
       key: "qassim",
