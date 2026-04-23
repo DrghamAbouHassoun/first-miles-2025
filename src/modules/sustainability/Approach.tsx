@@ -13,9 +13,12 @@ const Approach = () => {
         <Container>
           <div className="max-w-220">
             <SlideTopAnimation>
-              <h2 className="text-2xl font-bold text-fm-yellow mb-4">
-                {t("sustainabilityApproach.title")}
-              </h2>
+              <h2
+                className="text-2xl font-bold text-fm-yellow mb-4"
+                dangerouslySetInnerHTML={{
+                  __html: t("sustainabilityApproach.title"),
+                }}
+              ></h2>
             </SlideTopAnimation>
             <SlideTopAnimation>
               <p

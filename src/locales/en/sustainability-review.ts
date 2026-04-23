@@ -11,7 +11,7 @@ export default {
     social: "Driving Social Change",
   },
   sustainabilityApproach: {
-    title: "Sustaining progress through",
+    title: "Sustaining progress through <br />responsible growth",
     desc: "At First Mills, sustainability is embedded in how we grow, operate, and create long-term value. As a company positioned at the heart of the Kingdom’s food system, our performance is inseparable from the health of natural resources, the strength of communities, and the integrity of the systems that support responsible production.<br />Through disciplined management, measurable targets, and continuous improvement, we are strengthening resilience across our operations while contributing to national priorities and the broader transition toward a more sustainable and inclusive future.",
     p1: "At First Mills, sustainability begins with a fundamental understanding of our role in the Kingdom’s food system. As a leading milling and food company, we operate at the heart of national priorities related to food security, nutrition, and economic development. Our responsibility extends beyond delivering products. It includes safeguarding resources, strengthening communities, and operating with integrity.",
     p2: "Our approach is structured around three core pillars that reflect where we have the greatest impact: protecting the natural environment, creating social value, and upholding responsible governance. These pillars provide a focused framework that aligns our operations with Saudi Vision 2030 and relevant international standards. They guide how we allocate resources, measure performance, and shape long-term strategy.",

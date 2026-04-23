@@ -5,6 +5,7 @@ import StrategicReviewPage from "../pages/StrategicReviewPage";
 import LeadershipPage from "../pages/LeadershipPage";
 import OperatingReviewPage from "../pages/OperatingReviewPage";
 import SustainabilityReviewPage from "../pages/SustainabilityReviewPage";
+import FinancialStatementsPage from "../pages/FinancialStatementsPage";
 import Home from "../pages/Home";
 import DownloadCenter from "../pages/DownloadCenter";
 
@@ -40,6 +41,12 @@ export const pages = [
     isNavVisible: true,
   },
   {
+    path: "financial-statements",
+    name: "Financial Statements",
+    component: <FinancialStatementsPage />,
+    isNavVisible: true,
+  },
+  {
     path: "download-center",
     name: "Download Center",
     component: <DownloadCenter />,
@@ -60,6 +67,8 @@ const Router = () => {
       return <OperatingReviewPage />;
     case "sustainability-review":
       return <SustainabilityReviewPage />;
+    case "financial-statements":
+      return <FinancialStatementsPage />;
     case "download-center":
       return <DownloadCenter />;
     default:

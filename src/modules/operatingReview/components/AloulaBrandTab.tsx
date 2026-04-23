@@ -12,14 +12,14 @@ const AloulaBrandTab = () => {
   const { lang } = useLocale();
   const paragraphs =
     tRaw<Array<{ title: string; desc: string }>>(
-      "aloulaBrand.paragraphs",
+      "aloulaContent.paragraphs",
     ) ?? [];
   return (
     <div className="relative">
       <ORHeader
-        title={t("aloulaBrand.title")}
-        subtitle={t("aloulaBrand.subtitle")}
-        desc={t("aloulaBrand.desc")}
+        title={t("aloulaContent.title")}
+        subtitle={t("aloulaContent.subtitle")}
+        desc={t("aloulaContent.desc")}
         bgImage={aloulaBg}
         brandImage={aloulaBrand}
       />
@@ -27,7 +27,7 @@ const AloulaBrandTab = () => {
         <Container>
           <div className="max-w-220 text-fm-green">
             <SlideTopAnimation>
-              <p className="font-bold">{t("aloulaBrand.intro")}</p>
+              <p className="font-bold">{t("aloulaContent.intro")}</p>
             </SlideTopAnimation>
             {paragraphs.map((paragraph, index) => (
               <div key={index} className="mt-8">

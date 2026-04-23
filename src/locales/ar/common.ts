@@ -6,6 +6,7 @@ export default {
     "leadership": "القيادة",
     "operating-review": "المراجعة التشغيلية",
     "sustainability-review": "مراجعة الاستدامة",
+    "financial-statements": "القوائم المالية",
   },
   buttons: {
     "download": "تحميل",

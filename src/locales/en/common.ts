@@ -6,6 +6,7 @@ export default {
     "leadership": "Leadership",
     "operating-review": "Operating Review",
     "sustainability-review": "Sustainability Review",
+    "financial-statements": "Financial Statements",
   },
   buttons: {
     "download": "Download",

@@ -9,6 +9,7 @@ import enStrategicReview from "../../../locales/en/strategic-review";
 import enLeadership from "../../../locales/en/leadership";
 import enOperatingReview from "../../../locales/en/operating-review";
 import enSustainabilityReview from "../../../locales/en/sustainability-review";
+import enFinancialStatements from "../../../locales/en/financial-statements";
 
 // AR translations
 import arCommon from "../../../locales/ar/common";
@@ -19,6 +20,7 @@ import arStrategicReview from "../../../locales/ar/strategic-review";
 import arLeadership from "../../../locales/ar/leadership";
 import arOperatingReview from "../../../locales/ar/operating-review";
 import arSustainabilityReview from "../../../locales/ar/sustainability-review";
+import arFinancialStatements from "../../../locales/ar/financial-statements";
 import enDownloadCenter from "../../../locales/en/download-center";
 import arDownloadCenter from "../../../locales/ar/download-center";
 
@@ -32,6 +34,7 @@ const translations = {
     leadership: enLeadership,
     "operating-review": enOperatingReview,
     "sustainability-review": enSustainabilityReview,
+    "financial-statements": enFinancialStatements,
     "download-center": enDownloadCenter,
   },
   ar: {
@@ -43,6 +46,7 @@ const translations = {
     leadership: arLeadership,
     "operating-review": arOperatingReview,
     "sustainability-review": arSustainabilityReview,
+    "financial-statements": arFinancialStatements,
     "download-center": arDownloadCenter,
   },
 };
