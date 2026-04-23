@@ -54,7 +54,7 @@ const Hero = () => {
           </div>
         </div>
         <div className={` w-full h-full mx-auto max-w-337.5 min-h-screen flex ${lang === "ar" ? "flex-row-reverse" : ""} justify-center items-center animate-move-left-40 animate-delay-4s z-10`}>
-          <div className="text-white flex-1 flex flex-col max-w-90">
+          <div className="text-white flex-1 flex flex-col max-w-120">
             <div className="overflow-hidden">
               <h1 className="text-2xl font-thin animate-move-up animate-delay-3s">
                 {t("hero.title")}

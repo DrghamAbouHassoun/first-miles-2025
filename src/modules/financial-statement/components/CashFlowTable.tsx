@@ -1,27 +1,30 @@
 import { formatNumber, isValidNumber } from "../../../utils";
-import { useLocale } from "../../common/hooks/useLocale";
 import { useTranslation } from "../../common/hooks/useTranslation";
-import { consolidatedStatmentOfFinanicalPosition as tableDataEn } from "../data/en";
-import { consolidatedStatmentOfFinanicalPositionArabic as tableDataAr } from "../data/ar";
+import { consolidatedCashFlowStatement as tableDataEn } from "../data/en";
+import { consolidatedCashFlowStatementArabic as tableDataAr } from "../data/ar";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const HIGHLIGHTED_ROW = 2;
 
-const FiniancialPositionTable = () => {
+const CashFlowTable = () => {
   const { t } = useTranslation("financial-statements");
   const { lang } = useLocale();
   return (
-    <div>
+    <div className="w-full overflow-hidden">
       <h4 className="text-base mb-2">{t("prefix")}</h4>
-      <h3 className="text-3xl font-bold">{t("tables.0.title")}</h3>
-      <p className="text-fm-yellow my-2">{t("date1")}</p>
+      <h3 className="text-3xl font-bold">{t("tables.3.title")}</h3>
+      <p className="text-fm-yellow my-2">{t("date2")}</p>
       <p className="text-lg" dangerouslySetInnerHTML={{ __html: t("note") }} />
-      <div className="w-full overflow-y-auto pb-16 mt-4">
-        <table className="w-full">
+      <div className="w-full max-w-full overflow-y-auto pb-6 mt-4">
+        <table className="w-auto min-w-120">
           <thead className="border-b-2 border-fm-yellow">
             <tr>
               {(lang === "ar" ? tableDataAr : tableDataEn).headings.map(
                 (item, index) => (
-                  <th key={item || `heading-${index}`} className="p-1 text-end">
+                  <th
+                    key={item || `heading-${index}`}
+                    className="p-1 text-end min-w-42"
+                  >
                     {item || ""}
                   </th>
                 ),
@@ -56,9 +59,8 @@ const FiniancialPositionTable = () => {
           </tbody>
         </table>
       </div>
-      <p className="text-sm pb-8">{t("finalNote")}</p>
+      <p className="text-sm pb-8 pt-4">{t("finalNote")}</p>
     </div>
   );
 };
-
-export default FiniancialPositionTable;
+export default CashFlowTable;

@@ -6,6 +6,7 @@ import { useState } from "react";
 import FiniancialPositionTable from "../modules/financial-statement/components/FiniancialPositionTable";
 import ProfitOrLossTable from "../modules/financial-statement/components/ProfitOrLossTable";
 import EquityTable from "../modules/financial-statement/components/EquityTable";
+import CashFlowTable from "../modules/financial-statement/components/CashFlowTable";
 
 const tabs = [
   {
@@ -35,7 +36,7 @@ const FinancialStatementsPage = () => {
       <MainHeader title={t("title")} subtitle="" image={FSBg} />
       <section className="py-16">
         <Container>
-          <div className="w-full max-w-337.5 flex">
+          <div className="w-full lg:max-w-337.5 flex flex-col lg:flex-row gap-16 lg:gap-0">
             <div className="flex-1 w-full min-w-80 max-w-80 relative">
               <div className="flex flex-col sticky top-4">
                 {tabs.map((item) => (
@@ -50,13 +51,13 @@ const FinancialStatementsPage = () => {
                 ))}
               </div>
             </div>
-            <div className="w-full  max-w-[calc(100%-320px)] overflow-hidden max-w-[] px-4">
+            <div className="w-full  lg:max-w-[calc(100%-320px)] overflow-hidden px-4">
               {currantTable === "financial-position" && (
                 <FiniancialPositionTable />
               )}
               {currantTable === "profit-or-loss" && <ProfitOrLossTable />}
               {currantTable === "changes-in-equity" && <EquityTable />}
-              {currantTable === "cash-flows" && <div>Cash Flows</div>}
+              {currantTable === "cash-flows" && <CashFlowTable />}
             </div>
           </div>
         </Container>
