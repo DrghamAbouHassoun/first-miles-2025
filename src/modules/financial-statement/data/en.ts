@@ -180,7 +180,7 @@ export const consolidatedEquityStatement = {
 
     {
       bold: true,
-      cells: ["Total transactions with owners of the Company", null, "--","--","--","--","--", null, 11899089, null, "--",11899089,-152904000,-141004911,3290402,-137714509]
+      cells: ["Total transactions with owners of the Company", null, "--","--","--","--","--", 11899089, null,"--", "--",11899089,-152904000,-141004911,3290402,-137714509]
     },
 
     { cells: ["Transfer to general reserves", null, "--","--","--","--",25090172,"--", null,"--","--",25090172,-25090172,"--","--","--"] },
@@ -223,7 +223,7 @@ export const consolidatedEquityStatement = {
 
     { cells: ["Purchase of treasury shares", "19.5", "--",-25318388,"--","--","--","--", null,"--","--","--","--",-25318388,"--",-25318388] },
 
-    { cells: ["Equity-settled share-based payment", null, "--","--","--","--",2851403,"--", null, "--" ,"--",2851403,"--",2851403,"--",2851403] },
+    { cells: ["Equity-settled share-based payment", null, "--","--","--","--","--", 2851403, null, "--" ,"--",2851403,"--",2851403,"--",2851403] },
 
     {
       bold: true,
@@ -265,9 +265,9 @@ export const consolidatedCashFlowStatement = {
     { cells: ["Employees’ share based payments plan expense", "19.4", 11899089, 2851403] },
     { cells: ["Expected credit (reversal)/loss on trade receivables", "14.2", -306187, 314586] },
     { cells: ["Amortisation of cost of hedging", 32, 4779950, 2756736] },
-    { cells: ["Exchange loss on long-term payable", "--", "--", 622696] },
-    { cells: ["Loss on disposal of property, plant and equipment", "--", "--", 855570] },
-    { cells: ["Loss on termination of lease liability", "--", "--", 6802] },
+    { cells: ["Exchange loss on long-term payable", null, "--", 622696] },
+    { cells: ["Loss on disposal of property, plant and equipment", null, "--", 855570] },
+    { cells: ["Loss on termination of lease liability", null, "--", 6802] },
 
     { bold: true, cells: ["", null, 412526916, 379934428] },
 

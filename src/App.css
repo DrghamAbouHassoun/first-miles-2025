@@ -6,6 +6,10 @@ button {
     cursor: pointer;
 }
 
+b, strong {
+  font-weight: 500;
+}
+
 /* hidden scrollbar */
 .hidden-scrollbar::-webkit-scrollbar {
     display: none;

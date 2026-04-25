@@ -6,14 +6,16 @@ import MainButton from "../modules/common/components/buttons/MainButton";
 import FirstMillsBrandTab from "../modules/operatingReview/components/FirstMillsBrandTab";
 import AloulaBrandTab from "../modules/operatingReview/components/AloulaBrandTab";
 import NaffaaBrandTab from "../modules/operatingReview/components/NaffaaBrandTab";
+import COOTab from "../modules/operatingReview/components/coo/COOTab";
 
-type OperatingReviewTab = "firstMillsBrand" | "aloulaBrand" | "naffaaBrand";
+type OperatingReviewTab = "firstMillsBrand" | "aloulaBrand" | "naffaaBrand" | "coo";
 
 const OperatingReviewPage = () => {
   const { t } = useTranslation("operating-review");
-  const [activeTab, setActiveTab] = useState<OperatingReviewTab>("firstMillsBrand");
+  const [activeTab, setActiveTab] = useState<OperatingReviewTab>("coo");
 
   const tabs: { key: OperatingReviewTab; label: string }[] = [
+    { key: "coo", label: t("tabs.coo") },
     { key: "firstMillsBrand", label: t("tabs.firstMillsBrand") },
     { key: "aloulaBrand", label: t("tabs.aloulaBrand") },
     { key: "naffaaBrand", label: t("tabs.naffaaBrand") },
@@ -39,6 +41,7 @@ const OperatingReviewPage = () => {
         ))}
       </div>
       <div>
+        {activeTab === "coo" && <COOTab />}
         {activeTab === "firstMillsBrand" && <FirstMillsBrandTab />}
         {activeTab === "aloulaBrand" && <AloulaBrandTab />}
         {activeTab === "naffaaBrand" && <NaffaaBrandTab />}

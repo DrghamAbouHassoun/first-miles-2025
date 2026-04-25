@@ -119,8 +119,8 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="text-black font-bold text-5xl leading-none mb-2">
                     {data.stats.physicalTests.number}
                   </p>
-                  <p className="font-bold text-black leading-snug">
-                    {data.stats.physicalTests.label}{" "}
+                  <p className=" text-black leading-snug">
+                    <span className="font-bold">{data.stats.physicalTests.label}</span>{" "}
                     <span className="black/70">
                       {data.stats.physicalTests.desc}
                     </span>
@@ -138,7 +138,7 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="font-bold black leading-snug">
                     {data.stats.trainingCourses.label}
                   </p>
-                  <p className="font-bold text-sm text-white">
+                  <p className="font-bold text-xl text-white">
                     {data.stats.trainingCourses.highlight}
                   </p>
                 </SlideTopAnimation>
@@ -154,7 +154,7 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="leading-snug font-bold">
                     {data.stats.qualityTests.label}
                   </p>
-                  <p className="font-bold black/70">
+                  <p className="black/70">
                     {data.stats.qualityTests.desc}
                   </p>
                 </SlideTopAnimation>
@@ -170,7 +170,7 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="font-bold text-base black">
                     {data.stats.employees.label}
                   </p>
-                  <p className="font-bold black/70 leading-snug">
+                  <p className=" black/70 leading-snug">
                     {data.stats.employees.desc}
                   </p>
                 </SlideTopAnimation>
@@ -186,10 +186,10 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="black font-bold text-4xl md:text-5xl leading-none mb-2">
                     {data.stats.safeHours.number}
                   </p>
-                  <p className="font-bold  text-white leading-snug mb-1">
+                  <p className="font-bold text-xl text-white leading-snug mb-1">
                     {data.stats.safeHours.label}
                   </p>
-                  <p className="font-bold black/70 leading-relaxed">
+                  <p className="black/70 leading-relaxed">
                     {data.stats.safeHours.highlight}
                   </p>
                 </SlideTopAnimation>
@@ -205,7 +205,7 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="font-bold text-white leading-snug">
                     {data.stats.microbiological.label}
                   </p>
-                  <p className="font-bold text-white">
+                  <p className=" text-white">
                     {data.stats.microbiological.highlight}
                   </p>
                 </SlideTopAnimation>
@@ -218,8 +218,8 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="text-white font-bold text-5xl leading-none mb-2">
                     {data.stats.chemicalTests.number}
                   </p>
-                  <p className="font-bold black/70 leading-snug">
-                    {data.stats.chemicalTests.label}{" "}
+                  <p className="black/70 leading-snug">
+                    <span className="font-bold ">{data.stats.chemicalTests.label}</span>{" "}
                     <span className="black/70">
                       {data.stats.chemicalTests.desc}
                     </span>
