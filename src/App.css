@@ -1,23 +1,24 @@
 body {
-    width: 100%;
+  width: 100%;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-b, strong {
+b,
+strong {
   font-weight: 500;
 }
 
 /* hidden scrollbar */
 .hidden-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .hidden-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Primary Scrollbar */
@@ -46,7 +47,6 @@ b, strong {
   background-color: #e09e30;
 }
 
-
 .border-gradient {
   position: relative;
 }
@@ -60,10 +60,12 @@ b, strong {
   border-radius: 16px;
   pointer-events: none;
 
-  mask: linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-  -webkit-mask: linear-gradient(#000 0 0) content-box,
-               linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
 }
@@ -85,7 +87,6 @@ b, strong {
   opacity: 1;
 }
 
-
 .border-gradient-reversed {
   position: relative;
 }
@@ -99,10 +100,12 @@ b, strong {
   border-radius: 16px;
   pointer-events: none;
 
-  mask: linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-  -webkit-mask: linear-gradient(#000 0 0) content-box,
-               linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: xor;
 }

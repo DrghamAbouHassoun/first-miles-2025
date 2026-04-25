@@ -4,6 +4,7 @@ interface UseInViewOptions {
   partial?: boolean;
   rootMargin?: string;
   root?: Element | null;
+  triggerOnce?: boolean;
 }
 
 interface UseInViewResult<T extends Element> {
@@ -14,7 +15,7 @@ interface UseInViewResult<T extends Element> {
 function useInView<T extends Element = Element>(
   options: UseInViewOptions = {}
 ): UseInViewResult<T> {
-  const { partial = true, rootMargin = "0px", root = null } = options;
+  const { partial = true, rootMargin = "0px", root = null, triggerOnce = true } = options;
   const ref = useRef<T>(null);
   const [inView, setInView] = useState(false);
 
@@ -26,9 +27,13 @@ function useInView<T extends Element = Element>(
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
+        if (triggerOnce) {
+          if (entry.isIntersecting) {
+            setInView(true);
+            observer.disconnect();
+          }
+        } else {
+          setInView(entry.isIntersecting);
         }
       },
       { root, rootMargin, threshold }
@@ -36,7 +41,7 @@ function useInView<T extends Element = Element>(
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [partial, rootMargin, root]);
+  }, [partial, rootMargin, root, triggerOnce]);
 
   return { ref, inView };
 }

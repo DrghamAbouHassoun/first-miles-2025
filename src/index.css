@@ -49,6 +49,8 @@
   --color-fm-gray-200: #9a9ea0;
   --color-fm-gray-300: #6c7075;
   --color-fm-gray-400: #404041;
+
+  --color-fm-blue: #1E4387;
 }
 
 @layer base {
