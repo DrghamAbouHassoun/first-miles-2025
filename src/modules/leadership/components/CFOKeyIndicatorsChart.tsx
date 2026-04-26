@@ -8,19 +8,19 @@ const CountUp = ((CountUpModule as any).default ??
   CountUpModule) as React.FC<CountUpProps>;
 
 const CASH_DATA = [
-  { year: 2021, value: 88.5 },
-  { year: 2022, value: 261.8 },
-  { year: 2023, value: 268.3 },
-  { year: 2024, value: 338.8 },
-  { year: 2025, value: 431.5 },
+  { year: 2021, value: 157.5 },
+  { year: 2022, value: 215.3 },
+  { year: 2023, value: 192.1 },
+  { year: 2024, value: 192.5 },
+  { year: 2025, value: 93.3 },
 ];
 
 const LOANS_DATA = [
-  { year: 2021, value: 120.7 },
-  { year: 2022, value: 1207.5 },
-  { year: 2023, value: 1262.5 },
-  { year: 2024, value: 1288.3 },
-  { year: 2025, value: 1388.8 },
+  { year: 2021, value: 1170.7 },
+  { year: 2022, value: 1044.1 },
+  // { year: 2023, value: 1 },
+  { year: 2024, value: 1010.6 },
+  { year: 2025, value: 940.8 },
 ];
 
 // const CASH_COLOR = "#162f29";

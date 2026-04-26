@@ -63,24 +63,10 @@ const StrategyKPIsTab = () => {
             </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="mb-4 font-semibold">
-              {t("strategyAndKPIsContent.description")}
-            </p>
+            <p className="mb-4">{t("strategyAndKPIsContent.p1")}</p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
-              {t("strategyAndKPIsContent.subtitle")}
-            </h3>
-          </SlideTopAnimation>
-          <SlideTopAnimation>
-            <p className="mb-4 font-semibold">
-              {t("strategyAndKPIsContent.p1")}
-            </p>
-          </SlideTopAnimation>
-          <SlideTopAnimation>
-            <p className="mb-4 font-semibold">
-              {t("strategyAndKPIsContent.p2")}
-            </p>
+            <p className="mb-4">{t("strategyAndKPIsContent.p2")}</p>
           </SlideTopAnimation>
         </Container>
       </div>
@@ -143,6 +129,7 @@ type AchievementProps = {
   highlight?: string;
   suffix?: string;
   large?: string;
+  note?: string;
 };
 
 const Achievement = ({
@@ -150,8 +137,9 @@ const Achievement = ({
   highlight,
   suffix,
   large,
+  note,
 }: AchievementProps) => (
-  <div className="py-2">
+  <div className="py-2 pb-7">
     <p className=" leading-relaxed">
       {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}{" "}
       {highlight && (
@@ -166,7 +154,8 @@ const Achievement = ({
     </p>
     {large && (
       <p className="text-3xl mt-1">
-        <span dangerouslySetInnerHTML={{ __html: large }}></span>{""}
+        <span dangerouslySetInnerHTML={{ __html: large }}></span>
+        {""}
         {suffix && (
           <span
             className="text-4xl font-normal text-white ms-2"
@@ -175,6 +164,7 @@ const Achievement = ({
         )}
       </p>
     )}
+    {note && <p className="text-white max-w-1/2">{note}</p>}
   </div>
 );
 
@@ -249,6 +239,11 @@ const PillarContent = ({
               t(`${p}.achievements.${i}.large`) !==
               `${p}.achievements.${i}.large`
                 ? t(`${p}.achievements.${i}.large`)
+                : undefined
+            }
+            note={
+              t(`${p}.achievements.${i}.note`) !== `${p}.achievements.${i}.note`
+                ? t(`${p}.achievements.${i}.note`)
                 : undefined
             }
           />

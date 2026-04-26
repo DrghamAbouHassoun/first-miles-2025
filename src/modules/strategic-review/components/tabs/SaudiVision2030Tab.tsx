@@ -22,6 +22,12 @@ const SaudiVision2030Tab = () => {
           className="absolute top-0 left-0 h-full w-full object-cover object-center"
         />
       </div>
+      <div className="py-16">
+        <Container>
+          <h2 className="text-2xl font-bold text-fm-yellow mb-4">{t("saudiVisionContent.title")}</h2>
+          <p className="text-white font-bold">{t("saudiVisionContent.description")}</p>
+        </Container>
+      </div>
       <div className="">
         <Container>
           <div className="flex flex-col lg:flex-row gap-8 min-h-screen py-24">

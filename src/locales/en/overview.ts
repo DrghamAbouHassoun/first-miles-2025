@@ -16,7 +16,7 @@ export default {
     title: "Nationwide reach with strategic regional strength",
     boldParagraph:
       "Our four primary production plants – in Jeddah, Al Qassim, Tabuk, Al Ahsa and Al Manar – give us a strong presence across the Kingdom. This expansive network allows us to serve a wide and diverse customer base with reliable coverage in every major region.",
-    p1: "Each plant brings distinct capacity strengths. Our Jeddah mill holds 120,000 metric tons of wheat storage, the largest in our network. Al Qassim follows with 60,000 metric tons, Al Ahsa with 30,000 metric tons, and Tabuk with 10,000 metric tons. Al Manar Feed Mill, the newest addition to our footprint, adds a further 30,000 metric tons of dedicated feed storage.",
+    p1: "Each plant brings distinct capacity strengths. Our Jeddah mill holds 120,000 metric tons of wheat storage, the largest in our network. Al Qassim follows with 60,000 metric tons, Al Ahsa with 30,000 metric tons and Tabuk with 10,000 metric tons. Al Manar Feed Mill, the newest addition to our footprint, adds a further 30,000 metric tons of dedicated feed storage.",
     p2: "Our reach extends well beyond our mill locations. We supply customers across the Kingdom through our sales and distribution warehouses and through authorized distributors, confirming consistent access to our products in every region.",
     p3: "We are now expanding this reach to regional markets. Following the recent approval for Saudi milling companies to export, we have begun exporting to markets, including the UAE, Qatar, Kuwait and Egypt, with additional opportunities under evaluation.",
     p4: "Our geographic diversification reflects our performance profile. The Jeddah mill, which serves the Western and Southern regions, contributed 47% of our revenues at the end of 2025, demonstrating the scale and importance of our presence in high-demand areas.",
@@ -180,9 +180,9 @@ export default {
     pageTitle: "Year in Review",
     yearOfProgress: {
       title:
-        "A year of progress shaped by scale, discipline, and strategic ambition",
-      p1: "First Mills advanced its growth agenda through disciplined execution, targeted investments, and continued leadership across flour, feed, and value-added categories. ",
-      p2: "The year brought meaningful steps forward in capacity expansion, portfolio diversification, customer engagement, and organizational excellence, supported by a strengthened market position and a clear commitment to sustainable value creation for all Stakeholders.",
+        "A year of progress shaped by scale, discipline and strategic ambition",
+      p1: "First Mills advanced its growth agenda through disciplined execution, targeted investments and continued leadership across flour, feed and value-added categories. ",
+      p2: "The year brought meaningful steps forward in capacity expansion, portfolio diversification, customer engagement and organizational excellence, supported by a strengthened market position and a clear commitment to sustainable value creation for all Stakeholders.",
     },
     slider: {
       title: "Year in Review",
@@ -233,7 +233,7 @@ export default {
         december: {
           month: "December",
           title: "Hosting the 35th IAOM MEA Conference and Expo",
-          desc: "We sponsored and welcomed the IAOM MEA Conference and Expo to Saudi Arabia for the first time, bringing global expertise, innovation, and industry collaboration to Jeddah.",
+          desc: "We sponsored and welcomed the IAOM MEA Conference and Expo to Saudi Arabia for the first time, bringing global expertise, innovation and industry collaboration to Jeddah.",
           title2: "Completion of the Al-Kenan Al-Arabia acquisition",
           desc2:
             "We finalized the acquisition of a 60% stake in Al-Kenan Al-Arabia Trading Company, completing regulatory approvals and strengthening our integrated feed operations.",
@@ -310,7 +310,7 @@ export default {
     title:
       "At First Mills, we believe our success is strengthened when our Stakeholders succeed alongside us.",
     description:
-      "We actively engage our Shareholders, employees, suppliers, customers, communities and government partners through continuous dialogue, transparent communication and shared action. By listening to their priorities and aligning them with our strategic goals, we create mutual value, strengthen trust and support meaningful outcomes across our ecosystem. This approach enables us to maintain strong governance, elevate service and product quality, drive social and economic impact, and reinforce our role as a national food security champion whose progress benefits everyone we serve.",
+      "We actively engage our Shareholders, employees, suppliers, customers, communities and government partners through continuous dialogue, transparent communication and shared action. By listening to their priorities and aligning them with our strategic goals, we create mutual value, strengthen trust and support meaningful outcomes across our ecosystem. This approach enables us to maintain strong governance, elevate service and product quality, drive social and economic impact and reinforce our role as a national food security champion whose progress benefits everyone we serve.",
     groups: [
       {
         name: "Shareholders and Investors",

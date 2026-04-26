@@ -9,14 +9,14 @@ const CountUp = ((CountUpModule as any).default ??
 const ASSETS_DATA = [
   { year: 2021, current: 298.7, nonCurrent: 857.7, total: 1156.4 },
   { year: 2022, current: 415.1, nonCurrent: 2011.2, total: 2426.4 },
-  { year: 2023, current: 379.7, nonCurrent: 2091.8, total: 2470.7 },
+  { year: 2023, current: 379.7, nonCurrent: 2091.0, total: 2470.7 },
   { year: 2024, current: 403.8, nonCurrent: 2091.8, total: 2495.5 },
   { year: 2025, current: 338.5, nonCurrent: 2260.4, total: 2598.9 },
 ];
 
 const LIABILITIES_DATA = [
   { year: 2021, current: 154.3, nonCurrent: 336.9, total: 491.2 },
-  { year: 2022, current: 337.4, nonCurrent: 1135.0, total: 1675.4 },
+  { year: 2022, current: 337.4, nonCurrent: 1138.0, total: 1675.4 },
   { year: 2023, current: 289.4, nonCurrent: 1289.2, total: 1578.6 },
   { year: 2024, current: 360.7, nonCurrent: 1189.8, total: 1550.5 },
   { year: 2025, current: 397.2, nonCurrent: 1130.5, total: 1527.6 },

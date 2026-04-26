@@ -12,9 +12,9 @@ const Y_AXIS_WIDTH = 36;
 
 const BAR_DATA = [
   { year: 2021, flour: 494.9, feed: 222.5, bran: 83.7 },
-  { year: 2022, flour: 507.4, feed: 278.7, bran: 132.6 },
+  { year: 2022, flour: 507.4, feed: 273.7, bran: 132.6 },
   { year: 2023, flour: 552.9, feed: 271.1, bran: 140.3 },
-  { year: 2024, flour: 599.1, feed: 311.9, bran: 137.8 },
+  { year: 2024, flour: 599.1, feed: 311.1, bran: 137.8 },
   { year: 2025, flour: 651.8, feed: 351.7, bran: 142.9 },
 ];
 

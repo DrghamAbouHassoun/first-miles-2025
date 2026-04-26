@@ -1,0 +1,161 @@
+export const TURNOVER_DATA = [
+  { year: "2024", turnover: 1.5, retention: 98.5 },
+  { year: "2025", turnover: 1.5, retention: 98.5 },
+];
+
+export const WORKFORCE_EN = [
+  {
+    location: "Head Office",
+    saudi24: 63,
+    saudi25: 84,
+    expat24: 32,
+    expat25: 18,
+    total24: 95,
+    total25: 102,
+  },
+  {
+    location: "Jeddah Plant",
+    saudi24: 82,
+    saudi25: 105,
+    expat24: 79,
+    expat25: 74,
+    total24: 161,
+    total25: 179,
+  },
+  {
+    location: "Al-Qassim Plant",
+    saudi24: 79,
+    saudi25: 144,
+    expat24: 78,
+    expat25: 75,
+    total24: 157,
+    total25: 219,
+  },
+  {
+    location: "Tabuk Plant",
+    saudi24: 43,
+    saudi25: 75,
+    expat24: 75,
+    expat25: 74,
+    total24: 118,
+    total25: 149,
+  },
+  {
+    location: "Plants Total",
+    saudi24: 204,
+    saudi25: 324,
+    expat24: 232,
+    expat25: 223,
+    total24: 436,
+    total25: 547,
+  },
+];
+
+export const WORKFORCE_AR = [
+  {
+    location: "المقر الرئيسي",
+    saudi24: 63,
+    saudi25: 84,
+    expat24: 32,
+    expat25: 18,
+    total24: 95,
+    total25: 102,
+  },
+  {
+    location: "مصنع جدة",
+    saudi24: 82,
+    saudi25: 105,
+    expat24: 79,
+    expat25: 74,
+    total24: 161,
+    total25: 179,
+  },
+  {
+    location: "مصنع القصيم",
+    saudi24: 79,
+    saudi25: 144,
+    expat24: 78,
+    expat25: 75,
+    total24: 157,
+    total25: 219,
+  },
+  {
+    location: "مصنع تبوك",
+    saudi24: 43,
+    saudi25: 75,
+    expat24: 75,
+    expat25: 74,
+    total24: 118,
+    total25: 149,
+  },
+  {
+    location: "إجمالي المصانع",
+    saudi24: 204,
+    saudi25: 324,
+    expat24: 232,
+    expat25: 223,
+    total24: 436,
+    total25: 547,
+  },
+];
+
+export const SAUDIZATION_EN = [
+  {
+    category: "Head Office",
+    cat24: "High Green",
+    cat25: "High Green",
+    actual24: "66.3%",
+    actual25: "82.4%",
+  },
+  {
+    category: "Plants",
+    cat24: "High Green",
+    cat25: "High Green",
+    actual24: "46.8%",
+    actual25: "59.2%",
+  },
+];
+export const SAUDIZATION_AR = [
+  {
+    category: "المقر الرئيسي",
+    cat24: "أخضر عالٍ",
+    cat25: "أخضر عالٍ",
+    actual24: "66.3%",
+    actual25: "82.4%",
+  },
+  {
+    category: "المصانع",
+    cat24: "أخضر عالٍ",
+    cat25: "أخضر عالٍ",
+    actual24: "46.8%",
+    actual25: "59.2%",
+  },
+];
+export const SAUDIZATION_AVG = "43.7%";
+
+export const OHS_EN = [
+  { metric: "Training sessions", val24: "50", val25: "11" },
+  { metric: "Training Hours", val24: "272", val25: "37" },
+  { metric: "Safe operating hours", val24: "1,445,000", val25: "1,300,728" },
+  { metric: "Minor incidents", val24: "0", val25: "0" },
+  { metric: "Major quality incidents", val24: "0", val25: "0" },
+];
+export const OHS_AR = [
+  { metric: "جلسات التدريب", val24: "50", val25: "11" },
+  { metric: "ساعات التدريب", val24: "272", val25: "37" },
+  { metric: "ساعات التشغيل الآمنة", val24: "1,445,000", val25: "1,300,728" },
+  { metric: "الحوادث الطفيفة", val24: "0", val25: "0" },
+  { metric: "الحوادث الجسيمة", val24: "0", val25: "0" },
+];
+
+export const QUALITY_EN = [
+  { metric: "Daily tests", val23: "899", val24: "899", val25: "899" },
+];
+export const QUALITY_AR = [
+  { metric: "الاختبارات اليومية", val23: "899", val24: "899", val25: "899" },
+];
+
+export const GENDER_DATA = [
+  { year: "2024", male: 96.83, female: 3.17 },
+  { year: "2025", male: 96.97, female: 3.03 },
+];

@@ -317,7 +317,7 @@ export default {
           prefix: "",
           number: "05",
           label: "plants certified",
-          desc: "<b>ISO 45001, ISO 9001, ISO 14001 and ISO 22000</b>, plus FSSC 22000 V6 Certification, and HACCP and Halal accreditations",
+          desc: "<b>ISO 45001, ISO 9001, ISO 14001 and ISO 22000</b>, plus FSSC 22000 V6 Certification and HACCP and Halal accreditations",
         },
         physicalTests: {
           prefix: "",

@@ -35,7 +35,7 @@ export default {
       title: "An Added Value To All Relevant Authorities & Stakeholders",
       items: [
         "A diverse product portfolio with more than 60 main products of food and feed products.",
-        "Five plants located in strategic locations, including two facilities in Jeddah in the Makkah Province, one of which is the newly acquired Al Manar feed plant with a daily capacity of 450 t/d, as well as Al Qassim in Buraidah, Tabuk in Tabuk City, and the Eastern Province Al-Ahsa.",
+        "Five plants located in strategic locations, including two facilities in Jeddah in the Makkah Province, one of which is the newly acquired Al Manar feed plant with a daily capacity of 450 t/d, as well as Al Qassim in Buraidah, Tabuk in Tabuk City and the Eastern Province Al-Ahsa.",
         "Sale and distribution warehouses belong to the Company or its distributors spread all over the Kingdom.",
         "Close and strong relationships with all raw material suppliers, including the General Food Security Authority (GFSA).",
         "Completed the acquisition of 60% of Al-Kenan Al-Arabia Trading Company.",
@@ -52,12 +52,12 @@ export default {
     outputs: {
       title: "Outputs",
       items: [
-        "Reaching around 31%* in the local flour market as a market share.",
+        "Reaching more than 31%* in the local flour market as a market share.",
         "Achieving attractive profit margins and sustainable growth that exceeds the average market rates and targets.",
-        "Maintaining current leadership in the feed sector and expanding the bran production in alignment with the growth in flour milling volumes.",
-        "Cash sales, which are immediately collected, account for 90% of the Company’s flour product sales.",
+        "Maintaining current leadership in the feed sector and expanding the bran production in alignment with the growth in flour volumes.",
+        "Cash sales, which are immediately collected, account for 90% of the Company’s product sales.",
         "Owning the first-of-its-kind durum mill for producing semolina with a production capacity capable of meeting local market demand with the possibility of exporting to regional markets.",
-        "Fixed asset base with a book value of more than SAR 4 billion, backed by the latest modern technologies for flour and feed production.",
+        "Fixed asset base with a book value of more than <i class='riyal-icon'></i> 4 billion, backed by the latest modern technologies for flour and feed production.",
         "Ongoing follow-up on increasing the production capacity and constantly expanding and renovating plants to achieve the best possible returns and to meet the increasing market demands.",
         "Leveraging cutting-edge systems and technologies across all production processes to guarantee the highest quality.",
         "Building strategic, high-value partnerships with both the public and private sectors.",
@@ -71,7 +71,7 @@ export default {
           id: "stackholders",
           title: "Shareholders and Investors",
           description:
-            "The Company is committed to protecting its Shareholders’ rights, guaranteeing fairness and transparency in the provision of information and strengthening relations through diversified distributions. During 2025G, First Milling Company distributed dividends totalling SAR 153,291,000 for H2 2024 and H1 2025. The Company also adheres to financial regulatory regulations, according to the instructions governing First Milling Company’s Investor Relations (IR) Department operations, which is dedicated to efficiently addressing Shareholders’ inquiries.",
+            "The Company is committed to protecting its Shareholders’ rights, guaranteeing fairness and transparency in the provision of information and strengthening relations through diversified distributions. During 2025G, First Milling Company distributed dividends totalling <i class='riyal-icon'></i> 173,880,000 for H2 2024 and H1 2025. The Company also adheres to financial regulations, according to the instructions governing First Milling Company’s Investor Relations (IR) Department operations, which is dedicated to eciently addressing Shareholders’ inquiries.",
         },
         {
           id: "employees",
@@ -83,7 +83,7 @@ export default {
           id: "regulatoryAndGovernmentAuthorities",
           title: "Regulatory and Government Authorities",
           description:
-            "The Company works in full compliance with the disclosure and cooperative standards with regulatory authorities such as the Capital Market Authority (CMA), Zakat, Tax and Customs Authority (ZTCA), and the Food Security Authority along with the national food security strategy and the Saudi Vision 2030. Furthermore, First Milling Company participates in multiple government efforts in collaboration with the Ministry of Human Resources and Social Development (HRSD).",
+            "The Company works in full compliance with the disclosure and cooperative standards with regulatory authorities such as the Capital Market Authority (CMA), Zakat, Tax and Customs Authority (ZTCA) and the Food Security Authority along with the national food security strategy and the Saudi Vision 2030. Furthermore, First Milling Company participates in multiple government efforts in collaboration with the Ministry of Human Resources and Social Development (HRSD).",
         },
         {
           id: "customers",
@@ -107,53 +107,56 @@ export default {
     },
   },
   strategyAndKPIsContent: {
-    title: "Driving Business Value through Innovative Technologies",
-    description:
-      "Technology and innovation remain essential enablers of First Mills’ corporate strategy. The Company was built as a digital-first operation, designed to reach customers more effectively and deliver an integrated, seamless experience across every touchpoint. This vision supports its ecosystem-based approach, making certain that technology strengthens value creation for customers, partners, employees and Stakeholders and enabling scale, efficiency and long-term competitiveness.",
-    subtitle: "Technology & Innovation Vision",
-    p1: "To be the First Mills’ business capability engine, powering solutions through connection, transformation and innovation.",
-    p2: "Technology and innovation are core enablers of First Mills’ corporate strategy. From its inception, the Company has been designed as a digital-first organization, enabling broader market reach and a seamless, integrated customer experience. This approach supports First Mills’ ecosystem-based business model and ensures technology consistently drives value creation for customers, partners, employees and Stakeholders.",
+    // title: "Driving Business Value through Innovative Technologies",
+    // description:
+    //   "Technology and innovation remain essential enablers of First Mills’ corporate strategy. The Company was built as a digital-first operation, designed to reach customers more effectively and deliver an integrated, seamless experience across every touchpoint. This vision supports its ecosystem-based approach, making certain that technology strengthens value creation for customers, partners, employees and Stakeholders and enabling scale, efficiency and long-term competitiveness.",
+    // subtitle: "Technology & Innovation Vision",
+    // p1: "To be the First Mills’ business capability engine, powering solutions through connection, transformation and innovation.",
+    // p2: "Technology and innovation are core enablers of First Mills’ corporate strategy. From its inception, the Company has been designed as a digital-first organization, enabling broader market reach and a seamless, integrated customer experience. This approach supports First Mills’ ecosystem-based business model and ensures technology consistently drives value creation for customers, partners, employees and Stakeholders.",
     target: "Target",
     successMetricsAndKPIs: "Success Metrics and KPIs",
     achievements2025: "2025 Achievements",
+    title: "Strategic Progress Driving Long-Term Value",
+    p1: "First Mills maintains a flexible strategic vision, adapting to the continuous developments in the food and feed sectors in local and global markets. The Company’s strategy and objectives are centered on providing high-quality premium products. This focus supports its aspirations in becoming the first partner of choice across the Kingdom and the credible source of vital products for both the market and community.",
+    p2: "The Company has set strategic targets to guarantee it maintains its leading role in the market and contributes to the provision of sustainable sources of food. This is done through four main pillars.",
     pillar1: {
       number: "Pillar 1",
       title: "Enhancing Market Leadership",
       description:
-        "Strengthen First Mills’ position as a top player in the milling and food ingredients sector by expanding market share, increasing brand recognition and continuously improving competitiveness across all key markets.",
+        "Strengthen First Mills’ position as a top player in the food products sector by expanding market share, increasing brand recognition and continuously improving competitiveness across all key markets.",
       target:
         "To be the first choice for customers and industry leaders in terms of sales volume, revenue and market share in flour products.",
       kpis: [
-        "Maximizing Company Value",
-        "Increasing Revenues and Profits Sustainably",
-        "Expanding into New Products and Sectors",
-        "Improve Distribution and Sales Channels",
+        "Maximizing Company value",
+        "Increasing revenues and profits sustainably",
+        "Expanding into new products and sectors",
+        "Improve distribution and sales channels",
       ],
       achievements: [
         {
           prefix: "Revenue growth by",
-          highlight: "9%",
-          suffix: "to reach",
-          large: "<i class='riyal-icon'></i> 1,147.78 MN",
+          highlight: "9% to reach",
+          suffix: "",
+          large: "<i class='riyal-icon'></i> 1,146.4 mln",
         },
         {
           prefix: "Acquired Al Manar Feed Co. Ltd, adding",
-          large: "<i class='riyal-icon'></i>",
+          large: "450 tons",
           suffix: "of daily feed production",
         },
         {
           prefix: "Net profit grew by",
-          highlight: "9.8%",
-          suffix: "to reach",
-          large: "<i class='riyal-icon'></i> 275 MlN",
+          highlight: "10% to reach",
+          suffix: "",
+          large: "<i class='riyal-icon'></i> 277.4",
         },
         {
           prefix:
-            "Implemented the highly secured IT infrastructure for First Mills and rolling it to all its locations across the Kingdom",
+            "Implemented the highly secured <strong>IT infrastructure for First Mills and rolling it to all its locations across the Kingdom</strong>",
         },
         {
-          prefix: "Increased our SKUs to",
-          large: "60",
+          prefix: "Increased SKUs to",
+          large: "90 products",
         },
       ],
     },
@@ -165,25 +168,25 @@ export default {
       target:
         "To have the most powerful brand, the best-in-class customer service and be well-known for its products innovation.",
       kpis: [
-        "Increasing Revenue Contribution from the Flour New Products Developed (NPDs)",
-        "Strengthening Brand Equity",
-        "Improving Customer Service",
-        "Developing Innovation Practices",
+        "Increasing revenue contribution from the Flour New Products Developed (NPDs)",
+        "Strengthening brand equity",
+        "Improving customer service",
+        "Developing innovation practices",
       ],
       achievements: [
         {
-          prefix: "First Mills market share goes up to",
-          large: "31%",
+          prefix: "First Mills market share goes up to more than",
+          large: "30%",
         },
         {
           prefix: "Customer satisfaction NPS reached",
           large: "93%",
         },
-        {
-          prefix: "Retail sector sales grew to reach a market share of flour",
-          highlight: "31%",
-          suffix: "owing to the expansion of Aloula",
-        },
+        // {
+        //   prefix: "Retail sector sales grew to reach a market share of flour",
+        //   highlight: "31%",
+        //   suffix: "owing to the expansion of Aloula",
+        // },
       ],
     },
     pillar3: {
@@ -194,10 +197,10 @@ export default {
       target:
         "To produce premium quality products, in the most efficient manner utilizing world-class technology at the ideal competitive cost.",
       kpis: [
-        "Cost Optimization across the Value Chain",
-        "Developing Strategic Sourcing",
-        "Developing Integrated Business Planning (IBP)",
-        "Increasing Production Efficiency and Capacity, and Improving Product Quality",
+        "Cost optimization across the value chain",
+        "Developing strategic sourcing",
+        "Developing integrated business planning (IBP)",
+        "Increasing production efficiency and capacity and improving product quality",
       ],
       achievements: [
         {
@@ -205,9 +208,9 @@ export default {
           large: "94%",
         },
         {
-          large: "817,000",
-          suffix:
-            "Quality tests conducted, compliant with the highest international standards and ISO",
+          large: "893,520",
+          note:
+            "quality tests conducted, compliant with the highest international standards and ISO",
         },
       ],
     },
@@ -220,10 +223,10 @@ export default {
       target:
         "To be the employer of choice, known for its high safety standards and highly capable team working together within the right culture and systems in place.",
       kpis: [
-        "Improving HSE Practices",
-        "Strengthening Organizational Structure and Governance",
-        "Enhancing Work Culture and Environment, and Developing Skills and Capabilities",
-        "Improving Digitization and Automation",
+        "Improving HSE practices",
+        "Strengthening organizational structure and governance",
+        "Enhancing work culture and environment and developing skills and capabilities",
+        "Improving digitization and automation",
       ],
       achievements: [
         {
@@ -234,7 +237,7 @@ export default {
           prefix:
             "Delivered extensive training and development, with more than",
           large: "300 employees",
-          suffix: "trained and over 7,000,200 training hours completed.",
+          suffix: "trained and over 7,200 training hours completed.",
         },
         {
           prefix:
@@ -328,7 +331,7 @@ export default {
           "Cost Optimization across the Value Chain",
           "Developing Strategic Sourcing",
           "Developing Integrated Business Planning (IBP)",
-          "Increasing Production Efficiency and Capacity, and Improving Product Quality",
+          "Increasing Production Efficiency and Capacity and Improving Product Quality",
         ],
         achievements: [
           {
@@ -355,7 +358,7 @@ export default {
         kpis: [
           "Improving HSE Practices",
           "Strengthening Organizational Structure and Governance",
-          "Enhancing Work Culture and Environment, and Developing Skills and Capabilities",
+          "Enhancing Work Culture and Environment and Developing Skills and Capabilities",
           "Improving Digitization and Automation",
         ],
         achievements: [
@@ -390,7 +393,7 @@ export default {
           paragrphs: [
             "First Mills supports the national drive to strengthen social well-being by delivering initiatives that enhance quality of life and empower communities. We advance nutrition awareness and community engagement programs that benefit households, students and local institutions, reinforcing Vision 2030’s aspiration for an informed and healthy society.",
             "We continue to improve consumer experience through clearer product information, better usage guidance and responsive digital channels. These efforts enhance daily life for customers while elevating service standards across the food ecosystem.",
-            "Women’s workforce participation remains an important priority. Female hiring at First Mills increased from 1-2% in 2021-2022 to 3% in 2023, and we aim to continue growing this representation. This aligns with Vision 2030’s national objective to expand opportunities for women across the private sector.",
+            "Women’s workforce participation remains an important priority. Female hiring at First Mills increased from 1-2% in 2021-2022 to 3% in 2023 and we aim to continue growing this representation. This aligns with Vision 2030’s national objective to expand opportunities for women across the private sector.",
           ],
         },
       },
@@ -449,7 +452,7 @@ export default {
       },
       {
         id: "pillar4",
-        content: "The AI-Powered Virtual Workforce establishes the foundation for an intelligent, adaptive and increasingly automated enterprise. AI agents enable advanced analytics, predictive insight and the creation of a digital twin of First Mills’ operations. This transformation supports a model of working that delivers more outcomes faster, more intelligently, and with reduced reliance on manual intervention, while improving accuracy, consistency and responsiveness across the organization."
+        content: "The AI-Powered Virtual Workforce establishes the foundation for an intelligent, adaptive and increasingly automated enterprise. AI agents enable advanced analytics, predictive insight and the creation of a digital twin of First Mills’ operations. This transformation supports a model of working that delivers more outcomes faster, more intelligently and with reduced reliance on manual intervention, while improving accuracy, consistency and responsiveness across the organization."
       }
     ]
   }
