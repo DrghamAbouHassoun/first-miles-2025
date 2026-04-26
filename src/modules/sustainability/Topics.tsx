@@ -27,9 +27,14 @@ import IndexIcon16 from "../../assets/icons/sustainability/topics/numbers/16.png
 import UNSDGSIcon2 from "../../assets/icons/sustainability/topics/unsdgs/2.svg";
 import UNSDGSIcon3 from "../../assets/icons/sustainability/topics/unsdgs/3.svg";
 import UNSDGSIcon4 from "../../assets/icons/sustainability/topics/unsdgs/4.svg";
+import UNSDGSIcon5 from "../../assets/icons/sustainability/topics/unsdgs/5.svg";
 import UNSDGSIcon6 from "../../assets/icons/sustainability/topics/unsdgs/6.svg";
+import UNSDGSIcon7 from "../../assets/icons/sustainability/topics/unsdgs/7.svg";
 import UNSDGSIcon8 from "../../assets/icons/sustainability/topics/unsdgs/8.svg";
+import UNSDGSIcon10 from "../../assets/icons/sustainability/topics/unsdgs/10.svg";
 import UNSDGSIcon12 from "../../assets/icons/sustainability/topics/unsdgs/12.svg";
+import UNSDGSIcon13 from "../../assets/icons/sustainability/topics/unsdgs/13.svg";
+import UNSDGSIcon15 from "../../assets/icons/sustainability/topics/unsdgs/15.svg";
 import UNSDGSIcon16 from "../../assets/icons/sustainability/topics/unsdgs/16.svg";
 
 // Vision 2030 Icons
@@ -48,9 +53,14 @@ const unsdgsIcons = [
   { index: 2, icon: UNSDGSIcon2 },
   { index: 3, icon: UNSDGSIcon3 },
   { index: 4, icon: UNSDGSIcon4 },
+  { index: 5, icon: UNSDGSIcon5 },
   { index: 6, icon: UNSDGSIcon6 },
+  { index: 7, icon: UNSDGSIcon7 },
   { index: 8, icon: UNSDGSIcon8 },
+  { index: 10, icon: UNSDGSIcon10 },
   { index: 12, icon: UNSDGSIcon12 },
+  { index: 13, icon: UNSDGSIcon13 },
+  { index: 15, icon: UNSDGSIcon15 },
   { index: 16, icon: UNSDGSIcon16 },
 ];
 

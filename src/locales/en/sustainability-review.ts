@@ -223,6 +223,7 @@ export default {
       p1: "We are committed to maintaining a diverse, equitable and inclusive workplace where hiring and promotion decisions are guided by merit, capability and performance. In 2025, we reinforced a capability-driven recruitment approach focused on attracting the best talent regardless of gender or background, while continuing to support national priorities to develop Saudi talent across all levels of the organization.",
       table: {
         title: "Our Workforce",
+        note: "*includes Al Manar Plant employees."
       },
       chart: {
         title: "Gender ratio",
@@ -270,7 +271,7 @@ export default {
         title: "Food Quality and Safety",
         desc: "We continued to strengthen our proactive quality assurance processes in 2025. Through systematic testing, supplier oversight and process controls, we ensured compliance with regulatory standards and maintained strict internal benchmarks across all production facilities."
       },
-      note: "To uphold our commitment to excellence, we perform more than <span class='text-xl'>2,000</span> quality tests daily across our operations, reinforcing food safety, consistency and product integrity.",
+      note: "To uphold our commitment to excellence, we perform more than <span class='text-2xl'>2,000</span> quality tests daily across our operations, reinforcing food safety, consistency and product integrity.",
       nutrition: {
         title: "Nutrition and Health",
         p1: "We recognize the growing awareness around healthy eating and inclusive nutrition within our communities. In 2025, we continued to prioritize the development and promotion of whole wheat and gluten-free flour products to meet the evolving needs of consumers seeking healthier and specialized dietary options. These product lines support balanced eating habits while providing suitable alternatives for individuals with gluten intolerance.",

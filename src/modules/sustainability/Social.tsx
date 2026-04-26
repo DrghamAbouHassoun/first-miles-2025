@@ -12,13 +12,8 @@ import GraduatesImg from "../../assets/images/sustainability/graduates.jpg";
 import VerticalSpikeYellow from "../../assets/icons/vertical-spike-yellow.svg";
 import {
   GENDER_DATA,
-  OHS_AR,
-  OHS_EN,
   QUALITY_AR,
   QUALITY_EN,
-  SAUDIZATION_AR,
-  SAUDIZATION_AVG,
-  SAUDIZATION_EN,
   TURNOVER_DATA,
 } from "./data/social.data";
 
@@ -71,15 +66,10 @@ const Social = () => {
   const { lang } = useLocale();
 
   const isAr = lang === "ar";
-  const saudization = isAr ? SAUDIZATION_AR : SAUDIZATION_EN;
-  const ohsData = isAr ? OHS_AR : OHS_EN;
   const qualityData = isAr ? QUALITY_AR : QUALITY_EN;
   const qualityTitle = isAr
     ? "ضمان الجودة بالأرقام (في جميع المصانع)"
     : "Quality Assurance in Numbers (across all plants)";
-  const saudizationAvgLabel = isAr
-    ? "متوسط نسبة التوطين"
-    : "Average Saudization Percentage";
 
   const bakeryCards =
     tRaw<BakeryCard[]>("social.communities.saudiBakery2025.cards") ?? [];
@@ -241,7 +231,7 @@ const Social = () => {
                       <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
                         {row.year}
                       </p>
-                      <div className="w-full border-l border-gray-300">
+                      <div className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}>
                         <div className="flex items-center gap-3">
                           <div className="flex-1 h-5 relative">
                             <div
@@ -250,7 +240,10 @@ const Social = () => {
                             />
                             <span
                               className="text-xs font-bold w-12 shrink-0 absolute top-0.5 text-gray-600"
-                              style={{ left: `${row.turnover + 6}%` }}
+                              style={{ 
+                                left: lang === "ar" ? "" : `${row.turnover + 6}%`,
+                                right: lang === "ar" ? `${row.turnover + 6}%` : ""
+                              }}
                             >
                               {row.turnover}%
                             </span>
@@ -264,7 +257,10 @@ const Social = () => {
                             />
                             <span
                               className="text-xs font-bold w-12 shrink-0 text-gray-600 absolute top-0.5"
-                              style={{ left: `${row.retention + 1}%` }}
+                              style={{ 
+                                left: lang === "ar" ? "" : `${row.retention + 1}%`,
+                                right: lang === "ar" ? `${row.retention + 1}%` : ""
+                              }}
                             >
                               {row.retention}%
                             </span>
@@ -283,7 +279,8 @@ const Social = () => {
                           key={tick}
                           className="absolute flex flex-col items-center"
                           style={{
-                            left: `${tick}%`,
+                            left: lang === "ar" ? "" : `${tick}%`,
+                            right: lang === "ar" ? `${tick}%` : "",
                             transform:
                               tick === 100
                                 ? "translateX(-100%)"
@@ -351,8 +348,14 @@ const Social = () => {
                       <table className="workforce-table text-sm">
                         <thead>
                           <tr>
-                            <th rowSpan={2} className="border-b border-fm-yellow"></th>
-                            <th colSpan={3} className="border-b border-b-gray-400">
+                            <th
+                              rowSpan={2}
+                              className="border-b border-fm-yellow"
+                            ></th>
+                            <th
+                              colSpan={3}
+                              className="border-b border-b-gray-400"
+                            >
                               {lang === "ar" ? "2024م" : "2024"}
                             </th>
                             <th
@@ -421,70 +424,177 @@ const Social = () => {
                         </thead>
                         <tbody>
                           <tr>
-                            <td className="font-bold border-b border-gray-400">{lang === "ar" ? "المركز الرئيسي للشركة الإجمالي" : "Head Office Total"}</td>
-                            <td className="text-end border-b border-gray-400">49</td>
-                            <td className="text-end border-b border-gray-400">19</td>
-                            <td className="text-end border-b border-gray-400">68</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">53</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">20</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">73</td>
+                            <td className="font-bold border-b border-gray-400">
+                              {lang === "ar"
+                                ? "المركز الرئيسي للشركة الإجمالي"
+                                : "Head Office Total"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              49
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              19
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              68
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              53
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              20
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              73
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400">{lang === "ar" ? "مصنع جدة*" : "Jeddah Plant"}</td>
-                            <td className="text-end border-b border-gray-400">62</td>
-                            <td className="text-end border-b border-gray-400">164</td>
-                            <td className="text-end border-b border-gray-400">226</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">59</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">145</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">204</td>
+                            <td className=" border-b border-gray-400">
+                              {lang === "ar" ? "مصنع جدة*" : "Jeddah Plant"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              62
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              164
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              226
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              59
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              145
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              204
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400">{lang === "ar" ? "مصنع القصيم" : "Al-Qassim Plant"}</td>
-                            <td className="text-end border-b border-gray-400">44</td>
-                            <td className="text-end border-b border-gray-400">73</td>
-                            <td className="text-end border-b border-gray-400">117</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">46</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">75</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">121</td>
+                            <td className=" border-b border-gray-400">
+                              {lang === "ar"
+                                ? "مصنع القصيم"
+                                : "Al-Qassim Plant"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              44
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              73
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              117
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              46
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              75
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              121
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400">{lang === "ar" ? "مصنع تبوك" : "Tabuk Plant"}</td>
-                            <td className="text-end border-b border-gray-400">30</td>
-                            <td className="text-end border-b border-gray-400">59</td>
-                            <td className="text-end border-b border-gray-400">89</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">26</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">50</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">76</td>
+                            <td className=" border-b border-gray-400">
+                              {lang === "ar" ? "مصنع تبوك" : "Tabuk Plant"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              30
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              59
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              89
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              26
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              50
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              76
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400">{lang === "ar" ? "مصنع الأحساء" : "Al-Asha Plant"}</td>
-                            <td className="text-end border-b border-gray-400">34</td>
-                            <td className="text-end border-b border-gray-400">67</td>
-                            <td className="text-end border-b border-gray-400">101</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">29</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">58</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">87</td>
+                            <td className=" border-b border-gray-400">
+                              {lang === "ar" ? "مصنع الأحساء" : "Al-Asha Plant"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              34
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              67
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              101
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              29
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              58
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              87
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400">{lang === "ar" ? "المصنع الإجمالي" : "Plants total"}</td>
-                            <td className="text-end border-b border-gray-400">170</td>
-                            <td className="text-end border-b border-gray-400">363</td>
-                            <td className="text-end border-b border-gray-400">533</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">160</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">328</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">488</td>
+                            <td className=" border-b border-gray-400">
+                              {lang === "ar"
+                                ? "المصنع الإجمالي"
+                                : "Plants total"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              170
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              363
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              533
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              160
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              328
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              488
+                            </td>
                           </tr>
                           <tr>
-                            <td className=" border-b border-gray-400 font-bold">{lang === "ar" ? "الإجمالي" : "Total"}</td>
-                            <td className="text-end border-b border-gray-400">219</td>
-                            <td className="text-end border-b border-gray-400">382</td>
-                            <td className="text-end border-b border-gray-400">601</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">213</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">348</td>
-                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">561</td>
+                            <td className=" border-b border-gray-400 font-bold">
+                              {lang === "ar" ? "الإجمالي" : "Total"}
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              219
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              382
+                            </td>
+                            <td className="text-end border-b border-gray-400">
+                              601
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              213
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              348
+                            </td>
+                            <td className="bg-fm-yellow-100 font-bold text-black text-end border-b border-gray-400">
+                              561
+                            </td>
                           </tr>
                         </tbody>
                       </table>
+                      <p className="text-xs text-white">
+                        {t("social.diversity.table.note")}
+                      </p>
                     </div>
                   </div>
                   <div dir={isAr ? "rtl" : "ltr"} className="flex-1 w-full">
@@ -496,7 +606,10 @@ const Social = () => {
                     {/* Bar rows */}
                     <div className="mb-1 w-full">
                       {GENDER_DATA.map(({ year, male, female }) => (
-                        <div key={year} className="flex items-stretch gap-2 mb-2">
+                        <div
+                          key={year}
+                          className="flex items-stretch gap-2 mb-2"
+                        >
                           {/* Year label */}
                           <div className="w-10 shrink-0 flex items-center justify-center">
                             <span
@@ -563,7 +676,9 @@ const Social = () => {
                                 style={{ [pos]: `${tick}%`, transform: tf }}
                               >
                                 <div className="w-px h-1.5 bg-gray-500" />
-                                <span className="text-xs text-gray-400">{tick}</span>
+                                <span className="text-xs text-gray-400">
+                                  {tick}
+                                </span>
                               </div>
                             );
                           })}
@@ -575,11 +690,15 @@ const Social = () => {
                     <div className="flex items-center gap-6 mt-3">
                       <div className="flex items-center gap-2">
                         <span className="inline-block w-4 h-4 bg-fm-yellow-100 shrink-0" />
-                        <span className="text-sm">{t("social.diversity.chart.male")}</span>
+                        <span className="text-sm">
+                          {t("social.diversity.chart.male")}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="inline-block w-4 h-4 bg-fm-yellow shrink-0" />
-                        <span className="text-sm">{t("social.diversity.chart.female")}</span>
+                        <span className="text-sm">
+                          {t("social.diversity.chart.female")}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -589,10 +708,10 @@ const Social = () => {
           </div>
 
           {/* ── 4. Nationalization ────────────────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
               <SectionHeader
-                maxWidth={isAr ? "40" : "60"}
+                maxWidth={isAr ? "30" : "30"}
                 title={t("social.nationalization.title")}
               />
             </SlideTopAnimation>
@@ -616,74 +735,162 @@ const Social = () => {
                 }}
               />
 
-              <p className="font-bold text-fm-green mb-3">
+              <p className="font-bold text-fm-yellow mb-3">
                 {t("social.nationalization.table.title")}
               </p>
-              <div className="overflow-auto">
-                <table className="w-full text-sm border-collapse border border-fm-gray-100">
+              <div className="overflow-auto max-w-220">
+                <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-fm-green text-white">
-                      <th className="p-3 text-start font-medium border border-white/10">
-                        {isAr ? "الفئة" : "Category"}
+                    <tr className="border-b border-b-fm-yellow">
+                      <th></th>
+                      <th
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? (
+                          <>
+                            فئة نطاقات
+                            <br />
+                            2024م
+                          </>
+                        ) : (
+                          <>
+                            Nitaqat
+                            <br />
+                            Category 2024
+                          </>
+                        )}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        {isAr
-                          ? "فئة التوطين 2024"
-                          : "Saudization Category 2024"}
+                      <th
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? (
+                          <>
+                            التوطين
+                            <br />
+                            2024م
+                          </>
+                        ) : (
+                          <>
+                            Saudization
+                            <br />
+                            2024
+                          </>
+                        )}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        {isAr
-                          ? "فئة التوطين 2025"
-                          : "Saudization Category 2025"}
+                      <th
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? (
+                          <>
+                            فئة نطاقات
+                            <br />
+                            2025م
+                          </>
+                        ) : (
+                          <>
+                            Nitaqat
+                            <br />
+                            Category 2025
+                          </>
+                        )}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        {isAr
-                          ? "نسبة التوطين الفعلية 2024"
-                          : "Actual Saudization 2024"}
-                      </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        {isAr
-                          ? "نسبة التوطين الفعلية 2025"
-                          : "Actual Saudization 2025"}
+                      <th
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? (
+                          <>
+                            نسبة التوطين
+                            <br />
+                            2025م
+                          </>
+                        ) : (
+                          <>
+                            Saudization
+                            <br />
+                            2025
+                          </>
+                        )}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {saudization.map((row, i) => (
-                      <tr
-                        key={i}
-                        className={
-                          i % 2 === 0 ? "bg-white" : "bg-fm-gray-100/40"
-                        }
-                      >
-                        <td className="p-3 font-medium border border-fm-gray-100">
-                          {row.category}
-                        </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          <span className="bg-green-600 text-white px-2 py-0.5 rounded text-xs">
-                            {row.cat24}
-                          </span>
-                        </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          <span className="bg-green-600 text-white px-2 py-0.5 rounded text-xs">
-                            {row.cat25}
-                          </span>
-                        </td>
-                        <td className="p-3 text-center font-bold border border-fm-gray-100">
-                          {row.actual24}
-                        </td>
-                        <td className="p-3 text-center font-bold border border-fm-gray-100">
-                          {row.actual25}
-                        </td>
-                      </tr>
-                    ))}
-                    <tr className="bg-fm-green/10 font-bold">
-                      <td className="p-3 border border-fm-gray-100" colSpan={3}>
-                        {saudizationAvgLabel}
+                    <tr>
+                      <td className=" border-b border-b-gray-400">
+                        {lang === "ar"
+                          ? "المركز الرئيسي للشركة"
+                          : "Head Office"}
                       </td>
-                      <td className="p-3 border border-fm-gray-100" />
-                      <td className="p-3 text-center text-fm-green border border-fm-gray-100">
-                        {SAUDIZATION_AVG}
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "بلاتيني" : "Platinum"}
+                      </td>
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%42" : "42%"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "بلاتيني" : "Platinum"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%50" : "50%"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className=" border-b border-b-gray-400">
+                        {lang === "ar" ? "المصانع" : "Plants"}
+                      </td>
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                      </td>
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%37" : "37%"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%38" : "38%"}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-bold border-b border-b-gray-400">
+                        {lang === "ar"
+                          ? "متوسط نسبة التوطين"
+                          : "Average Saudization Percentage"}
+                      </td>
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                      </td>
+                      <td
+                        className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%39.5" : "39.5%"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                      </td>
+                      <td
+                        className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                      >
+                        {lang === "ar" ? "%43.7" : "43.7%"}
                       </td>
                     </tr>
                   </tbody>
@@ -693,7 +900,7 @@ const Social = () => {
           </div>
 
           {/* ── 5. Occupational Health and Safety ────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
               <SectionHeader
                 maxWidth={isAr ? "60" : "100"}
@@ -717,42 +924,134 @@ const Social = () => {
               <p className="font-bold text-fm-green mb-3">
                 {t("social.occupational.table.title")}
               </p>
-              <div className="overflow-auto mb-6">
-                <table className="w-full text-sm border-collapse border border-fm-gray-100">
-                  <thead>
-                    <tr className="bg-fm-green text-white">
-                      <th className="p-3 text-start font-medium border border-white/10">
-                        {isAr ? "المؤشر" : "Metric"}
-                      </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        2024
-                      </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        2025
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {ohsData.map((row, i) => (
-                      <tr
-                        key={i}
-                        className={
-                          i % 2 === 0 ? "bg-white" : "bg-fm-gray-100/40"
-                        }
-                      >
-                        <td className="p-3 font-medium border border-fm-gray-100">
-                          {row.metric}
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="overflow-auto mb-6">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-fm-yellow">
+                        <th className="text-bold p-2 text-fm-yellow text-start">
+                          {lang === "ar" ? "التدريب" : "Training"}
+                        </th>
+                        <th
+                          className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                        >
+                          {lang === "ar" ? "2024م" : "2024"}
+                        </th>
+                        <th
+                          className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                        >
+                          {lang === "ar" ? "2025م" : "2025"}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-300">
+                        <td className=" p-2">
+                          {lang === "ar"
+                            ? "الدورات التدريبية"
+                            : "Training sessions"}
                         </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          {row.val24}
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                        >
+                          68
                         </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          {row.val25}
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                        >
+                          11
                         </td>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      <tr className="border-b border-gray-300">
+                        <td className=" p-2">
+                          {lang === "ar" ? "ساعات التدريب" : "Training hours"}
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                        >
+                          37
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                        >
+                          272
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className=" p-2">
+                          {lang === "ar"
+                            ? "ساعات التشغيل الآمنة"
+                            : "Safe operation hours"}
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                        >
+                          1,440,000
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                        >
+                          1,200,278
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="overflow-auto mb-6">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-fm-yellow">
+                        <th className="text-bold p-2 text-fm-yellow text-start"></th>
+                        <th
+                          className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                        >
+                          {lang === "ar" ? "2024م" : "2024"}
+                        </th>
+                        <th
+                          className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                        >
+                          {lang === "ar" ? "2025م" : "2025"}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-300">
+                        <td className=" p-2">
+                          {lang === "ar"
+                            ? "الحوادث البسيطة"
+                            : "Minor incidents"}
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                        >
+                          9
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                        >
+                          6
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-300">
+                        <td className=" p-2">
+                          {lang === "ar"
+                            ? "الإصابات البسيطة"
+                            : "Major quality incidents"}
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                        >
+                          0
+                        </td>
+                        <td
+                          className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                        >
+                          0
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
               <p
@@ -773,10 +1072,10 @@ const Social = () => {
           </div>
 
           {/* ── 5b. Well-being and Employee Experience ────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
               <SectionHeader
-                maxWidth={isAr ? "40" : "80"}
+                maxWidth={isAr ? "40" : "120"}
                 title={t("social.occupational.wellBeing.title")}
               />
             </SlideTopAnimation>
@@ -808,14 +1107,14 @@ const Social = () => {
           </div>
 
           {/* ── 6a. Communities dark block ────────────────────────────────── */}
-          <FadeInAnimation className="bg-fm-green text-white rounded-lg px-8 py-8 mb-8">
+          <FadeInAnimation className="mb-8">
             <SlideTopAnimation>
-              <h2 className="text-fm-yellow font-bold text-2xl mb-4">
+              <h2 className="text-fm-yellow font-bold text-3xl mb-4">
                 {t("social.communities.title")}
               </h2>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <h3 className="text-fm-yellow font-bold mb-3">
+              <h3 className=" font-bold mb-3">
                 {t("social.communities.support.title")}
               </h3>
             </SlideTopAnimation>
@@ -829,7 +1128,7 @@ const Social = () => {
           </FadeInAnimation>
 
           {/* ── 6b. Ensuring Excellence ───────────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <FadeInAnimation>
               <h3 className="font-bold text-lg mb-3">
                 {t("social.communities.ensuring.title")}
@@ -843,12 +1142,11 @@ const Social = () => {
           </div>
 
           {/* ── 6c. Food Quality & Safety ─────────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <SectionHeader
-                maxWidth={isAr ? "30" : "50"}
-                title={t("social.communities.food.title")}
-              />
+              <h3 className="font-bold text-lg mb-1 text-fm-yellow">
+                {t("social.communities.food.title")}
+              </h3>
             </SlideTopAnimation>
             <FadeInAnimation className="mt-4">
               <p
@@ -857,71 +1155,84 @@ const Social = () => {
                   __html: t("social.communities.food.desc"),
                 }}
               />
-
-              {/* Quality note callout */}
-              <div className="border border-fm-yellow rounded-lg p-5 bg-fm-yellow-100 mb-6 text-center">
-                <p
-                  className="text-fm-green font-semibold"
-                  dangerouslySetInnerHTML={{
-                    __html: t("social.communities.note"),
-                  }}
-                />
-              </div>
-
               {/* Quality assurance table */}
-              <div className="overflow-auto">
-                <table className="w-full text-sm border-collapse border border-fm-gray-100">
+              <div className="overflow-auto max-w-220">
+                <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-fm-green text-white">
-                      <th className="p-3 text-start font-medium border border-white/10">
+                    <tr className="border-b border-fm-yellow">
+                      <th className="p-2 text-start font-bold">
                         {qualityTitle}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        2023
+                      <th
+                        className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
+                      >
+                        {isAr ? "2023م" : "2023"}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        2024
+                      <th
+                        className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
+                      >
+                        {isAr ? "2024م" : "2024"}
                       </th>
-                      <th className="p-3 text-center font-medium border border-white/10">
-                        2025
+                      <th
+                        className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
+                      >
+                        {isAr ? "2025م" : "2025"}
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {qualityData.map((row, i) => (
-                      <tr
-                        key={i}
-                        className={
-                          i % 2 === 0 ? "bg-white" : "bg-fm-gray-100/40"
-                        }
-                      >
-                        <td className="p-3 font-medium border border-fm-gray-100">
-                          {row.metric}
-                        </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          {row.val23}
-                        </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          {row.val24}
-                        </td>
-                        <td className="p-3 text-center border border-fm-gray-100">
-                          {row.val25}
-                        </td>
-                      </tr>
-                    ))}
+                    {qualityData.map((row, i) =>
+                      row.isHeader ? (
+                        <tr key={i} className="border-b border-gray-200">
+                          <td
+                            colSpan={4}
+                            className="p-2 font-bold text-fm-green"
+                          >
+                            {row.metric}
+                          </td>
+                        </tr>
+                      ) : (
+                        <tr key={i} className="border-b border-gray-200">
+                          <td className="p-2">{row.metric}</td>
+                          <td
+                            className={`p-2 ${isAr ? "text-start" : "text-end"}`}
+                          >
+                            {row.val23}
+                          </td>
+                          <td
+                            className={`p-2 ${isAr ? "text-start" : "text-end"}`}
+                          >
+                            {row.val24}
+                          </td>
+                          <td
+                            className={`p-2 font-bold bg-fm-yellow-100 ${isAr ? "text-start" : "text-end"}`}
+                          >
+                            {row.val25}
+                          </td>
+                        </tr>
+                      ),
+                    )}
                   </tbody>
                 </table>
               </div>
             </FadeInAnimation>
+            {/* Quality note callout */}
+            <div className="w-full max-w-240 mx-auto py-10 p-4 bg-fm-green text-fm-yellow my-16">
+              <p
+                className="text-fm-yellow text-lg max-w-2/3"
+                dangerouslySetInnerHTML={{
+                  __html: t("social.communities.note"),
+                }}
+              />
+            </div>
           </div>
 
           {/* ── 6d. Nutrition and Health ──────────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <SectionHeader
-                maxWidth={isAr ? "40" : "60"}
-                title={t("social.communities.nutrition.title")}
-              />
+              <h3 className="text-fm-yellow font-bold">
+                {t("social.communities.nutrition.title")}
+              </h3>
             </SlideTopAnimation>
             <FadeInAnimation className="mt-4">
               <p
@@ -939,12 +1250,11 @@ const Social = () => {
           </div>
 
           {/* ── 6e. Community Support ─────────────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <SectionHeader
-                maxWidth={isAr ? "30" : "50"}
-                title={t("social.communities.communitySupport.title")}
-              />
+              <h3 className="font-bold">
+                {t("social.communities.communitySupport.title")}
+              </h3>
             </SlideTopAnimation>
             <FadeInAnimation className="mt-4">
               <p
@@ -968,12 +1278,11 @@ const Social = () => {
           </div>
 
           {/* ── 6f. Saudi Bakery Initiative ───────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <SectionHeader
-                maxWidth={isAr ? "50" : "70"}
-                title={t("social.communities.saudiBakery.title")}
-              />
+              <h3 className="text-fm-yellow font-bold">
+                {t("social.communities.saudiBakery.title")}
+              </h3>
             </SlideTopAnimation>
             <FadeInAnimation className="mt-4">
               <p
@@ -1004,16 +1313,18 @@ const Social = () => {
                     transitionDelay: `${i * 100}ms`,
                   }}
                 >
-                  <div className="bg-fm-green text-white rounded-lg overflow-hidden">
-                    <img
-                      src={BAKERY_IMAGES[i]}
-                      alt={card.label}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-5 text-center">
-                      <p className="text-4xl font-bold text-fm-yellow">
-                        {card.value}
-                      </p>
+                  <div className=" text-white overflow-hidden">
+                    <div className="w-full h-full absolute top-0 left-0 -z-10">
+                      <img
+                        src={BAKERY_IMAGES[i]}
+                        alt={card.label}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div
+                      className={`p-5 py-16 ${i === 0 ? "text-end bg-linear-to-l" : "text-start bg-linear-to-r"} from-fm-green to-fm-green/0`}
+                    >
+                      <p className="text-4xl font-bold">{card.value}</p>
                       <p className="text-sm mt-1">{card.label}</p>
                     </div>
                   </div>
@@ -1023,12 +1334,11 @@ const Social = () => {
           </div>
 
           {/* ── 6g. Partnerships and Community Outreach ───────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <SectionHeader
-                maxWidth={isAr ? "50" : "80"}
-                title={t("social.communities.partnerships.title")}
-              />
+              <h3 className="font-bold text-fm-yellow">
+                {t("social.communities.partnerships.title")}
+              </h3>
             </SlideTopAnimation>
             <FadeInAnimation className="mt-4">
               <p
@@ -1046,30 +1356,43 @@ const Social = () => {
           </div>
 
           {/* ── 6h. Community Contributions ───────────────────────────────── */}
-          <div className="mb-8 max-w-220">
+          <div className="mb-8">
             <SlideTopAnimation>
-              <h3 className="font-bold text-fm-green text-lg mb-4">
+              <h3 className="font-bold text-fm-yellow mb-4">
                 {t("social.communities.communityContributions.title")}
               </h3>
             </SlideTopAnimation>
             <FadeInAnimation>
               <div className="space-y-4 mb-6">
                 {contributions.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4 border border-fm-gray-100 rounded-lg p-4"
-                  >
-                    <p className="text-sm text-fm-gray-300 flex-1">
-                      {item.text}
-                    </p>
-                    <div className="flex items-baseline gap-2 shrink-0">
-                      <span className="text-2xl font-bold text-fm-yellow">
-                        {item.value}
-                      </span>
-                      <span
-                        className="text-sm text-fm-gray-300"
-                        dangerouslySetInnerHTML={{ __html: String(item.label) }}
-                      />
+                  <div key={i} className=" flex items-end gap-2">
+                    <p className="font-bold">{item.text}</p>
+                    <div className="flex items-baseline gap-2">
+                      {i === 2 ? (
+                        <>
+                          <span
+                            className="text-4xl text-fm-yellow font-bold"
+                            dangerouslySetInnerHTML={{
+                              __html: String(item.label),
+                            }}
+                          />
+                          <span className="text-4xl font-bold text-fm-yellow">
+                            {item.value}
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-4xl font-bold text-fm-yellow">
+                            {item.value}
+                          </span>
+                          <span
+                            className="text-sm font-bold"
+                            dangerouslySetInnerHTML={{
+                              __html: String(item.label),
+                            }}
+                          />
+                        </>
+                      )}
                     </div>
                   </div>
                 ))}
