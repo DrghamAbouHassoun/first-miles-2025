@@ -88,7 +88,7 @@ const GeoRevenueColumn = ({
             <CounterAnimation
               as="span"
               end={total}
-              decimals={2}
+              decimals={1}
               separator=","
               duration={1.5}
             />
