@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
-import ChairmanImage from "../../../assets/images/leadership-people/chairman.png";
+import ChairmanImage from "../../../assets/images/leadership-people/new-chairman.png";
 import LeadershipHeader from "./LeadershipHeader";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import GroupOfSpikes from "./GroupOfSpikes";
@@ -31,6 +31,7 @@ const ChairmanTab = () => {
           title={data.name}
           subtitle={data.title}
           quotation={data.quote}
+          isCEOorChairman
         />
       </Container>
       <div className="pt-16">

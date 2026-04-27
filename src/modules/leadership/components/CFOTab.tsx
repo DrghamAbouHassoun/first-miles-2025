@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
-import CFOImage from "../../../assets/images/leadership-people/cfo.png";
+import CFOImage from "../../../assets/images/leadership-people/new-cfo.png";
 import LeadershipHeader from "./LeadershipHeader";
 import GroupOfSpikes from "./GroupOfSpikes";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";

@@ -1,5 +1,5 @@
 import LeadershipHeader from "../../../leadership/components/LeadershipHeader";
-import COOImage from "../../../../assets/images/operating-review/coo/coo.png";
+import COOImage from "../../../../assets/images/leadership-people/new-coo.png";
 import { useTranslation } from "../../../common/hooks/useTranslation";
 import Container from "../../../common/components/Container/Container";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";

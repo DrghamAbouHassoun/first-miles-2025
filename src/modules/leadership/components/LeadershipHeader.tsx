@@ -1,7 +1,7 @@
 import { SITE_NAME } from "../../../config/constants";
 import VerticalSpike from "../../../assets/icons/vertical-spike.svg";
 import QuotationIcon from "../../../assets/icons/quotation.svg";
-import useWindowDimensions from "../../common/hooks/useWindowDimensions";
+// import useWindowDimensions from "../../common/hooks/useWindowDimensions";
 import FlowerOneIcon from "../../../assets/vectors/flower-1.svg";
 import FlowerTwoIcon from "../../../assets/vectors/flower-2.svg";
 import { useLocale } from "../../common/hooks/useLocale";
@@ -16,19 +16,21 @@ interface LeadershipHeaderProps {
   title: string;
   subtitle?: string;
   quotation?: string;
+  isCEOorChairman?: boolean;
 }
 
 const LeadershipHeader = ({
   imageUrl,
-  imageWidth = 250,
-  imageScale = 1,
-  imageTranslateX = 0,
-  imageTranslateY = 0,
+  // imageWidth = 250,
+  // imageScale = 1,
+  // imageTranslateX = 0,
+  // imageTranslateY = 0,
   title,
   subtitle,
   quotation,
+  isCEOorChairman = false,
 }: LeadershipHeaderProps) => {
-  const { width: screenWidth } = useWindowDimensions();
+  // const { width: screenWidth } = useWindowDimensions();
   const { lang } = useLocale();
 
   const { ref: flowerOneRef, inView: isFlowerOneInView } =
@@ -43,7 +45,7 @@ const LeadershipHeader = ({
     useInView<HTMLDivElement>({});
 
   return (
-    <div className="w-full bg-fm-green text-white flex flex-col lg:items-center lg:flex-row overflow-x-clip relative min-h-100 pb-4 lg:pb-0">
+    <div className="w-full bg-fm-green text-white flex flex-col lg:items-center lg:flex-row overflow-x-clip relative min-h-100 pb-4 lg:pb-0 lg:max-h-40">
       {/* <img
         src={TwoLeavesVector}
         alt={SITE_NAME}
@@ -73,20 +75,20 @@ const LeadershipHeader = ({
       </div>
       <div
         ref={imageRef}
-        className={` flex relative max-w-100 lg:max-w-none justify-center lg:justify-start lg:w-110 ${lang === "ar" ? "animation-slide-left-50" : "animation-slide-right-50"} ${isImageInView ? "active" : ""}`}
+        className={` flex relative max-w-90 lg:max-w-none justify-center lg:justify-start lg:w-110 ${lang === "ar" ? "animation-slide-left-50" : "animation-slide-right-50"} ${isImageInView ? "active" : ""}`}
       >
-        <div className={`${lang === "ar" ? "rotate-y-180" : ""}`}>
+        <div className={`${lang === "en" ? "rotate-y-180" : ""}`}>
           <img
             src={imageUrl}
             alt={`${title} | ${SITE_NAME}`}
-            style={{
-              width: screenWidth > 1024 ? imageWidth : "100%",
-              transform:
-                screenWidth > 1024
-                  ? `scale(${imageScale}) translateX(${imageTranslateX}px) translateY(${imageTranslateY}px)`
-                  : "translateX(-16px)",
-            }}
-            className="w-full h-auto object-contain"
+            // style={{
+            //   width: screenWidth > 1024 ? imageWidth : "100%",
+            //   transform:
+            //     screenWidth > 1024
+            //       ? `scale(${imageScale}) translateX(${imageTranslateX}px) translateY(${imageTranslateY}px)`
+            //       : "translateX(-16px)",
+            // }}
+            className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? "lg:-translate-y-25.5" : "lg:-translate-y-23"} lg:translate-x-1`}
           />
         </div>
       </div>
@@ -109,7 +111,7 @@ const LeadershipHeader = ({
             <img
               src={VerticalSpike}
               alt={SITE_NAME}
-              className={`${lang === "ar" ? "animation-slide-right-100": "animation-slide-right-100"} ${isInfoInView ? "active" : ""}`}
+              className={`w-full object-contain ${lang === "ar" ? "animation-slide-right-100": "animation-slide-right-100"} ${isInfoInView ? "active" : ""}`}
             />
           </div>
         </div>

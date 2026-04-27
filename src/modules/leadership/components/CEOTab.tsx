@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
-import CEOImage from "../../../assets/images/leadership-people/ceo.png";
+import CEOImage from "../../../assets/images/leadership-people/new-ceo.png";
 import LeadershipHeader from "./LeadershipHeader";
 import GroupOfSpikes from "./GroupOfSpikes";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
@@ -32,6 +32,7 @@ const CEOTab = () => {
           title={data.name}
           subtitle={data.title}
           quotation={data.quote}
+          isCEOorChairman={true}
         />
       </Container>
 
