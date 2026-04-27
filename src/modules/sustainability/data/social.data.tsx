@@ -1,6 +1,6 @@
 export const TURNOVER_DATA = [
-  { year: "2024", turnover: 2, retention: 98.5 },
-  { year: "2025", turnover: 1.9, retention: 98.5 },
+  { year: "2024", turnover: 2, retention: 98.0 },
+  { year: "2025", turnover: 1.9, retention: 98.1 },
 ];
 
 export const WORKFORCE_EN = [
@@ -156,7 +156,7 @@ export const QUALITY_EN = [
   { metric: "Microbiological", val23: "100", val24: "100", val25: "100", isHeader: false },
 ];
 export const QUALITY_AR = [
-  { metric: "إجمالي الفحوصات المنفذة", val23: "720,000", val24: "817,600", val25: "893,520", isHeader: false },
+  { metric: "إجمالي الفحوصات المنفّذة", val23: "720,000", val24: "817,600", val25: "893,520", isHeader: false },
   { metric: "الفحوصات اليومية", val23: "", val24: "", val25: "", isHeader: true },
   { metric: "فيزيائية", val23: "400", val24: "420", val25: "598", isHeader: false },
   { metric: "كيميائية", val23: "1,500", val24: "1,720", val25: "1,715", isHeader: false },

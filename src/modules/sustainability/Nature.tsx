@@ -271,7 +271,7 @@ const Nature = () => {
                         <img
                           src={LIFECYCLE_ICONS[i]}
                           alt=""
-                          className="w-12 h-12"
+                          className={`w-12 h-12 ${lang === "ar" ? "rotate-y-180" : ""}`}
                         />
                         <h4 className="font-bold text-lg text-fm-yellow">
                           {div.title}

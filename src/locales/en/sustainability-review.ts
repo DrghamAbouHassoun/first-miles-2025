@@ -23,7 +23,7 @@ export default {
       "Our sustainability strategy is built on a robust framework that connects our long-term ambitions with everyday operational decisions. We recognize that sustainable performance must be intentional, structured and embedded into how we run the business.",
       "We organize our strategy around three core pillars that address our most material impacts: protecting the natural environment, driving positive social outcomes and upholding responsible governance. These pillars shape our priorities, guide our investments and inform how we measure progress across the organization.",
       "Our strategic framework translates these pillars into defined action areas and enabling capabilities. By linking environmental and social objectives to measurable targets, governance oversight and clear accountability, we create a structured pathway for progress. This approach aligns our efforts with national priorities and evolving global standards, while reinforcing our commitment to responsible growth and long-term value creation.",
-      "For further information on our strategy, please refer to the 2025 Sustainability Report that will be available on our website at <a target='_blank' href='https://www.firstmills.com/en/sustainability.php'>https://www.firstmills.com/en/sustainability.php</a>",
+      "For further information on our strategy, please refer to the 2025 Sustainability Report that will be available on our website at <a target='_blank' class='text-fm-yellow' href='https://www.firstmills.com/en/sustainability.php'>https://www.firstmills.com/en/sustainability.php</a>",
     ],
     accordionTitle: "Strategic Framework",
     visionSection: {
@@ -207,7 +207,7 @@ export default {
         title: "Workforce Development",
         p1: "We are committed to developing our people, supporting our communities and contributing to economic development and food security across the Kingdom of Saudi Arabia. Our workforce development approach is holistic and closely aligned with Vision 2030, with a strong focus on initiatives that deliver meaningful social value through education, capability-building and skills development programs that benefit both employees and the wider community. We also play an active role in supporting local entrepreneurship and national talent development, helping to strengthen the broader labor market in which we operate.",
         p2: "In 2025, this commitment was reflected in the rollout of an organization-wide leadership development program and continued enhancements to core HR processes and systems, designed to improve recruitment, onboarding, performance management and career progression.",
-        p3: "For more details and specific metrics on training, safety programs and people development performance, please refer to the Sustainability Report published on our website at <a target='_blank' href='https://www.firstmills.com'>www.firstmills.com</a>"
+        p3: "For more details and specific metrics on training, safety programs and people development performance, please refer to the Sustainability Report published on our website at <a target='_blank' class='text-fm-yellow' href='https://www.firstmills.com'>www.firstmills.com</a>"
       },
       turnover: {
         title: "Turnover and Retention",

@@ -151,7 +151,7 @@ const Social = () => {
               <img
                 src={VerticalSpikeYellow}
                 alt="First Mills"
-                className="w-90 h-5 object-contain object-right"
+                className={`w-90 h-5 object-contain object-right ${lang === "ar" ? "rotate-y-180" : ""}`}
               />
             </div>
             <div className="flex gap-4 flex-col md:flex-row">
@@ -226,48 +226,56 @@ const Social = () => {
                 </p>
 
                 <div className="mb-6">
-                  {TURNOVER_DATA.map((row) => (
-                    <div key={row.year} className="flex w-full items-center">
-                      <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
-                        {row.year}
-                      </p>
-                      <div className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}>
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 h-5 relative">
-                            <div
-                              className="bg-fm-green h-5"
-                              style={{ width: `${row.turnover + 5}%` }}
-                            />
-                            <span
-                              className="text-xs font-bold w-12 shrink-0 absolute top-0.5 text-gray-600"
-                              style={{ 
-                                left: lang === "ar" ? "" : `${row.turnover + 6}%`,
-                                right: lang === "ar" ? `${row.turnover + 6}%` : ""
-                              }}
-                            >
-                              {row.turnover}%
-                            </span>
+                  {TURNOVER_DATA.map((row, i) => (
+                    <PopupAnimation
+                      key={row.year}
+                      style={{
+                        animationDelay: `${i * 120}ms`,
+                        transitionDelay: `${i * 120}ms`,
+                      }}
+                    >
+                      <div className="flex w-full items-center">
+                        <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
+                          {row.year}
+                        </p>
+                        <div className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}>
+                          <div className="flex items-center gap-3">
+                            <div className="flex-1 h-5 relative">
+                              <div
+                                className="bg-fm-green h-5"
+                                style={{ width: `${row.turnover + 5}%` }}
+                              />
+                              <span
+                                className="text-xs font-bold w-12 shrink-0 absolute top-0.5 text-gray-600"
+                                style={{
+                                  left: lang === "ar" ? "" : `${row.turnover + 6}%`,
+                                  right: lang === "ar" ? `${row.turnover + 6}%` : ""
+                                }}
+                              >
+                                {row.turnover}%
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 h-5 relative">
-                            <div
-                              className="bg-fm-yellow h-5"
-                              style={{ width: `${row.retention}%` }}
-                            />
-                            <span
-                              className="text-xs font-bold w-12 shrink-0 text-gray-600 absolute top-0.5"
-                              style={{ 
-                                left: lang === "ar" ? "" : `${row.retention + 1}%`,
-                                right: lang === "ar" ? `${row.retention + 1}%` : ""
-                              }}
-                            >
-                              {row.retention}%
-                            </span>
+                          <div className="flex items-center gap-3">
+                            <div className="flex-1 h-5 relative">
+                              <div
+                                className="bg-fm-yellow h-5"
+                                style={{ width: `${row.retention}%` }}
+                              />
+                              <span
+                                className="text-xs font-bold w-12 shrink-0 text-gray-600 absolute top-0.5"
+                                style={{
+                                  left: lang === "ar" ? "" : `${row.retention + 1}%`,
+                                  right: lang === "ar" ? `${row.retention + 1}%` : ""
+                                }}
+                              >
+                                {row.retention.toFixed(1)}%
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </PopupAnimation>
                   ))}
 
                   {/* X-axis */}
@@ -605,9 +613,15 @@ const Social = () => {
 
                     {/* Bar rows */}
                     <div className="mb-1 w-full">
-                      {GENDER_DATA.map(({ year, male, female }) => (
-                        <div
+                      {GENDER_DATA.map(({ year, male, female }, i) => (
+                        <PopupAnimation
                           key={year}
+                          style={{
+                            animationDelay: `${i * 120}ms`,
+                            transitionDelay: `${i * 120}ms`,
+                          }}
+                        >
+                        <div
                           className="flex items-stretch gap-2 mb-2"
                         >
                           {/* Year label */}
@@ -648,6 +662,7 @@ const Social = () => {
                             </div>
                           </div>
                         </div>
+                        </PopupAnimation>
                       ))}
 
                       {/* X-axis */}
@@ -1217,14 +1232,16 @@ const Social = () => {
               </div>
             </FadeInAnimation>
             {/* Quality note callout */}
-            <div className="w-full max-w-240 mx-auto py-10 p-4 bg-fm-green text-fm-yellow my-16">
-              <p
-                className="text-fm-yellow text-lg max-w-2/3"
-                dangerouslySetInnerHTML={{
-                  __html: t("social.communities.note"),
-                }}
-              />
-            </div>
+            <PopupAnimation>
+              <div className="w-full max-w-240 mx-auto py-10 p-4 bg-fm-green text-fm-yellow my-16">
+                <p
+                  className="text-fm-yellow text-lg max-w-2/3"
+                  dangerouslySetInnerHTML={{
+                    __html: t("social.communities.note"),
+                  }}
+                />
+              </div>
+            </PopupAnimation>
           </div>
 
           {/* ── 6d. Nutrition and Health ──────────────────────────────────── */}
@@ -1365,7 +1382,14 @@ const Social = () => {
             <FadeInAnimation>
               <div className="space-y-4 mb-6">
                 {contributions.map((item, i) => (
-                  <div key={i} className=" flex items-end gap-2">
+                  <PopupAnimation
+                    key={i}
+                    style={{
+                      animationDelay: `${i * 120}ms`,
+                      transitionDelay: `${i * 120}ms`,
+                    }}
+                  >
+                  <div className=" flex items-end gap-2">
                     <p className="font-bold">{item.text}</p>
                     <div className="flex items-baseline gap-2">
                       {i === 2 ? (
@@ -1395,6 +1419,7 @@ const Social = () => {
                       )}
                     </div>
                   </div>
+                  </PopupAnimation>
                 ))}
               </div>
               <p
