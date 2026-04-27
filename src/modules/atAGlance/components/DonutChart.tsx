@@ -59,7 +59,7 @@ const DonutChart = ({
             {totalLabel} {year}{lang === "ar" ? "م" : ""}
           </span>
           <span className="text-base font-bold text-fm-yellow leading-tight">
-            <CounterAnimation as="span" end={total} decimals={2} separator="," duration={1.5} />
+            <CounterAnimation as="span" end={total} decimals={1} separator="," duration={1.5} />
           </span>
           <span className="text-[10px] text-fm-gray-300 leading-tight" dangerouslySetInnerHTML={{ __html: `(${unit})`}}>
             
