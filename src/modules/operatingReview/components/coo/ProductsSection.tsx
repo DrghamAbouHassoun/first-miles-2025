@@ -1,5 +1,7 @@
 import Container from "../../../common/components/Container/Container";
 import { useTranslation } from "../../../common/hooks/useTranslation";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
+import PopupAnimation from "../../../common/components/animations/PopupAnimation";
 
 // Products Image
 import PImage0 from "../../../../assets/images/operating-review/coo/products/1.png";
@@ -54,20 +56,23 @@ const ProductsSection = () => {
   return (
     <section className="py-16">
       <Container>
-        <h1 className="text-3xl font-bold">
-          <span className="text-fm-yellow">
-            {t("cooContent.productsSection.title1")}
-          </span>{" "}
-          {t("cooContent.productsSection.title2")}
-        </h1>
+        <SlideTopAnimation>
+          <h1 className="text-3xl font-bold">
+            <span className="text-fm-yellow">
+              {t("cooContent.productsSection.title1")}
+            </span>{" "}
+            {t("cooContent.productsSection.title2")}
+          </h1>
+        </SlideTopAnimation>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
           {products.map((item) => (
-            <ProductCard
-              key={item.title}
-              title={t(item.title)}
-              desc={t(item.desc)}
-              image={item.image}
-            />
+            <PopupAnimation key={item.title}>
+              <ProductCard
+                title={t(item.title)}
+                desc={t(item.desc)}
+                image={item.image}
+              />
+            </PopupAnimation>
           ))}
         </div>
       </Container>

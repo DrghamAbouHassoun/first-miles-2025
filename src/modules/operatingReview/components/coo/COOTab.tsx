@@ -46,7 +46,8 @@ const COOTab = () => {
   const { t } = useTranslation("operating-review");
   const { lang, translations } = useContext(LangContext);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const qualityData = (translations as any)[lang]?.["operating-review"]?.cooContent?.qualitySection;
+  const qualityData = (translations as any)[lang]?.["operating-review"]
+    ?.cooContent?.qualitySection;
   return (
     <div className="pt-44">
       <Container>
@@ -121,7 +122,14 @@ const COOTab = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="py-32">
+        <Container>
+          <SlideTopAnimation>
+            <h3 className="text-xl font-bold text-fm-yellow mb-4 pt-16">
+              {t("cooContent.servicesTitle")}
+            </h3>
+          </SlideTopAnimation>
+        </Container>
+        <div className="pb-32 pt-16">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-220 mx-auto">
               {services.map((item, index) => (

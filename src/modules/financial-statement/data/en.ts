@@ -74,7 +74,7 @@ export const consolidatedIncomeStatementOfProfitAndLoss = {
     { cells: ["General and administrative expenses", 30, -74969451, -81875909] },
     { cells: ["Selling and distribution expenses", 31, -67822759, -55565102] },
     { cells: ["Expected credit reversal/(loss) on trade receivables", 14.2, 306187, -314586] },
-    { cells: ["Gain on disposals of property, plant and equipment", "--", "--", -855570] },
+    { cells: ["Gain on disposals of property, plant and equipment", null, "--", -855570] },
 
     { bold: true, cells: ["Operating profit", null, 339717002, 318476631] },
 

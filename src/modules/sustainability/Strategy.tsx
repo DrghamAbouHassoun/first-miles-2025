@@ -115,6 +115,9 @@ const Strategy = () => {
       {/* Accordion */}
       <section className="bg-white pb-16">
         <Container>
+          <SlideTopAnimation>
+            <h3 className="text-xl font-bold mb-4">{t("sustainabilityStrategy.accordionTitle")}</h3>
+          </SlideTopAnimation>
           <div className="overflow-hidden">
 
             {/* Vision */}
@@ -168,7 +171,7 @@ const Strategy = () => {
                       {list.map((item, ii) => (
                         <li key={ii} className="flex items-center gap-3">
                           <span className=" rounded-md p-1.5 shrink-0 flex items-center justify-center">
-                            <img src={FOCUS_ICONS[li]?.[ii]} alt="" className="w-5 h-5" />
+                            <img src={FOCUS_ICONS[li]?.[ii]} alt="" className={`w-5 h-5 ${item === "التغذية والصحة" || item === "أخلاقيات العمل وحقوق الإنسان" ? "rotate-y-180" : ""}`} />
                           </span>
                           <span className="">{item}</span>
                         </li>

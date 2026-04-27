@@ -2,6 +2,8 @@ import Container from "../../../common/components/Container/Container";
 import { useLocale } from "../../../common/hooks/useLocale";
 import { useTranslation } from "../../../common/hooks/useTranslation";
 import { tableDataEn, tableDataAr } from "../../data/coo-tables";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
+import FadeInAnimation from "../../../common/components/animations/FadeInAnimation";
 
 const HIGHLIGHTED_CELL_INDEX = 5;
 
@@ -12,13 +14,15 @@ const ProductRevnewSection = () => {
   return (
     <section className="py-16">
       <Container>
-        <h3 className="text-3xl font-bold text-fm-yellow">
-          {t("cooContent.productRevenue.title")}
-        </h3>
+        <SlideTopAnimation>
+          <h3 className="text-3xl font-bold text-fm-yellow">
+            {t("cooContent.productRevenue.title")}
+          </h3>
+        </SlideTopAnimation>
         <div className="flex flex-col gap-4 py-8 max-w-220">
           {(lang === "ar" ? tableDataAr : tableDataEn).map(
             (singleTable, tableIndex) => (
-              <div key={tableIndex} className="overflow-x-auto">
+              <FadeInAnimation key={tableIndex} className="overflow-x-auto">
                 <table className="w-full min-w-150 text-sm">
                   <thead className=" bg-linear-to-r from-fm-yellow to-fm-yellow/0">
                     <tr>
@@ -49,34 +53,46 @@ const ProductRevnewSection = () => {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </FadeInAnimation>
             ),
           )}
         </div>
         <div>
-          <h4 className="text-2xl font-bold mb-4">{t("cooContent.productRevenue.customers.title")}</h4>
-          <h5 className="text-lg font-bold mb-4">{t("cooContent.productRevenue.customers.subtitle")}</h5>
+          <SlideTopAnimation>
+            <h4 className="text-2xl font-bold mb-4">{t("cooContent.productRevenue.customers.title")}</h4>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <h5 className="text-lg font-bold mb-4">{t("cooContent.productRevenue.customers.subtitle")}</h5>
+          </SlideTopAnimation>
           <ul className="list-disc mx-4">
-            <li
-              dangerouslySetInnerHTML={{
-                __html: t("cooContent.productRevenue.customers.list.0"),
-              }}
-            ></li>
-            <li
-              dangerouslySetInnerHTML={{
-                __html: t("cooContent.productRevenue.customers.list.1"),
-              }}
-            ></li>
-            <li
-              dangerouslySetInnerHTML={{
-                __html: t("cooContent.productRevenue.customers.list.2"),
-              }}
-            ></li>
-            <li
-              dangerouslySetInnerHTML={{
-                __html: t("cooContent.productRevenue.customers.list.3"),
-              }}
-            ></li>
+            <SlideTopAnimation>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: t("cooContent.productRevenue.customers.list.0"),
+                }}
+              ></li>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: t("cooContent.productRevenue.customers.list.1"),
+                }}
+              ></li>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: t("cooContent.productRevenue.customers.list.2"),
+                }}
+              ></li>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <li
+                dangerouslySetInnerHTML={{
+                  __html: t("cooContent.productRevenue.customers.list.3"),
+                }}
+              ></li>
+            </SlideTopAnimation>
           </ul>
         </div>
       </Container>

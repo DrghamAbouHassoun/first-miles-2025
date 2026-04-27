@@ -114,13 +114,14 @@ export default {
       p5: "In parallel, we strengthened our operational platform through targeted investments in storage, logistics and feed capabilities. The acquisition of Al Manar Feed plant, with a production capacity of 450 tons per day and silo storage of 30,000 tons, expanded our feed manufacturing capacity and supported a broader operational scale within the Kingdom. Enhancements to bran handling and storage improved density and reduced delivery costs for both customers and internal users, while new cold-storage infrastructure reinforced finished-goods integrity and energy efficiency.",
       p6: "Above all, the year reinforced the importance of our people and process discipline in sustaining performance. Continued investment in technical capability, clearer accountability and cross-functional collaboration strengthened execution across our operating model. By maintaining a clear focus on efficiency, reliability and continuous improvement, we remain well positioned to support growth, manage complexity and deliver consistent value to customers and Shareholders as we move into our next phase of development.",
     },
+    servicesTitle: "Key Activities of the First Milling Company",
     services: [
       {
         title: "Grinding and packaging:",
         subtitle: " Wheat, corn, soybean, semolina and durum",
       },
       {
-        title: "Manufacturing",
+        title: "Manufacturing:",
         subtitle:
           "Flour and dough for bakeries; livestock feed, concentrated animal feed, poultry feed, bird feed and plant by-products used as animal feed",
       },
@@ -135,7 +136,7 @@ export default {
       },
     ],
     timeline: {
-      title: "Expansion Timeline",
+      title: "Increasing capacity.<br />Driving scale.",
       subtitle: "2021 - 2026 Milestones & Growth",
       items: [
         {
@@ -210,7 +211,7 @@ export default {
             },
             {
               value: "120 t/d",
-              description: "feed mill upgrade in Jeddah",
+              description: "feed mill upgrade in Jeddah plant",
             },
           ],
         },
@@ -251,7 +252,7 @@ export default {
       ],
     },
     snapshot: {
-      title: "",
+      title: "Milling Snapshot",
       capacity: {
         title: "Capacity and network",
         bullets: [
@@ -305,6 +306,7 @@ export default {
       }
     },
     qualitySection: {
+      tiny: "Success Story",
       subtitle: "Quality and Assurance at the Core",
       title: "Raising the Bar",
       paragraph1:

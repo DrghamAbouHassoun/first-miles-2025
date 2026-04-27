@@ -5,6 +5,7 @@ import Iso14001 from "../../../assets/icons/cfo/iso-14001.png";
 import Iso22000 from "../../../assets/icons/cfo/iso-22000.png";
 import Container from "../../common/components/Container/Container";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
+import { useLocale } from "../../common/hooks/useLocale";
 
 interface StatItem {
   prefix?: string;
@@ -15,6 +16,7 @@ interface StatItem {
 }
 
 interface QualitySectionData {
+  tiny: string;
   subtitle: string;
   title: string;
   paragraph1: string;
@@ -37,6 +39,7 @@ interface Props {
 }
 
 const CFOQualitySection = ({ data }: Props) => {
+  const { lang } = useLocale();
   return (
     <div className="relative">
       <div className="absolute inset-0 -z-10">
@@ -52,15 +55,38 @@ const CFOQualitySection = ({ data }: Props) => {
         <Container>
           <div className="relative z-10 py-16 md:py-20">
             <SlideTopAnimation>
-              <p className="text-white/70 text-sm mb-3 tracking-wide">
-                {data.subtitle}
-              </p>
+              <h5 className="text-sm font-bold text-fm-yellow mb-3">
+                {data.tiny}
+              </h5>
             </SlideTopAnimation>
-            <SlideTopAnimation>
-              <h2 className="text-fm-yellow font-bold text-4xl md:text-5xl leading-tight mb-8">
-                {data.title}
-              </h2>
-            </SlideTopAnimation>
+            {lang === "ar" ? (
+              <>
+                <SlideTopAnimation>
+                  <h2 className="text-fm-yellow font-bold text-4xl md:text-5xl leading-tight mb-1">
+                    {data.title}
+                  </h2>
+                </SlideTopAnimation>
+                <SlideTopAnimation>
+                  <p className="text-white text-lg mb-8 tracking-wide">
+                    {data.subtitle}
+                  </p>
+                </SlideTopAnimation>
+              </>
+            ) : (
+              <>
+                <SlideTopAnimation>
+                  <p className="text-white text-lg mb-1 tracking-wide">
+                    {data.subtitle}
+                  </p>
+                </SlideTopAnimation>
+                <SlideTopAnimation>
+                  <h2 className="text-fm-yellow font-bold text-4xl md:text-5xl leading-tight mb-8">
+                    {data.title}
+                  </h2>
+                </SlideTopAnimation>
+              </>
+            )}
+
             <SlideTopAnimation>
               <p className="text-white/85 text-sm leading-relaxed mb-4 max-w-4xl">
                 {data.paragraph1}
@@ -114,13 +140,17 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* 598 physical tests */}
                 <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
                   {data.stats.physicalTests.prefix && (
-                    <p className="font-bold">{data.stats.physicalTests.prefix}</p>
+                    <p className="font-bold">
+                      {data.stats.physicalTests.prefix}
+                    </p>
                   )}
                   <p className="text-black font-bold text-5xl leading-none mb-2">
                     {data.stats.physicalTests.number}
                   </p>
                   <p className=" text-black leading-snug">
-                    <span className="font-bold">{data.stats.physicalTests.label}</span>{" "}
+                    <span className="font-bold">
+                      {data.stats.physicalTests.label}
+                    </span>{" "}
                     <span className="black/70">
                       {data.stats.physicalTests.desc}
                     </span>
@@ -130,7 +160,9 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* 09 training courses */}
                 <SlideTopAnimation className="pb-6 md:pb-0">
                   {data.stats.trainingCourses.prefix && (
-                    <p className="font-bold">{data.stats.trainingCourses.prefix}</p>
+                    <p className="font-bold">
+                      {data.stats.trainingCourses.prefix}
+                    </p>
                   )}
                   <p className="text-white font-bold text-5xl leading-none mb-2">
                     {data.stats.trainingCourses.number}
@@ -146,7 +178,9 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* 893,520 quality tests */}
                 <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
                   {data.stats.qualityTests.prefix && (
-                    <p className="font-bold">{data.stats.qualityTests.prefix}</p>
+                    <p className="font-bold">
+                      {data.stats.qualityTests.prefix}
+                    </p>
                   )}
                   <p className="text-white font-bold text-4xl leading-none mb-2">
                     {data.stats.qualityTests.number}
@@ -154,9 +188,7 @@ const CFOQualitySection = ({ data }: Props) => {
                   <p className="leading-snug font-bold">
                     {data.stats.qualityTests.label}
                   </p>
-                  <p className="black/70">
-                    {data.stats.qualityTests.desc}
-                  </p>
+                  <p className="black/70">{data.stats.qualityTests.desc}</p>
                 </SlideTopAnimation>
 
                 {/* 171 employees */}
@@ -181,7 +213,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* 1,200,728 safe hours */}
                 <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
                   {data.stats.safeHours.prefix && (
-                    <p className="font-bold">{data.stats.safeHours.prefix}</p>
+                    <p className="font-bold text-white">{data.stats.safeHours.prefix}</p>
                   )}
                   <p className="black font-bold text-4xl md:text-5xl leading-none mb-2">
                     {data.stats.safeHours.number}
@@ -197,7 +229,9 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* ONE HUNDRED microbiological */}
                 <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
                   {data.stats.microbiological.prefix && (
-                    <p className="font-bold">{data.stats.microbiological.prefix}</p>
+                    <p className="font-bold">
+                      {data.stats.microbiological.prefix}
+                    </p>
                   )}
                   <p className="black font-bold text-4xl md:text-5xl leading-tight mb-2 whitespace-pre-line">
                     {data.stats.microbiological.number}
@@ -213,13 +247,17 @@ const CFOQualitySection = ({ data }: Props) => {
                 {/* 1,750 chemical tests */}
                 <SlideTopAnimation>
                   {data.stats.chemicalTests.prefix && (
-                    <p className="font-bold">{data.stats.chemicalTests.prefix}</p>
+                    <p className="font-bold">
+                      {data.stats.chemicalTests.prefix}
+                    </p>
                   )}
                   <p className="text-white font-bold text-5xl leading-none mb-2">
                     {data.stats.chemicalTests.number}
                   </p>
                   <p className="black/70 leading-snug">
-                    <span className="font-bold ">{data.stats.chemicalTests.label}</span>{" "}
+                    <span className="font-bold ">
+                      {data.stats.chemicalTests.label}
+                    </span>{" "}
                     <span className="black/70">
                       {data.stats.chemicalTests.desc}
                     </span>

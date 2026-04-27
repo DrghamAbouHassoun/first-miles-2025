@@ -15,7 +15,7 @@ export const consolidatedStatmentOfFinanicalPositionArabic = {
       cells: ["الموجودات غير المتداولة", null, 2260410062, 2091767103],
     },
 
-    { cells: ["الأدوات مالية المستحقة", 12, 7928860, 19422922] },
+    { cells: ["الأدوات المالية المشتقة", 12, 7928860, 19422922] },
     { cells: ["المخزون", "1-13", 162899736, 161698540] },
     { cells: ["الذمم المدينة التجارية", "1-14", 40319907, 18562782] },
     { cells: ["المدفوعات مقدماً والموجودات المتداولة الأخرى", 15, 34070975, 11535531] },
@@ -230,7 +230,7 @@ export const consolidatedEquityStatementArabic = {
     },
 
     { bold: true, cells: ["المعاملات مع مالكي الشركة", null, ...Array(14).fill(null)] },
-    { bold: true, cells: ["مساهمات وتوزيعات", null, ...Array(14).fill(null)] },
+    { bold: true, cells: ["مساهمات وتوزيعات أرباح", null, ...Array(14).fill(null)] },
 
     { cells: ["توزيعات أرباح", "20", "--", "--", "--", "--", "--", null, "--", "--", "--", "--", -152904000, -152904000, "--", -152904000] },
 
@@ -289,7 +289,7 @@ export const consolidatedEquityStatementArabic = {
     },
 
     { bold: true, cells: ["المعاملات مع مالكي الشركة", null, ...Array(14).fill(null)] },
-    { bold: true, cells: ["المساهمات وتوزيعات الأرباح", null, ...Array(14).fill(null)] },
+    { bold: true, cells: ["مساهمات وتوزيعات", null, ...Array(14).fill(null)] },
 
     { cells: ["توزيعات أرباح", "20", "--", "--", "--", "--", "--", null, "--", "--", "--", "--", -163674000, -163674000, "--", -163674000] },
 
