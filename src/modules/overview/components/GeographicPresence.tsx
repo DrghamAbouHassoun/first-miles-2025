@@ -34,6 +34,11 @@ const GeographicPresence = () => {
       <Container className="pb-16">
         {/* Text block with dashed yellow border */}
         <div className="py-20 pb-10 px-4">
+          <SlideTopAnimation level="50">
+            <h2 className="text-3xl font-bold mb-8 text-fm-green">
+              {t("tabs.geographicPresence")}
+            </h2>
+          </SlideTopAnimation>
           <SlideTopAnimation>
             <h2 className="text-xl font-bold text-fm-yellow mb-4">
               {t("geographicPresenceContent.title")}
@@ -79,10 +84,10 @@ const GeographicPresence = () => {
               return (
                 <div
                   key={key}
-                  className=" border border-fm-yellow rounded-lg p-4 py-16"
+                  className=" border border-fm-yellow rounded-lg p-4 py-6 flex justify-between items-center transition-all duration-700 hover:bg-fm-yellow/20"
                 >
                   <PopupAnimation>
-                    <p className="text-fm-yellow font-bold text-base mb-2">
+                    <p className="text-fm-yellow font-bold text-base">
                       {market.name}
                     </p>
                   </PopupAnimation>
@@ -92,25 +97,6 @@ const GeographicPresence = () => {
                       suffix={market.tons.suffix}
                     />
                   </p>
-                  {/* <p className="text-fm-gray-400 font-bold text-xl leading-tight mb-3">
-                    <CounterAnimation
-                      end={parseInt(market.sar.value)}
-                      suffix={market.sar.suffix}
-                    />
-                  </p>
-                  <ul className="space-y-1">
-                    {market.notes.map((note, i) => (
-                      <li
-                        key={i}
-                        className="text-fm-gray-300 text-xs flex gap-1.5"
-                      >
-                        <SlideTopAnimation className="flex gap-1.5 items-start">
-                          <span className="mt-0.5 shrink-0">•</span>
-                          <span>{note}</span>
-                        </SlideTopAnimation>
-                      </li>
-                    ))}
-                  </ul> */}
                 </div>
               );
             })}

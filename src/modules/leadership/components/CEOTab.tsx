@@ -36,9 +36,9 @@ const CEOTab = () => {
         />
       </Container>
 
-      <div className="mt-12">
+      <div className="mt-3">
         <Container>
-          <div className="py-12">
+          <div className="py-3">
             {/* Tagline */}
             <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-xl md:text-2xl leading-snug mb-6 whitespace-pre-line">
@@ -54,7 +54,7 @@ const CEOTab = () => {
             </SlideTopAnimation>
 
             {/* First half of sections */}
-            <div className="max-w-4xl space-y-6">
+            <div className="max-w-4xl space-y-3">
               {firstHalf.map(
                 (
                   section: { heading: string; paragraphs: string[] },
@@ -87,7 +87,7 @@ const CEOTab = () => {
       {/* Second half of sections with wheat decoration */}
       <div className="relative bg-white overflow-hidden">
         <Container>
-          <div className="max-w-4xl space-y-6 mb-6">
+          <div className="max-w-4xl space-y-3 mb-3">
             {secondHalf.map(
               (
                 section: { heading: string; paragraphs: string[] },

@@ -56,6 +56,11 @@ const BusinessModelTab = () => {
       <div className="bg-fm-yellow-100 py-24">
         <Container>
           <SlideTopAnimation>
+            <h2 className="text-4xl font-bold text-fm-green mb-4">
+              {t("tabs.businessModel")}
+            </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-2 font-bold text-2xl max-w-160">
               {t("businessModelContent.title")}
             </h2>
@@ -321,6 +326,7 @@ const BusinessModelTab = () => {
                         }}
                       />
                     </ul>
+                    <p className="py-2">{t("businessModelContent.outputs.note")}</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-4 pb-4">
                       {stackholdersIcons.map((icon, i) => {
                         const itemKey = `businessModelContent.outputs.stakeholders.${i}`;

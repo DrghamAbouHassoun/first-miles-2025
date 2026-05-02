@@ -111,7 +111,7 @@ const PL_DATA = (lang: string) => {
         "277.4",
         lang === "en" ? "10.6%" : "%10.6",
       ],
-      bold: false,
+      bold: true,
     },
   ] as const;
 };

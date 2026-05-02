@@ -84,7 +84,7 @@ const GeoRevenueColumn = ({
           <span className="text-sm font-bold text-fm-yellow">
             {t("geoRevenue.total")}
           </span>
-          <span className="text-sm font-bold text-fm-green">
+          <span className="w-16 text-sm font-bold text-fm-green">
             <CounterAnimation
               as="span"
               end={total}

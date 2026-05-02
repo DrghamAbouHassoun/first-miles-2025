@@ -9,13 +9,17 @@ import TabIcon2 from "../../../../assets/icons/saudi-vision/icon-2.png";
 import TabIcon3 from "../../../../assets/icons/saudi-vision/icon-3.png";
 import { useTranslation } from "../../../common/hooks/useTranslation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
+import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 
 const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
   const [activeTab, setActiveTab] = useState(0);
   return (
     <div className="relative w-full">
-      <div className="sticky top-0 left-0 h-screen w-full -z-10" style={{ marginBottom: "-100vh" }}>
+      <div
+        className="sticky top-0 left-0 h-screen w-full -z-10"
+        style={{ marginBottom: "-100vh" }}
+      >
         <img
           src={SaudiVisionBg}
           alt={`Saudi Vision 2030 | ${SITE_NAME}`}
@@ -24,8 +28,17 @@ const SaudiVision2030Tab = () => {
       </div>
       <div className="py-16">
         <Container>
-          <h2 className="text-2xl font-bold text-fm-yellow mb-4">{t("saudiVisionContent.title")}</h2>
-          <p className="text-white font-bold">{t("saudiVisionContent.description")}</p>
+          <SlideTopAnimation>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {t("tabs.saudiVision2030")}
+            </h2>
+          </SlideTopAnimation>
+          <h2 className="text-2xl font-bold text-fm-yellow mb-4">
+            {t("saudiVisionContent.title")}
+          </h2>
+          <p className="text-white font-bold">
+            {t("saudiVisionContent.description")}
+          </p>
         </Container>
       </div>
       <div className="">

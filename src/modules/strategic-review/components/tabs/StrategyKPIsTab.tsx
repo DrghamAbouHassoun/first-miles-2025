@@ -58,6 +58,11 @@ const StrategyKPIsTab = () => {
       <div className="bg-fm-yellow-100 py-24">
         <Container>
           <SlideTopAnimation>
+            <h2 className="text-4xl font-bold text-fm-green mb-4">
+              {t("tabs.strategyKPIs")}
+            </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
               {t("strategyAndKPIsContent.title")}
             </h2>

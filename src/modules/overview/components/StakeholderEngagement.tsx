@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import Container from "../../common/components/Container/Container";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
@@ -69,42 +69,6 @@ function AccordionItem({
   );
 }
 
-function StakeholderGroupRow({ group }: { group: StakeholderGroup }) {
-  const [openSection, setOpenSection] = useState<number | null>(0);
-
-  const handleToggle = (index: number) => {
-    setOpenSection((prev) => (prev === index ? null : index));
-  };
-
-  return (
-    <div className=" even:bg-fm-yellow-100 py-8">
-    <Container>
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 border-b border-fm-green/10 last:border-b-0 min-h-screen">
-        {/* Left: group label */}
-        <div className="lg:w-75 shrink-0">
-          <div className="px-6 py-6 font-semibold text-lg rounded-2xl border-gradient-reversed bg-linear-270 from-fm-yellow/20 to-fm-yellow/0 w-full lg:max-w-75">
-            {group.name}
-          </div>
-        </div>
-
-        {/* Right: accordion */}
-        <div className="flex-1 overflow-hidden">
-          {group.sections.map((section, i) => (
-            <AccordionItem
-              key={i}
-              title={section.title}
-              bullets={section.bullets}
-              isOpen={openSection === i}
-              onToggle={() => handleToggle(i)}
-            />
-          ))}
-        </div>
-      </div>
-    </Container>
-    </div>
-  );
-}
-
 const StakeholderEngagement = () => {
   const { t } = useTranslation("overview");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -115,28 +79,89 @@ const StakeholderEngagement = () => {
     (translations as any)[lang]?.overview?.stakeholderEngagementContent
       ?.groups ?? [];
 
+  const [activeGroup, setActiveGroup] = useState(0);
+  const [openSection, setOpenSection] = useState<number | null>(0);
+
+  useEffect(() => {
+    setOpenSection(0);
+  }, [activeGroup]);
+
   return (
     <div className="min-h-screen">
       {/* Green intro section */}
       <div className="bg-fm-green py-32 text-white">
         <Container>
-          <h2 className="text-lg text-fm-yellow font-semibold max-w-100 mb-4">
+          <h1 className="text-3xl font-bold text-white mb-4">
+            {t("tabs.stakeholderEngagement")}
+          </h1>
+          <h2 className="text-lg text-fm-yellow font-semibold mb-4">
             {t("stakeholderEngagementContent.title")}
           </h2>
-          <p className="max-w-180">
+          <p className="">
             {t("stakeholderEngagementContent.description")}
           </p>
         </Container>
       </div>
 
-      {/* Stacked groups section */}
-      {/* <div className="bg-fm-cream py-8"> */}
-      {/* <Container> */}
-      {groups.map((group, i) => (
-        <StakeholderGroupRow key={i} group={group} />
-      ))}
-      {/* </Container> */}
-      {/* </div> */}
+      {/* Sticky side nav + content */}
+      <Container>
+      <div className="flex flex-col lg:flex-row min-h-screen">
+        {/* Mobile: horizontal scrollable tab strip */}
+        <div className="lg:hidden flex flex-row overflow-x-auto shrink-0 gap-3 p-4">
+          {groups.map((group, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveGroup(i)}
+              className={`shrink-0 px-5 py-4 text-sm font-semibold rounded-2xl transition-colors duration-200 whitespace-nowrap border-gradient-reversed
+                ${activeGroup === i
+                  ? "bg-linear-270 from-fm-yellow/60 to-fm-yellow/20"
+                  : "bg-linear-270 from-fm-yellow/20 to-fm-yellow/0 hover:from-fm-yellow/40 hover:to-fm-yellow/10"
+                }`}
+            >
+              {group.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Desktop: sticky vertical sidebar */}
+        <div className="hidden lg:flex sticky top-0 h-screen w-95 flex-col shrink-0 overflow-y-auto gap-3 p-6">
+          {groups.map((group, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveGroup(i)}
+              className={`w-full text-start px-6 py-6 font-semibold text-lg rounded-2xl border-gradient-reversed transition-colors duration-200
+                ${activeGroup === i
+                  ? "bg-linear-270 from-fm-yellow/60 to-fm-yellow/20"
+                  : "bg-linear-270 from-fm-yellow/20 to-fm-yellow/0 hover:from-fm-yellow/40 hover:to-fm-yellow/10 hover:text-fm-green"
+                }`}
+            >
+              {group.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Content panel */}
+        <div
+          key={activeGroup}
+          className={`flex-1 py-12 px-8 lg:px-16 transition-colors duration-300`}
+        >
+          <h3 className="text-fm-green font-bold text-2xl mb-8">
+            {groups[activeGroup]?.name}
+          </h3>
+          {groups[activeGroup]?.sections.map((section, i) => (
+            <AccordionItem
+              key={i}
+              title={section.title}
+              bullets={section.bullets}
+              isOpen={openSection === i}
+              onToggle={() =>
+                setOpenSection((prev) => (prev === i ? null : i))
+              }
+            />
+          ))}
+        </div>
+      </div>
+      </Container>
     </div>
   );
 };

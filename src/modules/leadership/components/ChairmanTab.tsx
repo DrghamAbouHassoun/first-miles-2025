@@ -52,7 +52,7 @@ const ChairmanTab = () => {
             </SlideTopAnimation>
 
             {/* First half of sections */}
-            <div className="max-w-4xl space-y-6">
+            <div className="max-w-4xl space-y-4">
               {firstHalf.map(
                 (
                   section: { heading: string; paragraphs: string[] },
@@ -67,9 +67,9 @@ const ChairmanTab = () => {
                     {section.paragraphs.map((p: string, j: number) => (
                       <SlideTopAnimation key={j}>
                         <p
-                          className="text-sm leading-relaxed last:mb-0"
+                          className="text-sm leading-relaxed last:mb-0 pb-3"
                           dangerouslySetInnerHTML={{ __html: p }}
-                        ></p><br />
+                        ></p>
                       </SlideTopAnimation>
                     ))}
                   </div>
@@ -83,7 +83,7 @@ const ChairmanTab = () => {
       {/* Second half of sections with wheat decoration */}
       <div className="relative bg-white overflow-hidden">
         <Container className=" z-10">
-          <div className=" max-w-4xl space-y-8 mb-6 z-10">
+          <div className=" max-w-4xl space-y-3 mb-3 z-10">
             {secondHalf.map(
               (
                 section: { heading: string; paragraphs: string[] },
@@ -98,9 +98,9 @@ const ChairmanTab = () => {
                   {section.paragraphs.map((p: string, j: number) => (
                     <SlideTopAnimation key={j}>
                       <p
-                        className="text-sm leading-relaxed mb-3 last:mb-0"
+                        className="text-sm leading-relaxed pb-3 last:mb-0"
                         dangerouslySetInnerHTML={{ __html: p }}
-                      ></p><br />
+                      ></p>
                     </SlideTopAnimation>
                   ))}
                 </div>

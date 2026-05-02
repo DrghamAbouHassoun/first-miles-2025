@@ -57,7 +57,12 @@ const TechnologyInnovationTab = () => {
       <Container>
         <div className=" py-24">
           <SlideTopAnimation>
-            <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
+            <h2 className="text-4xl font-bold text-fm-green mb-4">
+              {t("tabs.technologyInnovation")}
+            </h2>
+          </SlideTopAnimation>
+          <SlideTopAnimation>
+            <h2 className="text-fm-yellow mb-4 font-bold text-2xl">
               {t("technologyInnovationContent.title")}
             </h2>
           </SlideTopAnimation>
@@ -67,7 +72,7 @@ const TechnologyInnovationTab = () => {
             </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <h3 className="text-fm-yellow mb-2 font-bold text-2xl max-w-120">
+            <h3 className="text-fm-yellow mb-2 font-bold text-2xl">
               {t("technologyInnovationContent.subtitle")}
             </h3>
           </SlideTopAnimation>
@@ -84,7 +89,10 @@ const TechnologyInnovationTab = () => {
         </div>
       </Container>
       <div className="relative w-full">
-        <div className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden" style={{ marginBottom: "-100vh" }}>
+        <div
+          className="sticky top-0 left-0 h-screen w-full -z-10 overflow-hidden"
+          style={{ marginBottom: "-100vh" }}
+        >
           <ImageScaleAnimation
             src={TechInnovationBg}
             alt={`Technology Innovation | ${SITE_NAME}`}
@@ -105,7 +113,9 @@ const TechnologyInnovationTab = () => {
             {t("technologyInnovationContent.pillarsSectionSubtitle")}
           </h4>
         </Container>
-        <Container className={`flex flex-col ${lang === "ar" ? "lg:flex-row-reverse" : "lg:flex-row"} gap-2 min-h-screen lg:min-h-180 h-fit mt-16`}>
+        <Container
+          className={`flex flex-col ${lang === "ar" ? "lg:flex-row-reverse" : "lg:flex-row"} gap-2 min-h-screen lg:min-h-180 h-fit mt-16`}
+        >
           <div className="flex-1 hidden lg:block">
             <div
               className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-24 transition-all duration-700 ${activeItem === 2 ? "opacity-100" : "opacity-0"}`}
@@ -130,14 +140,16 @@ const TechnologyInnovationTab = () => {
             <div
               className={`bg-fm-green text-white w-full max-w-100 p-4 translate-y-8 transition-all duration-700 ${activeItem === 0 ? "opacity-100" : "opacity-0"}`}
             >
-              <p>{t("technologyInnovationContent.pillars.2.content")}</p>
+              <p>{t("technologyInnovationContent.pillars.0.content")}</p>
             </div>
             <div
-              className={`bg-fm-green text-white w-full max-w-100 p-4 -translate-y-24 transition-all duration-700 ${activeItem === 1 ? "opacity-100" : "opacity-0"}`}
+              className={`bg-fm-green text-white w-full max-w-100 p-4 -translate-y-34 transition-all duration-700 ${activeItem === 1 ? "opacity-100" : "opacity-0"}`}
             >
-              <p>{t("technologyInnovationContent.pillars.3.content")}</p>
+              <p>{t("technologyInnovationContent.pillars.1.content")}</p>
             </div>
           </div>
+
+          {/* Mobile Tabs */}
           <div className="w-full flex-1 lg:hidden py-4">
             {activeItem === 0 && (
               <div

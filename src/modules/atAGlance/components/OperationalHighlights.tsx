@@ -289,7 +289,7 @@ const OperationalHighlights = () => {
                 key={key}
                 className={`relative flex flex-col items-start h-full ${index === 0 ? "lg:pe-12" : "lg:px-12"}`}
               >
-                <PopupAnimation className="w-fit h-20">
+                <PopupAnimation className="w-fit h-20 mb-2">
                   <img
                     src={icon}
                     alt=""

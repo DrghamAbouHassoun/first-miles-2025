@@ -32,7 +32,7 @@ export default {
       ],
     },
     addedValue: {
-      title: "An Added Value To All Relevant Authorities & Stakeholders",
+      title: "An Added Value To All Relevant Authorities and Stakeholders",
       items: [
         "A diverse product portfolio with more than 60 main products of food and feed products.",
         "Five plants located in strategic locations, including two facilities in Jeddah in the Makkah Province, one of which is the newly acquired Al Manar feed plant with a daily capacity of 450 t/d, as well as Al Qassim in Buraidah, Tabuk in Tabuk City and the Eastern Province Al-Ahsa.",
@@ -52,20 +52,21 @@ export default {
     outputs: {
       title: "Outputs",
       items: [
-        "Reaching more than 31%* in the local flour market as a market share.",
-        "Achieving attractive profit margins and sustainable growth that exceeds the average market rates and targets.",
+        "Reaching more than 30%* in the local flour market as a market share.",
+        "Achieving attractive profit margins and sustainable growth that exceeds the average market rates and targets",
         "Maintaining current leadership in the feed sector and expanding the bran production in alignment with the growth in flour volumes.",
-        "Cash sales, which are immediately collected, account for 90% of the Company’s product sales.",
-        "Owning the first-of-its-kind durum mill for producing semolina with a production capacity capable of meeting local market demand with the possibility of exporting to regional markets.",
-        "Fixed asset base with a book value of more than <i class='riyal-icon'></i> 4 billion, backed by the latest modern technologies for flour and feed production.",
+        "Cash sales, which are immediately collected, account for 65% of the Company’s product sales.",
+        "Owning the first-of-its-kind durum mill for producing semolina with a production capacity capable of meeting local market demand with the possibility of exporting to regional markets",
+        "Fixed asset base with a book value of more than <i class='riyal-icon'></i> 820 million, backed by the latest modern technologies for flour and feed production",
         "Ongoing follow-up on increasing the production capacity and constantly expanding and renovating plants to achieve the best possible returns and to meet the increasing market demands.",
-        "Leveraging cutting-edge systems and technologies across all production processes to guarantee the highest quality.",
-        "Building strategic, high-value partnerships with both the public and private sectors.",
+        "Leveraging cutting-edge systems and technologies across all production processes to guarantee the highest quality",
+        "Building strategic, high-value partnerships with both the public and private sectors",
         "A specialized team handles all potential risks at all levels.",
         "Raw materials supply agreements with the Company’s suppliers, which contribute to mitigating and managing any risks associated with the fluctuations in the international market prices.",
         "Comprehensive review and assessment to mitigate risks and align with regulatory development in Saudi Arabia.",
         "A specialized team to manage the supply of raw materials and other purchases to ensure optimal business sustainability.",
       ],
+      note: "* According to GFSA",
       stakeholders: [
         {
           id: "stackholders",

@@ -252,7 +252,7 @@ export default {
         bullets: [
           "We hold a leading share of the Saudi flour milling market at around 30% of flour production and sales, with FY2025 flour volumes increasing by 9% year-on-year.",
           "We operate five mills across all major regions, enabling broad national coverage and reliable supply, with total daily wheat milling capacity of 5,150 and daily feed capacity of 1,350 and a capacity utilization rate of 94% in 2025.",
-          "We serve more than <strong>7,500</strong> direct and indirect customers across industrial, food service, trade and retail channels.",
+          "We serve more than <strong class='text-fm-yellow'>7,500</strong> direct and indirect customers across industrial, food service, trade and retail channels.",
           "We are the only Saudi milling company with dedicated production capability for durum semolina and related durum-based products.",
         ],
       },
@@ -261,14 +261,14 @@ export default {
         bullets: [
           "Our operations use advanced global milling and feed technologies that enhance efficiency, consistency and competitiveness.",
           "We deploy modern digital solutions to improve production planning, manufacturing efficiency and quality control, with +90% of our operations digitalized in 2025.",
-          "Our strong fixed-asset base and logistics network, valued at more than <i class='riyal-icon'></i> 820.3 mln support scale and dependable market reach.",
+          "Our strong fixed-asset base and logistics network, valued at more than <strong class='text-fm-yellow'><i class='riyal-icon'></i> 820.3 mln</strong> support scale and dependable market reach.",
           "We apply robust risk management practices aligned with leading global standards",
         ],
       },
       {
         title: "Diversified, high-quality portfolio supported by innovation",
         bullets: [
-          "We offer more than <strong>90 products</strong> across flour, feed, bran, semolina, mixes and specialty categories under the First Mills and Aloula brands, with a gross margin of 22% in 2025.",
+          "We offer more than <strong class='text-fm-yellow'>90 products</strong> across flour, feed, bran, semolina, mixes and specialty categories under the First Mills and Aloula brands, with a gross margin of 22% in 2025.",
           "We operate the Kingdom’s only durum mill for semolina production, using advanced technology that strengthens our position in high-growth pasta and bakery markets.",
           "Our products meet the highest global quality standards and are backed by <strong class='text-fm-yellow'>seven</strong> ISO certifications ,with zero major quality incidents recorded in 2025.",
           "We maintain a disciplined product development program focused on quality, innovation and market needs, delivering notable program achievements in 2025"
