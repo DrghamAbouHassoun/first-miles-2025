@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Container from "../common/components/Container/Container";
 import { useTranslation } from "../common/hooks/useTranslation";
 import TopicChartEn from "../../assets/vectors/sustainability/topics/chart-en.svg";
@@ -44,10 +45,22 @@ import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambit
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 
 const indexIconsArray = [
-  IndexIcon1, IndexIcon2, IndexIcon3, IndexIcon4,
-  IndexIcon5, IndexIcon6, IndexIcon7, IndexIcon8,
-  IndexIcon9, IndexIcon10, IndexIcon11, IndexIcon12,
-  IndexIcon13, IndexIcon14, IndexIcon15, IndexIcon16,
+  IndexIcon1,
+  IndexIcon2,
+  IndexIcon3,
+  IndexIcon4,
+  IndexIcon5,
+  IndexIcon6,
+  IndexIcon7,
+  IndexIcon8,
+  IndexIcon9,
+  IndexIcon10,
+  IndexIcon11,
+  IndexIcon12,
+  IndexIcon13,
+  IndexIcon14,
+  IndexIcon15,
+  IndexIcon16,
 ];
 
 const unsdgsIcons = [
@@ -81,6 +94,9 @@ const Topics = () => {
   const { t } = useTranslation("sustainability-review");
   const { lang } = useLocale();
   const tableData = lang === "ar" ? topicsTableAr : topicsTableEn;
+  const [activeTab, setActiveTab] = useState("01");
+
+  const activeGroup = tableData.table.find((g) => g.priority === activeTab)!;
 
   return (
     <div>
@@ -88,7 +104,9 @@ const Topics = () => {
         <Container>
           <div className="max-w-220">
             <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">{t("tabs.topics")}</h1>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">
+                {t("tabs.topics")}
+              </h1>
             </SlideTopAnimation>
             <p className="font-bold mb-4">{t("topics.desc")}</p>
             <h3 className="font-bold text-fm-yellow">{t("topics.h2")}</h3>
@@ -99,109 +117,132 @@ const Topics = () => {
       </section>
       <section className="py-16">
         <Container>
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-32 ">
-            {/* Chart */}
-            <div className="flex-1">
-              <img
-                src={lang === "ar" ? TopicChartAr : TopicChartEn}
-                alt="First Mills"
-                className="w-full h-auto object-contain max-w-120 lg:max-w-none"
-              />
-            </div>
+          {/* Chart */}
+          <div className="flex mb-16">
+            <img
+              src={lang === "ar" ? TopicChartAr : TopicChartEn}
+              alt="First Mills"
+              className="w-full h-auto object-contain max-w-120"
+            />
+          </div>
 
-            {/* Priority Table */}
-            <div className="flex-1 overflow-auto">
-              {tableData.table.map((group, groupIndex) => {
+          {/* Tabbed Priority Tables */}
+
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Tab buttons — vertical on the side */}
+            <div className="flex flex-row md:flex-col gap-3 md:w-64 shrink-0">
+              {tableData.table.map((group) => {
                 const color = priorityColors[group.priority];
+                const isActive = activeTab === group.priority;
                 return (
-                  <div
+                  <button
                     key={group.priority}
-                    className={`flex gap-3 py-5 flex-col md:flex-row ${groupIndex < tableData.table.length - 1 ? "border-b border-fm-gray-100" : ""}`}
+                    onClick={() => setActiveTab(group.priority)}
+                    className={`flex items-center justify-between px-4 py-3 bg-linear-to-r rounded-2xl border-gradient-reversed text-start text-xl transition-colors cursor-pointer ${
+                      isActive
+                        ? "from-fm-yellow-200 to-fm-yellow-200"
+                        : "from-fm-yellow-200/0 to-fm-yellow-200"
+                    }`}
+                    style={{ borderColor: isActive ? color : "transparent" }}
                   >
-                    {/* Priority label */}
-                    <div className="w-14 shrink-0 flex flex-col items-center justify-center">
-                      <span className="text-[10px] text-fm-gray-200 font-medium uppercase tracking-wide">
-                        {t("topics.priority")}
-                      </span>
-                      <span className="text-3xl font-bold leading-none" style={{ color }}>
-                        {group.priority}
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 min-w-100 lg:min-w-auto">
-                      {/* Column headers */}
-                      <div className="flex items-center mb-1">
-                        <div className="flex-1 pr-3">
-                          <span className="text-sm font-semibold" >
-                            {group.importance.level}
-                          </span>
-                        </div>
-                        <div className={`w-24 text-center ${lang === "ar" ? "border-r" : "border-l"} border-fm-gray-100 px-2`}>
-                          <span className="text-xs font-bold text-fm-gray-400">{t("topics.unsdgs")}</span>
-                        </div>
-                        <div className={`w-24 text-center ${lang === "ar" ? "border-r" : "border-l"} border-fm-gray-100 px-2`}>
-                          <span className="text-xs font-bold text-fm-gray-400">{t("topics.vision2030")}</span>
-                        </div>
-                      </div>
-
-                      {/* Item rows */}
-                      {group.importance.list.map((item, i) => (
-                        <div key={item.index} className="flex items-center py-1.5">
-                          {/* Number + Title */}
-                          <div className={`flex-1 flex items-center gap-2 pr-3 ${lang === "ar" ? "border-l" : "border-r"} border-fm-gray-100`}>
-                            <img
-                              src={indexIconsArray[item.index - 1]}
-                              alt={String(item.index)}
-                              className="w-7 h-7 object-contain shrink-0"
-                            />
-                            <span className="text-xs font-bold leading-tight text-fm-blue" >
-                              {item.title}
-                            </span>
-                          </div>
-
-                          {/* UNSDGs icons */}
-                          <div className={`w-24 flex flex-wrap gap-0.5 items-center justify-start px-2 ${lang === "ar" ? "border-l" : "border-r"} border-fm-gray-100`}>
-                            {group.unsdgs[i]?.map((num) => {
-                              const icon = unsdgsIcons.find((u) => u.index === num)?.icon;
-                              return icon ? (
-                                <img key={num} src={icon} alt={`UNSDG ${num}`} className="w-6 h-6" />
-                              ) : null;
-                            })}
-                          </div>
-
-                          {/* Vision 2030 icon */}
-                          <div className="w-24 flex items-center justify-center px-2">
-                            {group.vision[i] && visionIconsMap[group.vision[i]] && (
-                              <img
-                                src={visionIconsMap[group.vision[i]]}
-                                alt="Vision 2030"
-                                className="w-6 h-6"
-                              />
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                    <span>{t("topics.priority")}</span>{" "}
+                    <span>{group.priority}</span>
+                  </button>
                 );
               })}
+            </div>
 
-              {/* Legend */}
-              <div className="flex items-center flex-wrap lg:flex-nowrap gap-6 mt-4 pt-4 border-t border-fm-gray-100">
-                <div className="flex items-center gap-1.5">
-                  <img src={VibrantIcon} alt="Vibrant" className="w-9 h-9" />
-                  <span className=" text-fm-gray-300">{t("topics.aVibrantSociety")}</span>
+            {/* Tab content */}
+            <div className="overflow-y-auto pb-4 flex-1">
+              <div className="flex-1 min-w-130">
+                {/* Column headers */}
+                <div className="flex items-center divide-x divide-gray-400">
+                  <div className="flex-1 pr-3">
+                    <span className=" font-semibold">
+                      {activeGroup.importance.level}
+                    </span>
+                  </div>
+                  <div className={`w-24 text-center px-2`}>
+                    <span className=" font-bold text-fm-gray-400">
+                      {t("topics.unsdgs")}
+                    </span>
+                  </div>
+                  <div className={`w-24 text-center px-2`}>
+                    <span className=" font-bold text-fm-gray-400">
+                      {t("topics.vision2030")}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <img src={ThrivingIcon} alt="Thriving" className="w-9 h-9" />
-                  <span className=" text-fm-gray-300">{t("topics.aThrivingEconomy")}</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <img src={AmbitiousIcon} alt="Ambitious" className="w-9 h-9" />
-                  <span className=" text-fm-gray-300">{t("topics.anAmbitiousNation")}</span>
-                </div>
+
+                {/* Item rows */}
+                {activeGroup.importance.list.map((item, i) => (
+                  <div key={item.index} className="flex items-center divide-x divide-gray-500">
+                    {/* Number + Title */}
+                    <div className={`flex-1 flex items-center gap-2 pr-3 py-2` }>
+                      <img
+                        src={indexIconsArray[item.index - 1]}
+                        alt={String(item.index)}
+                        className="w-7 h-7 object-contain shrink-0"
+                      />
+                      <span className=" font-bold leading-tight text-fm-blue">
+                        {item.title}
+                      </span>
+                    </div>
+
+                    {/* UNSDGs icons */}
+                    <div
+                      className={`w-24 flex flex-wrap gap-1 items-center justify-start px-2 py-2 h-full`}
+                    >
+                      {activeGroup.unsdgs[i]?.map((num) => {
+                        const icon = unsdgsIcons.find(
+                          (u) => u.index === num,
+                        )?.icon;
+                        return icon ? (
+                          <img
+                            key={num}
+                            src={icon}
+                            alt={`UNSDG ${num}`}
+                            className="w-6 h-6"
+                          />
+                        ) : null;
+                      })}
+                    </div>
+
+                    {/* Vision 2030 icon */}
+                    <div className="w-24 flex items-center justify-center px-2 py-2 h-full">
+                      {activeGroup.vision[i] &&
+                        visionIconsMap[activeGroup.vision[i]] && (
+                          <img
+                            src={visionIconsMap[activeGroup.vision[i]]}
+                            alt="Vision 2030"
+                            className="w-8 h-8"
+                          />
+                        )}
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
+          </div>
+          {/* Legend — under chart, above tabs */}
+          <div className="flex items-center justify-center py-16 flex-wrap gap-6">
+            <div className="flex items-center gap-1.5">
+              <img src={VibrantIcon} alt="Vibrant" className="w-9 h-9" />
+              <span className="text-fm-gray-300">
+                {t("topics.aVibrantSociety")}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <img src={ThrivingIcon} alt="Thriving" className="w-9 h-9" />
+              <span className="text-fm-gray-300">
+                {t("topics.aThrivingEconomy")}
+              </span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <img src={AmbitiousIcon} alt="Ambitious" className="w-9 h-9" />
+              <span className="text-fm-gray-300">
+                {t("topics.anAmbitiousNation")}
+              </span>
             </div>
           </div>
         </Container>

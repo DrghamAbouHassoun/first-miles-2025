@@ -97,7 +97,7 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end">
           {/* Grey Spikes */}
-          <div className="absolute left-1/2 animate-fade-top animate-delay-1s">
+          <div className={`absolute left-1/2 animate-fade-top ${lang === "ar" ? "animate-delay-1s" : "animate-delay-2s"}`}>
             <div className="w-11.25 h-auto animate-spike-wave animate-delay-5s">
               <img
                 src={GreySpike}
@@ -115,7 +115,7 @@ const Hero = () => {
               />
             </div>
           </div>
-          <div className="absolute -left-1/4 animate-fade-top animate-delay-2s">
+          <div className={`absolute -left-1/4 animate-fade-top ${lang === "ar" ? "animate-delay-2s" : "animate-delay-1s"}`}>
             <div className="w-11.25 h-auto animate-spike-wave animate-delay-5s">
               <img
                 src={GreySpike}
@@ -236,7 +236,7 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-end z-10">
           {/* Grey Spikes */}
-          <div className="absolute left-1/2 animate-fade-top animate-delay-2s">
+          <div className={`absolute left-1/2 animate-fade-top ${lang === "ar" ? "animate-delay-1s" : "animate-delay-2s"}`}>
             <div className="w-7.5 h-auto animate-spike-wave animate-delay-5s">
               <img
                 src={GreySpike}
@@ -254,7 +254,7 @@ const Hero = () => {
               />
             </div>
           </div>
-          <div className="absolute -left-1/4 animate-fade-top animate-delay-1s">
+          <div className={`absolute -left-1/4 animate-fade-top ${lang === "ar" ? "animate-delay-2s" : "animate-delay-1s"}`}>
             <div className="w-7.5 h-auto animate-spike-wave animate-delay-5s">
               <img
                 src={GreySpike}

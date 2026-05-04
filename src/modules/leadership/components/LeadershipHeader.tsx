@@ -81,13 +81,6 @@ const LeadershipHeader = ({
           <img
             src={imageUrl}
             alt={`${title} | ${SITE_NAME}`}
-            // style={{
-            //   width: screenWidth > 1024 ? imageWidth : "100%",
-            //   transform:
-            //     screenWidth > 1024
-            //       ? `scale(${imageScale}) translateX(${imageTranslateX}px) translateY(${imageTranslateY}px)`
-            //       : "translateX(-16px)",
-            // }}
             className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? "lg:-translate-y-25.5" : "lg:-translate-y-23"} lg:translate-x-1`}
           />
         </div>
@@ -117,11 +110,13 @@ const LeadershipHeader = ({
         </div>
         <div className="flex-1 flex lg:justify-center items-center pr-4 text-lg">
           <div ref={quotationRef} className="flex items-start gap-2 max-w-150">
-            <img
-              src={QuotationIcon}
-              alt={SITE_NAME}
-              className={`w-8 h-auto xl:mb-4 animation-popup ${isQuotationInView ? "active" : ""}`}
-            />
+            <div className={`w-55 xl:mb-4 ${lang === "ar" ? "rotate-y-180" : ""}`}>
+              <img
+                src={QuotationIcon}
+                alt={SITE_NAME}
+                className={`w-full h-auto  animation-popup ${isQuotationInView ? "active" : ""}`}
+              />
+            </div>
             <p
               className={`font-bold animation-slide-top-50 ${isQuotationInView ? "active" : ""}`}
             >

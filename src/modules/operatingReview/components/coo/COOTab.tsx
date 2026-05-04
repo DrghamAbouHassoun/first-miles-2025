@@ -18,6 +18,8 @@ import ProductRevnewSection from "./ProductRevnewSection";
 import CFOQualitySection from "../../../leadership/components/CFOQualitySection";
 import { useContext } from "react";
 import { LangContext } from "../../../common/contexts/LangProvider";
+import TimelineDesktopEn from "./TimelineDesktopEn";
+import TimeLineDesktopAr from "./TimeLineDesktopAr";
 
 const services = [
   {
@@ -52,7 +54,9 @@ const COOTab = () => {
     <>
       <Container>
         <SlideTopAnimation>
-          <h1 className="text-3xl font-bold text-fm-green py-16">{t("tabs.coo")}</h1>
+          <h1 className="text-3xl font-bold text-fm-green py-16">
+            {t("tabs.coo")}
+          </h1>
         </SlideTopAnimation>
       </Container>
       <div className="pt-44">
@@ -169,7 +173,12 @@ const COOTab = () => {
           </div>
         </section>
         <section className="bg-fm-yellow-200">
-          <Timeline />
+          <div className="w-full hidden md:block">
+            {lang === "ar" ? <TimeLineDesktopAr /> : <TimelineDesktopEn />}
+          </div>
+          <div className="w-full block md:hidden">
+            <Timeline />
+          </div>
         </section>
         <ProductsSection />
         <MillingSnapshotSection />

@@ -11,6 +11,7 @@ interface ORHeaderProps {
   desc: string;
   bgImage: string;
   brandImage: string;
+  brandLogo?: string;
 }
 
 const ORHeader = ({
@@ -20,6 +21,7 @@ const ORHeader = ({
   desc,
   bgImage,
   brandImage,
+  brandLogo,
 }: ORHeaderProps) => {
   const { lang } = useLocale();
   return (
@@ -35,6 +37,13 @@ const ORHeader = ({
         <Container>
           <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-4 text-white">
             <div className="flex-1">
+              {brandLogo && (
+                <PopupAnimation>
+                  <div className="w-32 h-auto mb-4">
+                    <img src={brandLogo} alt="" className="w-full h-full object-contain" />
+                  </div>
+                </PopupAnimation>
+              )}
               <SlideAsideAnimation
                 level="20"
                 side={lang === "ar" ? "left" : "right"}

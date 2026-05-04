@@ -92,6 +92,7 @@ export default {
     },
     climateChange: {
       title: "Climate Change and Energy Management",
+      desc: "At First Mills, addressing climate change is an integral part of how we operate and plan for the future. We recognize the urgency of managing climate-related risks and opportunities, and we integrate sustainable energy practices directly into our operational and investment decisions. Our approach focuses on improving energy efficiency, reducing emissions, and strengthening climate resilience across our facilities.",
       t1: "Climate Change",
       p1: "We incorporate environmental risk considerations into operational planning, preventive maintenance and site-level performance reviews. Establishing our 2024 GHG baseline provided greater visibility into energy- and emissions-intensive processes, allowing us to prioritize actions with the highest potential impact. Emissions performance is increasingly monitored on an intensity basis, measured per ton of production, ensuring that efficiency improvements keep pace with capacity growth.",
       p2: "Our environmental management system remains certified to ISO 14001, reflecting a structured approach to managing environmental performance and embedding climate considerations into governance, risk management and daily operations.",

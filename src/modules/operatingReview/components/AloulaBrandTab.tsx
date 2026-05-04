@@ -2,6 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import ORHeader from "./ORHeader";
 import aloulaBg from "../../../assets/images/operating-review/bg/aloula.jpg";
 import aloulaBrand from "../../../assets/images/operating-review/brands/aloula.png";
+import aloulaLogo from "../../../assets/logo/aloula.svg";
 import Container from "../../common/components/Container/Container";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../common/hooks/useLocale";
@@ -23,6 +24,7 @@ const AloulaBrandTab = () => {
         desc={t("aloulaContent.desc")}
         bgImage={aloulaBg}
         brandImage={aloulaBrand}
+        brandLogo={aloulaLogo}
       />
       <section className="py-16">
         <Container>

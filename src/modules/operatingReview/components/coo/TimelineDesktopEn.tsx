@@ -1,0 +1,28 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import TimelineSvg from "../../../../assets/vectors/coo/timeline-en.svg?react";
+
+const TimelineDesktopEn = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className="w-full"
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <motion.div
+        initial={{ clipPath: "inset(0 100% 0 0)" }}
+        animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : {}}
+        transition={{ duration: 2.2, ease: [0.76, 0, 0.24, 1], delay: 0.2 }}
+      >
+        <TimelineSvg className="w-full" />
+      </motion.div>
+    </motion.div>
+  );
+};
+
+export default TimelineDesktopEn;
