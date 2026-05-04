@@ -85,6 +85,11 @@ const Social = () => {
         <Container>
           <div className="max-w-220">
             <SlideTopAnimation>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">
+                {t("tabs.social")}
+              </h1>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-2xl mb-2">
                 {t("social.title")}
               </h2>
@@ -154,7 +159,7 @@ const Social = () => {
                 className={`w-90 h-5 object-contain object-right ${lang === "ar" ? "rotate-y-180" : ""}`}
               />
             </div>
-            <div className="flex gap-4 flex-col md:flex-row">
+            <div className="flex gap-4 flex-col">
               <div className="flex-1">
                 <SlideTopAnimation>
                   <p className="font-semibold mb-4">
@@ -238,7 +243,9 @@ const Social = () => {
                         <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
                           {row.year}
                         </p>
-                        <div className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}>
+                        <div
+                          className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}
+                        >
                           <div className="flex items-center gap-3">
                             <div className="flex-1 h-5 relative">
                               <div
@@ -248,8 +255,10 @@ const Social = () => {
                               <span
                                 className="text-xs font-bold w-12 shrink-0 absolute top-0.5 text-gray-600"
                                 style={{
-                                  left: lang === "ar" ? "" : `${row.turnover + 6}%`,
-                                  right: lang === "ar" ? `${row.turnover + 6}%` : ""
+                                  left:
+                                    lang === "ar" ? "" : `${row.turnover + 6}%`,
+                                  right:
+                                    lang === "ar" ? `${row.turnover + 6}%` : "",
                                 }}
                               >
                                 {row.turnover}%
@@ -265,8 +274,14 @@ const Social = () => {
                               <span
                                 className="text-xs font-bold w-12 shrink-0 text-gray-600 absolute top-0.5"
                                 style={{
-                                  left: lang === "ar" ? "" : `${row.retention + 1}%`,
-                                  right: lang === "ar" ? `${row.retention + 1}%` : ""
+                                  left:
+                                    lang === "ar"
+                                      ? ""
+                                      : `${row.retention + 1}%`,
+                                  right:
+                                    lang === "ar"
+                                      ? `${row.retention + 1}%`
+                                      : "",
                                 }}
                               >
                                 {row.retention.toFixed(1)}%
@@ -621,47 +636,45 @@ const Social = () => {
                             transitionDelay: `${i * 120}ms`,
                           }}
                         >
-                        <div
-                          className="flex items-stretch gap-2 mb-2"
-                        >
-                          {/* Year label */}
-                          <div className="w-10 shrink-0 flex items-center justify-center">
-                            <span
-                              className="text-xs font-bold text-white"
-                              style={{
-                                writingMode: "vertical-lr",
-                                transform: "rotate(180deg)",
-                              }}
-                            >
-                              {isAr ? `م${year}` : year}
-                            </span>
-                          </div>
-
-                          {/* Bars */}
-                          <div className="flex-1 border-s border-gray-500 ps-0 space-y-1">
-                            {/* Male bar */}
-                            <div className="h-7 flex items-center">
-                              <div
-                                className="h-full bg-fm-yellow-200 flex items-center"
-                                style={{ width: `${male}%` }}
+                          <div className="flex items-stretch gap-2 mb-2">
+                            {/* Year label */}
+                            <div className="w-10 shrink-0 flex items-center justify-center">
+                              <span
+                                className="text-xs font-bold text-white"
+                                style={{
+                                  writingMode: "vertical-lr",
+                                  transform: "rotate(180deg)",
+                                }}
                               >
-                                <span className="ms-auto me-1.5 text-xs font-bold text-fm-green whitespace-nowrap">
-                                  {male}%
+                                {isAr ? `م${year}` : year}
+                              </span>
+                            </div>
+
+                            {/* Bars */}
+                            <div className="flex-1 border-s border-gray-500 ps-0 space-y-1">
+                              {/* Male bar */}
+                              <div className="h-7 flex items-center">
+                                <div
+                                  className="h-full bg-fm-yellow-200 flex items-center"
+                                  style={{ width: `${male}%` }}
+                                >
+                                  <span className="ms-auto me-1.5 text-xs font-bold text-fm-green whitespace-nowrap">
+                                    {male}%
+                                  </span>
+                                </div>
+                              </div>
+                              {/* Female bar */}
+                              <div className="h-7 flex items-center gap-1.5">
+                                <div
+                                  className="h-full bg-fm-yellow shrink-0"
+                                  style={{ width: `${female}%` }}
+                                />
+                                <span className="text-xs font-bold text-white whitespace-nowrap">
+                                  {female}%
                                 </span>
                               </div>
                             </div>
-                            {/* Female bar */}
-                            <div className="h-7 flex items-center gap-1.5">
-                              <div
-                                className="h-full bg-fm-yellow shrink-0"
-                                style={{ width: `${female}%` }}
-                              />
-                              <span className="text-xs font-bold text-white whitespace-nowrap">
-                                {female}%
-                              </span>
-                            </div>
                           </div>
-                        </div>
                         </PopupAnimation>
                       ))}
 
@@ -888,12 +901,12 @@ const Social = () => {
                           : "Average Saudization Percentage"}
                       </td>
                       <td
-                        className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-b-gray-400`}
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                       >
                         {lang === "ar" ? "أخضر مرتفع" : "High Green"}
                       </td>
                       <td
-                        className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-b-gray-400`}
+                        className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                       >
                         {lang === "ar" ? "%39.5" : "39.5%"}
                       </td>
@@ -1069,20 +1082,21 @@ const Social = () => {
                 </div>
               </div>
 
-              <p
-                className="mb-1"
-                dangerouslySetInnerHTML={{
-                  __html: t("social.occupational.p3"),
-                }}
-              />
-              <a
-                href={t("social.occupational.link")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fm-yellow underline break-all"
-              >
-                {t("social.occupational.link")}
-              </a>
+              <p className="mb-1">
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: t("social.occupational.p3"),
+                  }}
+                ></span>{" "}
+                <a
+                  href={t("social.occupational.link")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fm-yellow underline break-all"
+                >
+                  {t("social.occupational.link")}
+                </a>
+              </p>
             </FadeInAnimation>
           </div>
 
@@ -1233,7 +1247,7 @@ const Social = () => {
             </FadeInAnimation>
             {/* Quality note callout */}
             <PopupAnimation>
-              <div className="w-full max-w-240 mx-auto py-10 p-4 bg-fm-green text-fm-yellow my-16">
+              <div className="w-full max-w-240 py-10 p-4 bg-fm-green text-fm-yellow my-16">
                 <p
                   className="text-fm-yellow text-lg max-w-2/3"
                   dangerouslySetInnerHTML={{
@@ -1389,36 +1403,36 @@ const Social = () => {
                       transitionDelay: `${i * 120}ms`,
                     }}
                   >
-                  <div className=" flex items-end gap-2">
-                    <p className="font-bold">{item.text}</p>
-                    <div className="flex items-baseline gap-2">
-                      {i === 2 ? (
-                        <>
-                          <span
-                            className="text-4xl text-fm-yellow font-bold"
-                            dangerouslySetInnerHTML={{
-                              __html: String(item.label),
-                            }}
-                          />
-                          <span className="text-4xl font-bold text-fm-yellow">
-                            {item.value}
-                          </span>
-                        </>
-                      ) : (
-                        <>
-                          <span className="text-4xl font-bold text-fm-yellow">
-                            {item.value}
-                          </span>
-                          <span
-                            className="text-sm font-bold"
-                            dangerouslySetInnerHTML={{
-                              __html: String(item.label),
-                            }}
-                          />
-                        </>
-                      )}
+                    <div className=" flex items-end gap-2">
+                      <p className="font-bold">{item.text}</p>
+                      <div className="flex items-baseline gap-2">
+                        {i === 2 ? (
+                          <>
+                            <span
+                              className="text-4xl text-fm-yellow font-bold"
+                              dangerouslySetInnerHTML={{
+                                __html: String(item.label),
+                              }}
+                            />
+                            <span className="text-4xl font-bold text-fm-yellow">
+                              {item.value}
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <span className="text-4xl font-bold text-fm-yellow">
+                              {item.value}
+                            </span>
+                            <span
+                              className="text-sm font-bold"
+                              dangerouslySetInnerHTML={{
+                                __html: String(item.label),
+                              }}
+                            />
+                          </>
+                        )}
+                      </div>
                     </div>
-                  </div>
                   </PopupAnimation>
                 ))}
               </div>

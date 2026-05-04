@@ -84,7 +84,7 @@ const GeoRevenueColumn = ({
           <span className="text-sm font-bold text-fm-yellow">
             {t("geoRevenue.total")}
           </span>
-          <span className="w-16 text-sm font-bold text-fm-green">
+          <span className={`${lang === "ar" ? "w-16 text-end" : "w-16"} text-sm font-bold text-fm-green`}>
             <CounterAnimation
               as="span"
               end={total}
@@ -96,7 +96,7 @@ const GeoRevenueColumn = ({
         </div>
       </div>
       {year === 2025 && (
-        <p className="text-xs text-end font-thin text-fm-gray-300 mt-4">
+        <p className="text-xs font-thin text-fm-gray-300 mt-4">
           {translate("financialHighlights.geoRevenue.jeddahFootnote")}
         </p>
       )}

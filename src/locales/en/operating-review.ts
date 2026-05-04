@@ -43,7 +43,7 @@ export default {
   aloulaContent: {
     title: "Premium solutions driving value-led growth",
     subtitle: "About Aloula Brand",
-    desc: "Aloula is First Mills’ premium consumer brand, positioned at the intersection of quality, innovation and value-added food solutions. <br />The brand focuses on high-margin flour, mixes and baking products designed for modern households and small bakeries, with a clear emphasis on usability, consistency and performance. Aloula plays a strategic role within the portfolio as the primary driver of customization, innovation and margin enhancement across retail and emerging digital channels.",
+    desc: "Aloula is First Mills’ premium consumer brand, positioned at the intersection of quality, innovation and value-added food solutions. <br /><br />The brand focuses on high-margin flour, mixes and baking products designed for modern households and small bakeries, with a clear emphasis on usability, consistency and performance. Aloula plays a strategic role within the portfolio as the primary driver of customization, innovation and margin enhancement across retail and emerging digital channels.",
     intro:
       "In 2025, Aloula strengthened its role as First Mills’ innovation-led growth engine by advancing its shift toward cooking and baking solutions with higher value density. The brand prioritized portfolio diversification, premium channel execution and operational discipline, reinforcing its contribution to profitability and deepening relevance within priority consumer segments. Performance during the year reflected Aloula’s ability to translate innovation and focused execution into commercial impact across both physical and digital touchpoints.",
     paragraphs: [
@@ -109,7 +109,7 @@ export default {
         "Through tight operational control, targeted investments and a strong safety and quality culture, we continued to provide a stable foundation for commercial expansion and portfolio diversification.",
       p1: "Operational excellence remained the defining theme of the year. Across our production network, most sites consistently achieved average efficiency levels above 94%, reflecting stronger asset utilization, fewer unplanned stoppages and improved process stability. We achieved these outcomes through tighter maintenance planning, enhanced technical oversight and closer coordination between our operations, quality and supply chain teams. Strengthened governance around maintenance execution and spare-parts management improved site-level responsiveness, maintaining consistency and reliability across our manufacturing footprint.",
       p2: "Technology continued to play an increasingly important role in supporting our operational performance and quality. During the year, we completed the rollout of integrated digital platforms that provide real-time visibility into production performance, quality indicators and energy usage across all sites. This enhanced transparency strengthened decision-making at both plant and head-office levels, enabling faster interventions, more proactive planning and more consistent quality outcomes. The broader adoption of data-led monitoring and predictive maintenance capabilities advanced our shift toward preventative operations, reducing downtime risk and extending asset life.",
-      p3: "Alongside efficiency and digitalization, we further embedded sustainability into our day-to-day operations. Energy-optimization initiatives delivered tangible cost and performance benefits, supported by power-factor improvements, lighting upgrades and smarter energy monitoring across sites. We also enhanced operational resilience and food safety through the expanded use of chemical-free heat treatment for pest control, significantly reducing downtime and lowering environmental impact. In parallel, we signed a long-term solar power agreement with Safeer for our Tabuk and Al-Ahsa sites, representing a major milestone in <br />our sustainability roadmap and laying the foundation for renewable energy integration from 2026.",
+      p3: "Alongside efficiency and digitalization, we further embedded sustainability into our day-to-day operations. Energy-optimization initiatives delivered tangible cost and performance benefits, supported by power-factor improvements, lighting upgrades and smarter energy monitoring across sites. We also enhanced operational resilience and food safety through the expanded use of chemical-free heat treatment for pest control, significantly reducing downtime and lowering environmental impact. In parallel, we signed a long-term solar power agreement with Safeer for our Tabuk and Al-Ahsa sites, representing a major milestone in <br /><br />our sustainability roadmap and laying the foundation for renewable energy integration from 2026.",
       p4: "Capacity expansion and operational readiness remained central to how we plan for future growth. During the year, we advanced several strategic projects designed to support rising demand and greater product diversity. These included progress on the Mill C project in Al-Qassim, which is scheduled to commence operations in 2026 and will incorporate next-generation milling technology and enhanced cooling systems to improve yields and operational efficiency. Additional upgrades across our flour and feed operations strengthened flexibility, logistics efficiency and product performance, ensuring capacity development remains aligned with our commercial and market expansion.",
       p5: "In parallel, we strengthened our operational platform through targeted investments in storage, logistics and feed capabilities. The acquisition of Al Manar Feed plant, with a production capacity of 450 tons per day and silo storage of 30,000 tons, expanded our feed manufacturing capacity and supported a broader operational scale within the Kingdom. Enhancements to bran handling and storage improved density and reduced delivery costs for both customers and internal users, while new cold-storage infrastructure reinforced finished-goods integrity and energy efficiency.",
       p6: "Above all, the year reinforced the importance of our people and process discipline in sustaining performance. Continued investment in technical capability, clearer accountability and cross-functional collaboration strengthened execution across our operating model. By maintaining a clear focus on efficiency, reliability and continuous improvement, we remain well positioned to support growth, manage complexity and deliver consistent value to customers and Shareholders as we move into our next phase of development.",
@@ -143,12 +143,12 @@ export default {
           year: "2021",
           isEven: true,
           items: [
-            { value: "600 t/d", description: "in Al Qassim feed mill" },
-            { value: "300 t/d", description: "in Jeddah feed mill" },
-            { value: "600 t/d", description: "in Tabuk wheat milling" },
-            { value: "600 t/d", description: "in Al Ahsa wheat milling" },
-            { value: "900 t/d", description: "Al Qassim wheat milling" },
-            { value: "2,100t/d", description: "in Jeddah wheat milling" },
+            { isReversed: false, value: "600 t/d", description: "in Al Qassim feed mill" },
+            { isReversed: false, value: "300 t/d", description: "in Jeddah feed mill" },
+            { isReversed: false, value: "600 t/d", description: "in Tabuk wheat milling" },
+            { isReversed: false,value: "600 t/d", description: "in Al Ahsa wheat milling" },
+            { isReversed: false,value: "900 t/d", description: "Al Qassim wheat milling" },
+            { isReversed: false,value: "2,100t/d", description: "in Jeddah wheat milling" },
           ],
         },
         {
@@ -156,6 +156,7 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: false,
               value: "",
               description:
                 "Al Qassim feed mill<br /> upgraded with additional <br /><b>100 t/d</b>",
@@ -167,11 +168,13 @@ export default {
           isEven: true,
           items: [
             {
+              isReversed: false,
               value: "300 t/d",
               description: "in Jeddah,<br /> new silo for durum mill",
             },
-            { value: "150 t/d", description: "in Jeddah, new pesa mill" },
+            { isReversed: false, value: "150 t/d", description: "in Jeddah, new pesa mill" },
             {
+              isReversed: true,
               value: "250 t/d (Jeddah plant)",
               description: "Mill C upgraded <br />with an additional",
             },
@@ -182,6 +185,7 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: true,
               value: "250 t/d (Jeddah plant)",
               description: "Mill A upgraded with an additional",
             },
@@ -192,6 +196,7 @@ export default {
           isEven: true,
           items: [
             {
+              isReversed: false,
               value: "450 t/d",
               description: "Al Manar Feed factory acquired",
             },
@@ -202,14 +207,17 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: false,
               value: "600 t/d",
               description: "Mill C in Al Qassim to be commissioned",
             },
             {
+              isReversed: false,
               value: "130 t/d",
               description: "pesa mill in Al Qassim to be commissioned",
             },
             {
+              isReversed: false,
               value: "120 t/d",
               description: "feed mill upgrade in Jeddah plant",
             },
@@ -256,7 +264,7 @@ export default {
       capacity: {
         title: "Capacity and network",
         bullets: [
-          "<b class='font-bold'>Mills in operation:</b>15 (vs. 11 in 2024)",
+          "<b class='font-bold'>Mills in operation:</b> 15 (vs. 11 in 2024)",
           "<b>Silo storage capacity:</b> 250,000 tons (vs. 220,000 tons in 2024)",
           "<b>Annual installed milling capacity:</b> 1,550,150 tons",
         ],
@@ -264,11 +272,11 @@ export default {
       daily: {
         title: "Daily production capacities",
         bullets: [
-          "<b>Wheat milling</b> (design):5,150 tons/day",
-          "<b>Flour milling:</b>3,672 tons/day",
-          "<b>Bran milling:</b>1,238 tons/day",
+          "<b>Wheat milling</b> (design): 5,150 tons/day",
+          "<b>Flour milling:</b> 3,672 tons/day",
+          "<b>Bran milling:</b> 1,238 tons/day",
           "<b>Feed production:</b> 1,350 tons/day (vs. 900 tons/day in 2024)",
-          "<b>Durum milling:</b>300 tons/day",
+          "<b>Durum milling:</b> 300 tons/day",
         ],
       },
       performance: {
@@ -298,10 +306,10 @@ export default {
         title: "Customers and Success Partners",
         subtitle: "First Milling Company serves a broad and diversified customer portfolio, organized into four primary sales channels.",
         list: [
-          "<b>B2B customers</b> Large food manufacturers and commercial bakeries, as well as smaller businesses such as restaurants, catering companies and small bakeries that use flour as a core input in their operations.",
-          "<b>Traditional trade</b> Distributors and wholesalers that purchase the Company’s products in bulk and resell them to other customers, including flour traders and both large and small wholesalers.",
-          "<b>Modern trade</b> Organized retail outlets serving end consumers, including supermarkets and other modern retail formats.",
-          "<b>Farms and feed distributors</b> Farms, traders and distributors supplying animal feed and bran to livestock and poultry producers.",
+          "<b>B2B customers</b> <br />Large food manufacturers and commercial bakeries, as well as smaller businesses such as restaurants, catering companies and small bakeries that use flour as a core input in their operations.",
+          "<b>Traditional trade</b> <br />Distributors and wholesalers that purchase the Company’s products in bulk and resell them to other customers, including flour traders and both large and small wholesalers.",
+          "<b>Modern trade</b> <br />Organized retail outlets serving end consumers, including supermarkets and other modern retail formats.",
+          "<b>Farms and feed distributors</b> <br />Farms, traders and distributors supplying animal feed and bran to livestock and poultry producers.",
         ]
       }
     },

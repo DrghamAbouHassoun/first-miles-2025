@@ -84,7 +84,15 @@ const Bar = ({
         transition: `opacity 0.3s ease-out ${delay}`,
       }}
     >
-      {inView && <div className={color === CURRENT_COLOR ? "translate-y-[calc(100%+8px)]" : ""}><CountUp end={value} decimals={1} duration={1.5} /></div>}
+      {inView && (
+        <div
+          className={
+            color === CURRENT_COLOR ? "translate-y-[calc(100%+8px)]" : ""
+          }
+        >
+          <CountUp end={value} decimals={1} duration={1.5} />
+        </div>
+      )}
     </span>
   </div>
 );
@@ -97,16 +105,24 @@ const GroupedBarChart = ({
   title,
   legend,
   inView,
+  unit,
 }: {
   data: typeof ASSETS_DATA;
   yMax: number;
   yTicks: number[];
   title: string;
+  unit: string;
   legend: { color: string; label: string }[];
   inView: boolean;
 }) => (
   <div className="flex-1 min-w-0">
-    <p className="font-bold text-sm text-fm-green mb-2">{title}</p>
+    <p className="font-bold text-sm text-fm-green mb-2">
+      {title}
+      <span
+        className="font-normal text-sm text-fm-gray-300"
+        dangerouslySetInnerHTML={{ __html: `(${unit})` }}
+      ></span>
+    </p>
 
     {/* Chart body */}
     <div className="flex" style={{ height: CHART_HEIGHT }}>
@@ -221,9 +237,6 @@ const CFOFinancialPositionChart = ({
     <div className="bg-fm-yellow-100 p-4">
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.financialPositionTitle}{" "}
-        <span className="font-normal text-sm text-fm-gray-300" dangerouslySetInnerHTML={{ __html: `(${labels.financialUnit})`}}>
-
-        </span>
       </p>
 
       <div ref={ref} dir="ltr" className="flex flex-col sm:flex-row gap-8 mt-4">
@@ -232,6 +245,7 @@ const CFOFinancialPositionChart = ({
           yMax={ASSETS_Y_MAX}
           yTicks={ASSETS_Y_TICKS}
           title={labels.assetsTitle}
+          unit={labels.financialUnit}
           inView={inView}
           legend={[
             { color: CURRENT_COLOR, label: labels.currentAssets },
@@ -244,6 +258,7 @@ const CFOFinancialPositionChart = ({
           yMax={LIAB_Y_MAX}
           yTicks={LIAB_Y_TICKS}
           title={labels.liabilitiesTitle}
+          unit={labels.financialUnit}
           inView={inView}
           legend={[
             { color: CURRENT_COLOR, label: labels.currentLiabilities },

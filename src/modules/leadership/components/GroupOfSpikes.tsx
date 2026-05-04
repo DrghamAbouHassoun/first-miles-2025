@@ -1,4 +1,5 @@
 import YellowSpike from "../../../assets/icons/spike-yellow-2.svg";
+import GreySpike from "../../../assets/icons/spike-gray.svg";
 import { useLocale } from "../../common/hooks/useLocale";
 
 const GroupOfSpikes = () => {
@@ -27,6 +28,35 @@ const GroupOfSpikes = () => {
         <div className="w-full h-auto">
           <img
             src={YellowSpike}
+            alt="Yellow Spike"
+            className="w-full h-auto animate-spike-wave opacity-30 xl:opacity-100"
+          />
+        </div>
+      </div>
+
+      {/* Grey Spikes */}
+      <div className={`absolute w-10 h-auto ${lang === "ar" ? "-translate-x-2 left-44" : "translate-x-10 right-44"}`}>
+        <div className="w-full h-auto">
+          <img
+            src={GreySpike}
+            alt="Yellow Spike"
+            className="w-full h-auto animate-spike-wave opacity-30 xl:opacity-100"
+          />
+        </div>
+      </div>
+      <div className={`absolute w-25 h-auto ${lang === 'ar' ? "left-16" : "right-16"}`}>
+        <div className="w-full h-auto">
+          <img
+            src={GreySpike}
+            alt="Yellow Spike"
+            className="w-full h-auto animate-spike-wave opacity-30 xl:opacity-100"
+          />
+        </div>
+      </div>
+      <div className={`absolute w-13 h-auto ${lang === "ar" ? "translate-x-8 left-4" : "-translate-x-8 right-4"}`}>
+        <div className="w-full h-auto">
+          <img
+            src={GreySpike}
             alt="Yellow Spike"
             className="w-full h-auto animate-spike-wave opacity-30 xl:opacity-100"
           />

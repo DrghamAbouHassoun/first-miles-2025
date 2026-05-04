@@ -78,12 +78,12 @@ const InvestmentCase = () => {
               <h1 className="text-2xl font-bold text-fm-green mb-6">{t("investmentCaseContent.pageTitle")}</h1>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <h2 className="text-fm-yellow mb-4 font-bold text-lg max-w-160">
+              <h2 className="text-fm-yellow mb-4 font-bold text-lg">
                 {t("investmentCaseContent.title")}
               </h2>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <p className="max-w-160 mb-4">
+              <p className="mb-4">
                 {t("investmentCaseContent.description")}
               </p>
             </SlideTopAnimation>

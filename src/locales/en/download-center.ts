@@ -7,6 +7,14 @@ export default {
   preparingMessage: "Preparing your document, please wait...",
   chapters: [
     {
+      title: "Introductory",
+      sections: [
+        "Theme of the Year",
+        "At a Glance",
+        "Awards and Certifications",
+      ],
+    },
+    {
       title: "Overview",
       sections: [
         "About First Mills",
@@ -33,17 +41,25 @@ export default {
       ],
     },
     {
-      title: "Business Review",
-      sections: ["First Mills", "Aloula", "Naffa'a"],
+      title: "Operating Review",
+      sections: [
+        "COO's Review",
+        "First Mills",
+        "Aloula",
+        "Naffa'a",
+      ],
     },
     {
       title: "Sustainability Review",
       sections: [
-        "Approach to Sustainability",
-        "Materiality Assessment",
+        "Our Sustainability Approach",
+        "Our Sustainability Strategy",
+        "Our Material Topics",
+        "Alignment with National and Global Imperatives",
         "Protecting our Nature",
         "Driving Social Change",
-        "Cultivating Ethical Governance",
+        "Our People",
+        "Our Communities",
       ],
     },
     {

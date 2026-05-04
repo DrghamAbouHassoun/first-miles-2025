@@ -16,9 +16,9 @@ const CASH_DATA = [
 ];
 
 const LOANS_DATA = [
-  { year: 2021, value: 1170.7 },
-  { year: 2022, value: 1044.1 },
-  // { year: 2023, value: 1 },
+  { year: 2021, value: 0 },
+  { year: 2022, value: 1170.7 },
+  { year: 2023, value: 1044.1 },
   { year: 2024, value: 1010.6 },
   { year: 2025, value: 940.8 },
 ];
@@ -58,19 +58,19 @@ const HorizontalBarPanel = ({
             </span>
             <div className="flex-1 h-6 flex items-center ">
               <div
-                className="h-full flex items-center justify-end overflow-hidden"
+                className={`h-full flex items-center justify-end overflow-hidden `}
                 style={{
-                  width: inView ? `${(d.value / maxVal) * 100}%` : "0%",
+                  width: inView && d.value !== 0 ? `${(d.value / maxVal) * 100}%` : "0%",
                   backgroundColor: color,
                   transition: "width 0.7s ease-out 0s",
-                  minWidth: 42,
+                  minWidth: d.value === 0 ? 0 : 42,
                 }}
               >
-                <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap select-none">
+                {d.value !== 0 && <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap select-none">
                   {inView && (
                     <CountUp end={d.value} decimals={1} duration={1.5} />
                   )}
-                </span>
+                </span>}
               </div>
             </div>
           </div>

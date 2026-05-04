@@ -144,12 +144,12 @@ export default {
           year: "2021",
           isEven: true,
           items: [
-            { value: "600 طن يومياً", description: "في مطحنة القصيم للأعلاف" },
-            { value: "300 طن يومياً", description: "في مطحنة جدة للأعلاف" },
-            { value: "600 طن يومياً", description: "في مطحنة تبوك للقمح " },
-            { value: "600 طن يومياً", description: "في مطحنة الأحساء للقمح" },
-            { value: "900 طن يومياً", description: "في مطحنة القصيم للقمح " },
-            { value: "2,100 طن يومياً", description: "في مطاحن جدة" },
+            { isReversed: false, value: "600 طن يومياً", description: "في مطحنة القصيم للأعلاف" },
+            { isReversed: false, value: "300 طن يومياً", description: "في مطحنة جدة للأعلاف" },
+            { isReversed: false, value: "600 طن يومياً", description: "في مطحنة تبوك للقمح " },
+            { isReversed: false, value: "600 طن يومياً", description: "في مطحنة الأحساء للقمح" },
+            { isReversed: false, value: "900 طن يومياً", description: "في مطحنة القصيم للقمح " },
+            { isReversed: false, value: "2,100 طن يومياً", description: "في مطاحن جدة" },
           ],
         },
         {
@@ -157,6 +157,7 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: false,
               value: "",
               description:
                 "تطوير مطحنة القصيم <br />للأعلاف بإضافة <b>100 طن يومياً</b>",
@@ -168,14 +169,17 @@ export default {
           isEven: true,
           items: [
             {
+              isReversed: false,
               value: "300  طن يومياً",
               description: "في جدة، مع صومعة مطحنة<br /> سميد جديدة",
             },
             {
+              isReversed: false,
               value: "150  طن يومياً",
               description: " في جدة، مع مطحنة البيزا جديدة",
             },
             {
+              isReversed: false,
               value: "",
               description:
                 'تطوير المطحنة "سي"<br /> بإضافة <b>250 طن يومياً</b> (مصنع جدة)',
@@ -187,6 +191,7 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: false,
               value: "",
               description:
                 'تطوير المطحنة "أ" بإضافة <br /><b>250 طن يومياً</b> (مصنع جدة)',
@@ -198,6 +203,7 @@ export default {
           isEven: true,
           items: [
             {
+              isReversed: false,
               value: "",
               description:
                 "الاستحواذ على مصنع المنار<br /> للأعلاف بطاقة إنتاجية قدرها <br /><b>450 طن يومياً</b> ",
@@ -209,16 +215,19 @@ export default {
           isEven: false,
           items: [
             {
+              isReversed: false, 
               value: "",
               description:
                 'من المقرر أن تبدأ المطحنة "سي"<br /> في مصنع القصيم<br /> عملها بطاقة إنتاجية<br /> <b>600 طن يومياً</b>',
             },
             {
+              isReversed: false, 
               value: "",
               description:
                 "من المقرر أن تبدأ مطحنة البيزا<br /> في مصنع القصيم<br /> عملها بطاقة إنتاجية <br /><b>130 طن يومياً</b>",
             },
             {
+              isReversed: false, 
               value: "",
               description:
                 "سيتم تطوير مطحنة الأعلاف<br /> في مصنع جدة بإضافة <br /><b>120 طن يومياً </b>",

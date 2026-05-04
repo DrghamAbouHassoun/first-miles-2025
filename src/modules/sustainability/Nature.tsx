@@ -38,7 +38,10 @@ const SectionHeader = ({
   return (
     <div className="w-fit relative">
       <h3 className="text-fm-green font-bold text-lg w-fit">{title}</h3>
-      <div ref={ref} className={`overflow-hidden w-full pt-1 max-w-${maxWidth} ${lang === "ar" ? "rotate-y-180" : ""}`}>
+      <div
+        ref={ref}
+        className={`overflow-hidden w-full pt-1 max-w-${maxWidth} ${lang === "ar" ? "rotate-y-180" : ""}`}
+      >
         <img
           src={SpikeArrow}
           alt="First Mills"
@@ -63,6 +66,11 @@ const Nature = () => {
       <section className="py-16">
         <Container>
           <div className="max-w-220">
+            <SlideTopAnimation>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">
+                {t("tabs.nature")}
+              </h1>
+            </SlideTopAnimation>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-2xl mb-6">
                 {t("protectingNature.opening.title")}
@@ -156,6 +164,13 @@ const Nature = () => {
 
           {/* Powering Efficiency — full dark-green block */}
           <FadeInAnimation className="bg-fm-green text-white rounded-lg px-8 py-8 mb-8">
+            <SlideTopAnimation>
+              <h4
+                className={` from-fm-yellow w-fit p-2 font-bold mb-4 text-xl ${lang === "ar" ? "rounded-bl-lg bg-linear-to-r" : "rounded-br-lg bg-linear-to-l"}`}
+              >
+                {t("protectingNature.poweringEfficiency.caseStudy")}
+              </h4>
+            </SlideTopAnimation>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-2xl mb-4">
                 {t("protectingNature.poweringEfficiency.title")}
@@ -254,7 +269,9 @@ const Nature = () => {
                 <p
                   className="mb-6"
                   dangerouslySetInnerHTML={{
-                    __html: t("protectingNature.wastManagement.ourProduct.desc"),
+                    __html: t(
+                      "protectingNature.wastManagement.ourProduct.desc",
+                    ),
                   }}
                 />
               </FadeInAnimation>
@@ -264,7 +281,10 @@ const Nature = () => {
                 {lifecycleDivisions.map((div, i) => (
                   <PopupAnimation
                     key={i}
-                    style={{ animationDelay: `${i * 100}ms`, transitionDelay: `${i * 100}ms` }}
+                    style={{
+                      animationDelay: `${i * 100}ms`,
+                      transitionDelay: `${i * 100}ms`,
+                    }}
                   >
                     <div className="flex flex-col border-gradient rounded-lg p-5 gap-3 h-full">
                       <div className="flex gap-2">
@@ -293,18 +313,24 @@ const Nature = () => {
                 <p
                   className="mb-4"
                   dangerouslySetInnerHTML={{
-                    __html: t("protectingNature.wastManagement.minimizeWaste.p1"),
+                    __html: t(
+                      "protectingNature.wastManagement.minimizeWaste.p1",
+                    ),
                   }}
                 />
                 <p
                   className="mb-4"
                   dangerouslySetInnerHTML={{
-                    __html: t("protectingNature.wastManagement.minimizeWaste.p2"),
+                    __html: t(
+                      "protectingNature.wastManagement.minimizeWaste.p2",
+                    ),
                   }}
                 />
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: t("protectingNature.wastManagement.minimizeWaste.p3"),
+                    __html: t(
+                      "protectingNature.wastManagement.minimizeWaste.p3",
+                    ),
                   }}
                 />
               </FadeInAnimation>
@@ -367,21 +393,23 @@ const Nature = () => {
                   __html: t("protectingNature.sustainableAgriculture.p2"),
                 }}
               />
-              <p
-                className="mb-2"
-                dangerouslySetInnerHTML={{
-                  __html: t("protectingNature.sustainableAgriculture.p3"),
-                }}
-              />
-              <a
-                href={t("protectingNature.sustainableAgriculture.link")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-fm-yellow underline break-all"
-              >
-                {t("protectingNature.sustainableAgriculture.link")}
-              </a>
             </FadeInAnimation>
+          </div>
+          <div className="p-4 bg-fm-green text-white max-w-220 mx-auto">
+            <p
+              className="mb-2"
+              dangerouslySetInnerHTML={{
+                __html: t("protectingNature.sustainableAgriculture.p3"),
+              }}
+            />
+            <a
+              href={t("protectingNature.sustainableAgriculture.link")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fm-yellow hover:text-fm-yellow/60 transition-colors duration-300 underline break-all"
+            >
+              {t("protectingNature.sustainableAgriculture.link")}
+            </a>
           </div>
         </Container>
       </section>

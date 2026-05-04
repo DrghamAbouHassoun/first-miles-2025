@@ -2,6 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { SITE_NAME } from "../../../config/constants";
 import ThemeOfTheYearBg from "../../../assets/images/backgrounds/theme-of-the-year.jpg";
 import FadeInAnimation from "../../common/components/animations/FadeInAnimation";
+import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 
 const ThemeOfTheYear = () => {
   const { t } = useTranslation("home");
@@ -12,7 +13,7 @@ const ThemeOfTheYear = () => {
         <div className="flex flex-col lg:flex-row w-full min-h-screen">
           <div className="py-16 px-6 md:px-12 lg:px-16 xl:px-24 flex-1 flex flex-col justify-center">
             <FadeInAnimation>
-              <h3 className="text-2xl text-fm-yellow font-bold animate-fade-in">
+              <h3 className="text-5xl text-fm-yellow font-bold animate-fade-in">
                 {t("theme.theme-of-the-year")}
               </h3>
             </FadeInAnimation>
@@ -51,6 +52,9 @@ const ThemeOfTheYear = () => {
           alt={SITE_NAME}
           className="w-full h-full object-cover"
         />
+      </div>
+      <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 pointer-events-none">
+        <GroupOfSpikes />
       </div>
     </div>
   );

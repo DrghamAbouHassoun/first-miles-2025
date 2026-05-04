@@ -5,6 +5,7 @@ import Container from "../../common/components/Container/Container";
 import { useLocale } from "../../common/hooks/useLocale";
 
 interface ORHeaderProps {
+  pageTitle: string;
   title: string;
   subtitle: string;
   desc: string;
@@ -13,6 +14,7 @@ interface ORHeaderProps {
 }
 
 const ORHeader = ({
+  pageTitle,
   title,
   subtitle,
   desc,
@@ -33,6 +35,15 @@ const ORHeader = ({
         <Container>
           <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-4 text-white">
             <div className="flex-1">
+              <SlideAsideAnimation
+                level="20"
+                side={lang === "ar" ? "left" : "right"}
+              >
+                <h1
+                  className="text-4xl text-fm-white font-bold mb-4"
+                  dangerouslySetInnerHTML={{ __html: pageTitle }}
+                ></h1>
+              </SlideAsideAnimation>
               <SlideAsideAnimation
                 level="20"
                 side={lang === "ar" ? "left" : "right"}

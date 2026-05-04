@@ -130,16 +130,55 @@ const DownloadCenterContent = () => {
     }
   };
 
-  const handleDownloadFull = () => {
-    const lang_folder = getLanguageFolder(isAr);
-    const link = document.createElement("a");
-    link.href = `${URL_ENDPOINT}/${lang_folder}/${COMPANY}_${lang_folder}.pdf`;
-    link.download = isAr
-      ? `${COMPANY}_Full_Report_AR.pdf`
-      : `${COMPANY}_Full_Report_EN.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownloadFull = async () => {
+    setIsLoading(true);
+    const urls: string[] = [];
+
+    chapters.forEach((chapter, ci) => {
+      const count = chapter.sections.length > 0 ? chapter.sections.length : 1;
+      for (let si = 0; si < count; si++) {
+        urls.push(
+          `${URL_ENDPOINT}/${getLanguageFolder(isAr)}/${getSectionPdfName(ci, si)}`
+        );
+      }
+    });
+
+    try {
+      const buffers = await Promise.all(
+        urls.map((url) =>
+          fetch(url, { headers: { "Content-Type": "application/pdf" } }).then(
+            (r) => r.arrayBuffer()
+          )
+        )
+      );
+
+      const docs = await Promise.all(
+        buffers.map((buf) => PDFDocument.load(buf))
+      );
+
+      const merged = await PDFDocument.create();
+      for (const doc of docs) {
+        const pages = await merged.copyPages(doc, doc.getPageIndices());
+        pages.forEach((p) => merged.addPage(p));
+      }
+
+      const bytes = await merged.save();
+      const blob = new Blob([new Uint8Array(bytes)], {
+        type: "application/pdf",
+      });
+      const objectUrl = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = objectUrl;
+      link.download = isAr
+        ? `${COMPANY}_Full_Report_AR.pdf`
+        : `${COMPANY}_Full_Report_EN.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      URL.revokeObjectURL(objectUrl);
+      document.body.removeChild(link);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (checkedChapters.length === 0) return null;

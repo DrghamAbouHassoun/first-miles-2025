@@ -5,6 +5,7 @@ import SlideTopAnimation from "../../../common/components/animations/SlideTopAni
 import PopupAnimation from "../../../common/components/animations/PopupAnimation";
 
 interface Item {
+  isReversed: boolean;
   value: string;
   description: string;
 }
@@ -52,13 +53,27 @@ const TimelineItem = ({ year, items, isEven }: TimelineItemProps) => {
             >
               {items.map((item, idx) => (
                 <div key={idx} className="text-sm">
-                  <div className="font-semibold text-slate-900">
-                    {item.value}
-                  </div>
-                  <div
-                    className="text-slate-900 text-xs"
-                    dangerouslySetInnerHTML={{ __html: item.description }}
-                  ></div>
+                  {item.isReversed ? (
+                    <>
+                      <div
+                        className="text-slate-900 text-xs"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      ></div>
+                      <div className="font-semibold text-slate-900">
+                        {item.value}
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="font-semibold text-slate-900">
+                        {item.value}
+                      </div>
+                      <div
+                        className="text-slate-900 text-xs"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      ></div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>

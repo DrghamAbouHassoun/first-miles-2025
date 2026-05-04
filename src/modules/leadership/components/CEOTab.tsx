@@ -21,41 +21,82 @@ const CEOTab = () => {
   const secondHalf = sections.slice(midpoint);
 
   return (
-    <div className="pt-44">
+    <>
       <Container>
-        <LeadershipHeader
-          imageUrl={CEOImage}
-          imageWidth={250}
-          imageScale={1.6}
-          imageTranslateX={44.5}
-          imageTranslateY={-36.5}
-          title={data.name}
-          subtitle={data.title}
-          quotation={data.quote}
-          isCEOorChairman={true}
-        />
+        <SlideTopAnimation>
+          <h1 className="text-3xl font-bold text-fm-green mb-16">
+            {data.pageTitle}
+          </h1>
+        </SlideTopAnimation>
       </Container>
-
-      <div className="mt-3">
+      <div className="pt-44">
         <Container>
-          <div className="py-3">
-            {/* Tagline */}
-            <SlideTopAnimation>
-              <h2 className="text-fm-yellow font-bold text-xl md:text-2xl leading-snug mb-6 whitespace-pre-line">
-                {data.tagline}
-              </h2>
-            </SlideTopAnimation>
+          <LeadershipHeader
+            imageUrl={CEOImage}
+            imageWidth={250}
+            imageScale={1.6}
+            imageTranslateX={44.5}
+            imageTranslateY={-36.5}
+            title={data.name}
+            subtitle={data.title}
+            quotation={data.quote}
+            isCEOorChairman={true}
+          />
+        </Container>
 
-            {/* Opening bold paragraph */}
-            <SlideTopAnimation>
-              <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
-                {data.opening}
-              </p>
-            </SlideTopAnimation>
+        <div className="mt-3">
+          <Container>
+            <div className="py-3">
+              {/* Tagline */}
+              <SlideTopAnimation>
+                <h2 className="text-fm-yellow font-bold text-xl md:text-2xl leading-snug mb-6 whitespace-pre-line">
+                  {data.tagline}
+                </h2>
+              </SlideTopAnimation>
 
-            {/* First half of sections */}
-            <div className="max-w-4xl space-y-3">
-              {firstHalf.map(
+              {/* Opening bold paragraph */}
+              <SlideTopAnimation>
+                <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
+                  {data.opening}
+                </p>
+              </SlideTopAnimation>
+
+              {/* First half of sections */}
+              <div className="max-w-4xl space-y-3">
+                {firstHalf.map(
+                  (
+                    section: { heading: string; paragraphs: string[] },
+                    i: number,
+                  ) => (
+                    <div key={i}>
+                      <SlideTopAnimation>
+                        <h3 className="font-bold text-base mb-3">
+                          {section.heading}
+                        </h3>
+                      </SlideTopAnimation>
+                      {section.paragraphs.map((p: string, j: number) => (
+                        <SlideTopAnimation key={j}>
+                          <p
+                            key={j}
+                            className="text-sm leading-relaxed"
+                            dangerouslySetInnerHTML={{ __html: p }}
+                          ></p>
+                          <br />
+                        </SlideTopAnimation>
+                      ))}
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        {/* Second half of sections with wheat decoration */}
+        <div className="relative bg-white overflow-hidden">
+          <Container>
+            <div className="max-w-4xl space-y-3 mb-3">
+              {secondHalf.map(
                 (
                   section: { heading: string; paragraphs: string[] },
                   i: number,
@@ -72,55 +113,24 @@ const CEOTab = () => {
                           key={j}
                           className="text-sm leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: p }}
-                        >
-                        </p><br />
+                        ></p>
+                        <br />
                       </SlideTopAnimation>
                     ))}
                   </div>
                 ),
               )}
             </div>
+          </Container>
+          <div
+            className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+          >
+            <GroupOfSpikes />
           </div>
-        </Container>
-      </div>
-
-      {/* Second half of sections with wheat decoration */}
-      <div className="relative bg-white overflow-hidden">
-        <Container>
-          <div className="max-w-4xl space-y-3 mb-3">
-            {secondHalf.map(
-              (
-                section: { heading: string; paragraphs: string[] },
-                i: number,
-              ) => (
-                <div key={i}>
-                  <SlideTopAnimation>
-                    <h3 className="font-bold text-base mb-3">
-                      {section.heading}
-                    </h3>
-                  </SlideTopAnimation>
-                  {section.paragraphs.map((p: string, j: number) => (
-                    <SlideTopAnimation key={j}>
-                      <p
-                        key={j}
-                        className="text-sm leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: p }}
-                      ></p><br />
-                    </SlideTopAnimation>
-                  ))}
-                </div>
-              ),
-            )}
-          </div>
-        </Container>
-        <div
-          className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
-        >
-          <GroupOfSpikes />
         </div>
+        <div className="w-full bg-fm-green h-16"></div>
       </div>
-      <div className="w-full bg-fm-green h-16"></div>
-    </div>
+    </>
   );
 };
 

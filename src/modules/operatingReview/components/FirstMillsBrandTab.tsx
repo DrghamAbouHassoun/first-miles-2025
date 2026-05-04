@@ -17,6 +17,7 @@ const FirstMillsBrandTab = () => {
   return (
     <div className="relative">
       <ORHeader
+        pageTitle={t("tabs.firstMillsBrand")}
         title={t("firstMillsContent.title")}
         subtitle={t("firstMillsContent.subtitle")}
         desc={t("firstMillsContent.desc")}

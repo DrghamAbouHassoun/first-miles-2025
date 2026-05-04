@@ -45,27 +45,27 @@ const GeographicPresence = () => {
             </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="font-bold text-fm-gray-400 text-sm mb-4 max-w-180">
+            <p className="font-bold text-fm-gray-400 text-sm mb-4">
               {t("geographicPresenceContent.boldParagraph")}
             </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="text-fm-gray-400 text-sm mb-3 max-w-180">
+            <p className="text-fm-gray-400 text-sm mb-3">
               {t("geographicPresenceContent.p1")}
             </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="text-fm-gray-400 text-sm mb-3 max-w-180">
+            <p className="text-fm-gray-400 text-sm mb-3">
               {t("geographicPresenceContent.p2")}
             </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="text-fm-gray-400 text-sm mb-3 max-w-180">
+            <p className="text-fm-gray-400 text-sm mb-3">
               {t("geographicPresenceContent.p3")}
             </p>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="text-fm-gray-400 text-sm max-w-180">
+            <p className="text-fm-gray-400 text-sm">
               {t("geographicPresenceContent.p4")}
             </p>
           </SlideTopAnimation>

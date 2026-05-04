@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SaudiVisionBg from "../../../../assets/images/backgrounds/saudi-vision.jpg";
+// import SaudiVisionBg from "../../../../assets/images/backgrounds/saudi-vision.jpg";
 import { SITE_NAME } from "../../../../config/constants";
 import Container from "../../../common/components/Container/Container";
 
@@ -11,6 +11,17 @@ import { useTranslation } from "../../../common/hooks/useTranslation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 
+// Tabs Bgs
+import S1Bg from "../../../../assets/images/backgrounds/saudi-vision/s-1.jpg"
+import S2Bg from "../../../../assets/images/backgrounds/saudi-vision/s-2.jpg"
+import S3Bg from "../../../../assets/images/backgrounds/saudi-vision/s-3.jpg"
+
+const sBgs = [
+  S1Bg,
+  S2Bg,
+  S3Bg,
+]
+
 const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
   const [activeTab, setActiveTab] = useState(0);
@@ -21,7 +32,7 @@ const SaudiVision2030Tab = () => {
         style={{ marginBottom: "-100vh" }}
       >
         <img
-          src={SaudiVisionBg}
+          src={sBgs[activeTab]}
           alt={`Saudi Vision 2030 | ${SITE_NAME}`}
           className="absolute top-0 left-0 h-full w-full object-cover object-center"
         />

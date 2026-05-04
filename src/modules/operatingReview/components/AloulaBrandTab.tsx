@@ -17,6 +17,7 @@ const AloulaBrandTab = () => {
   return (
     <div className="relative">
       <ORHeader
+        pageTitle={t("tabs.aloulaBrand")}
         title={t("aloulaContent.title")}
         subtitle={t("aloulaContent.subtitle")}
         desc={t("aloulaContent.desc")}

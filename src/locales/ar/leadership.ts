@@ -8,6 +8,7 @@ export default {
     cfo: "مراجعة المدير المالي",
   },
   chairman: {
+    pageTitle: "كلمة رئيس مجلس الإدارة",
     name: "طارق مطلق عبدالله المطلق",
     title: "رئيس مجلس الإدارة",
     quote:
@@ -74,6 +75,7 @@ export default {
     ],
   },
   ceo: {
+    pageTitle: "رسالة الرئيس التنفيذي",
     name: "م. عبدالله عبدالعزيز أبابطين",
     title: "الرئيس التنفيذي",
     quote:
@@ -136,6 +138,7 @@ export default {
     ],
   },
   cfo: {
+    pageTitle: "مراجعة المدير المالي",
     name: "علاء الدين محمد شوشة",
     title: "المدير المالي",
     quote:

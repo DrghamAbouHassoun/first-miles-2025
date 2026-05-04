@@ -107,6 +107,33 @@
   animation: MoveUp 1s ease-out forwards;
 }
 
+@keyframes MoveDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-move-down {
+  transform: translateY(-100%);
+  animation: MoveDown 1s ease-out forwards;
+}
+@keyframes MoveUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-move-up {
+  transform: translateY(100%);
+  animation: MoveUp 1s ease-out forwards;
+}
+
 @keyframes FadeIn {
   0% {
     opacity: 0;

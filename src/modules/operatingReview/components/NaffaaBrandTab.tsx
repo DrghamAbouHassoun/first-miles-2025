@@ -17,6 +17,7 @@ const NaffaaBrandTab = () => {
   return (
     <div className="relative">
       <ORHeader
+        pageTitle={t("tabs.naffaaBrand")}
         title={t("naffaBrand.title")}
         subtitle={t("naffaBrand.subtitle")}
         desc={t("naffaBrand.desc")}

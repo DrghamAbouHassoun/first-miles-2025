@@ -39,7 +39,9 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
             ref={flowerOneRef}
           />
         </div>
-        <div className={`w-32 h-auto object-contain absolute bottom-0 ${lang === "ar" ? "rotate-y-180" : ""}`}>
+        <div
+          className={`w-32 h-auto object-contain absolute bottom-0 ${lang === "ar" ? "rotate-y-180" : ""}`}
+        >
           <img
             src={FlowerTwo}
             alt={`Flower ${SITE_NAME}`}
@@ -95,7 +97,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
           />
         </div> */}
         <div
-          className={`${lang === "ar" ? "-translate-x-6" : "translate-x-6"} w-10 h-auto animate-spike-wave`}
+          className={`${lang === "ar" ? "-translate-x-18" : "translate-x-18"} w-10 h-auto`}
         >
           <div className="w-10 h-auto animate-spike-wave">
             <img
@@ -105,7 +107,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
             />
           </div>
         </div>
-        <div className="absolute -translate-x-5">
+        <div className={`absolute ${lang === "ar" ? "-translate-x-5" : "translate-x-5"}`}>
           <div className="w-20 h-auto animate-spike-wave ">
             <img
               src={GraySpike}
@@ -115,7 +117,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
           </div>
         </div>
         <div
-          className={`${lang === "ar" ? "translate-x-4" : "translate-x-20"}`}
+          className={`${lang === "ar" ? "-translate-x-30" : "translate-x-30"}`}
         >
           <div className="w-10 h-auto animate-spike-wave">
             <img
@@ -125,16 +127,16 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
             />
           </div>
         </div>
+
+        {/* Yellow Spikes */}
         <div
-          className={`${lang === "ar" ? "-translate-x-4" : "translate-x-4"} w-10 h-auto animate-spike-wave animate-delay-5s`}
+          className={`w-10 h-auto animate-spike-wave ${lang === "ar" ? "-translate-x-4" : "translate-x-4"}`}
         >
-          <div className="w-10 h-auto animate-spike-wave">
-            <img
-              src={YellowSpike}
-              alt={`Spike ${SITE_NAME}`}
-              className="w-full h-auto"
-            />
-          </div>
+          <img
+            src={YellowSpike}
+            alt={`Spike ${SITE_NAME}`}
+            className="w-full h-auto"
+          />
         </div>
         <div className="">
           <div className="w-20 h-auto animate-spike-wave">

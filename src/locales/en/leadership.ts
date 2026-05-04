@@ -3,11 +3,12 @@ export default {
     title: "Leadership",
   },
   tabs: {
-    chairman: "Chairman’s Statement ",
+    chairman: "Chairman’s Statement",
     ceo: "CEO’s Message",
     cfo: "CFO’s Review",
   },
   chairman: {
+    pageTitle: "Chairman’s Statement",
     name: "Tariq Mutlaq Abdullah AlMutlaq",
     title: "Chairman of the Board",
     quote:
@@ -74,6 +75,7 @@ export default {
     ],
   },
   ceo: {
+    pageTitle: "CEO’s Message",
     name: "Eng. Abdullah Abdulaziz Ababtain",
     title: "Chief Executive Officer",
     quote:
@@ -136,6 +138,7 @@ export default {
     ],
   },
   cfo: {
+    pageTitle: "CFO’s Review",
     name: "Alaaeldin Mohamed Shousha",
     title: "Chief Financial Officer",
     quote:
@@ -173,7 +176,7 @@ export default {
       totalLiabilities: "Total Liabilities",
       totalEquity: "Total Equity",
       keyIndicatorsTitle: "Key Balance Sheet Indicators",
-      cashTitle: "Cash & Cash Equivalents",
+      cashTitle: "Cash and Cash Equivalents",
       loansTitle: "Total Loans",
       financialUnit: "<i class='riyal-icon'></i> million",
     },
@@ -210,8 +213,8 @@ export default {
       {
         heading: "Capital allocation and investment strategy",
         paragraphs: [
-          "Capital allocation in 2025 remained focused on projects that enhance long-term productive capacity, improve efficiency and strengthen market positioning. Capital expenditure for the year totaled <i class='riyal-icon'></i> 85.1 million, directed primarily toward capacity, including the ongoing construction of Mill C at <br />Al-Qassim, as well as operational modernization and technology deployment.<br /><br />",
-          "Major investments included continued development of Mill C and the strategic acquisitions of <br />Al-Manar Feed Company and a 60% stake in AATC, designed to scale the Company's integrated feed platform. These investments are expected to enhance production capability, strengthen vertical integration and support long-term revenue growth.<br /><br />",
+          "Capital allocation in 2025 remained focused on projects that enhance long-term productive capacity, improve efficiency and strengthen market positioning. Capital expenditure for the year totaled <i class='riyal-icon'></i> 85.1 million, directed primarily toward capacity, including the ongoing construction of Mill C at Al-Qassim, as well as operational modernization and technology deployment.<br /><br />",
+          "Major investments included continued development of Mill C and the strategic acquisitions of Al-Manar Feed Company and a 60% stake in AATC, designed to scale the Company's integrated feed platform. These investments are expected to enhance production capability, strengthen vertical integration and support long-term revenue growth.<br /><br />",
           "Capital deployment decisions continue to be guided by return discipline, with return on equity remaining a key performance metric. ROE for the year stood at 25.9%, reflecting effective allocation of capital toward high-impact initiatives and the scalability of the operating model.",
         ],
       },
@@ -219,14 +222,14 @@ export default {
         heading: "Shareholder returns and dividend policy",
         paragraphs: [
           "Delivering consistent value to Shareholders remains a central objective of the Company’s financial strategy. In line with its approved dividend policy, First Mills continued to distribute cash dividends reflecting strong earnings performance and healthy cash flow generation.<br /><br />",
-          "Dividend distributions for the year totaled <br /><i class='riyal-icon'></i> 174 million, representing 63% of net profit attributable to shareholders. This approach balances the delivery of Shareholder returns with the need to reinvest in growth opportunities and maintain financial flexibility. First Mills remains committed to sustainable and predictable distributions supported by long-term earnings capacity.",
+          "Dividend distributions for the year totaled <i class='riyal-icon'></i> 174 million, representing 63% of net profit attributable to shareholders. This approach balances the delivery of Shareholder returns with the need to reinvest in growth opportunities and maintain financial flexibility. First Mills remains committed to sustainable and predictable distributions supported by long-term earnings capacity.",
         ],
       },
       {
         heading: "Financial discipline, governance and risk management",
         paragraphs: [
           "Financial performance in 2025 was supported by robust governance, risk management and internal control frameworks. The Company continued to strengthen financial oversight, enhance reporting transparency and improve risk monitoring across operational and financial activities.<br /><br />",
-          "Enterprise risk management tools provide visibility across supply chain exposures, market dynamics and operational risks, enabling proactive mitigation and informed decision-making. Internal audit and compliance programs continue to support financial integrity and accountability across the organization.<br />Maintaining strong financial governance remains essential to preserving Stakeholder confidence and supporting sustainable growth.",
+          "Enterprise risk management tools provide visibility across supply chain exposures, market dynamics and operational risks, enabling proactive mitigation and informed decision-making. Internal audit and compliance programs continue to support financial integrity and accountability across the organization.<br /><br />Maintaining strong financial governance remains essential to preserving Stakeholder confidence and supporting sustainable growth.",
         ],
       },
       {

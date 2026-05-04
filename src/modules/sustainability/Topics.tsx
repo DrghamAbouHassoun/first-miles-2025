@@ -41,6 +41,7 @@ import UNSDGSIcon16 from "../../assets/icons/sustainability/topics/unsdgs/16.svg
 import VibrantIcon from "../../assets/icons/sustainability/topics/vision/vibrant.svg";
 import ThrivingIcon from "../../assets/icons/sustainability/topics/vision/thriving.svg";
 import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";
+import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 
 const indexIconsArray = [
   IndexIcon1, IndexIcon2, IndexIcon3, IndexIcon4,
@@ -86,6 +87,9 @@ const Topics = () => {
       <section className="py-16">
         <Container>
           <div className="max-w-220">
+            <SlideTopAnimation>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">{t("tabs.topics")}</h1>
+            </SlideTopAnimation>
             <p className="font-bold mb-4">{t("topics.desc")}</p>
             <h3 className="font-bold text-fm-yellow">{t("topics.h2")}</h3>
             <p className="mb-4">{t("topics.p1")}</p>

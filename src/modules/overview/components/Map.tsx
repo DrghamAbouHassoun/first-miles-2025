@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import MapVector from "../../../assets/vectors/maps/map.svg";
+import MapVectorAr from "../../../assets/vectors/maps/map-ar.svg";
 import PlantVector from "../../../assets/vectors/maps/plant.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
@@ -295,7 +296,7 @@ const Map = () => {
         <div className="flex-1 h-full relative">
           <PopupAnimation>
             <div className="relative w-full">
-              <img src={MapVector} alt="Map" className="w-full h-auto" />
+              <img src={lang === "ar" ? MapVectorAr : MapVector} alt="Map" className="w-full h-auto" />
               {/* Overlay markers */}
               {plantConfigs.map((plant, index) => {
                 const left = (plant.cx / SVG_WIDTH) * 100;
@@ -341,7 +342,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute  ${isRtl ? "lg:left-auto lg:right-6 xl:right-16" : "bottom-0 lg:bottom-22 left-16 lg:left-22"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute  ${isRtl ? "lg:left-auto lg:right-6 xl:right-1/6 bottom-44" : "bottom-0 lg:bottom-54 left-16 lg:left-1/6"}`}
       >
         <RevenueContributionChart />
       </div>

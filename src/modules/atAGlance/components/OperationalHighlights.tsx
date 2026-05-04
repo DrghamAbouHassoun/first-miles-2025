@@ -160,7 +160,7 @@ const OperationalHighlights = () => {
                     }}
                   />
                 </SlideTopAnimation>
-                <span className="text-fm-yellow font-bold text-lg">
+                <span className="text-fm-yellow font-bold text-2xl">
                   <CounterAnimation
                     end={Number(
                       t("operationalHighlights.alManarHighlight.value"),
@@ -190,7 +190,7 @@ const OperationalHighlights = () => {
                     }}
                   />
                 </SlideTopAnimation>
-                <span className="text-fm-yellow text-lg font-bold">
+                <span className="text-fm-yellow text-2xl font-bold">
                   <CounterAnimation
                     end={Number(
                       t("operationalHighlights.productionCapacityValue.value"),
@@ -223,7 +223,7 @@ const OperationalHighlights = () => {
                 <SlideTopAnimation>
                   {t("operationalHighlights.kenanStakeDescription")}
                 </SlideTopAnimation>
-                <span className="text-fm-yellow font-bold">
+                <span className="text-fm-yellow font-bold text-2xl">
                   <CounterAnimation
                     end={Number(
                       t("operationalHighlights.kenanStakeValue.value"),
@@ -301,7 +301,7 @@ const OperationalHighlights = () => {
                     {t(`operationalHighlights.capacities.${key}.label`)}
                   </p>
                 </SlideTopAnimation>
-                <p className="text-lg font-bold text-fm-yellow">
+                <p className="text-2xl font-bold text-fm-yellow">
                   <CounterAnimation
                     end={Number(
                       t(`operationalHighlights.capacities.${key}.value`),
@@ -344,7 +344,7 @@ const OperationalHighlights = () => {
                   {t("operationalHighlights.marketShare.description")}
                 </p>
               </SlideTopAnimation>
-              <p className="text-lg font-bold text-fm-yellow">
+              <p className="text-2xl font-bold text-fm-yellow">
                 <CounterAnimation
                   end={Number(
                     t("operationalHighlights.marketShare.value.number"),
@@ -375,7 +375,7 @@ const OperationalHighlights = () => {
                   {t("operationalHighlights.customers.subtitle")}
                 </p>
               </SlideTopAnimation>
-              <p className="text-lg font-bold text-fm-yellow">
+              <p className="text-2xl font-bold text-fm-yellow">
                 <CounterAnimation
                   end={Number(
                     t("operationalHighlights.customers.value.number"),

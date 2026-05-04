@@ -61,12 +61,12 @@ const BusinessModelTab = () => {
             </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <h2 className="text-fm-yellow mb-2 font-bold text-2xl max-w-160">
+            <h2 className="text-fm-yellow mb-2 font-bold text-2xl">
               {t("businessModelContent.title")}
             </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-            <p className="max-w-200">{t("businessModelContent.description")}</p>
+            <p className="">{t("businessModelContent.description")}</p>
           </SlideTopAnimation>
         </Container>
       </div>
@@ -219,7 +219,10 @@ const BusinessModelTab = () => {
                       <li>{t("businessModelContent.addedValue.items.10")}</li>
                       <li>{t("businessModelContent.addedValue.items.11")}</li>
                       <li>{t("businessModelContent.addedValue.items.12")}</li>
-                      <li>{t("businessModelContent.addedValue.items.13")}</li>
+                      {t("businessModelContent.addedValue.items.13") !==
+                        "businessModelContent.addedValue.items.13" && (
+                        <li>{t("businessModelContent.addedValue.items.13")}</li>
+                      )}
                     </ul>
                   </div>
                 </div>
@@ -326,7 +329,9 @@ const BusinessModelTab = () => {
                         }}
                       />
                     </ul>
-                    <p className="py-2">{t("businessModelContent.outputs.note")}</p>
+                    <p className="py-2">
+                      {t("businessModelContent.outputs.note")}
+                    </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-4 pb-4">
                       {stackholdersIcons.map((icon, i) => {
                         const itemKey = `businessModelContent.outputs.stakeholders.${i}`;

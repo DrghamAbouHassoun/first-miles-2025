@@ -6,6 +6,7 @@ import Iso22000 from "../../../assets/icons/cfo/iso-22000.png";
 import Container from "../../common/components/Container/Container";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import { useLocale } from "../../common/hooks/useLocale";
+import GroupOfSpikes from "./GroupOfSpikes";
 
 interface StatItem {
   prefix?: string;
@@ -103,42 +104,72 @@ const CFOQualitySection = ({ data }: Props) => {
 
       {/* Yellow stats panel */}
       <Container className="pb-16">
-        <div className="bg-fm-yellow">
+        <div className="">
           <Container>
             <div className="py-10 md:py-12">
               <SlideTopAnimation>
-                <p className="text-black font-semibold text-sm mb-8">
+                <p className="text-white font-semibold text-sm mb-8">
                   {data.highlightsLabel}
                 </p>
               </SlideTopAnimation>
 
               {/* 3-column grid: first item spans 2 rows */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7">
                 {/* 05 plants certified — spans 2 rows on md+ */}
-                <SlideTopAnimation className="md:row-span-3 pb-6 md:pb-0 md:pe-8">
-                  {data.stats.plants.prefix && (
-                    <p className="font-bold">{data.stats.plants.prefix}</p>
-                  )}
-                  <p className="text-white font-bold text-6xl md:text-7xl leading-none mb-2">
-                    {data.stats.plants.number}
-                  </p>
-                  <p className="font-bold text-base text-black mb-1">
-                    {data.stats.plants.label}
-                  </p>
-                  <p
-                    className="text-sm text-black leading-relaxed mb-5"
-                    dangerouslySetInnerHTML={{ __html: data.stats.plants.desc }}
-                  />
-                  <div className="grid grid-cols-2 gap-2 w-36">
-                    <img src={Iso45001} alt="ISO 45001" className="w-full" />
-                    <img src={Iso9001} alt="ISO 9001" className="w-full" />
-                    <img src={Iso14001} alt="ISO 14001" className="w-full" />
-                    <img src={Iso22000} alt="ISO 22000" className="w-full" />
+                <SlideTopAnimation className="md:col-span-2 bg-fm-yellow p-4">
+                  <div className="flex gap-2 sm:flex-row flex-col">
+                    <div>
+                      {data.stats.plants.prefix && (
+                        <p className="font-bold">{data.stats.plants.prefix}</p>
+                      )}
+                      <p className="text-white font-bold text-6xl md:text-7xl leading-none mb-2">
+                        {data.stats.plants.number}
+                      </p>
+                      <p className="font-bold text-base text-black mb-1">
+                        {data.stats.plants.label}
+                      </p>
+                      <p
+                        className="text-sm text-black leading-relaxed mb-5"
+                        dangerouslySetInnerHTML={{
+                          __html: data.stats.plants.desc,
+                        }}
+                      />
+                    </div>
+                    <div className="grid grid-cols-2  w-72 h-auto">
+                      <div className="p-1 h-16">
+                        <img
+                          src={Iso45001}
+                          alt="ISO 45001"
+                          className="w-36 object-contain"
+                        />
+                      </div>
+                      <div className="p-1 h-16">
+                        <img
+                          src={Iso9001}
+                          alt="ISO 9001"
+                          className="w-36 object-contain"
+                        />
+                      </div>
+                      <div className="p-1 h-16">
+                        <img
+                          src={Iso14001}
+                          alt="ISO 14001"
+                          className="w-36 object-contain"
+                        />
+                      </div>
+                      <div className="p-1 h-16">
+                        <img
+                          src={Iso22000}
+                          alt="ISO 22000"
+                          className="w-36 object-contain"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </SlideTopAnimation>
 
                 {/* 598 physical tests */}
-                <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.physicalTests.prefix && (
                     <p className="font-bold">
                       {data.stats.physicalTests.prefix}
@@ -158,7 +189,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 09 training courses */}
-                <SlideTopAnimation className="pb-6 md:pb-0">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.trainingCourses.prefix && (
                     <p className="font-bold">
                       {data.stats.trainingCourses.prefix}
@@ -176,7 +207,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 893,520 quality tests */}
-                <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.qualityTests.prefix && (
                     <p className="font-bold">
                       {data.stats.qualityTests.prefix}
@@ -192,7 +223,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 171 employees */}
-                <SlideTopAnimation className="pb-6 md:pb-0">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.employees.prefix && (
                     <p className="font-bold">{data.stats.employees.prefix}</p>
                   )}
@@ -207,13 +238,12 @@ const CFOQualitySection = ({ data }: Props) => {
                   </p>
                 </SlideTopAnimation>
 
-                {/* Bottom row divider */}
-                <div className="md:col-span-3 hidden md:block" />
-
                 {/* 1,200,728 safe hours */}
-                <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.safeHours.prefix && (
-                    <p className="font-bold text-white">{data.stats.safeHours.prefix}</p>
+                    <p className="font-bold text-white">
+                      {data.stats.safeHours.prefix}
+                    </p>
                   )}
                   <p className="black font-bold text-4xl md:text-5xl leading-none mb-2">
                     {data.stats.safeHours.number}
@@ -227,7 +257,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* ONE HUNDRED microbiological */}
-                <SlideTopAnimation className=" pb-6 md:pb-0 md:pe-8">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.microbiological.prefix && (
                     <p className="font-bold">
                       {data.stats.microbiological.prefix}
@@ -245,7 +275,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 1,750 chemical tests */}
-                <SlideTopAnimation>
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
                   {data.stats.chemicalTests.prefix && (
                     <p className="font-bold">
                       {data.stats.chemicalTests.prefix}
@@ -268,6 +298,9 @@ const CFOQualitySection = ({ data }: Props) => {
           </Container>
         </div>
       </Container>
+      <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 pointer-events-none">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

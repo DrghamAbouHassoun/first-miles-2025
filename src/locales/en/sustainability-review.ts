@@ -7,12 +7,12 @@ export default {
     approach: "Our Sustainability Approach",
     strategy: "Our Sustainability Strategy",
     topics: "Our Material Topics",
-    nature: "Protecting our Nature",
+    nature: "Protecting Our Nature",
     social: "Driving Social Change",
   },
   sustainabilityApproach: {
     title: "Sustaining progress through <br />responsible growth",
-    desc: "At First Mills, sustainability is embedded in how we grow, operate and create long-term value. As a company positioned at the heart of the Kingdom’s food system, our performance is inseparable from the health of natural resources, the strength of communities and the integrity of the systems that support responsible production.<br />Through disciplined management, measurable targets and continuous improvement, we are strengthening resilience across our operations while contributing to national priorities and the broader transition toward a more sustainable and inclusive future.",
+    desc: "At First Mills, sustainability is embedded in how we grow, operate and create long-term value. As a company positioned at the heart of the Kingdom’s food system, our performance is inseparable from the health of natural resources, the strength of communities and the integrity of the systems that support responsible production.<br /><br />Through disciplined management, measurable targets and continuous improvement, we are strengthening resilience across our operations while contributing to national priorities and the broader transition toward a more sustainable and inclusive future.",
     p1: "At First Mills, sustainability begins with a fundamental understanding of our role in the Kingdom’s food system. As a leading milling and food company, we operate at the heart of national priorities related to food security, nutrition and economic development. Our responsibility extends beyond delivering products. It includes safeguarding resources, strengthening communities and operating with integrity.",
     p2: "Our approach is structured around three core pillars that reflect where we have the greatest impact: protecting the natural environment, creating social value and upholding responsible governance. These pillars provide a focused framework that aligns our operations with Saudi Vision 2030 and relevant international standards. They guide how we allocate resources, measure performance and shape long-term strategy.",
     p3: "Sustainability is embedded directly into our operating model. Environmentally, we focus on improving energy efficiency, reducing emissions, managing water responsibly, advancing sustainable packaging and strengthening circular economy practices. We maximize the value of by-products, minimize waste and continuously improve operational efficiency across our sites. Socially, we prioritize food quality and safety, nutrition and health, workforce development and community engagement. Initiatives such as bakery training programs and targeted food donations reflect our commitment to building capability and supporting local communities. Strong governance frameworks, ISO-certified management systems and clearly defined accountability structures ensure these priorities are implemented consistently and in full compliance with regulatory requirements.",
@@ -31,7 +31,7 @@ export default {
       desc: "To transform the future of nutrition in the region through operational excellence creating sustainable impact"
     },
     marketSection: {
-      title: "Enhancing Market Leadership",
+      title: "Our Sustainability Strategy Pillars​",
       divisions: [
         {
           title: "Protecting Our Nature",
@@ -105,6 +105,7 @@ export default {
       p7: "In addition, we commissioned an energy-efficient cooling warehouse designed to minimize electricity demand per pallet stored."
     },
     poweringEfficiency: {
+      caseStudy: "Case Study",
       title: "Powering Efficiency and Eliminating Chemicals",
       subtitle: "We operate in an energy-intensive industry where electricity costs, grid exposure and rising ESG expectations require continuous improvement. At the same time, conventional chemical fumigation created production interruptions, safety considerations and increasing regulatory pressure. These factors highlighted a clear opportunity to stabilize energy use, reduce emissions and modernize pest control while protecting product quality and operational continuity.",
       division1: {
@@ -201,13 +202,13 @@ export default {
       developementProgram: {
         title: "Development Program –<br /> <b>Grow Together (2025)</b>",
         subtitle: 'In 2025, we implemented a comprehensive development initiative titled the “Development Program – Grow Together". The program was structured into four modules, with one module delivered each quarter.',
-        desc: "The initiative covered the entire company, including all plants and was designed to ensure organization-wide participation and alignment. It also included the engagement of C-suite executives, reinforcing leadership commitment to continuous development.<br />In total, the program delivered over 7200 training hours throughout the year, reflecting our strong focus on employee growth, capability building and fostering a unified culture of collaboration and performance excellence."
+        desc: "The initiative covered the entire company, including all plants and was designed to ensure organization-wide participation and alignment. It also included the engagement of C-suite executives, reinforcing leadership commitment to continuous development.<br /><br />In total, the program delivered over 7200 training hours throughout the year, reflecting our strong focus on employee growth, capability building and fostering a unified culture of collaboration and performance excellence."
       },
       workforce: {
         title: "Workforce Development",
         p1: "We are committed to developing our people, supporting our communities and contributing to economic development and food security across the Kingdom of Saudi Arabia. Our workforce development approach is holistic and closely aligned with Vision 2030, with a strong focus on initiatives that deliver meaningful social value through education, capability-building and skills development programs that benefit both employees and the wider community. We also play an active role in supporting local entrepreneurship and national talent development, helping to strengthen the broader labor market in which we operate.",
         p2: "In 2025, this commitment was reflected in the rollout of an organization-wide leadership development program and continued enhancements to core HR processes and systems, designed to improve recruitment, onboarding, performance management and career progression.",
-        p3: "For more details and specific metrics on training, safety programs and people development performance, please refer to the Sustainability Report published on our website at <a target='_blank' class='text-fm-yellow' href='https://www.firstmills.com'>www.firstmills.com</a>"
+        p3: "For more details and specific metrics on training, safety programs and people development performance, please refer to the Sustainability Report published on our website at <a target='_blank' class='text-fm-yellow' href='https://www.firstmills.com/en/sustainability.php'>www.firstmills.com/en/sustainability.php</a>"
       },
       turnover: {
         title: "Turnover and Retention",

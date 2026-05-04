@@ -13,6 +13,9 @@ const Approach = () => {
         <Container>
           <div className="max-w-220">
             <SlideTopAnimation>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">{t("tabs.approach")}</h1>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
               <h2
                 className="text-2xl font-bold text-fm-yellow mb-4"
                 dangerouslySetInnerHTML={{

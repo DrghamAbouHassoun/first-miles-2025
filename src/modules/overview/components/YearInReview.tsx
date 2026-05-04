@@ -6,7 +6,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import VerticalSpikeShort from "../../../assets/icons/vertical-spike-short.svg";
 import JanuaryImage from "../../../assets/images/year-in-review-monthes/january.jpg";
-import SeptemberImage from "../../../assets/images/year-in-review-monthes/september.png";
+import SeptemberImage from "../../../assets/images/year-in-review-monthes/september.jpg";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
@@ -14,14 +14,14 @@ import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import TimelineGalleryItem from "./TimelineGalleryItem";
 
 const TIMELINE_ITEMS = [
-  { key: "january", hasStat: false, image: JanuaryImage, offsetX: -15 },
-  { key: "february", hasStat: false, image: undefined, offsetX: -5 },
-  { key: "april", hasStat: true, image: undefined, offsetX: 8 },
-  { key: "may", hasStat: false, image: undefined, offsetX: 18 },
-  { key: "july", hasStat: false, image: undefined, offsetX: 10 },
-  { key: "august", hasStat: false, image: undefined, offsetX: 0 },
-  { key: "september", hasStat: false, image: SeptemberImage, offsetX: -10 },
-  { key: "december", hasStat: false, image: undefined, offsetX: -5 },
+  { key: "january", hasStat: false, image: JanuaryImage, offsetX: -15, isLargeNumber: false },
+  { key: "february", hasStat: false, image: undefined, offsetX: -5, isLargeNumber: false },
+  { key: "april", hasStat: true, image: undefined, offsetX: 8, isLargeNumber: true },
+  { key: "may", hasStat: false, image: undefined, offsetX: 18, isLargeNumber: false },
+  { key: "july", hasStat: false, image: undefined, offsetX: 10, isLargeNumber: false },
+  { key: "august", hasStat: false, image: undefined, offsetX: 0, isLargeNumber: false },
+  { key: "september", hasStat: false, image: SeptemberImage, offsetX: -10, isLargeNumber: false },
+  { key: "december", hasStat: false, image: undefined, offsetX: -5, isLargeNumber: false },
 ] as const;
 
 const YearInReview = () => {
@@ -39,17 +39,17 @@ const YearInReview = () => {
               <h1 className="text-2xl font-bold text-fm-green mb-6">{t("yearInReviewContent.pageTitle")}</h1>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <h3 className="text-fm-yellow mb-4 font-bold text-lg max-w-90">
+              <h3 className="text-fm-yellow mb-4 font-bold text-lg">
                 {t("yearInReviewContent.yearOfProgress.title")}
               </h3>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <p className="max-w-160 mb-4">
+              <p className="mb-4">
                 {t("yearInReviewContent.yearOfProgress.p1")}
               </p>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <p className="max-w-160">
+              <p className="">
                 {t("yearInReviewContent.yearOfProgress.p2")}
               </p>
             </SlideTopAnimation>
@@ -79,7 +79,7 @@ const YearInReview = () => {
         >
           {/* Gallery track items scroll over the fixed viewport background */}
           <div className="relative z-10 w-full">
-            {TIMELINE_ITEMS.map(({ key, hasStat, image, offsetX }) => (
+            {TIMELINE_ITEMS.map(({ key, hasStat, image, offsetX, isLargeNumber }) => (
               <TimelineGalleryItem
                 key={key}
                 image={image}
@@ -102,7 +102,7 @@ const YearInReview = () => {
                       <img
                         src={VerticalSpikeShort}
                         alt={SITE_NAME}
-                        className="w-60 h-auto"
+                        className={`w-60 h-auto ${lang === "ar" ? "rotate-y-180" : ""}`}
                       />
                     </SlideAsideAnimation>
                   </div>
@@ -150,7 +150,7 @@ const YearInReview = () => {
 
                   {hasStat && (
                     <div className="mt-4">
-                      <p className="text-5xl font-bold text-white">
+                      <p className={`font-bold ${isLargeNumber ? "text-fm-yellow text-6xl" : "text-white text-5xl"}`}>
                         <CounterAnimation
                           end={Number(
                             t(
