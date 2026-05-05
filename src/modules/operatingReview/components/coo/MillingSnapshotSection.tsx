@@ -124,7 +124,7 @@ const MillingSnapshotSection = () => {
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
             <div className="flex flex-col items-center gap-4">
               {/* Donut chart */}
-              <div className="w-44 h-44 relative">
+              <div className="w-64 h-64 relative">
                 <svg
                   ref={ref}
                   viewBox="-8 -8 136 136"

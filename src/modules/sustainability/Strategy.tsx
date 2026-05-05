@@ -37,13 +37,37 @@ import NationalizationIcon from "../../assets/icons/sustainability/nationalizati
 import BusinessEthicsIcon from "../../assets/icons/sustainability/business-ethics.svg";
 import ResponsibleSourcingIcon from "../../assets/icons/sustainability/responsible-sourcing.svg";
 import CustomerSatisfactionIcon from "../../assets/icons/sustainability/customer-satisfaction.svg";
+import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 
-const PILLAR_ICONS = [ProtectingNatureIcon, SocialChangeIcon, ResponsibleGovernance];
+const PILLAR_ICONS = [
+  ProtectingNatureIcon,
+  SocialChangeIcon,
+  ResponsibleGovernance,
+];
 
 const FOCUS_ICONS: string[][] = [
-  [ClimateChangeIcon, SustainablePackagingIcon, WasteManagementIcon, WaterManagementIcon, SustainableAgricultureIcon],
-  [FoodQualityIcon, TalentManagementIcon, CommunitySupportIcon, DiversityIcon, OccupationalHealthIcon, NutritionIcon, NationalizationIcon],
-  [GovernanceIcon, BusinessEthicsIcon, ResponsibleSourcingIcon, CustomerSatisfactionIcon],
+  [
+    ClimateChangeIcon,
+    SustainablePackagingIcon,
+    WasteManagementIcon,
+    WaterManagementIcon,
+    SustainableAgricultureIcon,
+  ],
+  [
+    FoodQualityIcon,
+    TalentManagementIcon,
+    CommunitySupportIcon,
+    DiversityIcon,
+    OccupationalHealthIcon,
+    NutritionIcon,
+    NationalizationIcon,
+  ],
+  [
+    GovernanceIcon,
+    BusinessEthicsIcon,
+    ResponsibleSourcingIcon,
+    CustomerSatisfactionIcon,
+  ],
 ];
 
 interface Division {
@@ -60,7 +84,14 @@ interface AccordionItemProps {
   children: React.ReactNode;
 }
 
-const AccordionItem = ({ id, open, onToggle, icon, title, children }: AccordionItemProps) => (
+const AccordionItem = ({
+  id,
+  open,
+  onToggle,
+  icon,
+  title,
+  children,
+}: AccordionItemProps) => (
   <div id={id} className=" mb-5">
     <button
       onClick={onToggle}
@@ -68,7 +99,9 @@ const AccordionItem = ({ id, open, onToggle, icon, title, children }: AccordionI
     >
       <div className="flex items-center gap-3">
         <img src={icon} alt="" className="w-7 h-7 shrink-0" />
-        <span className="text-fm-yellow font-bold text-lg text-start">{title}</span>
+        <span className="text-fm-yellow font-bold text-lg text-start">
+          {title}
+        </span>
       </div>
       <img
         src={AccordionArrow}
@@ -79,9 +112,7 @@ const AccordionItem = ({ id, open, onToggle, icon, title, children }: AccordionI
     <div
       className={`grid transition-all duration-500 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
     >
-      <div className="overflow-hidden">
-        {children}
-      </div>
+      <div className="overflow-hidden">{children}</div>
     </div>
   </div>
 );
@@ -93,8 +124,10 @@ const Strategy = () => {
   const toggle = (id: string) => setOpenTab((prev) => (prev === id ? "" : id));
 
   const paragraphs = tArray("sustainabilityStrategy.paragraphs");
-  const marketDivisions = tRaw<Division[]>("sustainabilityStrategy.marketSection.divisions") ?? [];
-  const focusLists = tRaw<string[][]>("sustainabilityStrategy.foucsAreaSection.lists") ?? [];
+  const marketDivisions =
+    tRaw<Division[]>("sustainabilityStrategy.marketSection.divisions") ?? [];
+  const focusLists =
+    tRaw<string[][]>("sustainabilityStrategy.foucsAreaSection.lists") ?? [];
   const enablers = tArray("sustainabilityStrategy.enablersSection.divisions");
 
   return (
@@ -102,13 +135,18 @@ const Strategy = () => {
       {/* Intro Paragraphs */}
       <section className="py-16">
         <Container>
-          <div className="max-w-220">
+          <div className="">
             <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">{t("tabs.strategy")}</h1>
+              <h1 className="text-3xl font-bold text-fm-green mb-4">
+                {t("tabs.strategy")}
+              </h1>
             </SlideTopAnimation>
             {paragraphs.map((para, i) => (
               <SlideTopAnimation key={i}>
-                <p className="mb-4" dangerouslySetInnerHTML={{ __html: para }} />
+                <p
+                  className="mb-4"
+                  dangerouslySetInnerHTML={{ __html: para }}
+                />
               </SlideTopAnimation>
             ))}
           </div>
@@ -119,10 +157,11 @@ const Strategy = () => {
       <section className="bg-white pb-16">
         <Container>
           <SlideTopAnimation>
-            <h3 className="text-xl font-bold mb-4">{t("sustainabilityStrategy.accordionTitle")}</h3>
+            <h3 className="text-xl font-bold mb-4">
+              {t("sustainabilityStrategy.accordionTitle")}
+            </h3>
           </SlideTopAnimation>
           <div className="overflow-hidden">
-
             {/* Vision */}
             <AccordionItem
               id="vision"
@@ -150,7 +189,11 @@ const Strategy = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {marketDivisions.map((div, i) => (
                     <div key={i} className="p-6">
-                      <img src={PILLAR_ICONS[i]} alt="" className="w-10 h-10 mb-4" />
+                      <img
+                        src={PILLAR_ICONS[i]}
+                        alt=""
+                        className="w-10 h-10 mb-4"
+                      />
                       <h3 className=" font-bold text-lg mb-3">{div.title}</h3>
                       <p className="leading-relaxed">{div.desc}</p>
                     </div>
@@ -174,7 +217,11 @@ const Strategy = () => {
                       {list.map((item, ii) => (
                         <li key={ii} className="flex items-center gap-3">
                           <span className=" rounded-md p-1.5 shrink-0 flex items-center justify-center">
-                            <img src={FOCUS_ICONS[li]?.[ii]} alt="" className={`w-5 h-5 ${item === "التغذية والصحة" || item === "أخلاقيات العمل وحقوق الإنسان" ? "rotate-y-180" : ""}`} />
+                            <img
+                              src={FOCUS_ICONS[li]?.[ii]}
+                              alt=""
+                              className={`w-5 h-5 ${item === "التغذية والصحة" || item === "أخلاقيات العمل وحقوق الإنسان" ? "rotate-y-180" : ""}`}
+                            />
                           </span>
                           <span className="">{item}</span>
                         </li>
@@ -203,10 +250,12 @@ const Strategy = () => {
                 </div>
               </div>
             </AccordionItem>
-
           </div>
         </Container>
       </section>
+      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

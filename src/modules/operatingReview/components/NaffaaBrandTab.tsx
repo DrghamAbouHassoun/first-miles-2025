@@ -28,7 +28,7 @@ const NaffaaBrandTab = () => {
       />
       <section className="py-16">
         <Container>
-          <div className="max-w-220 text-fm-green">
+          <div className="text-fm-green">
             <SlideTopAnimation>
               <p className="font-bold">{t("naffaBrand.intro")}</p>
             </SlideTopAnimation>

@@ -27,7 +27,7 @@ const PL_DATA = (lang: string) => {
         "1,146.4",
         lang === "en" ? "9.3%" : "%9.3",
       ],
-      bold: true,
+      bold: false,
     },
     {
       key: "costOfRevenue",
@@ -111,7 +111,7 @@ const PL_DATA = (lang: string) => {
         "277.4",
         lang === "en" ? "10.6%" : "%10.6",
       ],
-      bold: true,
+      bold: false,
     },
   ] as const;
 };
@@ -169,14 +169,14 @@ const CFOTab = () => {
               {/* Opening bold paragraph */}
               <SlideTopAnimation>
                 <p
-                  className="font-bold text-base leading-relaxed mb-10 max-w-4xl"
+                  className="font-bold text-base leading-relaxed mb-10 "
                   dangerouslySetInnerHTML={{ __html: data.opening }}
                 ></p>
               </SlideTopAnimation>
 
               {/* Section 0 – Financial performance and profitability */}
               {sections[0] && (
-                <div className="max-w-4xl mb-10">
+                <div className=" mb-10">
                   <SlideTopAnimation>
                     <h3 className="font-bold text-base mb-3">
                       {sections[0].heading}
@@ -229,9 +229,9 @@ const CFOTab = () => {
                                 التغير على <br />
                                 أساس سنوي %
                               </span>
-                            ) : (
-                              y
-                            )}
+                            ) : 
+                              lang === "ar" ? `${y}م` : y
+                            }
                           </th>
                         ))}
                       </tr>
@@ -269,7 +269,7 @@ const CFOTab = () => {
               </div>
 
               {/* Section 1 – Revenue drivers and cost management */}
-              <div className="max-w-4xl space-y-8 mb-14">
+              <div className=" space-y-8 mb-14">
                 {sections
                   .slice(1, 2)
                   .map(
@@ -310,7 +310,7 @@ const CFOTab = () => {
               </div>
 
               {/* Sections 1 & 2 – Revenue drivers + Cash flow */}
-              <div className="max-w-4xl space-y-8 mb-14">
+              <div className=" space-y-8 mb-14">
                 {sections
                   .slice(2, 3)
                   .map(
@@ -390,7 +390,7 @@ const CFOTab = () => {
               </div>
 
               {/* Sections 3–6 – Capital allocation, Shareholder returns, etc. */}
-              <div className="max-w-4xl space-y-8 mb-14">
+              <div className=" space-y-8 mb-14">
                 {sections
                   .slice(3)
                   .map(
@@ -422,7 +422,7 @@ const CFOTab = () => {
               {data.closingTagline && (
                 <SlideTopAnimation>
                   <p
-                    className={`font-bold text-xl md:text-2xl leading-snug text-fm-yellow max-w-3xl ${lang === "ar" ? "text-right" : ""}`}
+                    className={`font-bold text-xl md:text-2xl leading-snug text-fm-yellow ${lang === "ar" ? "text-right" : ""}`}
                   >
                     {data.closingTagline}
                   </p>

@@ -18,6 +18,7 @@ import S2bg from "../../assets/images/sustainability/nature/org-2.jpg";
 import S3bg from "../../assets/images/sustainability/nature/org-3.jpg";
 import S4bg from "../../assets/images/sustainability/nature/org-4.jpg";
 import S5bg from "../../assets/images/sustainability/nature/org-5.jpg";
+import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 
 const LIFECYCLE_ICONS = [
   RawMaterialIcon,
@@ -81,6 +82,7 @@ interface TabHeaderProps {
 }
 
 const TabHeader = ({ desc, image }: TabHeaderProps) => {
+  const { lang } = useLocale();
   return (
     <div className="w-full ">
       <div className="w-full relative flex bg-fm-green/60 md:bg-auto">
@@ -88,7 +90,9 @@ const TabHeader = ({ desc, image }: TabHeaderProps) => {
           <p className="text-white font-bold p-4 py-12">{desc}</p>
         </div>
         <div className="flex-1 absolute top-0 left-0 w-full h-full md:w-auto md:h-auto md:relative -z-10 md:z-auto">
-          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-r from-fm-green to-fm-green/0"></div>
+          <div
+            className={`absolute top-0 left-0 w-full h-full ${lang === "ar" ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-green to-fm-green/0`}
+          ></div>
           <div className="w-full h-full absolute top-0 left-0 -z-10">
             <img src={image} alt="" className="w-full h-full object-cover" />
           </div>
@@ -132,7 +136,7 @@ const Nature = () => {
       {/* Opening */}
       <section className="py-16">
         <Container>
-          <div className="max-w-220">
+          <div className="">
             <SlideTopAnimation>
               <h1 className="text-3xl font-bold text-fm-green mb-4">
                 {t("tabs.nature")}
@@ -495,6 +499,9 @@ const Nature = () => {
           </div>
         </Container>
       </section>
+      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

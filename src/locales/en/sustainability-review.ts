@@ -1,7 +1,7 @@
 export default {
   hero: {
     title: "Sustainability Review",
-    subtitle: "Our commitment to a sustainable future.",
+    subtitle: "At First Mills, sustainability is embedded in how we grow, operate, and create long-term value.",
   },
   tabs: {
     approach: "Our Sustainability Approach",
@@ -314,7 +314,7 @@ export default {
         contributions: [
           {
             text: "Total flour products donated:",
-            value: "10,310",
+            value: 10310,
             label: "(10 kg packs)",
           },
           {
@@ -325,7 +325,7 @@ export default {
           {
             text: "Total value of donations:",
             label: "<i class='riyal-icon'></i>",
-            value: "73,070"
+            value: 73070
           }
         ],
         finialP: "In total, we invested approximately <b><i class='riyal-icon'></i> 230,000</b> in 2025 to strengthen donations, partnerships, sponsorships and community initiatives that enhance welfare and sustainable development."

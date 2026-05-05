@@ -89,12 +89,12 @@ const CFOQualitySection = ({ data }: Props) => {
             )}
 
             <SlideTopAnimation>
-              <p className="text-white/85 text-sm leading-relaxed mb-4 max-w-4xl">
+              <p className="text-white/85 text-sm leading-relaxed mb-4">
                 {data.paragraph1}
               </p>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <p className="text-white/85 text-sm leading-relaxed max-w-4xl">
+              <p className="text-white/85 text-sm leading-relaxed">
                 {data.paragraph2}
               </p>
             </SlideTopAnimation>

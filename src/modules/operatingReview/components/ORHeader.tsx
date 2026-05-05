@@ -30,20 +30,13 @@ const ORHeader = ({
         <img
           src={bgImage}
           alt="Operating Review Header"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-bottom"
         />
       </div>
       <div className="w-full h-full bg-fm-green/70 py-32">
         <Container>
           <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-4 text-white">
             <div className="flex-1">
-              {brandLogo && (
-                <PopupAnimation>
-                  <div className="w-32 h-auto mb-4">
-                    <img src={brandLogo} alt="" className="w-full h-full object-contain" />
-                  </div>
-                </PopupAnimation>
-              )}
               <SlideAsideAnimation
                 level="20"
                 side={lang === "ar" ? "left" : "right"}
@@ -53,6 +46,17 @@ const ORHeader = ({
                   dangerouslySetInnerHTML={{ __html: pageTitle }}
                 ></h1>
               </SlideAsideAnimation>
+              {brandLogo && (
+                <PopupAnimation>
+                  <div className="w-32 h-auto mb-4">
+                    <img
+                      src={brandLogo}
+                      alt=""
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </PopupAnimation>
+              )}
               <SlideAsideAnimation
                 level="20"
                 side={lang === "ar" ? "left" : "right"}

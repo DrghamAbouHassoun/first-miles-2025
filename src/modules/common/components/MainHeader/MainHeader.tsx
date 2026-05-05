@@ -60,7 +60,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
         <div className="w-full sm:w-full sm:max-w-140  h-fit ">
           <Container>
             <SlideTopAnimation className="animate-delay-1s">
-              <h1 className="text-[30px] md:text-[38px] font-bold text-white lg:px-6">
+              <h1 className="text-[30px] md:text-[42px] font-bold text-white lg:px-6">
                 {title}
               </h1>
             </SlideTopAnimation>

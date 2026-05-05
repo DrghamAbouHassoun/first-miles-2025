@@ -43,6 +43,7 @@ import VibrantIcon from "../../assets/icons/sustainability/topics/vision/vibrant
 import ThrivingIcon from "../../assets/icons/sustainability/topics/vision/thriving.svg";
 import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
+import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 
 const indexIconsArray = [
   IndexIcon1,
@@ -176,9 +177,12 @@ const Topics = () => {
 
                 {/* Item rows */}
                 {activeGroup.importance.list.map((item, i) => (
-                  <div key={item.index} className="flex items-center divide-x divide-gray-500">
+                  <div
+                    key={item.index}
+                    className="flex items-center divide-x divide-gray-500"
+                  >
                     {/* Number + Title */}
-                    <div className={`flex-1 flex items-center gap-2 pr-3 py-2` }>
+                    <div className={`flex-1 flex items-center gap-2 pr-3 py-2`}>
                       <img
                         src={indexIconsArray[item.index - 1]}
                         alt={String(item.index)}
@@ -247,6 +251,9 @@ const Topics = () => {
           </div>
         </Container>
       </section>
+      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

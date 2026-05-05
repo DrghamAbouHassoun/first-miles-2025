@@ -56,13 +56,13 @@ const CEOTab = () => {
 
               {/* Opening bold paragraph */}
               <SlideTopAnimation>
-                <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
+                <p className="font-bold text-base leading-relaxed mb-6 ">
                   {data.opening}
                 </p>
               </SlideTopAnimation>
 
               {/* First half of sections */}
-              <div className="max-w-4xl space-y-3">
+              <div className=" space-y-3">
                 {firstHalf.map(
                   (
                     section: { heading: string; paragraphs: string[] },
@@ -93,9 +93,9 @@ const CEOTab = () => {
         </div>
 
         {/* Second half of sections with wheat decoration */}
-        <div className="relative bg-white overflow-hidden">
+        <div className="relative overflow-hidden">
           <Container>
-            <div className="max-w-4xl space-y-3 mb-3">
+            <div className=" space-y-3 mb-3">
               {secondHalf.map(
                 (
                   section: { heading: string; paragraphs: string[] },
@@ -123,7 +123,7 @@ const CEOTab = () => {
             </div>
           </Container>
           <div
-            className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+            className={`absolute bottom-0 -z-10 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
           >
             <GroupOfSpikes />
           </div>

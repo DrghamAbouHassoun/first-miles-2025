@@ -27,7 +27,7 @@ const SustainabilityReviewPage = () => {
     <div className="min-h-screen">
       <MainHeader
         title={t("hero.title")}
-        subtitle=""
+        subtitle={t("hero.subtitle")}
         image={SustainabilityReviewHeader}
       />
       <div

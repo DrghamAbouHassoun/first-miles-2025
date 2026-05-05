@@ -74,9 +74,9 @@ const COOTab = () => {
         </Container>
         <section className="py-16">
           <Container>
-            <div className="w-full max-w-250">
+            <div className="w-full">
               <SlideTopAnimation>
-                <h3 className="text-3xl text-fm-yellow font-bold max-w-120 mb-6">
+                <h3 className="text-3xl text-fm-yellow font-bold mb-6">
                   {t("cooContent.opening.title")}
                 </h3>
               </SlideTopAnimation>
@@ -155,17 +155,18 @@ const COOTab = () => {
             <Container>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-220 mx-auto">
                 {services.map((item, index) => (
-                  <PopupAnimation
-                    key={index}
-                    className="flex justify-start items-center flex-col gap-2 p-6 bg-fm-green/80 text-white text-center"
-                  >
-                    <img
-                      src={item.icon}
-                      alt={t(item.title)}
-                      className="w-20 h-20 object-contain"
-                    />
-                    <h5 className="text-lg text-fm-yellow">{t(item.title)}</h5>
-                    <p>{t(item.subtitle)}</p>
+                  <PopupAnimation key={index} className="">
+                    <div className="h-full flex justify-start items-center flex-col gap-2 p-6 bg-fm-green/80 text-white text-center hover:scale-105 transition-all duration-500">
+                      <img
+                        src={item.icon}
+                        alt={t(item.title)}
+                        className="w-20 h-20 object-contain"
+                      />
+                      <h5 className="text-lg text-fm-yellow font-bold">
+                        {t(item.title)}
+                      </h5>
+                      <p>{t(item.subtitle)}</p>
+                    </div>
                   </PopupAnimation>
                 ))}
               </div>

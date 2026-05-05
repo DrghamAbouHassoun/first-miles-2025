@@ -30,7 +30,7 @@ const ProductRevnewSection = () => {
                         {singleTable.headings.map((h, hIndex) => (
                           <th
                             key={h}
-                            className={`p-1.5 ${hIndex === 0 ? "text-start sm:min-w-70 md:min-w-90" : "text-end"}`}
+                            className={`p-1.5 ${hIndex === 0 ? "text-start sm:min-w-70 md:min-w-90" : lang === "ar" ? "text-start" : "text-end"}`}
                           >
                             {h}
                           </th>
@@ -46,7 +46,7 @@ const ProductRevnewSection = () => {
                           {row.map((cell, cellIndex) => (
                             <td
                               key={cellIndex}
-                              className={`p-1.5 ${cellIndex === 0 ? "text-start" : "text-end"} ${cellIndex === HIGHLIGHTED_CELL_INDEX && "bg-fm-yellow-100 font-bold"}`}
+                              className={`p-1.5 ${cellIndex === 0 ? "text-start" : lang === "ar" ? "text-start" : "text-end"} ${cellIndex === HIGHLIGHTED_CELL_INDEX && "bg-fm-yellow-100 font-bold"}`}
                               dangerouslySetInnerHTML={{ __html: cell }}
                             />
                           ))}

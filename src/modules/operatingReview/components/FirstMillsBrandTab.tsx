@@ -2,6 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import ORHeader from "./ORHeader";
 import FirstMillsBg from "../../../assets/images/operating-review/bg/first-mills.jpg";
 import FirstMillsBrand from "../../../assets/images/operating-review/brands/first-mills.png";
+import FirstMillsLogo from "../../../assets/logo/first-mills-brand.svg";
 import Container from "../../common/components/Container/Container";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../common/hooks/useLocale";
@@ -23,10 +24,11 @@ const FirstMillsBrandTab = () => {
         desc={t("firstMillsContent.desc")}
         bgImage={FirstMillsBg}
         brandImage={FirstMillsBrand}
+        brandLogo={FirstMillsLogo}
       />
       <section className="py-16">
         <Container>
-          <div className="max-w-220 text-fm-green">
+          <div className="text-fm-green">
             <SlideTopAnimation>
               <p className="font-bold">{t("firstMillsContent.intro")}</p>
             </SlideTopAnimation>

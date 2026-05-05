@@ -54,13 +54,13 @@ const ChairmanTab = () => {
 
               {/* Opening bold paragraph */}
               <SlideTopAnimation>
-                <p className="font-bold text-base leading-relaxed mb-6 max-w-4xl">
+                <p className="font-bold text-base leading-relaxed mb-6 ">
                   {data.opening}
                 </p>
               </SlideTopAnimation>
 
               {/* First half of sections */}
-              <div className="max-w-4xl space-y-4">
+              <div className=" space-y-4">
                 {firstHalf.map(
                   (
                     section: { heading: string; paragraphs: string[] },
@@ -91,7 +91,7 @@ const ChairmanTab = () => {
         {/* Second half of sections with wheat decoration */}
         <div className="relative bg-white overflow-hidden">
           <Container className=" z-10">
-            <div className=" max-w-4xl space-y-3 mb-3 z-10">
+            <div className="  space-y-3 mb-3 z-10">
               {secondHalf.map(
                 (
                   section: { heading: string; paragraphs: string[] },
