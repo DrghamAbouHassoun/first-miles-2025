@@ -103,7 +103,7 @@ const Topics = () => {
     <div>
       <section className="py-16">
         <Container>
-          <div className="max-w-220">
+          <div className="">
             <SlideTopAnimation>
               <h1 className="text-3xl font-bold text-fm-green mb-4">
                 {t("tabs.topics")}

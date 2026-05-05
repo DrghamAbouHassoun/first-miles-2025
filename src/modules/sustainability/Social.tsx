@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import Container from "../common/components/Container/Container";
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 import FadeInAnimation from "../common/components/animations/FadeInAnimation";
@@ -161,12 +161,10 @@ const Social = () => {
   const [activeTab, setActiveTab] = useState<TabId>("ourPeople");
   const tabSectionRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    tabSectionRef.current?.scrollIntoView({
-      behavior: "instant",
-      block: "start",
-    });
-  }, [activeTab]);
+  const handleTabChange = (tabId: TabId) => {
+    setActiveTab(tabId);
+    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+  };
 
   const isAr = lang === "ar";
   const qualityData = isAr ? QUALITY_AR : QUALITY_EN;
@@ -228,7 +226,7 @@ const Social = () => {
                   key={tab.id}
                   title={tab.label}
                   isActive={activeTab === tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => handleTabChange(tab.id)}
                   lang={lang}
                 />
               ))}
@@ -341,10 +339,10 @@ const Social = () => {
                               className="flex w-full items-center"
                             >
                               <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
-                                {row.year}
+                                {row.year}{lang === "ar" ? "م" : ""}
                               </p>
                               <div
-                                className={`w-full ${lang === "ar" ? "border-right" : "border-l"} border-gray-300`}
+                                className={`w-full ${lang === "ar" ? "border-r" : "border-l"} border-gray-300`}
                               >
                                 <div className="flex items-center gap-3">
                                   <div className="flex-1 h-5 relative">
@@ -374,7 +372,8 @@ const Social = () => {
                                         <CounterAnimation
                                           end={row.turnover}
                                           decimals={0}
-                                          suffix="%"
+                                          suffix={lang === "ar" ? "" : "%"}
+                                          prefix={lang === "ar" ? "%" : ""}
                                           duration={1.2}
                                           delay={i * 0.12}
                                         />
@@ -410,7 +409,8 @@ const Social = () => {
                                         <CounterAnimation
                                           end={row.retention}
                                           decimals={1}
-                                          suffix="%"
+                                          suffix={lang === "ar" ? "" : "%"}
+                                          prefix={lang === "ar" ? "%" : ""}
                                           duration={1.2}
                                           delay={i * 0.12}
                                         />
@@ -435,7 +435,7 @@ const Social = () => {
                                     right: lang === "ar" ? `${tick}%` : "",
                                     transform:
                                       tick === 100
-                                        ? "translateX(-100%)"
+                                        ? lang === "ar" ? "translateX(80%)" : "translateX(-80%)"
                                         : tick === 0
                                           ? "none"
                                           : "translateX(-50%)",

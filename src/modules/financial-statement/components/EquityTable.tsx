@@ -35,10 +35,12 @@ const EquityTable = () => {
                 (item, index) => (
                   <th
                     key={item || `heading-${index}`}
-                    className={`p-1 border-b-2 border-fm-yellow ${lang === "ar" ? "text-start" : "text-end"} min-w-42 ${index === 7 ? "-translate-y-8" : ""}`}
+                    className={`p-1 border-b-2 border-fm-yellow ${lang === "ar" ? "text-start" : "text-end"} min-w-42`}
                     style={index === 0 ? stickyHeadStyle : undefined}
                   >
+                    <div className={` ${index === 7 && lang === "ar" ? "-translate-y-8 text-nowrap" : ""} ${index === 8 && lang === "en" ? "-translate-y-10 text-nowrap" : ""}`}>
                     {item || ""}
+                    </div>
                   </th>
                 ),
               )}
