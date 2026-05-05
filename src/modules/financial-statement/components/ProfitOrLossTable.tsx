@@ -6,6 +6,25 @@ import { useLocale } from "../../common/hooks/useLocale";
 
 const HIGHLIGHTED_ROW = 2;
 
+const boldNumbers = [
+  {
+    row: 30,
+    col: 2,
+  },
+  {
+    row: 30,
+    col: 3,
+  },
+  {
+    row: 31,
+    col: 2,
+  },
+  {
+    row: 31,
+    col: 3,
+  },
+];
+
 const ProfitOrLossTable = () => {
   const { t } = useTranslation("financial-statements");
   const { lang } = useLocale();
@@ -38,7 +57,7 @@ const ProfitOrLossTable = () => {
                   {row.cells.map((item, colIndex) => (
                     <td
                       key={`${item}-${rowIndex}-${colIndex}`}
-                      className={`p-1 ${row.bold && "font-bold"} ${colIndex > 0 && lang !== "ar" && "text-end"} ${colIndex === HIGHLIGHTED_ROW && "bg-fm-yellow-100"}`}
+                      className={`p-1 ${row.bold || (boldNumbers.find((item) => item.row === rowIndex && item.col === colIndex) ? "font-bold" : "")} ${colIndex > 0 && lang !== "ar" && "text-end"} ${colIndex === HIGHLIGHTED_ROW && "bg-fm-yellow-100"}`}
                     >
                       {isValidNumber(item) ? (
                         Number(item) < 0 ? (
@@ -51,6 +70,7 @@ const ProfitOrLossTable = () => {
                           dangerouslySetInnerHTML={{ __html: item || "" }}
                         />
                       )}
+                      <br />
                     </td>
                   ))}
                 </tr>

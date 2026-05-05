@@ -6,24 +6,33 @@ import { useLocale } from "../../common/hooks/useLocale";
 
 const HIGHLIGHTED_COLS = [0, 15]
 
+const stickyColStyle: React.CSSProperties = {
+  position: "sticky",
+  left: 0,
+  zIndex: 10,
+  backgroundColor: "white",
+};
+
 const EquityTable = () => {
   const { t } = useTranslation("financial-statements");
   const { lang } = useLocale();
+
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full">
       <h4 className="text-base mb-2">{t("prefix")}</h4>
       <h3 className="text-3xl font-bold">{t("tables.2.title")}</h3>
       <p className="text-fm-yellow my-2">{t("date2")}</p>
       <p className="text-lg" dangerouslySetInnerHTML={{ __html: t("note") }} />
-      <div className="w-full max-w-full overflow-y-auto pb-6 mt-4">
-        <table className="w-auto">
+      <div className="w-full max-w-full overflow-x-auto pb-6 mt-4 pt-8">
+        <table className="w-auto border-collapse">
           <thead className="border-b-2 border-fm-yellow">
             <tr>
               {(lang === "ar" ? tableDataAr : tableDataEn).headings.map(
                 (item, index) => (
                   <th
                     key={item || `heading-${index}`}
-                    className={`p-1 ${lang === "ar" ? "text-start" : "text-end"} min-w-42`}
+                    className={`p-1 ${lang === "ar" ? "text-start" : "text-end"} min-w-42 ${index === 7 ? "-translate-y-8" : ""}`}
+                    style={index === 0 ? stickyColStyle : undefined}
                   >
                     {item || ""}
                   </th>
@@ -38,7 +47,8 @@ const EquityTable = () => {
                   {row.cells.map((item, colIndex) => (
                     <td
                       key={`${item}-${rowIndex}-${colIndex}`}
-                      className={`p-1 ${row.bold && "font-bold"} ${colIndex > 0 && lang !== "ar" ? "text-end" : "text-start"} ${HIGHLIGHTED_COLS.includes(rowIndex) && colIndex !== 0  && "bg-fm-yellow-100"}`}
+                      className={`p-1 ${row.bold && "font-bold"} ${colIndex > 0 && lang !== "ar" ? "text-end" : "text-start"} ${HIGHLIGHTED_COLS.includes(rowIndex) && colIndex !== 0 && "bg-fm-yellow-100"}`}
+                      style={colIndex === 0 ? stickyColStyle : undefined}
                     >
                       {isValidNumber(item) ? (
                         Number(item) < 0 ? (

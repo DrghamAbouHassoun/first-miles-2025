@@ -51,7 +51,7 @@ const FinancialStatementsPage = () => {
                 ))}
               </div>
             </div>
-            <div className="w-full  lg:max-w-[calc(100%-320px)] overflow-hidden px-4">
+            <div className="w-full lg:max-w-[calc(100%-320px)] px-4">
               {currantTable === "financial-position" && (
                 <FiniancialPositionTable />
               )}
