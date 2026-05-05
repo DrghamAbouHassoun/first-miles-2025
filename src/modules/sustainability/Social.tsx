@@ -22,6 +22,8 @@ import {
 import DevelopmentProgram from "./nature/DevelopmentProgram";
 import QualityNote from "./nature/QualityNote";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import Social1Image from "../../assets/images/sustainability/social/1.jpeg";
+import Social2Image from "../../assets/images/sustainability/social/2.jpeg";
 
 const BAKERY_IMAGES = [TraineesImg, GraduatesImg];
 
@@ -251,25 +253,34 @@ const Social = () => {
                         title={t("social.talentManagement.title")}
                       />
                     </SlideTopAnimation>
-                    <FadeInAnimation className="mt-4">
-                      <p
-                        className="mb-4"
-                        dangerouslySetInnerHTML={{
-                          __html: t("social.talentManagement.p1"),
-                        }}
-                      />
-                      <p
-                        className="mb-4"
-                        dangerouslySetInnerHTML={{
-                          __html: t("social.talentManagement.p2"),
-                        }}
-                      />
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: t("social.talentManagement.p3"),
-                        }}
-                      />
-                    </FadeInAnimation>
+                    <div className="mt-4 flex flex-col md:flex-row gap-4">
+                      <div className="flex-1">
+                        <FadeInAnimation className="mt-4">
+                          <p
+                            className="mb-4"
+                            dangerouslySetInnerHTML={{
+                              __html: t("social.talentManagement.p1"),
+                            }}
+                          />
+                          <p
+                            className="mb-4"
+                            dangerouslySetInnerHTML={{
+                              __html: t("social.talentManagement.p2"),
+                            }}
+                          />
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: t("social.talentManagement.p3"),
+                            }}
+                          />
+                        </FadeInAnimation>
+                      </div>
+                      <div className="flex-1">
+                        <div className="w-full h-full">
+                          <img src={Social1Image} alt="" className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* 2b. Development Program */}
@@ -1237,6 +1248,9 @@ const Social = () => {
                     </FadeInAnimation>
                   </div>
 
+                  <div className="w-full my-8">
+                    <img src={Social2Image} alt="" className="w-full h-auto object-contain" />
+                  </div>
                   {/* 5b. Well-being and Employee Experience */}
                   <div className="mb-8">
                     <SlideTopAnimation>
