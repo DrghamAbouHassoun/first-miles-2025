@@ -1,5 +1,6 @@
 export default {
   title: "Financial Statements",
+  subtitle: "First Mills’ financial performance is driven by operational efficiency, revenue stability, and a focus on delivering sustainable returns.",
   prefix: "THE FIRST MILLING COMPANY (A Saudi Joint Stock Company)",
   date1: "As at 31 December 2025",
   date2: "For the year ended 31 December 2025",

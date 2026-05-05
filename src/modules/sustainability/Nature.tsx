@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Container from "../common/components/Container/Container";
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 import FadeInAnimation from "../common/components/animations/FadeInAnimation";
@@ -106,6 +106,11 @@ const Nature = () => {
   const { t, tRaw } = useTranslation("sustainability-review");
   const { lang } = useLocale();
   const [activeTab, setActiveTab] = useState<TabId>("climateChange");
+  const tabSectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+  }, [activeTab]);
 
   const lifecycleDivisions =
     tRaw<Division[]>("protectingNature.wastManagement.ourProduct.divsions") ??
@@ -160,7 +165,7 @@ const Nature = () => {
       </section>
 
       {/* Tabbed sections */}
-      <section className="pb-16">
+      <section className="pb-16" ref={tabSectionRef}>
         <Container>
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-8">
             {/* Tab list */}

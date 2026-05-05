@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Container from "../common/components/Container/Container";
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 import FadeInAnimation from "../common/components/animations/FadeInAnimation";
@@ -157,6 +157,11 @@ const Social = () => {
   });
 
   const [activeTab, setActiveTab] = useState<TabId>("ourPeople");
+  const tabSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+  }, [activeTab]);
 
   const isAr = lang === "ar";
   const qualityData = isAr ? QUALITY_AR : QUALITY_EN;
@@ -208,7 +213,7 @@ const Social = () => {
       </section> */}
 
       {/* ── Tabbed sections ───────────────────────────────────────────────── */}
-      <section className="pb-16">
+      <section className="pb-16" ref={tabSectionRef}>
         <Container>
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-8">
             {/* Tab list */}

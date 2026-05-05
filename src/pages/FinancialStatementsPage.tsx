@@ -33,7 +33,7 @@ const FinancialStatementsPage = () => {
 
   return (
     <div className="min-h-screen w-full">
-      <MainHeader title={t("title")} subtitle="" image={FSBg} />
+      <MainHeader title={t("title")} subtitle={t("subtitle")} image={FSBg} />
       <section className="py-16">
         <Container>
           <div className="w-full lg:max-w-337.5 flex flex-col lg:flex-row gap-16 lg:gap-0">
