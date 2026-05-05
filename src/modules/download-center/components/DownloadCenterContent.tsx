@@ -200,7 +200,7 @@ const DownloadCenterContent = () => {
 
             {/* Buttons */}
             <div
-              className={`flex flex-col sm:flex-row justify-end gap-3 shrink-0 w-full mt-8 mb-4 ${isAr ? "sm:flex-row-reverse lg:flex-col" : ""}`}
+              className={`flex flex-col sm:flex-row justify-end gap-3 shrink-0 w-full mt-8 mb-4 `}
             >
               <button
                 onClick={handleDownloadSelected}
@@ -263,7 +263,7 @@ const DownloadCenterContent = () => {
               <div key={ci}>
                 {/* Chapter header checkbox */}
                 <label
-                  className={`flex items-center gap-2.5 cursor-pointer group ${isAr ? "flex-row-reverse" : ""}`}
+                  className={`flex items-center gap-2.5 cursor-pointer group`}
                 >
                   <input
                     type="checkbox"
@@ -278,11 +278,11 @@ const DownloadCenterContent = () => {
 
                 {/* Sub-sections */}
                 {hasSubSections && (
-                  <ul className={`mt-3 flex flex-col gap-2 ${isAr ? "pr-1" : "pl-1"}`}>
+                  <ul className={`mt-3 flex flex-col gap-2`}>
                     {chapter.sections.map((section, si) => (
                       <li key={si}>
                         <label
-                          className={`flex items-start gap-2.5 cursor-pointer group ${isAr ? "flex-row-reverse" : ""}`}
+                          className={`flex items-start gap-2.5 cursor-pointer group`}
                         >
                           <input
                             type="checkbox"
