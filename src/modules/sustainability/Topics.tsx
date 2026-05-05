@@ -157,19 +157,19 @@ const Topics = () => {
             <div className="overflow-y-auto pb-4 flex-1">
               <div className="flex-1 min-w-130">
                 {/* Column headers */}
-                <div className="flex items-center divide-x divide-gray-400">
+                <div className="flex">
                   <div className="flex-1 pr-3">
-                    <span className=" font-semibold">
+                    <span className="text-lg font-semibold ">
                       {activeGroup.importance.level}
                     </span>
                   </div>
-                  <div className={`w-24 text-center px-2`}>
-                    <span className=" font-bold text-fm-gray-400">
+                  <div className={`w-24 text-center px-2 border-l border-r `}>
+                    <span className="text-lg font-bold text-fm-gray-400 ">
                       {t("topics.unsdgs")}
                     </span>
                   </div>
                   <div className={`w-24 text-center px-2`}>
-                    <span className=" font-bold text-fm-gray-400">
+                    <span className="text-lg font-bold text-fm-gray-400">
                       {t("topics.vision2030")}
                     </span>
                   </div>
@@ -179,23 +179,23 @@ const Topics = () => {
                 {activeGroup.importance.list.map((item, i) => (
                   <div
                     key={item.index}
-                    className="flex items-center divide-x divide-gray-500"
+                    className="flex"
                   >
                     {/* Number + Title */}
-                    <div className={`flex-1 flex items-center gap-2 pr-3 py-2`}>
+                    <div className={`flex-1 flex  gap-2 pr-3 py-2`}>
                       <img
                         src={indexIconsArray[item.index - 1]}
                         alt={String(item.index)}
                         className="w-7 h-7 object-contain shrink-0"
                       />
-                      <span className=" font-bold leading-tight text-fm-blue">
+                      <span className=" leading-tight ">
                         {item.title}
                       </span>
                     </div>
 
                     {/* UNSDGs icons */}
                     <div
-                      className={`w-24 flex flex-wrap gap-1 items-center justify-start px-2 py-2 h-full`}
+                      className={`w-24 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r `}
                     >
                       {activeGroup.unsdgs[i]?.map((num) => {
                         const icon = unsdgsIcons.find(
