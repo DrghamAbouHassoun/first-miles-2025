@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState, useContext } from "react";
 import MapVector from "../../../assets/vectors/maps/map.svg";
 import MapVectorAr from "../../../assets/vectors/maps/map-ar.svg";
 import PlantVector from "../../../assets/vectors/maps/plant.svg";
+import CountryVector from "../../../assets/vectors/maps/country.svg";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
+import CounterAnimation from "../../common/components/animations/CounterAnimation";
 
 const SVG_WIDTH = 1011;
 const SVG_HEIGHT = 937;
@@ -63,6 +65,50 @@ const plantConfigs: PlantConfig[] = [
   },
 ];
 
+interface CountrItem {
+  id: CountriesType;
+  cx: number;
+  cy: number;
+}
+
+const countryConfigs: CountrItem[] = [
+  {
+    id: "uae",
+    cx: 788.5,
+    cy: 545,
+  },
+  {
+    id: "jordan",
+    cx: 320,
+    cy: 370,
+  },
+  {
+    id: "qatar",
+    cx: 710,
+    cy: 522,
+  },
+  {
+    id: "iraq",
+    cx: 492,
+    cy: 298,
+  },
+  {
+    id: "kuwait",
+    cx: 600,
+    cy: 410,
+  },
+  {
+    id: "egypt",
+    cx: 100,
+    cy: 502,
+  },
+  {
+    id: "syria",
+    cx: 368,
+    cy: 263,
+  },
+];
+
 const regionColors = {
   westernSouthern: "#F7E8CF",
   central: "#FCB44A",
@@ -87,9 +133,9 @@ const RevenueContributionChart = () => {
   const regionKeys = Object.keys(regionColors) as RegionKey[];
 
   return (
-    <div className="w-full max-w-130">
+    <div className="w-full max-w-160">
       <div className="flex items-center flex-col md:flex-row gap-8 md:gap-4">
-        <div className="relative shrink-0 h-44 w-44">
+        <div className="relative shrink-0 h-64 w-64">
           <svg
             viewBox="0 0 140 140"
             className="h-full w-full drop-shadow-[0_12px_12px_rgba(0,0,0,0.55)]"
@@ -110,8 +156,10 @@ const RevenueContributionChart = () => {
               const dashGap = CHART_CIRCUMFERENCE - dashLength;
               const dashOffset = -cumulativeLength;
 
-              const startAngle = (cumulativeLength / CHART_CIRCUMFERENCE) * 360 - 92;
-              const midAngleRad = ((startAngle + (value / 100) * 180) * Math.PI) / 180;
+              const startAngle =
+                (cumulativeLength / CHART_CIRCUMFERENCE) * 360 - 92;
+              const midAngleRad =
+                ((startAngle + (value / 100) * 180) * Math.PI) / 180;
               const lx = 70 + CHART_RADIUS * Math.cos(midAngleRad);
               const ly = 70 + CHART_RADIUS * Math.sin(midAngleRad);
 
@@ -138,7 +186,7 @@ const RevenueContributionChart = () => {
                     dominantBaseline="central"
                     fontSize="7.5"
                     fontWeight="normal"
-                    fill={value === 46 ? "black" :"white"}
+                    fill={value === 46 ? "black" : "white"}
                     // stroke="#1a3a30"
                     strokeWidth="0.4"
                     paintOrder="stroke"
@@ -194,31 +242,36 @@ const RevenueContributionChart = () => {
   );
 };
 
+type CountriesType =
+  | "egypt"
+  | "iraq"
+  | "jordan"
+  | "kuwait"
+  | "qatar"
+  | "syria"
+  | "uae";
+
 const Map = () => {
   const { t } = useTranslation("overview");
-  const { lang } = useContext(LangContext);
+  const { lang, translations } = useContext(LangContext);
   const isRtl = lang === "ar";
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeCountryIndex, setActiveCountryIndex] =
+    useState<CountriesType>("uae");
+  const [activeType, setActiveType] = useState<"plant" | "country">("plant");
 
-  const startInterval = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % plantConfigs.length);
-    }, 5000);
-  };
-
-  useEffect(() => {
-    startInterval();
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, []);
+  const overviewLocale = translations[lang as "en" | "ar"].overview;
+  const marketsData = overviewLocale.geographicPresenceContent.markets;
 
   const handleHover = (index: number) => {
     setActiveIndex(index);
-    startInterval();
+    setActiveType("plant");
+  };
+
+  const handleCountryHover = (id: CountriesType) => {
+    setActiveCountryIndex(id);
+    setActiveType("country");
   };
 
   const activePlant = plantConfigs[activeIndex];
@@ -231,64 +284,82 @@ const Map = () => {
       <div className="relative mx-auto flex max-w-352.5 flex-col-reverse gap-8 px-4 sm:px-6 lg:flex-row">
         {/* Sidebar */}
         <div className="flex-1 max-w-130 shrink-0 text-white">
-          <div className="w-full h-full flex items-center justify-center">
-            <div
-              className="w-full max-w-70 animation-slide-top-50 active"
-              key={`item-${activePlant.id}`}
-            >
-              <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 mb-24 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
-                <h3 className="text-fm-yellow font-bold text-lg mb-5 border-b-2 border-fm-gray-100 pb-2 text-center">
-                  {t(`map.plants.${activePlant.id}.name`)}
-                </h3>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex flex-col">
-                    <span className="text-md tracking-wide mb-0.5">
-                      {t("map.labels.silosStorage")}
-                    </span>
-                    <span className="text-white font-semibold">
-                      {t(`map.plants.${activePlant.id}.silosStorage`)}
-                    </span>
-                  </li>
-                  {activePlant.hasMilling && (
-                    <li className="flex flex-col">
-                      <span className="tracking-wide mb-0.5">
-                        {t("map.labels.millingCapacity")}
-                      </span>
-                      <span className="text-white font-semibold">
-                        {t(`map.plants.${activePlant.id}.millingCapacity`)}
-                      </span>
-                    </li>
-                  )}
-                  {activePlant.hasFeed && (
-                    <li className="flex flex-col">
-                      <span className="tracking-wide mb-0.5">
-                        {t("map.labels.feedCapacity")}
-                      </span>
-                      <span className="text-white font-semibold">
-                        {t(`map.plants.${activePlant.id}.feedCapacity`)}
-                      </span>
-                    </li>
-                  )}
-                  {activePlant.hasDurum && (
-                    <li className="flex flex-col">
-                      <span className="tracking-wide mb-0.5">
-                        {t("map.labels.durumCapacity")}
-                      </span>
-                      <span className="text-white font-semibold">
-                        {t(`map.plants.${activePlant.id}.durumCapacity`)}
-                      </span>
-                    </li>
-                  )}
-                  {t(`map.plants.${activePlant.id}.note`) !== `map.plants.${activePlant.id}.note` && (
-                    <li className="flex flex-col">
-                      <span className="text-white text-sm">
-                        {t(`map.plants.${activePlant.id}.note`)}
-                      </span>
-                    </li>
-                  )}
-                </ul>
+          <div className="w-full h-full flex items-center justify-center ">
+            {activeType === "country" ? (
+              <div
+                key={`country-${activeCountryIndex}`}
+                className="w-full max-w-70 animation-slide-top-50 active bg-fm-yellow-100 p-4 rounded-xl"
+              >
+                <p className="text-fm-yellow font-bold text-base">
+                  {marketsData[activeCountryIndex].name}
+                </p>
+                <p className="text-fm-gray-400 font-bold text-xl leading-tight">
+                  <CounterAnimation
+                    end={parseInt(marketsData[activeCountryIndex].tons.value)}
+                    suffix={marketsData[activeCountryIndex].tons.suffix}
+                  />
+                </p>
               </div>
-            </div>
+            ) : (
+              <div
+                className="w-full max-w-70 animation-slide-top-50 active"
+                key={`item-${activePlant.id}`}
+              >
+                <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 mb-24 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
+                  <h3 className="text-fm-yellow font-bold text-lg mb-5 border-b-2 border-fm-gray-100 pb-2 text-center">
+                    {t(`map.plants.${activePlant.id}.name`)}
+                  </h3>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex flex-col">
+                      <span className="text-md tracking-wide mb-0.5">
+                        {t("map.labels.silosStorage")}
+                      </span>
+                      <span className="text-white font-semibold">
+                        {t(`map.plants.${activePlant.id}.silosStorage`)}
+                      </span>
+                    </li>
+                    {activePlant.hasMilling && (
+                      <li className="flex flex-col">
+                        <span className="tracking-wide mb-0.5">
+                          {t("map.labels.millingCapacity")}
+                        </span>
+                        <span className="text-white font-semibold">
+                          {t(`map.plants.${activePlant.id}.millingCapacity`)}
+                        </span>
+                      </li>
+                    )}
+                    {activePlant.hasFeed && (
+                      <li className="flex flex-col">
+                        <span className="tracking-wide mb-0.5">
+                          {t("map.labels.feedCapacity")}
+                        </span>
+                        <span className="text-white font-semibold">
+                          {t(`map.plants.${activePlant.id}.feedCapacity`)}
+                        </span>
+                      </li>
+                    )}
+                    {activePlant.hasDurum && (
+                      <li className="flex flex-col">
+                        <span className="tracking-wide mb-0.5">
+                          {t("map.labels.durumCapacity")}
+                        </span>
+                        <span className="text-white font-semibold">
+                          {t(`map.plants.${activePlant.id}.durumCapacity`)}
+                        </span>
+                      </li>
+                    )}
+                    {t(`map.plants.${activePlant.id}.note`) !==
+                      `map.plants.${activePlant.id}.note` && (
+                      <li className="flex flex-col">
+                        <span className="text-white text-sm">
+                          {t(`map.plants.${activePlant.id}.note`)}
+                        </span>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -296,8 +367,35 @@ const Map = () => {
         <div className="flex-1 h-full relative">
           <PopupAnimation>
             <div className="relative w-full">
-              <img src={lang === "ar" ? MapVectorAr : MapVector} alt="Map" className="w-full h-auto" />
+              <img
+                src={lang === "ar" ? MapVectorAr : MapVector}
+                alt="Map"
+                className="w-full h-auto"
+              />
               {/* Overlay markers */}
+              {countryConfigs.map((plant) => {
+                const left = (plant.cx / SVG_WIDTH) * 100;
+                const top = (plant.cy / SVG_HEIGHT) * 100;
+                // const isActive = index === activeIndex;
+
+                return (
+                  <div
+                    key={plant.id}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                    style={{ left: `${left}%`, top: `${top}%` }}
+                    onMouseEnter={() => handleCountryHover(plant.id)}
+                  >
+                    {/* Dot */}
+                    <span className="relative flex justify-center items-center rounded-full transition-all duration-300 w-8 h-8">
+                      <img
+                        src={CountryVector}
+                        alt="Country"
+                        className="w-5 h-5"
+                      />
+                    </span>
+                  </div>
+                );
+              })}
               {plantConfigs.map((plant, index) => {
                 const left = (plant.cx / SVG_WIDTH) * 100;
                 const top = (plant.cy / SVG_HEIGHT) * 100;
@@ -342,7 +440,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute  ${isRtl ? "lg:left-auto lg:right-6 xl:right-1/6 bottom-44" : "bottom-0 lg:bottom-54 left-16 lg:left-1/6"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-6 xl:right-1/6 bottom-34" : "-bottom-10 lg:bottom-34 left-12 lg:left-1/7"}`}
       >
         <RevenueContributionChart />
       </div>
