@@ -157,19 +157,19 @@ const Topics = () => {
             <div className="overflow-y-auto pb-4 flex-1">
               <div className="flex-1 min-w-130">
                 {/* Column headers */}
-                <div className="flex">
+                <div className={`flex  ${activeGroup.importance.level === "Very Important" ? "text-[#326C5E]" : activeGroup.importance.level === "Important" ? "text-[#9FC7BB]" : "text-black"}`}>
                   <div className="flex-1 pr-3">
                     <span className="text-lg font-semibold ">
                       {activeGroup.importance.level}
                     </span>
                   </div>
-                  <div className={`w-24 text-center px-2 border-l border-r `}>
-                    <span className="text-lg font-bold text-fm-gray-400 ">
+                  <div className={`w-24 text-center px-2 border-l border-r border-gray-700 `}>
+                    <span className="text-lg font-bold ">
                       {t("topics.unsdgs")}
                     </span>
                   </div>
                   <div className={`w-24 text-center px-2`}>
-                    <span className="text-lg font-bold text-fm-gray-400">
+                    <span className="text-lg font-bold">
                       {t("topics.vision2030")}
                     </span>
                   </div>
@@ -188,14 +188,14 @@ const Topics = () => {
                         alt={String(item.index)}
                         className="w-7 h-7 object-contain shrink-0"
                       />
-                      <span className=" leading-tight ">
+                      <span className={` leading-tight`}>
                         {item.title}
                       </span>
                     </div>
 
                     {/* UNSDGs icons */}
                     <div
-                      className={`w-24 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r `}
+                      className={`w-24 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
                     >
                       {activeGroup.unsdgs[i]?.map((num) => {
                         const icon = unsdgsIcons.find(
