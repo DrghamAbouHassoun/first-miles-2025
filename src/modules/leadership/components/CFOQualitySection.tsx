@@ -116,7 +116,7 @@ const CFOQualitySection = ({ data }: Props) => {
               {/* 3-column grid: first item spans 2 rows */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7">
                 {/* 05 plants certified — spans 2 rows on md+ */}
-                <SlideTopAnimation className="md:col-span-2 bg-fm-yellow p-4">
+                <SlideTopAnimation className="md:col-span-2 bg-fm-yellow p-4 transition-transform duration-300 hover:scale-105">
                   <div className="flex gap-2 sm:flex-row flex-col">
                     <div>
                       {data.stats.plants.prefix && (
@@ -169,7 +169,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 598 physical tests */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.physicalTests.prefix && (
                     <p className="font-bold">
                       {data.stats.physicalTests.prefix}
@@ -189,7 +189,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 09 training courses */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.trainingCourses.prefix && (
                     <p className="font-bold">
                       {data.stats.trainingCourses.prefix}
@@ -207,7 +207,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 893,520 quality tests */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.qualityTests.prefix && (
                     <p className="font-bold">
                       {data.stats.qualityTests.prefix}
@@ -223,7 +223,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 171 employees */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.employees.prefix && (
                     <p className="font-bold">{data.stats.employees.prefix}</p>
                   )}
@@ -239,7 +239,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 1,200,728 safe hours */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.safeHours.prefix && (
                     <p className="font-bold text-white">
                       {data.stats.safeHours.prefix}
@@ -257,7 +257,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* ONE HUNDRED microbiological */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.microbiological.prefix && (
                     <p className="font-bold">
                       {data.stats.microbiological.prefix}
@@ -275,7 +275,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
 
                 {/* 1,750 chemical tests */}
-                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center">
+                <SlideTopAnimation className=" bg-fm-yellow p-4 flex flex-col justify-center transition-transform duration-300 hover:scale-105">
                   {data.stats.chemicalTests.prefix && (
                     <p className="font-bold">
                       {data.stats.chemicalTests.prefix}

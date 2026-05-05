@@ -27,7 +27,7 @@ const MillingSnapshotSection = () => {
   const { t, tRaw } = useTranslation("operating-review");
   const { lang } = useLocale();
   const isRtl = lang === "ar";
-  const { ref, inView } = useInView<SVGSVGElement>();
+  const { ref, inView } = useInView<HTMLDivElement>();
 
   const capacityBullets = tRaw<string[]>("cooContent.snapshot.capacity.bullets") ?? [];
   const dailyBullets = tRaw<string[]>("cooContent.snapshot.daily.bullets") ?? [];
@@ -124,9 +124,8 @@ const MillingSnapshotSection = () => {
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
             <div className="flex flex-col items-center gap-4">
               {/* Donut chart */}
-              <div className="w-64 h-64 relative">
+              <div className="w-64 h-64 relative" ref={ref}>
                 <svg
-                  ref={ref}
                   viewBox="-8 -8 136 136"
                   className="w-full h-full"
                 >
@@ -158,7 +157,11 @@ const MillingSnapshotSection = () => {
                           fontSize="9"
                           fontWeight="bold"
                           fill="white"
-                          style={{ pointerEvents: "none" }}
+                          style={{
+                            pointerEvents: "none",
+                            opacity: inView ? 1 : 0,
+                            transition: `opacity 0.4s ease-out ${i * 0.15 + 0.6}s`,
+                          }}
                         >
                           {seg.value}%
                         </text>

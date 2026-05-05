@@ -66,4 +66,39 @@
 
 .riyal-icon::before {
   content: "$";
+  margin-top: 4px;
 }
+
+/* ── Desktop SVG Timeline per-item popup animation ─────────────────────── */
+@keyframes tl-popup {
+  from {
+    opacity: 0;
+    transform: scale(0.78) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.tl-item {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.tl-in-view .tl-item-1 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.10s both; }
+.tl-in-view .tl-item-2 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.28s both; }
+.tl-in-view .tl-item-3 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.46s both; }
+.tl-in-view .tl-item-4 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.64s both; }
+.tl-in-view .tl-item-5 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.82s both; }
+.tl-in-view .tl-item-6 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.00s both; }
+.tl-in-view .tl-item-7 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.18s both; }
+.tl-in-view .tl-item-8  { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.36s both; }
+.tl-in-view .tl-item-9  { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.51s both; }
+.tl-in-view .tl-item-10 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.66s both; }
+.tl-in-view .tl-item-11 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.81s both; }
+.tl-in-view .tl-item-12 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 1.96s both; }
+.tl-in-view .tl-item-13 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2.11s both; }
+.tl-in-view .tl-item-14 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2.26s both; }
+.tl-in-view .tl-item-15 { animation: tl-popup 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 2.41s both; }
