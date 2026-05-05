@@ -344,7 +344,7 @@ const OperationalHighlights = () => {
                   {t("operationalHighlights.marketShare.description")}
                 </p>
               </SlideTopAnimation>
-              <p className="text-2xl font-bold text-fm-yellow">
+              <p className="text-5xl font-bold text-fm-yellow">
                 <CounterAnimation
                   end={Number(
                     t("operationalHighlights.marketShare.value.number"),
@@ -375,7 +375,7 @@ const OperationalHighlights = () => {
                   {t("operationalHighlights.customers.subtitle")}
                 </p>
               </SlideTopAnimation>
-              <p className="text-2xl font-bold text-fm-yellow">
+              <p className="text-5xl font-bold text-fm-yellow">
                 <CounterAnimation
                   end={Number(
                     t("operationalHighlights.customers.value.number"),
