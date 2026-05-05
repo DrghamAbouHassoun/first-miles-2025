@@ -160,7 +160,10 @@ const Social = () => {
   const tabSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+    tabSectionRef.current?.scrollIntoView({
+      behavior: "instant",
+      block: "start",
+    });
   }, [activeTab]);
 
   const isAr = lang === "ar";
@@ -894,7 +897,7 @@ const Social = () => {
                             <tr className="border-b border-b-fm-yellow">
                               <th></th>
                               <th
-                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
                                 {lang === "ar" ? (
                                   <>
@@ -911,7 +914,7 @@ const Social = () => {
                                 )}
                               </th>
                               <th
-                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
                                 {lang === "ar" ? (
                                   <>
@@ -928,7 +931,7 @@ const Social = () => {
                                 )}
                               </th>
                               <th
-                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
                                 {lang === "ar" ? (
                                   <>
@@ -945,7 +948,7 @@ const Social = () => {
                                 )}
                               </th>
                               <th
-                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
+                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
                                 {lang === "ar" ? (
                                   <>
@@ -1074,135 +1077,145 @@ const Social = () => {
                       <p className="font-bold text-fm-green mb-3">
                         {t("social.occupational.table.title")}
                       </p>
-                      <div className="flex flex-col md:flex-row gap-4">
-                        <div className="overflow-auto mb-6">
-                          <table className="w-full text-sm">
-                            <thead>
-                              <tr className="border-b border-fm-yellow">
-                                <th className="text-bold p-2 text-fm-yellow text-start">
-                                  {lang === "ar" ? "التدريب" : "Training"}
-                                </th>
-                                <th
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                >
-                                  {lang === "ar" ? "2024م" : "2024"}
-                                </th>
-                                <th
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                >
-                                  {lang === "ar" ? "2025م" : "2025"}
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr className="border-b border-gray-300">
-                                <td className="p-2">
-                                  {lang === "ar"
-                                    ? "الدورات التدريبية"
-                                    : "Training sessions"}
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
-                                >
-                                  68
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
-                                >
-                                  11
-                                </td>
-                              </tr>
-                              <tr className="border-b border-gray-300">
-                                <td className="p-2">
-                                  {lang === "ar"
-                                    ? "ساعات التدريب"
-                                    : "Training hours"}
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
-                                >
-                                  37
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
-                                >
-                                  272
-                                </td>
-                              </tr>
-                              <tr>
-                                <td className="p-2">
-                                  {lang === "ar"
-                                    ? "ساعات التشغيل الآمنة"
-                                    : "Safe operation hours"}
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
-                                >
-                                  1,440,000
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
-                                >
-                                  1,200,278
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                      <div className="flex flex-col gap-4 max-w-180">
+                        <div>
+                          <h3 className="text-fm-yellow font-bold">
+                            {lang === "ar" ? "التدريب" : "Training"}
+                          </h3>
+                          <div className="overflow-auto mb-6">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="border-b border-fm-yellow">
+                                  <th className="text-bold p-2 text-fm-yellow text-start"></th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                                  >
+                                    {lang === "ar" ? "2024م" : "2024"}
+                                  </th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                                  >
+                                    {lang === "ar" ? "2025م" : "2025"}
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr className="border-b border-gray-300">
+                                  <td className="p-2">
+                                    {lang === "ar"
+                                      ? "الدورات التدريبية"
+                                      : "Training sessions"}
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                                  >
+                                    68
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                                  >
+                                    11
+                                  </td>
+                                </tr>
+                                <tr className="border-b border-gray-300">
+                                  <td className="p-2">
+                                    {lang === "ar"
+                                      ? "ساعات التدريب"
+                                      : "Training hours"}
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                                  >
+                                    37
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                                  >
+                                    272
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td className="p-2">
+                                    {lang === "ar"
+                                      ? "ساعات التشغيل الآمنة"
+                                      : "Safe operation hours"}
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                                  >
+                                    1,440,000
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                                  >
+                                    1,200,278
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
-                        <div className="overflow-auto mb-6">
-                          <table className="w-full text-sm">
-                            <thead>
-                              <tr className="border-b border-fm-yellow">
-                                <th className="text-bold p-2 text-fm-yellow text-start"></th>
-                                <th
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                >
-                                  {lang === "ar" ? "2024م" : "2024"}
-                                </th>
-                                <th
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                >
-                                  {lang === "ar" ? "2025م" : "2025"}
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr className="border-b border-gray-300">
-                                <td className="p-2">
-                                  {lang === "ar"
-                                    ? "الحوادث البسيطة"
-                                    : "Minor incidents"}
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
-                                >
-                                  9
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
-                                >
-                                  6
-                                </td>
-                              </tr>
-                              <tr className="border-b border-gray-300">
-                                <td className="p-2">
-                                  {lang === "ar"
-                                    ? "الإصابات البسيطة"
-                                    : "Major quality incidents"}
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
-                                >
-                                  0
-                                </td>
-                                <td
-                                  className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
-                                >
-                                  0
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <div>
+                          <h3 className="text-fm-yellow font-bold">
+                            {lang === "ar"
+                              ? "رصد الحوادث والإصابات"
+                              : "Incedents and Accidents"}
+                          </h3>
+                          <div className="overflow-auto mb-6">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="border-b border-fm-yellow">
+                                  <th className="text-bold p-2 text-fm-yellow text-start"></th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                                  >
+                                    {lang === "ar" ? "2024م" : "2024"}
+                                  </th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
+                                  >
+                                    {lang === "ar" ? "2025م" : "2025"}
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr className="border-b border-gray-300">
+                                  <td className="p-2">
+                                    {lang === "ar"
+                                      ? "الحوادث البسيطة"
+                                      : "Minor incidents"}
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                                  >
+                                    9
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                                  >
+                                    6
+                                  </td>
+                                </tr>
+                                <tr className="border-b border-gray-300">
+                                  <td className="p-2">
+                                    {lang === "ar"
+                                      ? "الإصابات البسيطة"
+                                      : "Major quality incidents"}
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
+                                  >
+                                    0
+                                  </td>
+                                  <td
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
+                                  >
+                                    0
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
 

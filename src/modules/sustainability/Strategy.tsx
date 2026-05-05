@@ -154,7 +154,7 @@ const Strategy = () => {
       </section>
 
       {/* Accordion */}
-      <section className="bg-white pb-16">
+      <section className="pb-16">
         <Container>
           <SlideTopAnimation>
             <h3 className="text-xl font-bold mb-4">
@@ -253,7 +253,7 @@ const Strategy = () => {
           </div>
         </Container>
       </section>
-      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 -z-10">
         <GroupOfSpikes />
       </div>
     </div>
