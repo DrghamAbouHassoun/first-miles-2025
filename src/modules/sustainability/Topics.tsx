@@ -41,8 +41,10 @@ import UNSDGSIcon16 from "../../assets/icons/sustainability/topics/unsdgs/16.svg
 // Vision 2030 Icons
 import VibrantIcon from "../../assets/icons/sustainability/topics/vision/vibrant.svg";
 import ThrivingIcon from "../../assets/icons/sustainability/topics/vision/thriving.svg";
-import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";
+import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 import PageTitle from "../common/components/typography/PageTitle";
+import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 
 const indexIconsArray = [
   IndexIcon1,
@@ -103,13 +105,19 @@ const Topics = () => {
       <section className="py-16">
         <Container>
           <div className="">
-            <PageTitle className="mb-4">
-              {t("tabs.topics")}
-            </PageTitle>
-            <p className="font-bold mb-4">{t("topics.desc")}</p>
-            <h3 className="font-bold text-fm-yellow">{t("topics.h2")}</h3>
-            <p className="mb-4">{t("topics.p1")}</p>
-            <p className="">{t("topics.p2")}</p>
+            <PageTitle className="mb-4">{t("tabs.topics")}</PageTitle>
+            <SlideTopAnimation>
+              <p className="font-bold mb-4">{t("topics.desc")}</p>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <h3 className="font-bold text-fm-yellow">{t("topics.h2")}</h3>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <p className="mb-4">{t("topics.p1")}</p>
+            </SlideTopAnimation>
+            <SlideTopAnimation>
+              <p className="">{t("topics.p2")}</p>
+            </SlideTopAnimation>
           </div>
         </Container>
       </section>
@@ -154,18 +162,22 @@ const Topics = () => {
             <div className="overflow-y-auto pb-4 flex-1">
               <div className="flex-1 min-w-130">
                 {/* Column headers */}
-                <div className={`flex  ${activeGroup.importance.level === "Very Important" ? "text-[#326C5E]" : activeGroup.importance.level === "Important" ? "text-[#9FC7BB]" : "text-black"}`}>
+                <div
+                  className={`flex  ${activeGroup.importance.level === "Very Important" ? "text-[#326C5E]" : activeGroup.importance.level === "Important" ? "text-[#9FC7BB]" : "text-black"}`}
+                >
                   <div className="flex-1 pr-3">
                     <span className="text-lg font-semibold ">
                       {activeGroup.importance.level}
                     </span>
                   </div>
-                  <div className={`w-24 text-center px-2 border-l border-r border-gray-700 `}>
+                  <div
+                    className={`w-full max-w-48 text-center px-2 border-l border-r border-gray-700 `}
+                  >
                     <span className="text-lg font-bold ">
                       {t("topics.unsdgs")}
                     </span>
                   </div>
-                  <div className={`w-24 text-center px-2`}>
+                  <div className={`w-full max-w-48 text-center px-2`}>
                     <span className="text-lg font-bold">
                       {t("topics.vision2030")}
                     </span>
@@ -174,10 +186,7 @@ const Topics = () => {
 
                 {/* Item rows */}
                 {activeGroup.importance.list.map((item, i) => (
-                  <div
-                    key={item.index}
-                    className="flex"
-                  >
+                  <div key={item.index} className="flex">
                     {/* Number + Title */}
                     <div className={`flex-1 flex  gap-2 pr-3 py-2`}>
                       <img
@@ -185,14 +194,12 @@ const Topics = () => {
                         alt={String(item.index)}
                         className="w-7 h-7 object-contain shrink-0"
                       />
-                      <span className={` leading-tight`}>
-                        {item.title}
-                      </span>
+                      <span className={` leading-tight`}>{item.title}</span>
                     </div>
 
                     {/* UNSDGs icons */}
                     <div
-                      className={`w-24 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
+                      className={`w-full max-w-48 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
                     >
                       {activeGroup.unsdgs[i]?.map((num) => {
                         const icon = unsdgsIcons.find(
@@ -210,7 +217,7 @@ const Topics = () => {
                     </div>
 
                     {/* Vision 2030 icon */}
-                    <div className="w-24 flex items-center justify-center px-2 py-2 h-full">
+                    <div className="w-full max-w-48 flex items-center justify-center px-2 py-2 h-full">
                       {activeGroup.vision[i] &&
                         visionIconsMap[activeGroup.vision[i]] && (
                           <img
