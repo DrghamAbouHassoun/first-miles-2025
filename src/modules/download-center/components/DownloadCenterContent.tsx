@@ -223,19 +223,21 @@ const DownloadCenterContent = () => {
             return (
               <div key={ci}>
                 {/* Chapter header checkbox */}
-                <label
-                  className={`flex items-center gap-2.5 cursor-pointer group`}
-                >
-                  <input
-                    type="checkbox"
-                    checked={allSelected}
-                    onChange={() => handleChapterToggle(ci)}
-                    className="w-4 h-4 rounded accent-fm-yellow cursor-pointer shrink-0"
-                  />
-                  <span className="font-bold text-fm-green text-lg group-hover:text-fm-yellow transition-colors duration-150">
-                    {chapter.title}
-                  </span>
-                </label>
+                {chapter.title && (
+                  <label
+                    className={`flex items-center gap-2.5 cursor-pointer group`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={allSelected}
+                      onChange={() => handleChapterToggle(ci)}
+                      className="w-4 h-4 rounded accent-fm-yellow cursor-pointer shrink-0"
+                    />
+                    <span className="font-bold text-fm-green text-lg group-hover:text-fm-yellow transition-colors duration-150">
+                      {chapter.title}
+                    </span>
+                  </label>
+                )}
 
                 {/* Sub-sections */}
                 {hasSubSections && (

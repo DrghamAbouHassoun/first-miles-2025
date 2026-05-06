@@ -7,7 +7,7 @@ export default {
   preparingMessage: "Preparing your document, please wait...",
   chapters: [
     {
-      title: "Introductory",
+      title: "",
       sections: [
         "Theme of the Year",
         "At a Glance",

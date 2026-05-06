@@ -7,7 +7,7 @@ export default {
   preparingMessage: "جارٍ تجهيز مستندك، يرجى الانتظار...",
   chapters: [
     {
-      title: "Introductory",
+      title: "",
       sections: [
         "شعار العام",
         "أبرز النتائج والإنجازات",
