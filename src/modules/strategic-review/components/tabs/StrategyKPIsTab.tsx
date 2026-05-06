@@ -60,7 +60,7 @@ const StrategyKPIsTab = () => {
         <Container>
           <PageTitle className="mb-6">{t("tabs.strategyKPIs")}</PageTitle>
           <SlideTopAnimation>
-            <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
+            <h2 className="text-fm-yellow mb-4 font-bold text-2xl">
               {t("strategyAndKPIsContent.title")}
             </h2>
           </SlideTopAnimation>

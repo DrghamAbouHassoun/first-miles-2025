@@ -77,7 +77,7 @@ export default {
       label: "",
     },
     productSales: {
-      title: "Product & Sales Overview",
+      title: "Product and Sales Overview",
       flourSales: {
         label: "Cash Sales",
         sublabel: "",

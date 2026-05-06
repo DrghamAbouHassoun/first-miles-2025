@@ -6,7 +6,7 @@ export default {
   },
   tabs: {
     businessModel: "Business Model",
-    strategyKPIs: "Strategy & KPIs",
+    strategyKPIs: "Strategy and KPIs",
     saudiVision2030: "Saudi Vision 2030",
     technologyInnovation: "Technology and Innovation",
     marketOverview: "Market Overview",
@@ -34,7 +34,7 @@ export default {
     addedValue: {
       title: "An Added Value To All Relevant Authorities and Stakeholders",
       items: [
-        "A diverse product portfolio with more than 60 main products of food and feed products.",
+        "A diverse product portfolio with more than 90 main products of food and feed products.",
         "Five plants located in strategic locations, including two facilities in Jeddah in the Makkah Province, one of which is the newly acquired Al Manar feed plant with a daily capacity of 450 t/d, as well as Al Qassim in Buraidah, Tabuk in Tabuk City and the Eastern Province Al-Ahsa.",
         "Sale and distribution warehouses belong to the Company or its distributors spread all over the Kingdom.",
         "Close and strong relationships with all raw material suppliers, including the General Food Security Authority (GFSA).",

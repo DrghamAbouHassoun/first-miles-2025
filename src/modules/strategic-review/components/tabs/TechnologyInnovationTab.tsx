@@ -21,11 +21,13 @@ const TechnologyInnovationTab = () => {
   const [stepIndex, setStepIndex] = useState(0);
 
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const hasInteractedRef = useRef(false);
 
   const activeItem =
     activePillar !== null ? activePillar : PILLAR_ORDER[stepIndex];
 
   const handlePillarHover = (pillarIndex: number) => {
+    hasInteractedRef.current = true;
     setActivePillar(pillarIndex);
     setIsHovering(true);
   };
@@ -42,7 +44,7 @@ const TechnologyInnovationTab = () => {
   };
 
   useEffect(() => {
-    if (isHovering) return;
+    if (isHovering || hasInteractedRef.current) return;
 
     intervalRef.current = setInterval(() => {
       setStepIndex((prev) => (prev + 1) % PILLAR_ORDER.length);
