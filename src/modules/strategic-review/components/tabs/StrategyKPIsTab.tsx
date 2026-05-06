@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import KpiPrint from "../prints/KpiPrint";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
+import PageTitle from "../../../common/components/typography/PageTitle";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -57,11 +58,7 @@ const StrategyKPIsTab = () => {
     <div>
       <div className="bg-fm-yellow-100 py-24">
         <Container>
-          <SlideTopAnimation>
-            <h2 className="text-4xl font-bold text-fm-green mb-4">
-              {t("tabs.strategyKPIs")}
-            </h2>
-          </SlideTopAnimation>
+          <PageTitle className="mb-6">{t("tabs.strategyKPIs")}</PageTitle>
           <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-4 font-bold text-2xl max-w-120">
               {t("strategyAndKPIsContent.title")}

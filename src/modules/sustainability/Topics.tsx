@@ -41,9 +41,8 @@ import UNSDGSIcon16 from "../../assets/icons/sustainability/topics/unsdgs/16.svg
 // Vision 2030 Icons
 import VibrantIcon from "../../assets/icons/sustainability/topics/vision/vibrant.svg";
 import ThrivingIcon from "../../assets/icons/sustainability/topics/vision/thriving.svg";
-import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";
-import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
-import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambitious.svg";import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import PageTitle from "../common/components/typography/PageTitle";
 
 const indexIconsArray = [
   IndexIcon1,
@@ -104,11 +103,9 @@ const Topics = () => {
       <section className="py-16">
         <Container>
           <div className="">
-            <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">
-                {t("tabs.topics")}
-              </h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-4">
+              {t("tabs.topics")}
+            </PageTitle>
             <p className="font-bold mb-4">{t("topics.desc")}</p>
             <h3 className="font-bold text-fm-yellow">{t("topics.h2")}</h3>
             <p className="mb-4">{t("topics.p1")}</p>

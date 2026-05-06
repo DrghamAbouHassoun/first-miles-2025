@@ -6,6 +6,7 @@ import { LangContext } from "../../common/contexts/LangProvider";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 interface LeafFinancials {
   labels: string[];
@@ -74,9 +75,7 @@ const InvestmentCase = () => {
       <div className="py-16 bg-fm-yellow-100">
         <Container>
           <div>
-            <SlideTopAnimation>
-              <h1 className="text-2xl font-bold text-fm-green mb-6">{t("investmentCaseContent.pageTitle")}</h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-6">{t("investmentCaseContent.pageTitle")}</PageTitle>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow mb-4 font-bold text-lg">
                 {t("investmentCaseContent.title")}

@@ -5,6 +5,7 @@ import CEOImage from "../../../assets/images/leadership-people/new-ceo.png";
 import LeadershipHeader from "./LeadershipHeader";
 import GroupOfSpikes from "./GroupOfSpikes";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 const CEOTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -23,11 +24,9 @@ const CEOTab = () => {
   return (
     <>
       <Container>
-        <SlideTopAnimation>
-          <h1 className="text-3xl font-bold text-fm-green mb-16">
-            {data.pageTitle}
-          </h1>
-        </SlideTopAnimation>
+        <PageTitle className="mb-16">
+          {data.pageTitle}
+        </PageTitle>
       </Container>
       <div className="pt-44">
         <Container>

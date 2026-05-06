@@ -9,6 +9,7 @@ import CFOBarChart from "./CFOBarChart";
 import CFOFinancialPositionChart from "./CFOFinancialPositionChart";
 import CFOTotalLEChart from "./CFOTotalLEChart";
 import CFOKeyIndicatorsChart from "./CFOKeyIndicatorsChart";
+import PageTitle from "../../common/components/typography/PageTitle";
 // import CFOQualitySection from "./CFOQualitySection";
 
 const PL_YEARS: (number | string)[] = [2021, 2022, 2023, 2024, 2025, "YoY %"];
@@ -137,11 +138,9 @@ const CFOTab = () => {
   return (
     <>
       <Container>
-        <SlideTopAnimation>
-          <h1 className="text-3xl font-bold text-fm-green">
-            {data.pageTitle}
-          </h1>
-        </SlideTopAnimation>
+        <PageTitle className="">
+           {data.pageTitle}
+        </PageTitle>
       </Container>
       <div className="pt-64">
         <Container>

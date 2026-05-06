@@ -38,6 +38,7 @@ import BusinessEthicsIcon from "../../assets/icons/sustainability/business-ethic
 import ResponsibleSourcingIcon from "../../assets/icons/sustainability/responsible-sourcing.svg";
 import CustomerSatisfactionIcon from "../../assets/icons/sustainability/customer-satisfaction.svg";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import PageTitle from "../common/components/typography/PageTitle";
 
 const PILLAR_ICONS = [
   ProtectingNatureIcon,
@@ -136,11 +137,9 @@ const Strategy = () => {
       <section className="py-16">
         <Container>
           <div className="">
-            <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">
-                {t("tabs.strategy")}
-              </h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-4">
+              {t("tabs.strategy")}
+            </PageTitle>
             {paragraphs.map((para, i) => (
               <SlideTopAnimation key={i}>
                 <p

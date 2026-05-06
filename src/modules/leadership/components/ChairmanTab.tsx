@@ -5,6 +5,7 @@ import ChairmanImage from "../../../assets/images/leadership-people/new-chairman
 import LeadershipHeader from "./LeadershipHeader";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import GroupOfSpikes from "./GroupOfSpikes";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 const ChairmanTab = () => {
   const { lang, translations } = useContext(LangContext);
@@ -23,11 +24,9 @@ const ChairmanTab = () => {
   return (
     <>
       <Container>
-        <SlideTopAnimation>
-          <h1 className="text-3xl font-bold text-fm-green mb-8">
-            {data.pageTitle}
-          </h1>
-        </SlideTopAnimation>
+        <PageTitle className="mb-6">
+          {data.pageTitle}
+        </PageTitle>
       </Container>
       <div className="w-full pt-52">
         <Container>

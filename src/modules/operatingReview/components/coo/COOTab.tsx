@@ -20,6 +20,7 @@ import { useContext } from "react";
 import { LangContext } from "../../../common/contexts/LangProvider";
 import TimelineDesktopEn from "./TimelineDesktopEn";
 import TimeLineDesktopAr from "./TimeLineDesktopAr";
+import PageTitle from "../../../common/components/typography/PageTitle";
 
 const services = [
   {
@@ -53,11 +54,9 @@ const COOTab = () => {
   return (
     <>
       <Container>
-        <SlideTopAnimation>
-          <h1 className="text-3xl font-bold text-fm-green py-16">
-            {t("tabs.coo")}
-          </h1>
-        </SlideTopAnimation>
+        <PageTitle className="mb-8 mt-12">
+          {t("tabs.coo")}
+        </PageTitle>
       </Container>
       <div className="pt-44">
         <Container>

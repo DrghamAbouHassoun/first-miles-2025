@@ -15,6 +15,7 @@ import AccordionArrow from "../../../../assets/icons/accordion-arrow.svg";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
+import PageTitle from "../../../common/components/typography/PageTitle";
 
 const stackholdersIcons = [
   {
@@ -55,11 +56,9 @@ const BusinessModelTab = () => {
     <div>
       <div className="bg-fm-yellow-100 py-24">
         <Container>
-          <SlideTopAnimation>
-            <h2 className="text-4xl font-bold text-fm-green mb-4">
-              {t("tabs.businessModel")}
-            </h2>
-          </SlideTopAnimation>
+          <PageTitle className="mb-6">
+            {t("tabs.businessModel")}
+          </PageTitle>
           <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-2 font-bold text-2xl">
               {t("businessModelContent.title")}

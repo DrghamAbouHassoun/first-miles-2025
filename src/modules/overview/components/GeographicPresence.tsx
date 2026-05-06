@@ -7,6 +7,7 @@ import SlideTopAnimation from "../../common/components/animations/SlideTopAnimat
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 const MARKET_KEYS = [
   "uae",
@@ -34,11 +35,7 @@ const GeographicPresence = () => {
       <Container className="pb-16">
         {/* Text block with dashed yellow border */}
         <div className="py-20 pb-10 px-4">
-          <SlideTopAnimation level="50">
-            <h2 className="text-3xl font-bold mb-8 text-fm-green">
-              {t("tabs.geographicPresence")}
-            </h2>
-          </SlideTopAnimation>
+          <PageTitle className="mb-6">{t("tabs.geographicPresence")}</PageTitle>
           <SlideTopAnimation>
             <h2 className="text-xl font-bold text-fm-yellow mb-4">
               {t("geographicPresenceContent.title")}

@@ -12,15 +12,12 @@ import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 import SlideTopAnimation from "../../../common/components/animations/SlideTopAnimation";
 
 // Tabs Bgs
-import S1Bg from "../../../../assets/images/backgrounds/saudi-vision/s-1.jpg"
-import S2Bg from "../../../../assets/images/backgrounds/saudi-vision/s-2.jpg"
-import S3Bg from "../../../../assets/images/backgrounds/saudi-vision/s-3.jpg"
+import S1Bg from "../../../../assets/images/backgrounds/saudi-vision/s-1.jpg";
+import S2Bg from "../../../../assets/images/backgrounds/saudi-vision/s-2.jpg";
+import S3Bg from "../../../../assets/images/backgrounds/saudi-vision/s-3.jpg";
+import PageTitle from "../../../common/components/typography/PageTitle";
 
-const sBgs = [
-  S1Bg,
-  S2Bg,
-  S3Bg,
-]
+const sBgs = [S1Bg, S2Bg, S3Bg];
 
 const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -39,17 +36,19 @@ const SaudiVision2030Tab = () => {
       </div>
       <div className="py-16">
         <Container>
+          <PageTitle className="mb-6" color="white">
+            {t("tabs.saudiVision2030")}
+          </PageTitle>
           <SlideTopAnimation>
-            <h2 className="text-4xl font-bold text-white mb-4">
-              {t("tabs.saudiVision2030")}
+            <h2 className="text-2xl font-bold text-fm-yellow mb-4">
+              {t("saudiVisionContent.title")}
             </h2>
           </SlideTopAnimation>
-          <h2 className="text-2xl font-bold text-fm-yellow mb-4">
-            {t("saudiVisionContent.title")}
-          </h2>
+          <SlideTopAnimation>
           <p className="text-white font-bold">
             {t("saudiVisionContent.description")}
           </p>
+          </SlideTopAnimation>
         </Container>
       </div>
       <div className="">

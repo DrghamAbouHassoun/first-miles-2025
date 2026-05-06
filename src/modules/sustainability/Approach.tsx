@@ -1,5 +1,6 @@
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
 import Container from "../common/components/Container/Container";
+import PageTitle from "../common/components/typography/PageTitle";
 import { useLocale } from "../common/hooks/useLocale";
 import { useTranslation } from "../common/hooks/useTranslation";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
@@ -12,9 +13,9 @@ const Approach = () => {
       <div className="py-16">
         <Container>
           <div className="">
-            <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">{t("tabs.approach")}</h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-4">
+              {t("tabs.approach")}
+            </PageTitle>
             <SlideTopAnimation>
               <h2
                 className="text-2xl font-bold text-fm-yellow mb-4"

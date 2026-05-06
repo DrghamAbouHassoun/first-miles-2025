@@ -24,6 +24,7 @@ import QualityNote from "./nature/QualityNote";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 import Social1Image from "../../assets/images/sustainability/social/1.jpeg";
 import Social2Image from "../../assets/images/sustainability/social/2.jpeg";
+import PageTitle from "../common/components/typography/PageTitle";
 
 const BAKERY_IMAGES = [TraineesImg, GraduatesImg];
 
@@ -163,7 +164,10 @@ const Social = () => {
 
   const handleTabChange = (tabId: TabId) => {
     setActiveTab(tabId);
-    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+    tabSectionRef.current?.scrollIntoView({
+      behavior: "instant",
+      block: "start",
+    });
   };
 
   const isAr = lang === "ar";
@@ -217,6 +221,9 @@ const Social = () => {
 
       {/* ── Tabbed sections ───────────────────────────────────────────────── */}
       <section className="pb-16" ref={tabSectionRef}>
+        <Container>
+          <PageTitle className="mb-16">{t("tabs.social")}</PageTitle>
+        </Container>
         <Container>
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-8">
             {/* Tab list */}
@@ -275,7 +282,11 @@ const Social = () => {
                       </div>
                       <div className="flex-1">
                         <div className="w-full h-full">
-                          <img src={Social1Image} alt="" className="w-full h-full object-cover" />
+                          <img
+                            src={Social1Image}
+                            alt=""
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                       </div>
                     </div>
@@ -339,7 +350,8 @@ const Social = () => {
                               className="flex w-full items-center"
                             >
                               <p className="font-bold text-sm p-2 w-14 shrink-0 text-center">
-                                {row.year}{lang === "ar" ? "م" : ""}
+                                {row.year}
+                                {lang === "ar" ? "م" : ""}
                               </p>
                               <div
                                 className={`w-full ${lang === "ar" ? "border-r" : "border-l"} border-gray-300`}
@@ -435,7 +447,9 @@ const Social = () => {
                                     right: lang === "ar" ? `${tick}%` : "",
                                     transform:
                                       tick === 100
-                                        ? lang === "ar" ? "translateX(80%)" : "translateX(-80%)"
+                                        ? lang === "ar"
+                                          ? "translateX(80%)"
+                                          : "translateX(-80%)"
                                         : tick === 0
                                           ? "none"
                                           : "translateX(-50%)",
@@ -1249,7 +1263,11 @@ const Social = () => {
                   </div>
 
                   <div className="w-full my-8">
-                    <img src={Social2Image} alt="" className="w-full h-auto object-contain" />
+                    <img
+                      src={Social2Image}
+                      alt=""
+                      className="w-full h-auto object-contain"
+                    />
                   </div>
                   {/* 5b. Well-being and Employee Experience */}
                   <div className="mb-8">

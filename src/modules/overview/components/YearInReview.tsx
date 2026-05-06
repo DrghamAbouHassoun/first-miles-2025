@@ -12,6 +12,7 @@ import SlideAsideAnimation from "../../common/components/animations/SlideAsideAn
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import TimelineGalleryItem from "./TimelineGalleryItem";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 const TIMELINE_ITEMS = [
   { key: "january", hasStat: false, image: JanuaryImage, offsetX: -15, isLargeNumber: false },
@@ -35,9 +36,9 @@ const YearInReview = () => {
       <div className="bg-fm-yellow-100">
         <Container>
           <div className="py-16">
-            <SlideTopAnimation>
-              <h1 className="text-2xl font-bold text-fm-green mb-6">{t("yearInReviewContent.pageTitle")}</h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-6">
+              {t("yearInReviewContent.pageTitle")}
+            </PageTitle>
             <SlideTopAnimation>
               <h3 className="text-fm-yellow mb-4 font-bold text-lg">
                 {t("yearInReviewContent.yearOfProgress.title")}

@@ -2,6 +2,7 @@ import { SITE_NAME } from "../../../config/constants";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import SlideAsideAnimation from "../../common/components/animations/SlideAsideAnimation";
 import Container from "../../common/components/Container/Container";
+import PageTitle from "../../common/components/typography/PageTitle";
 import { useLocale } from "../../common/hooks/useLocale";
 
 interface ORHeaderProps {
@@ -37,15 +38,11 @@ const ORHeader = ({
         <Container>
           <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-4 text-white">
             <div className="flex-1">
-              <SlideAsideAnimation
-                level="20"
-                side={lang === "ar" ? "left" : "right"}
-              >
-                <h1
-                  className="text-4xl text-fm-white font-bold mb-4"
-                  dangerouslySetInnerHTML={{ __html: pageTitle }}
-                ></h1>
-              </SlideAsideAnimation>
+              <PageTitle
+                color="white"
+                dangerouslySetInnerHTML={{ __html: pageTitle }}
+                className="mb-4"
+              ></PageTitle>
               {brandLogo && (
                 <PopupAnimation>
                   <div className="w-32 h-auto mb-4">

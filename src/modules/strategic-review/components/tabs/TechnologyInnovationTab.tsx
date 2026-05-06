@@ -8,6 +8,7 @@ import SlideTopAnimation from "../../../common/components/animations/SlideTopAni
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 import GroupOfSpikes from "../../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../../common/hooks/useLocale";
+import PageTitle from "../../../common/components/typography/PageTitle";
 
 const PILLAR_ORDER = [0, 1, 2, 3];
 const AUTO_INTERVAL = 4500;
@@ -56,11 +57,9 @@ const TechnologyInnovationTab = () => {
     <div>
       <Container>
         <div className=" py-24">
-          <SlideTopAnimation>
-            <h2 className="text-4xl font-bold text-fm-green mb-4">
-              {t("tabs.technologyInnovation")}
-            </h2>
-          </SlideTopAnimation>
+          <PageTitle className="mb-6">
+            {t("tabs.technologyInnovation")}
+          </PageTitle>
           <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-4 font-bold text-2xl">
               {t("technologyInnovationContent.title")}

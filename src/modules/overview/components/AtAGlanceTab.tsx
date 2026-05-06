@@ -4,8 +4,8 @@ import OperationalHighlights from "../../atAGlance/components/OperationalHighlig
 import ESGHighlights from "../../atAGlance/components/ESGHighlights";
 import AwardsCertifications from "../../atAGlance/components/AwardsCertifications";
 import { useTranslation } from "../../common/hooks/useTranslation";
-import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
 import { useLocale } from "../../common/hooks/useLocale";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 const AtAGlanceTab = () => {
   const { t } = useTranslation("at-a-glance");
@@ -13,11 +13,9 @@ const AtAGlanceTab = () => {
   return (
     <>
       <Container className="text-fm-green font-bold">
-        <SlideTopAnimation level="50">
-          <h3 className="max-w-165 py-16 text-4xl">
-            {lang === "ar" ? t("header.subtitle") : t("header.title")}
-          </h3>
-        </SlideTopAnimation>
+        <PageTitle className="py-16">
+          {lang === "ar" ? t("header.subtitle") : t("header.title")}
+        </PageTitle>
         <FinancialHighlights />
       </Container>
       <OperationalHighlights />

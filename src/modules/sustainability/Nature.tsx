@@ -19,6 +19,7 @@ import S3bg from "../../assets/images/sustainability/nature/org-3.jpg";
 import S4bg from "../../assets/images/sustainability/nature/org-4.jpg";
 import S5bg from "../../assets/images/sustainability/nature/org-5.jpg";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
+import PageTitle from "../common/components/typography/PageTitle";
 
 const LIFECYCLE_ICONS = [
   RawMaterialIcon,
@@ -143,11 +144,9 @@ const Nature = () => {
       <section className="py-16">
         <Container>
           <div className="">
-            <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">
-                {t("tabs.nature")}
-              </h1>
-            </SlideTopAnimation>
+            <PageTitle className="mb-4">
+              {t("tabs.nature")}
+            </PageTitle>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-2xl mb-6">
                 {t("protectingNature.opening.title")}
@@ -505,7 +504,7 @@ const Nature = () => {
           </div>
         </Container>
       </section>
-      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
+      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 -z-10">
         <GroupOfSpikes />
       </div>
     </div>

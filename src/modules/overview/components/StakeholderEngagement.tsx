@@ -3,6 +3,7 @@ import Container from "../../common/components/Container/Container";
 import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import AccordionArrowGreen from "../../../assets/icons/accordion-arrow-green.svg";
+import PageTitle from "../../common/components/typography/PageTitle";
 
 interface StakeholderSection {
   title: string;
@@ -91,9 +92,7 @@ const StakeholderEngagement = () => {
       {/* Green intro section */}
       <div className="bg-fm-green py-32 text-white">
         <Container>
-          <h1 className="text-3xl font-bold text-white mb-4">
-            {t("tabs.stakeholderEngagement")}
-          </h1>
+          <PageTitle className="mb-6" color="white">{t("tabs.stakeholderEngagement")}</PageTitle>
           <h2 className="text-lg text-fm-yellow font-semibold mb-4">
             {t("stakeholderEngagementContent.title")}
           </h2>
