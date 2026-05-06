@@ -4,31 +4,31 @@ import { LangContext } from "../../common/contexts/LangProvider";
 import Container from "../../common/components/Container/Container";
 import Map from "./Map";
 import SlideTopAnimation from "../../common/components/animations/SlideTopAnimation";
-import PopupAnimation from "../../common/components/animations/PopupAnimation";
-import CounterAnimation from "../../common/components/animations/CounterAnimation";
+// import PopupAnimation from "../../common/components/animations/PopupAnimation";
+// import CounterAnimation from "../../common/components/animations/CounterAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import PageTitle from "../../common/components/typography/PageTitle";
 
-const MARKET_KEYS = [
-  "uae",
-  "jordan",
-  "qatar",
-  "iraq",
-  "kuwait",
-  // "djibouti",
-  "egypt",
-  "syria",
-] as const;
+// const MARKET_KEYS = [
+//   "uae",
+//   "jordan",
+//   "qatar",
+//   "iraq",
+//   "kuwait",
+//   // "djibouti",
+//   "egypt",
+//   "syria",
+// ] as const;
 
-type MarketKey = (typeof MARKET_KEYS)[number];
+// type MarketKey = (typeof MARKET_KEYS)[number];
 
 const GeographicPresence = () => {
   const { t } = useTranslation("overview");
-  const { lang, translations } = useContext(LangContext);
+  const { lang } = useContext(LangContext);
   const isRtl = lang === "ar";
 
-  const overviewLocale = translations[lang as "en" | "ar"].overview;
-  const marketsData = overviewLocale.geographicPresenceContent.markets;
+  // const overviewLocale = translations[lang as "en" | "ar"].overview;
+  // const marketsData = overviewLocale.geographicPresenceContent.markets;
 
   return (
     <div dir={isRtl ? "rtl" : "ltr"}>
@@ -69,7 +69,7 @@ const GeographicPresence = () => {
         </div>
 
         {/* Export Markets and Volumes */}
-        <div className="bg-fm-yellow-100 rounded-lg p-6">
+        {/* <div className="bg-fm-yellow-100 rounded-lg p-6">
           <SlideTopAnimation>
             <h3 className="text-lg font-bold text-fm-yellow mb-6">
               {t("geographicPresenceContent.exportMarketsTitle")}
@@ -98,7 +98,7 @@ const GeographicPresence = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </Container>
       <Map />
       <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">

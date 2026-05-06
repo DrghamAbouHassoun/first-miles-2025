@@ -23,7 +23,7 @@ const CashFlowTable = () => {
                 (item, index) => (
                   <th
                     key={item || `heading-${index}`}
-                    className="p-1 text-end min-w-42"
+                    className={`p-1 ${lang === "ar" ? "text-start" : "text-end"} min-w-42`}
                   >
                     {item || ""}
                   </th>
@@ -38,7 +38,7 @@ const CashFlowTable = () => {
                   {row.cells.map((item, colIndex) => (
                     <td
                       key={`${item}-${rowIndex}-${colIndex}`}
-                      className={`p-1 ${row.bold && "font-bold"} ${colIndex > 0 && "text-end"} ${colIndex === HIGHLIGHTED_ROW && "bg-fm-yellow-100"}`}
+                      className={`p-1 ${row.bold && "font-bold"} ${colIndex > 0 && lang === "en" ? "text-end" : "text-start"} ${colIndex === HIGHLIGHTED_ROW && "bg-fm-yellow-100"}`}
                     >
                       {isValidNumber(item) ? (
                         Number(item) < 0 ? (

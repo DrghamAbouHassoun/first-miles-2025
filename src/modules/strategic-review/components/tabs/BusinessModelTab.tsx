@@ -56,9 +56,7 @@ const BusinessModelTab = () => {
     <div>
       <div className="bg-fm-yellow-100 py-24">
         <Container>
-          <PageTitle className="mb-6">
-            {t("tabs.businessModel")}
-          </PageTitle>
+          <PageTitle className="mb-6">{t("tabs.businessModel")}</PageTitle>
           <SlideTopAnimation>
             <h2 className="text-fm-yellow mb-2 font-bold text-2xl">
               {t("businessModelContent.title")}
@@ -217,7 +215,10 @@ const BusinessModelTab = () => {
                       <li>{t("businessModelContent.addedValue.items.9")}</li>
                       <li>{t("businessModelContent.addedValue.items.10")}</li>
                       <li>{t("businessModelContent.addedValue.items.11")}</li>
-                      <li>{t("businessModelContent.addedValue.items.12")}</li>
+                      {t("businessModelContent.addedValue.items.12") !==
+                        "businessModelContent.addedValue.items.12" && (
+                        <li>{t("businessModelContent.addedValue.items.12")}</li>
+                      )}
                       {t("businessModelContent.addedValue.items.13") !==
                         "businessModelContent.addedValue.items.13" && (
                         <li>{t("businessModelContent.addedValue.items.13")}</li>

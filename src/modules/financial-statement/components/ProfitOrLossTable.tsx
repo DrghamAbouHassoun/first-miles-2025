@@ -42,7 +42,7 @@ const ProfitOrLossTable = () => {
                 (item, index) => (
                   <th
                     key={item || `heading-${index}`}
-                    className={`p-1 ${lang === "ar" ? "" : "text-end"}`}
+                    className={`p-1 ${lang === "ar" ? "text-start" : "text-end"}`}
                   >
                     {item || ""}
                   </th>

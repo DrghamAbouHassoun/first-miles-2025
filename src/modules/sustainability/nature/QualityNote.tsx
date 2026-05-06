@@ -25,7 +25,7 @@ const QualityNote = () => {
           }}
         />
         <div
-          className={`absolute w-62 h-full z-0 ${lang === "ar" ? "left-0" : "right-0"} bottom-0 overflow-hidden`}
+          className={`absolute w-62 h-full z-0 rotate-x-180 ${lang === "ar" ? "left-0" : "right-0"} bottom-0 overflow-hidden`}
         >
           <div
             className={`w-50 h-auto absolute bottom-0 ${lang === "ar" ? "left-0" : " right-0 rotate-y-180"}`}
@@ -48,7 +48,13 @@ const QualityNote = () => {
             />
           </div>
         </div>
-        <div className={`absolute bottom-0 ${lang === "ar" ? "left-[20%]" : "right-[20%]"} flex items-end z-0`}>
+        <div
+          className={`absolute bottom-0 ${lang === "ar" ? "left-[20%]" : "right-[20%]"} flex items-end z-0`}
+        >
+          <img
+            src={YellowSpike}
+            className="w-6 h-auto object-contain animate-spike-wave"
+          />
           <img
             src={YellowSpike}
             className="w-12 h-auto object-contain animate-spike-wave"

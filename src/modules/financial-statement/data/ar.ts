@@ -104,7 +104,7 @@ export const consolidatedIncomeStatementOfProfitAndLossArabic = {
     {
       cells: [
         "الأرباح من استبعاد الممتلكات والآلات والمعدات",
-        "--",
+        null,
         "--",
         -855570,
       ],
