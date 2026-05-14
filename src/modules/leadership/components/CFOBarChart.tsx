@@ -1,6 +1,7 @@
 import CountUpModule, { type CountUpProps } from "react-countup";
 import type React from "react";
 import useInView from "../../common/hooks/useInView";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const CountUp = ((CountUpModule as any).default ??
   CountUpModule) as React.FC<CountUpProps>;
@@ -28,6 +29,11 @@ interface CFOBarChartLabels {
   flour: string;
   feed: string;
   bran: string;
+}
+
+interface CFOBarChartProps {
+  labels: CFOBarChartLabels;
+  isRTL?: boolean;
 }
 
 const Bar = ({
@@ -64,8 +70,10 @@ const Bar = ({
   </div>
 );
 
-const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
+const CFOBarChart = ({ labels, isRTL = false }: CFOBarChartProps) => {
   const { ref, inView } = useInView<HTMLDivElement>();
+  const { lang } = useLocale();
+  const barData = isRTL ? [...BAR_DATA].reverse() : BAR_DATA;
 
   return (
     <div className="max-w-110 bg-fm-yellow-100 p-1">
@@ -77,14 +85,13 @@ const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
           dangerouslySetInnerHTML={{ __html: `(${labels.unit})` }}
         ></span>
       </p>
-      {/* <div className="h-1 mt-1 mb-5 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)]" /> */}
 
       <div dir="ltr">
         {/* Chart body */}
-        <div className="flex" style={{ height: CHART_HEIGHT }}>
+        <div className="flex" style={{ height: CHART_HEIGHT, flexDirection: isRTL ? "row-reverse" : "row" }}>
           {/* Y-axis labels */}
           <div
-            className="flex flex-col justify-between items-end pr-1.5 shrink-0 text-[10px] text-fm-gray-300"
+            className={`flex flex-col justify-between items-end shrink-0 text-[10px] text-fm-gray-300 ${isRTL ? "pl-1.5" : "pr-1.5"}`}
             style={{ width: Y_AXIS_WIDTH }}
           >
             {Y_TICKS.map((t) => (
@@ -113,14 +120,14 @@ const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
 
             {/* Bar groups */}
             <div className="absolute inset-0 flex items-end gap-1 px-1">
-              {BAR_DATA.map((d, gi) => (
+              {barData.map((d, gi) => (
                 <div
                   key={d.year}
-                  className="flex-1 flex items-end gap-px"
+                  className={`flex-1 flex items-end gap-px ${lang === "ar" ? "flex-row-reverse" : "flex-row"}`}
                   style={{
                     height: "100%",
                     borderRight:
-                      gi < BAR_DATA.length - 1
+                      gi < barData.length - 1
                         ? "1px solid rgba(154,158,160,0.2)"
                         : "none",
                     paddingBottom: 0,
@@ -151,12 +158,19 @@ const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
         </div>
 
         {/* X-axis year labels */}
-        <div className="flex mt-1" style={{ paddingLeft: Y_AXIS_WIDTH }}>
-          {BAR_DATA.map((d) => (
-            <div key={d.year} className="flex-1 text-center">
+        <div
+          className="flex mt-1"
+          style={{
+            paddingLeft: isRTL ? 0 : Y_AXIS_WIDTH,
+            paddingRight: isRTL ? Y_AXIS_WIDTH : 0,
+          }}
+        >
+          {barData.map((d) => (
+            <div key={d.year} className="flex-1 text-center" dir="rtl">
               <span className="text-[10px] sm:text-xs font-bold text-fm-green">
-                {d.year}
+                {`${d.year}`}
               </span>
+              {lang === "ar" ? <span className="text-[10px] sm:text-xs font-bold text-fm-green">م</span> : ""}
             </div>
           ))}
         </div>
@@ -164,7 +178,10 @@ const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
         {/* Legend */}
         <div
           className="flex items-center justify-center gap-5 mt-4 flex-wrap"
-          style={{ paddingLeft: Y_AXIS_WIDTH }}
+          style={{
+            paddingLeft: isRTL ? 0 : Y_AXIS_WIDTH,
+            paddingRight: isRTL ? Y_AXIS_WIDTH : 0,
+          }}
         >
           {[
             { color: FLOUR_COLOR, label: labels.flour },

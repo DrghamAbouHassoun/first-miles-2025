@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import LeadershipHeader from "../assets/images/headers/leadership.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -6,12 +6,19 @@ import MainButton from "../modules/common/components/buttons/MainButton";
 import ChairmanTab from "../modules/leadership/components/ChairmanTab";
 import CEOTab from "../modules/leadership/components/CEOTab";
 import CFOTab from "../modules/leadership/components/CFOTab";
+import { useTabNavigation } from "../modules/common/hooks/useTabNavigation";
 
 type LeadershipTab = "chairman" | "ceo" | "cfo";
 
+const LEADERSHIP_TABS: LeadershipTab[] = ["chairman", "ceo", "cfo"];
+
 const LeadershipPage = () => {
   const { t } = useTranslation("leadership");
-  const [activeTab, setActiveTab] = useState<LeadershipTab>("chairman");
+  const { activeTab, registerPageTabs, setActiveTab } = useTabNavigation();
+
+  useEffect(() => {
+    registerPageTabs(LEADERSHIP_TABS, "chairman");
+  }, [registerPageTabs]);
 
   const tabs: { key: LeadershipTab; label: string }[] = [
     { key: "chairman", label: t("tabs.chairman") },

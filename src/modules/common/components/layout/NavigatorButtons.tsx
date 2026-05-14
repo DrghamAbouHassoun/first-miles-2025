@@ -3,10 +3,12 @@ import { useLocale } from "../../hooks/useLocale";
 import { useContext, useEffect, useState } from "react";
 import { RouterContext } from "../../contexts/RouterProvider";
 import { pages } from "../../../../router/Router";
+import { useTabNavigation } from "../../hooks/useTabNavigation";
 
 const NavigatorButtons = () => {
   const { lang } = useLocale();
   const { currentRoute, navigate } = useContext(RouterContext);
+  const { tabs, activeTab, setActiveTab } = useTabNavigation();
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -20,6 +22,14 @@ const NavigatorButtons = () => {
   }
 
   const handleNavigateNextPage = () => {
+    if (tabs.length > 0) {
+      const currentTabIndex = tabs.indexOf(activeTab);
+      if (currentTabIndex !== -1 && currentTabIndex < tabs.length - 1) {
+        window.scrollTo({ top: 0 });
+        setActiveTab(tabs[currentTabIndex + 1]);
+        return;
+      }
+    }
     const currentIndex = pages.findIndex((pge) => pge.path === currentRoute);
     if (currentIndex !== -1) {
       const nextPage = pages[currentIndex + 1];
@@ -31,6 +41,14 @@ const NavigatorButtons = () => {
   }
 
   const handleNavigatePreviousPage = () => {
+    if (tabs.length > 0) {
+      const currentTabIndex = tabs.indexOf(activeTab);
+      if (currentTabIndex > 0) {
+        window.scrollTo({ top: 0 });
+        setActiveTab(tabs[currentTabIndex - 1]);
+        return;
+      }
+    }
     const currentIndex = pages.findIndex((pge) => pge.path === currentRoute);
     if (currentIndex !== -1) {
       const previousPage = pages[currentIndex - 1];

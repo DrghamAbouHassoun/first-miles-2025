@@ -7,17 +7,20 @@ import MenuProvider from "./modules/common/contexts/MenuProvider";
 import RouterProvider from "./modules/common/contexts/RouterProvider";
 import Router from "./router/Router";
 import ContactModalProvider from "./modules/home/contexts/ContactModalProvider";
+import TabNavigationProvider from "./modules/common/contexts/TabNavigationProvider";
 
 function App() {
   return (
     <MenuProvider>
       <LangProvider>
         <RouterProvider>
-          <ContactModalProvider>
-            <Layout>
-              <Router />
-            </Layout>
-          </ContactModalProvider>
+          <TabNavigationProvider>
+            <ContactModalProvider>
+              <Layout>
+                <Router />
+              </Layout>
+            </ContactModalProvider>
+          </TabNavigationProvider>
         </RouterProvider>
       </LangProvider>
     </MenuProvider>

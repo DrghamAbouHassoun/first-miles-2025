@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import SustainabilityReviewHeader from "../assets/images/headers/sustainability-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -8,12 +8,25 @@ import Strategy from "../modules/sustainability/Strategy";
 import Topics from "../modules/sustainability/Topics";
 import Nature from "../modules/sustainability/Nature";
 import Social from "../modules/sustainability/Social";
+import { useTabNavigation } from "../modules/common/hooks/useTabNavigation";
 
 type SustainabilityTab = "approach" | "strategy" | "topics" | "nature" | "social";
 
+const SUSTAINABILITY_TABS: SustainabilityTab[] = [
+  "approach",
+  "strategy",
+  "topics",
+  "nature",
+  "social",
+];
+
 const SustainabilityReviewPage = () => {
   const { t } = useTranslation("sustainability-review");
-  const [activeTab, setActiveTab] = useState<SustainabilityTab>("approach");
+  const { activeTab, registerPageTabs, setActiveTab } = useTabNavigation();
+
+  useEffect(() => {
+    registerPageTabs(SUSTAINABILITY_TABS, "approach");
+  }, [registerPageTabs]);
 
   const tabs: { key: SustainabilityTab; label: string }[] = [
     { key: "approach", label: t("tabs.approach") },

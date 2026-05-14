@@ -160,7 +160,7 @@ export default {
     },
     charts: {
       revenue: "الإيرادات",
-      unit: "مليون <i class='riyal-icon'></i>",
+      unit: "بالمليون <i class='riyal-icon'></i>",
       flour: "دقيق",
       feed: "أعلاف",
       bran: "نخالة",
@@ -178,7 +178,7 @@ export default {
       keyIndicatorsTitle: "أبرز مؤشرات المركز المالي",
       cashTitle: "النقد وما في حكمه",
       loansTitle: "إجمالي القروض",
-      financialUnit: "مليون <i class='riyal-icon'></i>",
+      financialUnit: "<i class='riyal-icon'></i>",
     },
     sections: [
       {

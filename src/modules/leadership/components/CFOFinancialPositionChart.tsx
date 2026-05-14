@@ -1,6 +1,7 @@
 import CountUpModule, { type CountUpProps } from "react-countup";
 import type React from "react";
 import useInView from "../../common/hooks/useInView";
+import { useLocale } from "../../common/hooks/useLocale";
 
 const CountUp = ((CountUpModule as any).default ??
   CountUpModule) as React.FC<CountUpProps>;
@@ -106,6 +107,7 @@ const GroupedBarChart = ({
   legend,
   inView,
   unit,
+  isRTL = false,
 }: {
   data: typeof ASSETS_DATA;
   yMax: number;
@@ -114,122 +116,161 @@ const GroupedBarChart = ({
   unit: string;
   legend: { color: string; label: string }[];
   inView: boolean;
-}) => (
-  <div className="flex-1 min-w-0">
-    <p className="font-bold text-sm text-fm-green mb-2">
-      {title}{" "}
-      <span
-        className="font-normal text-sm text-fm-gray-300"
-        dangerouslySetInnerHTML={{ __html: `(${unit})` }}
-      ></span>
-    </p>
+  isRTL?: boolean;
+}) => {
+  const { lang } = useLocale();
+  const barData = isRTL ? [...data].reverse() : data;
 
-    {/* Chart body */}
-    <div className="flex" style={{ height: CHART_HEIGHT }}>
-      {/* Y-axis */}
+  return (
+    <div className="flex-1 min-w-0">
+      <p className="font-bold text-sm text-fm-green mb-2" dir={lang === 'ar' ? "rtl" : "ltr"}>
+        {title}{" "}
+        <span
+          className="font-normal text-sm text-fm-gray-300"
+          dangerouslySetInnerHTML={{ __html: `(${unit})` }}
+        ></span>
+      </p>
+
+      {/* Chart body */}
       <div
-        className="flex flex-col justify-between items-end pr-1.5 shrink-0 text-[9px] text-fm-gray-300"
-        style={{ width: Y_AXIS_WIDTH }}
+        className="flex"
+        style={{
+          height: CHART_HEIGHT,
+          flexDirection: isRTL ? "row-reverse" : "row",
+        }}
       >
-        {yTicks.map((t) => (
-          <span key={t} className="leading-none">
-            {t === 0 ? "0" : t >= 1000 ? `${t / 1000}K` : t}
-          </span>
-        ))}
-      </div>
-
-      {/* Bars + grid */}
-      <div className="flex-1 relative">
-        {/* Grid lines */}
-        {yTicks.map((t) => (
-          <div
-            key={t}
-            className="absolute left-0 right-0"
-            style={{
-              top: `${((yMax - t) / yMax) * 100}%`,
-              borderTop:
-                t === 0
-                  ? "1px solid #9a9ea0"
-                  : "1px solid rgba(154,158,160,0.25)",
-            }}
-          />
-        ))}
-
-        {/* Bar groups */}
-        <div className="absolute inset-0 flex items-end gap-1 px-1">
-          {data.map((d, gi) => (
-            <div
-              key={d.year}
-              className="flex-1 flex items-end gap-px"
-              style={{
-                height: "100%",
-                borderRight:
-                  gi < data.length - 1
-                    ? "1px solid rgba(154,158,160,0.2)"
-                    : "none",
-              }}
-            >
-              <Bar
-                value={d.current}
-                color={CURRENT_COLOR}
-                yMax={yMax}
-                inView={inView}
-                delay="0s"
-              />
-              <Bar
-                value={d.nonCurrent}
-                color={NON_CURRENT_COLOR}
-                yMax={yMax}
-                inView={inView}
-                delay="0.1s"
-              />
-              <Bar
-                value={d.total}
-                color={TOTAL_COLOR}
-                yMax={yMax}
-                inView={inView}
-                delay="0.2s"
-              />
-            </div>
+        {/* Y-axis */}
+        <div
+          className={`flex flex-col justify-between items-end shrink-0 text-[9px] text-fm-gray-300 ${isRTL ? "pl-1.5" : "pr-1.5"}`}
+          style={{ width: Y_AXIS_WIDTH }}
+        >
+          {yTicks.map((t) => (
+            <span key={t} className="leading-none">
+              {t === 0 ? "0" : t >= 1000 ? `${t / 1000}K` : t}
+            </span>
           ))}
         </div>
+
+        {/* Bars + grid */}
+        <div className="flex-1 relative">
+          {/* Grid lines */}
+          {yTicks.map((t) => (
+            <div
+              key={t}
+              className="absolute left-0 right-0"
+              style={{
+                top: `${((yMax - t) / yMax) * 100}%`,
+                borderTop:
+                  t === 0
+                    ? "1px solid #9a9ea0"
+                    : "1px solid rgba(154,158,160,0.25)",
+              }}
+            />
+          ))}
+
+          {/* Bar groups */}
+          <div className="absolute inset-0 flex items-end gap-1 px-1">
+            {barData.map((d, gi) => (
+              <div
+                key={d.year}
+                className={`flex-1 flex items-end gap-px ${lang === "ar" ? "flex-row-reverse" : "flex-row"}`}
+                style={{
+                  height: "100%",
+                  borderRight:
+                    gi < barData.length - 1
+                      ? "1px solid rgba(154,158,160,0.2)"
+                      : "none",
+                }}
+              >
+                <Bar
+                  value={d.current}
+                  color={CURRENT_COLOR}
+                  yMax={yMax}
+                  inView={inView}
+                  delay="0s"
+                />
+                <Bar
+                  value={d.nonCurrent}
+                  color={NON_CURRENT_COLOR}
+                  yMax={yMax}
+                  inView={inView}
+                  delay="0.1s"
+                />
+                <Bar
+                  value={d.total}
+                  color={TOTAL_COLOR}
+                  yMax={yMax}
+                  inView={inView}
+                  delay="0.2s"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* X-axis year labels */}
+      <div
+        className="flex mt-1 w-full"
+        style={{
+          paddingLeft: isRTL ? 0 : Y_AXIS_WIDTH,
+          paddingRight: isRTL ? Y_AXIS_WIDTH : 0,
+        }}
+      >
+        {barData.map((d) => (
+          <div
+            key={d.year}
+            className={` text-start flex justify-start flex-1 w-full `}
+            dir="rtl"
+          >
+            <div className="w-full max-w-20 text-center ">
+              <span className="text-[9px] sm:text-[10px] font-bold text-fm-green text-center">
+                {`${d.year}`}
+              </span>
+              {lang === "ar" ? (
+                <span className="text-[9px] sm:text-[10px] font-bold text-fm-green">
+                  م
+                </span>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Legend */}
+      <div
+        className="flex items-center justify-center gap-3 mt-3 flex-wrap"
+        style={{
+          // paddingLeft: isRTL ? 0 : Y_AXIS_WIDTH,
+          // paddingRight: isRTL ? Y_AXIS_WIDTH : 0,
+        }}
+         dir={lang === 'ar' ? "rtl" : "ltr"}
+      >
+        {legend.map(({ color, label }) => (
+          <div key={label} className="flex items-center gap-1">
+            <span
+              className="inline-block w-3 h-3 shrink-0"
+              style={{ backgroundColor: color }}
+            />
+            <span className="text-[10px] font-medium text-fm-green">
+              {label}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
-
-    {/* X-axis year labels */}
-    <div className="flex mt-1" style={{ paddingLeft: Y_AXIS_WIDTH }}>
-      {data.map((d) => (
-        <div key={d.year} className="flex-1 text-center">
-          <span className="text-[9px] sm:text-[10px] font-bold text-fm-green">
-            {d.year}
-          </span>
-        </div>
-      ))}
-    </div>
-
-    {/* Legend */}
-    <div
-      className="flex items-center gap-3 mt-3 flex-wrap"
-      style={{ paddingLeft: Y_AXIS_WIDTH }}
-    >
-      {legend.map(({ color, label }) => (
-        <div key={label} className="flex items-center gap-1">
-          <span
-            className="inline-block w-3 h-3 shrink-0"
-            style={{ backgroundColor: color }}
-          />
-          <span className="text-[10px] font-medium text-fm-green">{label}</span>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 /* ── Main component ────────────────────────────────────────────── */
 const CFOFinancialPositionChart = ({
   labels,
+  isRTL = false,
 }: {
   labels: CFOFPChartLabels;
+  isRTL?: boolean;
 }) => {
   const { ref, inView } = useInView<HTMLDivElement>();
 
@@ -247,6 +288,7 @@ const CFOFinancialPositionChart = ({
           title={labels.assetsTitle}
           unit={labels.financialUnit}
           inView={inView}
+          isRTL={isRTL}
           legend={[
             { color: CURRENT_COLOR, label: labels.currentAssets },
             { color: NON_CURRENT_COLOR, label: labels.nonCurrentAssets },
@@ -260,6 +302,7 @@ const CFOFinancialPositionChart = ({
           title={labels.liabilitiesTitle}
           unit={labels.financialUnit}
           inView={inView}
+          isRTL={isRTL}
           legend={[
             { color: CURRENT_COLOR, label: labels.currentLiabilities },
             { color: NON_CURRENT_COLOR, label: labels.nonCurrentLiabilities },

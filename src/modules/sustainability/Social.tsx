@@ -825,7 +825,7 @@ const Social = () => {
                                             {genderChartInView && (
                                               <CounterAnimation
                                                 end={male}
-                                                decimals={0}
+                                                decimals={2}
                                                 suffix={isAr ? "" : "%"}
                                                 prefix={isAr ? "%" : ""}
                                                 duration={1.2}
@@ -849,7 +849,7 @@ const Social = () => {
                                           {genderChartInView && (
                                             <CounterAnimation
                                               end={female}
-                                              decimals={0}
+                                              decimals={2}
                                               suffix={isAr ? "" : "%"}
                                               prefix={isAr ? "%" : ""}
                                               duration={1.2}
@@ -1427,7 +1427,7 @@ const Social = () => {
                           __html: t("social.communities.food.desc"),
                         }}
                       />
-                      <div className="overflow-auto max-w-220">
+                      <div className="overflow-auto">
                         <table className="w-full text-sm">
                           <thead>
                             <tr className="border-b border-fm-yellow">

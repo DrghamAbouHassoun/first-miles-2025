@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import OperatingReviewHeader from "../assets/images/headers/operating-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -7,12 +7,24 @@ import FirstMillsBrandTab from "../modules/operatingReview/components/FirstMills
 import AloulaBrandTab from "../modules/operatingReview/components/AloulaBrandTab";
 import NaffaaBrandTab from "../modules/operatingReview/components/NaffaaBrandTab";
 import COOTab from "../modules/operatingReview/components/coo/COOTab";
+import { useTabNavigation } from "../modules/common/hooks/useTabNavigation";
 
 type OperatingReviewTab = "firstMillsBrand" | "aloulaBrand" | "naffaaBrand" | "coo";
 
+const OPERATING_REVIEW_TABS: OperatingReviewTab[] = [
+  "coo",
+  "firstMillsBrand",
+  "aloulaBrand",
+  "naffaaBrand",
+];
+
 const OperatingReviewPage = () => {
   const { t } = useTranslation("operating-review");
-  const [activeTab, setActiveTab] = useState<OperatingReviewTab>("coo");
+  const { activeTab, registerPageTabs, setActiveTab } = useTabNavigation();
+
+  useEffect(() => {
+    registerPageTabs(OPERATING_REVIEW_TABS, "coo");
+  }, [registerPageTabs]);
 
   const tabs: { key: OperatingReviewTab; label: string }[] = [
     { key: "coo", label: t("tabs.coo") },

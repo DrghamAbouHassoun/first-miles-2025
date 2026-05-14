@@ -129,7 +129,7 @@ const InvestmentCase = () => {
                   <div className="mb-6">
                     <div className="grid grid-cols-3 gap-4 mb-4">
                       {currentLeaf.financials.labels.map((label, i) => (
-                        <div key={i}>
+                        <div key={i} className="flex flex-col justify-center text-center items-center">
                           <p className="text-xs mb-1">{label}</p>
                           <p
                             className="text-fm-yellow font-bold text-lg"

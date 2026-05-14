@@ -296,8 +296,10 @@ const CFOTab = () => {
               </div>
 
               {/* Bar Chart – Revenue */}
-              <div className="mb-14">
+              <div className="flex justify-center">
+              <div className="mb-14 min-w-110">
                 <CFOBarChart
+                  isRTL={lang === "ar"}
                   labels={{
                     title: charts.revenue ?? "Revenues",
                     unit: charts.unit ?? "(<i class='riyal-icon'></i> million)",
@@ -306,6 +308,7 @@ const CFOTab = () => {
                     bran: charts.bran ?? "Bran",
                   }}
                 />
+              </div>
               </div>
 
               {/* Sections 1 & 2 – Revenue drivers + Cash flow */}
@@ -339,6 +342,7 @@ const CFOTab = () => {
               {/* Statement of Financial Position – Assets & Liabilities charts */}
               <div className="mb-8">
                 <CFOFinancialPositionChart
+                  isRTL={lang === "ar"}
                   labels={{
                     financialPositionTitle:
                       charts.financialPositionTitle ??

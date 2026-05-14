@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import StrategicReviewHeader from "../assets/images/headers/strategic-review.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -7,6 +7,7 @@ import BusinessModelTab from "../modules/strategic-review/components/tabs/Busine
 import StrategyKPIsTab from "../modules/strategic-review/components/tabs/StrategyKPIsTab";
 import SaudiVision2030Tab from "../modules/strategic-review/components/tabs/SaudiVision2030Tab";
 import TechnologyInnovationTab from "../modules/strategic-review/components/tabs/TechnologyInnovationTab";
+import { useTabNavigation } from "../modules/common/hooks/useTabNavigation";
 
 type StrategicReviewSubPage =
   | "businessModel"
@@ -14,9 +15,20 @@ type StrategicReviewSubPage =
   | "saudiVision2030"
   | "technologyInnovation";
 
+const STRATEGIC_REVIEW_TABS: StrategicReviewSubPage[] = [
+  "businessModel",
+  "strategyKPIs",
+  "saudiVision2030",
+  "technologyInnovation",
+];
+
 const StrategicReviewPage = () => {
   const { t } = useTranslation("strategic-review");
-  const [subPage, setSubPage] = useState<StrategicReviewSubPage>("businessModel");
+  const { activeTab, registerPageTabs, setActiveTab } = useTabNavigation();
+
+  useEffect(() => {
+    registerPageTabs(STRATEGIC_REVIEW_TABS, "businessModel");
+  }, [registerPageTabs]);
 
   const tabs: { key: StrategicReviewSubPage; label: string }[] = [
     { key: "businessModel", label: t("tabs.businessModel") },
@@ -38,8 +50,8 @@ const StrategicReviewPage = () => {
         {tabs.map((tab) => (
           <MainButton
             key={tab.key}
-            onClick={() => setSubPage(tab.key)}
-            isActive={subPage === tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            isActive={activeTab === tab.key}
             className="w-full md:w-auto"
           >
             {tab.label}
@@ -47,10 +59,10 @@ const StrategicReviewPage = () => {
         ))}
       </div>
       <div>
-        {subPage === "businessModel" && <BusinessModelTab />}
-        {subPage === "strategyKPIs" && <StrategyKPIsTab />}
-        {subPage === "saudiVision2030" && <SaudiVision2030Tab />}
-        {subPage === "technologyInnovation" && <TechnologyInnovationTab />}
+        {activeTab === "businessModel" && <BusinessModelTab />}
+        {activeTab === "strategyKPIs" && <StrategyKPIsTab />}
+        {activeTab === "saudiVision2030" && <SaudiVision2030Tab />}
+        {activeTab === "technologyInnovation" && <TechnologyInnovationTab />}
       </div>
     </div>
   );

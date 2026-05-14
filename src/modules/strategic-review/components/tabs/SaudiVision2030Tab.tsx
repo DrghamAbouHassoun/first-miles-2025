@@ -17,7 +17,7 @@ import S2Bg from "../../../../assets/images/backgrounds/saudi-vision/s-2.jpg";
 import S3Bg from "../../../../assets/images/backgrounds/saudi-vision/s-3.jpg";
 import PageTitle from "../../../common/components/typography/PageTitle";
 
-const sBgs = [S1Bg, S2Bg, S3Bg];
+const sBgs = [S2Bg, S3Bg, S1Bg];
 
 const SaudiVision2030Tab = () => {
   const { t, tArray } = useTranslation("strategic-review");
@@ -45,9 +45,9 @@ const SaudiVision2030Tab = () => {
             </h2>
           </SlideTopAnimation>
           <SlideTopAnimation>
-          <p className="text-white font-bold">
-            {t("saudiVisionContent.description")}
-          </p>
+            <p className="text-white font-bold">
+              {t("saudiVisionContent.description")}
+            </p>
           </SlideTopAnimation>
         </Container>
       </div>

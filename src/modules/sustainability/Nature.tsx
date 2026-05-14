@@ -111,7 +111,10 @@ const Nature = () => {
 
   const handleTabChange = (tabId: TabId) => {
     setActiveTab(tabId);
-    tabSectionRef.current?.scrollIntoView({ behavior: "instant", block: "start" });
+    tabSectionRef.current?.scrollIntoView({
+      behavior: "instant",
+      block: "start",
+    });
   };
 
   const lifecycleDivisions =
@@ -144,9 +147,7 @@ const Nature = () => {
       <section className="py-16">
         <Container>
           <div className="">
-            <PageTitle className="mb-4">
-              {t("tabs.nature")}
-            </PageTitle>
+            <PageTitle className="mb-4">{t("tabs.nature")}</PageTitle>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow font-bold text-2xl mb-6">
                 {t("protectingNature.opening.title")}
@@ -190,9 +191,14 @@ const Nature = () => {
                     image={S1bg}
                   />
                   <FadeInAnimation>
-                    <h3 className="font-bold mb-2">
-                      {t("protectingNature.climateChange.t1")}
-                    </h3>
+                    <div className="w-fit mb-2 mt-4">
+                      <h3 className="font-bold">
+                        {t("protectingNature.climateChange.t1")}
+                      </h3>
+                      <div
+                        className={`w-full h-1 ${lang === "ar" ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow to-fm-yellow/0`}
+                      ></div>
+                    </div>
                     <p
                       className="mb-4"
                       dangerouslySetInnerHTML={{
@@ -217,9 +223,15 @@ const Nature = () => {
                         __html: t("protectingNature.climateChange.p3"),
                       }}
                     />
-                    <h3 className="font-bold mb-2">
-                      {t("protectingNature.climateChange.t2")}
-                    </h3>
+
+                    <div className="w-fit mb-2 mt-4">
+                      <h3 className="font-bold">
+                        {t("protectingNature.climateChange.t2")}
+                      </h3>
+                      <div
+                        className={`w-full h-1 ${lang === "ar" ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow to-fm-yellow/0`}
+                      ></div>
+                    </div>
                     <p
                       className="mb-4"
                       dangerouslySetInnerHTML={{

@@ -155,12 +155,12 @@ const Achievement = ({
       )}
     </p>
     {large && (
-      <p className="text-3xl mt-1">
-        <span dangerouslySetInnerHTML={{ __html: large }}></span>
+      <p className="mt-1">
+        <span className="text-3xl " dangerouslySetInnerHTML={{ __html: large }}></span>
         {""}
         {suffix && (
           <span
-            className="text-4xl font-normal text-white ms-2"
+            className=" font-normal text-white ms-2"
             dangerouslySetInnerHTML={{ __html: suffix }}
           ></span>
         )}

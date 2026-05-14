@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import MainHeader from "../modules/common/components/MainHeader/MainHeader";
 import OverviewHeaderImage from "../assets/images/headers/overview.jpg";
 import { useTranslation } from "../modules/common/hooks/useTranslation";
@@ -9,6 +9,7 @@ import StakeholderEngagement from "../modules/overview/components/StakeholderEng
 import ThemeOfTheYear from "../modules/overview/components/ThemeOfTheYear";
 import MainButton from "../modules/common/components/buttons/MainButton";
 import AtAGlanceTab from "../modules/overview/components/AtAGlanceTab";
+import { useTabNavigation } from "../modules/common/hooks/useTabNavigation";
 
 type OverviewSubPage =
   | "atAGlance"
@@ -18,9 +19,22 @@ type OverviewSubPage =
   | "investmentCase"
   | "stakeholderEngagement";
 
+const OVERVIEW_TABS: OverviewSubPage[] = [
+  "themeOfTheYear",
+  "atAGlance",
+  "yearInReview",
+  "geographicPresence",
+  "investmentCase",
+  "stakeholderEngagement",
+];
+
 const OverviewPage = () => {
   const { t } = useTranslation("overview");
-  const [subPage, setSubPage] = useState<OverviewSubPage>("themeOfTheYear");
+  const { activeTab, registerPageTabs, setActiveTab } = useTabNavigation();
+
+  useEffect(() => {
+    registerPageTabs(OVERVIEW_TABS, "themeOfTheYear");
+  }, [registerPageTabs]);
 
   const tabs: { key: OverviewSubPage; label: string }[] = [
     { key: "themeOfTheYear", label: t("tabs.themeOfTheYear") },
@@ -44,8 +58,8 @@ const OverviewPage = () => {
         {tabs.map((tab) => (
           <MainButton
             key={tab.key}
-            onClick={() => setSubPage(tab.key)}
-            isActive={subPage === tab.key}
+            onClick={() => setActiveTab(tab.key)}
+            isActive={activeTab === tab.key}
             className="w-full md:w-auto"
           >
             {tab.label}
@@ -53,12 +67,12 @@ const OverviewPage = () => {
         ))}
       </div>
       <div>
-        {subPage === "themeOfTheYear" && <ThemeOfTheYear />}
-        {subPage === "atAGlance" && <AtAGlanceTab />}
-        {subPage === "yearInReview" && <YearInReview />}
-        {subPage === "geographicPresence" && <GeographicPresence />}
-        {subPage === "investmentCase" && <InvestmentCase />}
-        {subPage === "stakeholderEngagement" && <StakeholderEngagement />}
+        {activeTab === "themeOfTheYear" && <ThemeOfTheYear />}
+        {activeTab === "atAGlance" && <AtAGlanceTab />}
+        {activeTab === "yearInReview" && <YearInReview />}
+        {activeTab === "geographicPresence" && <GeographicPresence />}
+        {activeTab === "investmentCase" && <InvestmentCase />}
+        {activeTab === "stakeholderEngagement" && <StakeholderEngagement />}
       </div>
     </div>
   );

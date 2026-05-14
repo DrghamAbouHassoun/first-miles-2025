@@ -142,8 +142,8 @@ export default {
         },
         {
           prefix: "Acquired Al Manar Feed Co. Ltd, adding",
-          large: "450 tons",
-          suffix: "of daily feed production",
+          large: "450",
+          suffix: "tons of daily feed production",
         },
         {
           prefix: "Net profit grew by",

@@ -163,7 +163,7 @@ const MillingSnapshotSection = () => {
                             transition: `opacity 0.4s ease-out ${i * 0.15 + 0.6}s`,
                           }}
                         >
-                          {seg.value}%
+                          {lang === "ar" ? `%${seg.value}` : `${seg.value}%`}
                         </text>
                       </g>
                     );
