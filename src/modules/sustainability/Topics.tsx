@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Container from "../common/components/Container/Container";
 import { useTranslation } from "../common/hooks/useTranslation";
-import TopicChartEn from "../../assets/vectors/sustainability/topics/chart-en.svg";
-import TopicChartAr from "../../assets/vectors/sustainability/topics/chart-ar.svg";
+// import TopicChartEn from "../../assets/vectors/sustainability/topics/chart-en.svg";
+// import TopicChartAr from "../../assets/vectors/sustainability/topics/chart-ar.svg";
 import { topicsTableEn, topicsTableAr } from "./data/topics";
 import { useLocale } from "../common/hooks/useLocale";
 
@@ -38,6 +38,20 @@ import UNSDGSIcon13 from "../../assets/icons/sustainability/topics/unsdgs/13.svg
 import UNSDGSIcon15 from "../../assets/icons/sustainability/topics/unsdgs/15.svg";
 import UNSDGSIcon16 from "../../assets/icons/sustainability/topics/unsdgs/16.svg";
 
+// UNSDGs Icons Arabic
+import UNSDGSIcon2Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/2.svg";
+import UNSDGSIcon3Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/3.svg";
+import UNSDGSIcon4Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/4.svg";
+import UNSDGSIcon5Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/5.svg";
+import UNSDGSIcon6Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/6.svg";
+import UNSDGSIcon7Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/7.svg";
+import UNSDGSIcon8Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/8.svg";
+import UNSDGSIcon10Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/10.svg";
+import UNSDGSIcon12Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/12.svg";
+import UNSDGSIcon13Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/13.svg";
+import UNSDGSIcon15Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/15.svg";
+import UNSDGSIcon16Ar from "../../assets/icons/sustainability/topics/unsdgs/ar/16.svg";
+
 // Vision 2030 Icons
 import VibrantIcon from "../../assets/icons/sustainability/topics/vision/vibrant.svg";
 import ThrivingIcon from "../../assets/icons/sustainability/topics/vision/thriving.svg";
@@ -45,6 +59,8 @@ import AmbitiousIcon from "../../assets/icons/sustainability/topics/vision/ambit
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
 import PageTitle from "../common/components/typography/PageTitle";
 import SlideTopAnimation from "../common/components/animations/SlideTopAnimation";
+import TopicsChartEn from "./Charts/TopicsChartEn";
+import TopicsChartAr from "./Charts/TopicsChartAr";
 
 const indexIconsArray = [
   IndexIcon1,
@@ -78,6 +94,21 @@ const unsdgsIcons = [
   { index: 13, icon: UNSDGSIcon13 },
   { index: 15, icon: UNSDGSIcon15 },
   { index: 16, icon: UNSDGSIcon16 },
+];
+
+const unsdgsIconsAr = [
+  { index: 2, icon: UNSDGSIcon2Ar },
+  { index: 3, icon: UNSDGSIcon3Ar },
+  { index: 4, icon: UNSDGSIcon4Ar },
+  { index: 5, icon: UNSDGSIcon5Ar },
+  { index: 6, icon: UNSDGSIcon6Ar },
+  { index: 7, icon: UNSDGSIcon7Ar },
+  { index: 8, icon: UNSDGSIcon8Ar },
+  { index: 10, icon: UNSDGSIcon10Ar },
+  { index: 12, icon: UNSDGSIcon12Ar },
+  { index: 13, icon: UNSDGSIcon13Ar },
+  { index: 15, icon: UNSDGSIcon15Ar },
+  { index: 16, icon: UNSDGSIcon16Ar },
 ];
 
 const visionIconsMap: Record<string, string> = {
@@ -125,11 +156,12 @@ const Topics = () => {
         <Container>
           {/* Chart */}
           <div className="flex mb-16">
-            <img
+            {/* <img
               src={lang === "ar" ? TopicChartAr : TopicChartEn}
               alt="First Mills"
               className="w-full h-auto object-contain max-w-120"
-            />
+            /> */}
+            {lang === "ar" ? <TopicsChartAr /> : <TopicsChartEn />}
           </div>
 
           {/* Tabbed Priority Tables */}
@@ -144,10 +176,14 @@ const Topics = () => {
                   <button
                     key={group.priority}
                     onClick={() => setActiveTab(group.priority)}
-                    className={`flex items-center justify-between px-4 py-3 bg-linear-to-r rounded-2xl border-gradient-reversed text-start text-xl transition-colors cursor-pointer ${
-                      isActive
-                        ? "from-fm-yellow-200 to-fm-yellow-200"
-                        : "from-fm-yellow-200/0 to-fm-yellow-200"
+                    className={`flex items-center justify-between px-4 py-3 bg-linear-to-r rounded-2xl text-start text-xl transition-colors cursor-pointer text-white ${
+                      group.priority === "01" ?
+                      "bg-[#173029]" :
+                      group.priority === "02" ?
+                      "bg-[#326C5E]" :
+                      "bg-[#9FC7BB]"
+                    } ${
+                      isActive ? "border-2 border-fm-green" : "border-2 border-transparent"  
                     }`}
                     style={{ borderColor: isActive ? color : "transparent" }}
                   >
@@ -202,9 +238,9 @@ const Topics = () => {
                       className={`w-full max-w-48 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
                     >
                       {activeGroup.unsdgs[i]?.map((num) => {
-                        const icon = unsdgsIcons.find(
-                          (u) => u.index === num,
-                        )?.icon;
+                        const icon = (
+                          lang === "ar" ? unsdgsIconsAr : unsdgsIcons
+                        ).find((u) => u.index === num)?.icon;
                         return icon ? (
                           <img
                             key={num}

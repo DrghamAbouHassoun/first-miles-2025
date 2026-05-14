@@ -79,7 +79,7 @@ const AwardsCertifications = () => {
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="sticky top-0 h-screen min-h-150 overflow-hidden">
-        <div className="flex justify-end absolute w-full h-auto bottom-0 z-10">
+        <div className="flex justify-end absolute w-full h-auto bottom-0 z-20">
           <GroupOfSpikes />
         </div>
         {/* Background image with dark overlay */}
@@ -117,10 +117,10 @@ const AwardsCertifications = () => {
                       />
                     </div>
                     <div className="px-2">
-                      <h3 className="text-fm-yellow font-bold text-md leading-snug mb-3">
+                      <h3 className="text-fm-yellow font-bold text-md leading-snug mb-3 text-center">
                         {t(`awards.items.${key}.title`)}
                       </h3>
-                      <p className="text-fm-gray-100 text-sm leading-relaxed">
+                      <p className="text-fm-gray-100 text-sm leading-relaxed text-center">
                         {t(`awards.items.${key}.desc`)}
                       </p>
                     </div>

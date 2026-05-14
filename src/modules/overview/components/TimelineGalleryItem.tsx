@@ -69,8 +69,9 @@ const TimelineGalleryItem = ({
       className="relative overflow-hidden will-change-transform w-[90%] md:w-[65%] max-w-200 lg:max-w-250 mx-auto my-20 max-md:max-w-85"
       style={{ clipPath, opacity, scale, x }}
     >
+      <div className="px-2 md:px-6">{children}</div>
       {image && (
-        <div className="relative w-full max-w-72 md:max-w-96 lg:max-w-110 aspect-video overflow-hidden mb-6">
+        <div className="relative w-full max-w-72 md:max-w-96 lg:max-w-110 aspect-video overflow-hidden mt-6 mx-4">
           <motion.img
             src={image}
             alt={imageAlt ?? ""}
@@ -79,7 +80,6 @@ const TimelineGalleryItem = ({
           />
         </div>
       )}
-      <div className="px-2 md:px-6">{children}</div>
     </motion.div>
   );
 };

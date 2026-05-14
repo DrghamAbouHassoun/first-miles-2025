@@ -40,6 +40,7 @@ const CEOTab = () => {
             subtitle={data.title}
             quotation={data.quote}
             isCEOorChairman={true}
+            isCEO={true}
           />
         </Container>
 
@@ -77,10 +78,9 @@ const CEOTab = () => {
                         <SlideTopAnimation key={j}>
                           <p
                             key={j}
-                            className="text-sm leading-relaxed"
+                            className="text-sm leading-relaxed mb-3"
                             dangerouslySetInnerHTML={{ __html: p }}
                           ></p>
-                          <br />
                         </SlideTopAnimation>
                       ))}
                     </div>
@@ -92,7 +92,7 @@ const CEOTab = () => {
         </div>
 
         {/* Second half of sections with wheat decoration */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden pb-32">
           <Container>
             <div className=" space-y-3 mb-3">
               {secondHalf.map(
@@ -110,10 +110,9 @@ const CEOTab = () => {
                       <SlideTopAnimation key={j}>
                         <p
                           key={j}
-                          className="text-sm leading-relaxed"
+                          className="text-sm leading-relaxed mb-3"
                           dangerouslySetInnerHTML={{ __html: p }}
                         ></p>
-                        <br />
                       </SlideTopAnimation>
                     ))}
                   </div>
@@ -127,7 +126,6 @@ const CEOTab = () => {
             <GroupOfSpikes />
           </div>
         </div>
-        <div className="w-full bg-fm-green h-16"></div>
       </div>
     </>
   );

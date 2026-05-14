@@ -98,7 +98,7 @@ const BusinessModelTab = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex items-center justify-between w-full">
+                  <div className="relative z-10 flex items-center gap-4 w-full">
                     <h4 className="text-fm-yellow font-bold text-xl">
                       {t("businessModelContent.inputs.title")}
                     </h4>
@@ -141,7 +141,7 @@ const BusinessModelTab = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex items-center justify-between w-full">
+                  <div className="relative z-10 flex items-center gap-4 w-full">
                     <h4 className="text-fm-yellow font-bold text-xl">
                       {t("businessModelContent.strengths.title")}
                     </h4>
@@ -184,7 +184,7 @@ const BusinessModelTab = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex items-center justify-between w-full">
+                  <div className="relative z-10 flex items-center gap-4 w-full">
                     <h4 className="text-fm-yellow font-bold text-xl">
                       {t("businessModelContent.addedValue.title")}
                     </h4>
@@ -228,7 +228,7 @@ const BusinessModelTab = () => {
                 </div>
               </div>
               {/* Outputs */}
-              <div id="outputs" className="mt-4">
+              <div id="outputs" className="mt-8">
                 <button
                   onClick={() => toggle("outputs")}
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
@@ -244,7 +244,7 @@ const BusinessModelTab = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="relative z-10 flex items-center justify-between w-full">
+                  <div className="relative z-10 flex items-center gap-4 w-full">
                     <h4 className="text-fm-yellow font-bold text-xl">
                       {t("businessModelContent.outputs.title")}
                     </h4>

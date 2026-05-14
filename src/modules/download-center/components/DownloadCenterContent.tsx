@@ -7,6 +7,7 @@ import SlideTopAnimation from "../../common/components/animations/SlideTopAnimat
 type Chapter = {
   title: string;
   sections: string[];
+  hiddenSectionIndices?: number[];
 };
 
 type DownloadCenterTranslations = {
@@ -217,8 +218,13 @@ const DownloadCenterContent = () => {
           {chapters.map((chapter, ci) => {
             const hasSubSections = chapter.sections.length > 0;
             const chapterChecked = checkedChapters[ci] ?? [];
+            const hidden = new Set(chapter.hiddenSectionIndices ?? []);
+            const visibleIndices = chapter.sections
+              .map((_, i) => i)
+              .filter((i) => !hidden.has(i));
             const allSelected =
-              chapterChecked.length > 0 && chapterChecked.every(Boolean);
+              visibleIndices.length > 0 &&
+              visibleIndices.every((i) => chapterChecked[i]);
 
             return (
               <div key={ci}>
@@ -242,7 +248,7 @@ const DownloadCenterContent = () => {
                 {/* Sub-sections */}
                 {hasSubSections && (
                   <ul className={`mt-3 flex flex-col gap-2`}>
-                    {chapter.sections.map((section, si) => (
+                    {chapter.sections.map((section, si) => hidden.has(si) ? null : (
                       <li key={si}>
                         <label
                           className={`flex items-start gap-2.5 cursor-pointer group`}

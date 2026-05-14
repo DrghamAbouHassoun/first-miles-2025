@@ -11,7 +11,7 @@ export default {
     social: "Driving Social Change",
   },
   sustainabilityApproach: {
-    title: "Sustaining progress through <br />responsible growth",
+    title: "Sustaining progress through responsible growth",
     desc: "At First Mills, sustainability is embedded in how we grow, operate and create long-term value. As a company positioned at the heart of the Kingdom’s food system, our performance is inseparable from the health of natural resources, the strength of communities and the integrity of the systems that support responsible production.<br /><br />Through disciplined management, measurable targets and continuous improvement, we are strengthening resilience across our operations while contributing to national priorities and the broader transition toward a more sustainable and inclusive future.",
     p1: "At First Mills, sustainability begins with a fundamental understanding of our role in the Kingdom’s food system. As a leading milling and food company, we operate at the heart of national priorities related to food security, nutrition and economic development. Our responsibility extends beyond delivering products. It includes safeguarding resources, strengthening communities and operating with integrity.",
     p2: "Our approach is structured around three core pillars that reflect where we have the greatest impact: protecting the natural environment, creating social value and upholding responsible governance. These pillars provide a focused framework that aligns our operations with Saudi Vision 2030 and relevant international standards. They guide how we allocate resources, measure performance and shape long-term strategy.",
@@ -201,7 +201,7 @@ export default {
       p2: "During the year, we expanded internal and external training programs covering technical, behavioral, compliance and safety topics, while increasingly using digital and AI-enabled learning tools to personalize development pathways and enhance learning analytics.",
       p3: "We also maintained a disciplined approach to workforce composition, limiting reliance on non-employee workers to short-term or highly specialized requirements while core operations continue to be driven by a stable internal workforce. Recruitment and onboarding processes were further strengthened through psychometric assessments that evaluate both technical capability and cultural alignment, supporting consistently low turnover and high levels of employee engagement.",
       developementProgram: {
-        title: "Development Program –<br /> <b>Grow Together (2025)</b>",
+        title: "Development Program – <b>Grow Together (2025)</b>",
         subtitle: 'In 2025, we implemented a comprehensive development initiative titled the “Development Program – Grow Together". The program was structured into four modules, with one module delivered each quarter.',
         desc: "The initiative covered the entire company, including all plants and was designed to ensure organization-wide participation and alignment. It also included the engagement of C-suite executives, reinforcing leadership commitment to continuous development.<br /><br />In total, the program delivered over 7200 training hours throughout the year, reflecting our strong focus on employee growth, capability building and fostering a unified culture of collaboration and performance excellence."
       },

@@ -125,6 +125,10 @@ export default {
     },
   },
   map: {
+    mapKeys: {
+      plants: "Plants",
+      exportMarkets: "Export Markets",
+    },
     plants: {
       tabuk: {
         name: "Tabuk Plant",
@@ -261,7 +265,7 @@ export default {
         bullets: [
           "Our operations use advanced global milling and feed technologies that enhance efficiency, consistency and competitiveness.",
           "We deploy modern digital solutions to improve production planning, manufacturing efficiency and quality control, with +90% of our operations digitalized in 2025.",
-          "Our strong fixed-asset base and logistics network, valued at more than <strong class='text-fm-yellow'><i class='riyal-icon'></i> 820.3 mln</strong> support scale and dependable market reach.",
+          "Our strong fixed-asset base and logistics network, valued at more than <strong class='text-fm-yellow text-nowrap'><i class='riyal-icon'></i> 820.3 mln</strong> support scale and dependable market reach.",
           "We apply robust risk management practices aligned with leading global standards",
         ],
       },
@@ -299,7 +303,7 @@ export default {
             "25.9%",
             "<i class='riyal-icon'></i> (184.2) mln",
             "<i class='riyal-icon'></i> 93.3 mln",
-            "<i class='riyal-icon'></i>342.1 mln",
+            "<i class='riyal-icon'></i> 342.1 mln",
           ],
           cashBalance: "",
         },

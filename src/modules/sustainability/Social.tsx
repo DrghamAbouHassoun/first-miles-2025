@@ -22,9 +22,10 @@ import {
 import DevelopmentProgram from "./nature/DevelopmentProgram";
 import QualityNote from "./nature/QualityNote";
 import GroupOfSpikes from "../leadership/components/GroupOfSpikes";
-import Social1Image from "../../assets/images/sustainability/social/1.jpeg";
+// import Social1Image from "../../assets/images/sustainability/social/1.jpeg";
 import Social2Image from "../../assets/images/sustainability/social/2.jpeg";
 import PageTitle from "../common/components/typography/PageTitle";
+import ImageScaleAnimation from "../common/components/animations/ImageScaleAnimation";
 
 const BAKERY_IMAGES = [TraineesImg, GraduatesImg];
 
@@ -192,35 +193,6 @@ const Social = () => {
 
   return (
     <div>
-      {/* ── Opening ───────────────────────────────────────────────────────── */}
-      {/* <section className="py-16">
-        <Container>
-          <div className="">
-            <SlideTopAnimation>
-              <h1 className="text-3xl font-bold text-fm-green mb-4">
-                {t("tabs.social")}
-              </h1>
-            </SlideTopAnimation>
-            <SlideTopAnimation>
-              <h2 className="text-fm-yellow font-bold text-2xl mb-2">
-                {t("social.title")}
-              </h2>
-            </SlideTopAnimation>
-            <SlideTopAnimation>
-              <p className="font-bold mb-4 text-fm-yellow">
-                {t("social.subtitle")}
-              </p>
-            </SlideTopAnimation>
-            <FadeInAnimation>
-              <p
-                className="font-bold"
-                dangerouslySetInnerHTML={{ __html: t("social.desc") }}
-              />
-            </FadeInAnimation>
-          </div>
-        </Container>
-      </section> */}
-
       {/* ── Tabbed sections ───────────────────────────────────────────────── */}
       <section className="pb-16" ref={tabSectionRef}>
         <Container>
@@ -282,7 +254,7 @@ const Social = () => {
                           />
                         </FadeInAnimation>
                       </div>
-                      <div className="flex-1">
+                      {/* <div className="flex-1">
                         <div className="w-full h-full">
                           <img
                             src={Social1Image}
@@ -290,7 +262,7 @@ const Social = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
@@ -513,262 +485,294 @@ const Social = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="flex w-full h-auto bg-fm-green/80 p-8 gap-9">
+                        <div className="flex flex-col w-full h-auto bg-fm-green/80 p-8 gap-9">
                           {/* Workforce table */}
-                          <div>
-                            <p className="font-bold text-fm-yellow mb-3">
+                          <div className="w-full max-w-180">
+                            <p className="font-bold text-fm-yellow mb-3 w-full">
                               {t("social.diversity.table.title")}
                             </p>
-                            <div className="overflow-auto mb-6">
-                              <table className="workforce-table text-sm">
+                            <div className="overflow-auto mb-6 w-full">
+                              <table className="workforce-table text-sm w-full">
                                 <thead>
                                   <tr>
                                     <th
                                       rowSpan={2}
                                       className="border-b border-fm-yellow"
-                                    ></th>
+                                    >
+                                      <SlideTopAnimation />
+                                    </th>
                                     <th
                                       colSpan={3}
                                       className="border-b border-b-gray-400"
                                     >
-                                      {lang === "ar" ? "2024م" : "2024"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? "2024م" : "2024"}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th
                                       colSpan={3}
                                       className="text-fm-yellow border-b border-fm-yellow"
                                     >
-                                      {lang === "ar" ? "2025م" : "2025"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? "2025م" : "2025"}
+                                      </SlideTopAnimation>
                                     </th>
                                   </tr>
                                   <tr>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
-                                      {lang === "ar" ? (
-                                        <>
-                                          الموظفون <br /> السعوديون
-                                        </>
-                                      ) : (
-                                        <>
-                                          Saudi <br /> Employees
-                                        </>
-                                      )}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? (
+                                          <>
+                                            الموظفون <br /> السعوديون
+                                          </>
+                                        ) : (
+                                          <>
+                                            Saudi <br /> Employees
+                                          </>
+                                        )}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
-                                      {lang === "ar" ? (
-                                        <>
-                                          الموظفون غير <br />
-                                          السعوديون
-                                        </>
-                                      ) : (
-                                        <>
-                                          Non-Saudi <br />
-                                          Employees
-                                        </>
-                                      )}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? (
+                                          <>
+                                            الموظفون غير <br />
+                                            السعوديون
+                                          </>
+                                        ) : (
+                                          <>
+                                            Non-Saudi <br />
+                                            Employees
+                                          </>
+                                        )}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
-                                      {lang === "ar" ? "الإجمالي" : "Totoal"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? "الإجمالي" : "Totoal"}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
-                                      {lang === "ar" ? (
-                                        <>
-                                          الموظفون <br /> السعوديون
-                                        </>
-                                      ) : (
-                                        <>
-                                          Saudi <br /> Employees
-                                        </>
-                                      )}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? (
+                                          <>
+                                            الموظفون <br /> السعوديون
+                                          </>
+                                        ) : (
+                                          <>
+                                            Saudi <br /> Employees
+                                          </>
+                                        )}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
-                                      {lang === "ar" ? (
-                                        <>
-                                          الموظفون غير <br />
-                                          السعوديون
-                                        </>
-                                      ) : (
-                                        <>
-                                          Non-Saudi <br />
-                                          Employees
-                                        </>
-                                      )}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? (
+                                          <>
+                                            الموظفون غير <br />
+                                            السعوديون
+                                          </>
+                                        ) : (
+                                          <>
+                                            Non-Saudi <br />
+                                            Employees
+                                          </>
+                                        )}
+                                      </SlideTopAnimation>
                                     </th>
                                     <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
-                                      {lang === "ar" ? "الإجمالي" : "Totoal"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? "الإجمالي" : "Totoal"}
+                                      </SlideTopAnimation>
                                     </th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   <tr>
                                     <td className="font-bold border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "المركز الرئيسي للشركة الإجمالي"
-                                        : "Head Office Total"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "المركز الرئيسي للشركة الإجمالي"
+                                          : "Head Office Total"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      49
+                                      <SlideTopAnimation>49</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      19
+                                      <SlideTopAnimation>19</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      68
+                                      <SlideTopAnimation>68</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      53
+                                      <SlideTopAnimation>53</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      20
+                                      <SlideTopAnimation>20</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      73
+                                      <SlideTopAnimation>73</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "مصنع جدة*"
-                                        : "Jeddah Plant"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "مصنع جدة*"
+                                          : "Jeddah Plant"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      62
+                                      <SlideTopAnimation>62</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      164
+                                      <SlideTopAnimation>164</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      226
+                                      <SlideTopAnimation>226</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      59
+                                      <SlideTopAnimation>59</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      145
+                                      <SlideTopAnimation>145</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      204
+                                      <SlideTopAnimation>204</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "مصنع القصيم"
-                                        : "Al-Qassim Plant"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "مصنع القصيم"
+                                          : "Al-Qassim Plant"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      44
+                                      <SlideTopAnimation>44</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      73
+                                      <SlideTopAnimation>73</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      117
+                                      <SlideTopAnimation>117</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      46
+                                      <SlideTopAnimation>46</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      75
+                                      <SlideTopAnimation>75</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      121
+                                      <SlideTopAnimation>121</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "مصنع تبوك"
-                                        : "Tabuk Plant"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "مصنع تبوك"
+                                          : "Tabuk Plant"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
-                                      30
+                                      <SlideTopAnimation>30</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
-                                      59
+                                      <SlideTopAnimation>59</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
-                                      89
+                                      <SlideTopAnimation>89</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      26
+                                      <SlideTopAnimation>26</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      50
+                                      <SlideTopAnimation>50</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      76
+                                      <SlideTopAnimation>76</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "مصنع الأحساء"
-                                        : "Al-Asha Plant"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "مصنع الأحساء"
+                                          : "Al-Asha Plant"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      34
+                                      <SlideTopAnimation>34</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      67
+                                      <SlideTopAnimation>67</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      101
+                                      <SlideTopAnimation>101</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      29
+                                      <SlideTopAnimation>29</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      58
+                                      <SlideTopAnimation>58</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      87
+                                      <SlideTopAnimation>87</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400">
-                                      {lang === "ar"
-                                        ? "المصنع الإجمالي"
-                                        : "Plants total"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar"
+                                          ? "المصنع الإجمالي"
+                                          : "Plants total"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      170
+                                      <SlideTopAnimation>170</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      363
+                                      <SlideTopAnimation>363</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      533
+                                      <SlideTopAnimation>533</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      160
+                                      <SlideTopAnimation>160</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      328
+                                      <SlideTopAnimation>328</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      488
+                                      <SlideTopAnimation>488</SlideTopAnimation>
                                     </td>
                                   </tr>
                                   <tr>
                                     <td className="border-b border-gray-400 font-bold">
-                                      {lang === "ar" ? "الإجمالي" : "Total"}
+                                      <SlideTopAnimation>
+                                        {lang === "ar" ? "الإجمالي" : "Total"}
+                                      </SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      219
+                                      <SlideTopAnimation>219</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      382
+                                      <SlideTopAnimation>382</SlideTopAnimation>
                                     </td>
                                     <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      601
+                                      <SlideTopAnimation>601</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      213
+                                      <SlideTopAnimation>213</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      348
+                                      <SlideTopAnimation>348</SlideTopAnimation>
                                     </td>
                                     <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
-                                      561
+                                      <SlideTopAnimation>561</SlideTopAnimation>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -780,7 +784,7 @@ const Social = () => {
                           </div>
                           <div
                             dir={isAr ? "rtl" : "ltr"}
-                            className="flex-1 w-full"
+                            className="flex-1 w-full max-w-180"
                           >
                             <p className="font-bold text-fm-yellow mb-4">
                               {t("social.diversity.chart.title")}
@@ -950,155 +954,195 @@ const Social = () => {
                         <table className="w-full text-sm">
                           <thead>
                             <tr className="border-b border-b-fm-yellow">
-                              <th></th>
-                              <th
-                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
-                              >
-                                {lang === "ar" ? (
-                                  <>
-                                    فئة نطاقات
-                                    <br />
-                                    2024م
-                                  </>
-                                ) : (
-                                  <>
-                                    Nitaqat
-                                    <br />
-                                    Category 2024
-                                  </>
-                                )}
+                              <th>
+                                <SlideTopAnimation />
                               </th>
                               <th
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
-                                {lang === "ar" ? (
-                                  <>
-                                    التوطين
-                                    <br />
-                                    2024م
-                                  </>
-                                ) : (
-                                  <>
-                                    Saudization
-                                    <br />
-                                    2024
-                                  </>
-                                )}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? (
+                                    <>
+                                      فئة نطاقات
+                                      <br />
+                                      2024م
+                                    </>
+                                  ) : (
+                                    <>
+                                      Nitaqat
+                                      <br />
+                                      Category 2024
+                                    </>
+                                  )}
+                                </SlideTopAnimation>
                               </th>
                               <th
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
-                                {lang === "ar" ? (
-                                  <>
-                                    فئة نطاقات
-                                    <br />
-                                    2025م
-                                  </>
-                                ) : (
-                                  <>
-                                    Nitaqat
-                                    <br />
-                                    Category 2025
-                                  </>
-                                )}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? (
+                                    <>
+                                      التوطين
+                                      <br />
+                                      2024م
+                                    </>
+                                  ) : (
+                                    <>
+                                      Saudization
+                                      <br />
+                                      2024
+                                    </>
+                                  )}
+                                </SlideTopAnimation>
                               </th>
                               <th
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
                               >
-                                {lang === "ar" ? (
-                                  <>
-                                    نسبة التوطين
-                                    <br />
-                                    2025م
-                                  </>
-                                ) : (
-                                  <>
-                                    Saudization
-                                    <br />
-                                    2025
-                                  </>
-                                )}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? (
+                                    <>
+                                      فئة نطاقات
+                                      <br />
+                                      2025م
+                                    </>
+                                  ) : (
+                                    <>
+                                      Nitaqat
+                                      <br />
+                                      Category 2025
+                                    </>
+                                  )}
+                                </SlideTopAnimation>
+                              </th>
+                              <th
+                                className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-fm-yellow`}
+                              >
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? (
+                                    <>
+                                      نسبة التوطين
+                                      <br />
+                                      2025م
+                                    </>
+                                  ) : (
+                                    <>
+                                      Saudization
+                                      <br />
+                                      2025
+                                    </>
+                                  )}
+                                </SlideTopAnimation>
                               </th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td className="border-b border-b-gray-400">
-                                {lang === "ar"
-                                  ? "المركز الرئيسي للشركة"
-                                  : "Head Office"}
+                                <SlideTopAnimation>
+                                  {lang === "ar"
+                                    ? "المركز الرئيسي للشركة"
+                                    : "Head Office"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "بلاتيني" : "Platinum"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "بلاتيني" : "Platinum"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%42" : "42%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%42" : "42%"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "بلاتيني" : "Platinum"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "بلاتيني" : "Platinum"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%50" : "50%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%50" : "50%"}
+                                </SlideTopAnimation>
                               </td>
                             </tr>
                             <tr>
                               <td className="border-b border-b-gray-400">
-                                {lang === "ar" ? "المصانع" : "Plants"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "المصانع" : "Plants"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%37" : "37%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%37" : "37%"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%38" : "38%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%38" : "38%"}
+                                </SlideTopAnimation>
                               </td>
                             </tr>
                             <tr>
                               <td className="font-bold border-b border-b-gray-400">
-                                {lang === "ar"
-                                  ? "متوسط نسبة التوطين"
-                                  : "Average Saudization Percentage"}
+                                <SlideTopAnimation>
+                                  {lang === "ar"
+                                    ? "متوسط نسبة التوطين"
+                                    : "Average Saudization Percentage"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%39.5" : "39.5%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%39.5" : "39.5%"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "أخضر مرتفع" : "High Green"}
+                                </SlideTopAnimation>
                               </td>
                               <td
                                 className={`font-bold bg-fm-yellow-100 ${lang === "ar" ? "text-start" : "text-end"} p-1 border-b border-b-gray-400`}
                               >
-                                {lang === "ar" ? "%43.7" : "43.7%"}
+                                <SlideTopAnimation>
+                                  {lang === "ar" ? "%43.7" : "43.7%"}
+                                </SlideTopAnimation>
                               </td>
                             </tr>
                           </tbody>
@@ -1141,69 +1185,81 @@ const Social = () => {
                             <table className="w-full text-sm">
                               <thead>
                                 <tr className="border-b border-fm-yellow">
-                                  <th className="text-bold p-2 text-fm-yellow text-start"></th>
-                                  <th
-                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                  >
-                                    {lang === "ar" ? "2024م" : "2024"}
+                                  <th className="text-bold p-2 text-fm-yellow text-start">
+                                    <SlideTopAnimation />
                                   </th>
                                   <th
                                     className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
                                   >
-                                    {lang === "ar" ? "2025م" : "2025"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar" ? "2024م" : "2024"}
+                                    </SlideTopAnimation>
+                                  </th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2 w-40`}
+                                  >
+                                    <SlideTopAnimation>
+                                      {lang === "ar" ? "2025م" : "2025"}
+                                    </SlideTopAnimation>
                                   </th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr className="border-b border-gray-300">
                                   <td className="p-2">
-                                    {lang === "ar"
-                                      ? "الدورات التدريبية"
-                                      : "Training sessions"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar"
+                                        ? "الدورات التدريبية"
+                                        : "Training sessions"}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    68
+                                    <SlideTopAnimation>68</SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    11
+                                    <SlideTopAnimation>11</SlideTopAnimation>
                                   </td>
                                 </tr>
                                 <tr className="border-b border-gray-300">
                                   <td className="p-2">
-                                    {lang === "ar"
-                                      ? "ساعات التدريب"
-                                      : "Training hours"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar"
+                                        ? "ساعات التدريب"
+                                        : "Training hours"}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    37
+                                    <SlideTopAnimation>37</SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    272
+                                    <SlideTopAnimation>272</SlideTopAnimation>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td className="p-2">
-                                    {lang === "ar"
-                                      ? "ساعات التشغيل الآمنة"
-                                      : "Safe operation hours"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar"
+                                        ? "ساعات التشغيل الآمنة"
+                                        : "Safe operation hours"}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    1,440,000
+                                    <SlideTopAnimation>1,440,000</SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    1,200,278
+                                    <SlideTopAnimation>1,200,278</SlideTopAnimation>
                                   </td>
                                 </tr>
                               </tbody>
@@ -1220,52 +1276,62 @@ const Social = () => {
                             <table className="w-full text-sm">
                               <thead>
                                 <tr className="border-b border-fm-yellow">
-                                  <th className="text-bold p-2 text-fm-yellow text-start"></th>
-                                  <th
-                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
-                                  >
-                                    {lang === "ar" ? "2024م" : "2024"}
+                                  <th className="text-bold p-2 text-fm-yellow text-start">
+                                    <SlideTopAnimation />
                                   </th>
                                   <th
                                     className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2`}
                                   >
-                                    {lang === "ar" ? "2025م" : "2025"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar" ? "2024م" : "2024"}
+                                    </SlideTopAnimation>
+                                  </th>
+                                  <th
+                                    className={`${lang === "ar" ? "text-start" : "text-end"} font-bold p-2 w-40`}
+                                  >
+                                    <SlideTopAnimation>
+                                      {lang === "ar" ? "2025م" : "2025"}
+                                    </SlideTopAnimation>
                                   </th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr className="border-b border-gray-300">
                                   <td className="p-2">
-                                    {lang === "ar"
-                                      ? "الحوادث البسيطة"
-                                      : "Minor incidents"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar"
+                                        ? "الحوادث البسيطة"
+                                        : "Minor incidents"}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    9
+                                    <SlideTopAnimation>9</SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    6
+                                    <SlideTopAnimation>6</SlideTopAnimation>
                                   </td>
                                 </tr>
                                 <tr className="border-b border-gray-300">
                                   <td className="p-2">
-                                    {lang === "ar"
-                                      ? "الإصابات البسيطة"
-                                      : "Major quality incidents"}
+                                    <SlideTopAnimation>
+                                      {lang === "ar"
+                                        ? "الإصابات البسيطة"
+                                        : "Major quality incidents"}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    0
+                                    <SlideTopAnimation>0</SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    0
+                                    <SlideTopAnimation>0</SlideTopAnimation>
                                   </td>
                                 </tr>
                               </tbody>
@@ -1292,11 +1358,11 @@ const Social = () => {
                     </FadeInAnimation>
                   </div>
 
-                  <div className="w-full my-8">
-                    <img
+                  <div className="w-full my-8 h-120 overflow-hidden">
+                    <ImageScaleAnimation
                       src={Social2Image}
                       alt=""
-                      className="w-full h-auto object-contain"
+                      className="w-full h-full object-cover object-top hover:scale-110 transition-all duration-700"
                     />
                   </div>
                   {/* 5b. Well-being and Employee Experience */}
@@ -1347,34 +1413,6 @@ const Social = () => {
                     desc2={t("social.communities.ensuring.desc")}
                   />
 
-                  {/* 6a. Communities intro */}
-                  {/* <FadeInAnimation className="mb-8 mt-6">
-                    <SlideTopAnimation>
-                      <h2 className="text-fm-yellow font-bold text-3xl mb-4">
-                        {t("social.communities.title")}
-                      </h2>
-                    </SlideTopAnimation>
-                    <SlideTopAnimation>
-                      <h3 className="font-bold mb-3">
-                        {t("social.communities.support.title")}
-                      </h3>
-                    </SlideTopAnimation>
-                  </FadeInAnimation> */}
-
-                  {/* 6b. Ensuring Excellence */}
-                  {/* <div className="mb-8">
-                    <FadeInAnimation>
-                      <h3 className="font-bold text-lg mb-3">
-                        {t("social.communities.ensuring.title")}
-                      </h3>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: t("social.communities.ensuring.desc"),
-                        }}
-                      />
-                    </FadeInAnimation>
-                  </div> */}
-
                   {/* 6c. Food Quality & Safety */}
                   <div className="mb-8 mt-8">
                     <SlideTopAnimation>
@@ -1394,22 +1432,30 @@ const Social = () => {
                           <thead>
                             <tr className="border-b border-fm-yellow">
                               <th className="p-2 text-start font-bold">
-                                {qualityTitle}
+                                <SlideTopAnimation>
+                                  {qualityTitle}
+                                </SlideTopAnimation>
                               </th>
                               <th
                                 className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
                               >
-                                {isAr ? "2023م" : "2023"}
+                                <SlideTopAnimation>
+                                  {isAr ? "2023م" : "2023"}
+                                </SlideTopAnimation>
                               </th>
                               <th
                                 className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
                               >
-                                {isAr ? "2024م" : "2024"}
+                                <SlideTopAnimation>
+                                  {isAr ? "2024م" : "2024"}
+                                </SlideTopAnimation>
                               </th>
                               <th
                                 className={`p-2 font-bold ${isAr ? "text-start" : "text-end"}`}
                               >
-                                {isAr ? "2025م" : "2025"}
+                                <SlideTopAnimation>
+                                  {isAr ? "2025م" : "2025"}
+                                </SlideTopAnimation>
                               </th>
                             </tr>
                           </thead>
@@ -1424,7 +1470,9 @@ const Social = () => {
                                     colSpan={4}
                                     className="p-2 font-bold text-fm-green"
                                   >
-                                    {row.metric}
+                                    <SlideTopAnimation>
+                                      {row.metric}
+                                    </SlideTopAnimation>
                                   </td>
                                 </tr>
                               ) : (
@@ -1432,21 +1480,31 @@ const Social = () => {
                                   key={i}
                                   className="border-b border-gray-200"
                                 >
-                                  <td className="p-2">{row.metric}</td>
-                                  <td
-                                    className={`p-2 ${isAr ? "text-start" : "text-end"}`}
-                                  >
-                                    {row.val23}
+                                  <td className="p-2">
+                                    <SlideTopAnimation>
+                                      {row.metric}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`p-2 ${isAr ? "text-start" : "text-end"}`}
                                   >
-                                    {row.val24}
+                                    <SlideTopAnimation>
+                                      {row.val23}
+                                    </SlideTopAnimation>
+                                  </td>
+                                  <td
+                                    className={`p-2 ${isAr ? "text-start" : "text-end"}`}
+                                  >
+                                    <SlideTopAnimation>
+                                      {row.val24}
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`p-2 font-bold bg-fm-yellow-100 ${isAr ? "text-start" : "text-end"}`}
                                   >
-                                    {row.val25}
+                                    <SlideTopAnimation>
+                                      {row.val25}
+                                    </SlideTopAnimation>
                                   </td>
                                 </tr>
                               ),

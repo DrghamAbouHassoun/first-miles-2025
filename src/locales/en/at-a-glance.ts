@@ -43,7 +43,7 @@ export default {
         unit: "tons",
       },
       dailyWheatMilling: {
-        label: "Daily Wheat Milling Design Capacity:",
+        label: "Daily Wheat Milling Design Capacity",
         value: "5150",
         unit: "tons",
       },

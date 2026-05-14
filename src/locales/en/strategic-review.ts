@@ -72,7 +72,7 @@ export default {
           id: "stackholders",
           title: "Shareholders and Investors",
           description:
-            "The Company is committed to protecting its Shareholders’ rights, guaranteeing fairness and transparency in the provision of information and strengthening relations through diversified distributions. During 2025G, First Milling Company distributed dividends totalling <i class='riyal-icon'></i> 173,880,000 for H2 2024 and H1 2025. The Company also adheres to financial regulations, according to the instructions governing First Milling Company’s Investor Relations (IR) Department operations, which is dedicated to eciently addressing Shareholders’ inquiries.",
+            "The Company is committed to protecting its Shareholders’ rights, guaranteeing fairness and transparency in the provision of information and strengthening relations through diversified distributions. During 2025G, First Milling Company distributed dividends totalling <span class='text-nowrap'><i class='riyal-icon'></i> 173,880,000</span> for H2 2024 and H1 2025. The Company also adheres to financial regulations, according to the instructions governing First Milling Company’s Investor Relations (IR) Department operations, which is dedicated to eciently addressing Shareholders’ inquiries.",
         },
         {
           id: "employees",
@@ -210,8 +210,7 @@ export default {
         },
         {
           large: "893,520",
-          note:
-            "quality tests conducted, compliant with the highest international standards and ISO",
+          note: "quality tests conducted, compliant with the highest international standards and ISO",
         },
       ],
     },
@@ -431,30 +430,73 @@ export default {
   },
   technologyInnovationContent: {
     title: "Driving Business Value through Innovative Technologies",
-    description: "Technology and innovation remain essential enablers of First Mills’ corporate strategy. The Company was built as a digital-first operation, designed to reach customers more effectively and deliver an integrated, seamless experience across every touchpoint. This vision supports its ecosystem-based approach, making certain that technology strengthens value creation for customers, partners, employees and Stakeholders and enabling scale, efficiency and long-term competitiveness.",
+    description:
+      "Technology and innovation remain essential enablers of First Mills’ corporate strategy. The Company was built as a digital-first operation, designed to reach customers more effectively and deliver an integrated, seamless experience across every touchpoint. This vision supports its ecosystem-based approach, making certain that technology strengthens value creation for customers, partners, employees and Stakeholders and enabling scale, efficiency and long-term competitiveness.",
     subtitle: "Technology & Innovation Vision",
     p1: "To be the First Mills’ business capability engine, powering solutions through connection, transformation and innovation.",
     p2: "Technology and innovation are core enablers of First Mills’ corporate strategy. From its inception, the Company has been designed as a digital-first organization, enabling broader market reach and a seamless, integrated customer experience. This approach supports First Mills’ ecosystem-based business model and ensures technology consistently drives value creation for customers, partners, employees and Stakeholders.",
     pillarsSectionTitle: "Technology and innovation strategy",
-    pillarsSectionDescription: "First Mills’ technology and innovation strategy reflects a commitment to using advanced tools and digital capabilities to modernize operations and support the Company’s ambition to build a fully integrated, future-ready ecosystem. The strategy is structured around four transformation pillars.",
-    pillarsSectionSubtitle: "Together, these pillars drive scalability, elevate customer experience and embed operational excellence across the organization.",
+    pillarsSectionDescription:
+      "First Mills’ technology and innovation strategy reflects a commitment to using advanced tools and digital capabilities to modernize operations and support the Company’s ambition to build a fully integrated, future-ready ecosystem. The strategy is structured around four transformation pillars.",
+    pillarsSectionSubtitle:
+      "Together, these pillars drive scalability, elevate customer experience and embed operational excellence across the organization.",
     pillars: [
       {
         id: "pillar1",
-        content: "The Move to Cloud initiative represents the next generation of First Mills’ technology infrastructure. It establishes a secure, scalable and flexible foundation that supports current business requirements while preparing the organization for future growth. By consolidating applications and migrating core systems to an in-country private cloud environment, this initiative enhances performance, strengthens cybersecurity, improves cost efficiency and equips IT teams with modern tools to better support evolving business needs.",
+        content:
+          "The Move to Cloud initiative represents the next generation of First Mills’ technology infrastructure. It establishes a secure, scalable and flexible foundation that supports current business requirements while preparing the organization for future growth. By consolidating applications and migrating core systems to an in-country private cloud environment, this initiative enhances performance, strengthens cybersecurity, improves cost efficiency and equips IT teams with modern tools to better support evolving business needs.",
       },
       {
         id: "pillar2",
-        content: "RISE with SAP and SAP SuccessFactors represent one of the most significant transformation programs in First Mills’ history. These platforms harmonize processes, automate manual activities, improve data accuracy and accelerate digital deployment across core business functions including finance, human resources, operations and the supply chain. Together, they provide a unified digital backbone that enhances efficiency, enables faster decision-making and differentiates First Mills’ operational capabilities in the market.",
+        content:
+          "RISE with SAP and SAP SuccessFactors represent one of the most significant transformation programs in First Mills’ history. These platforms harmonize processes, automate manual activities, improve data accuracy and accelerate digital deployment across core business functions including finance, human resources, operations and the supply chain. Together, they provide a unified digital backbone that enhances efficiency, enables faster decision-making and differentiates First Mills’ operational capabilities in the market.",
       },
       {
         id: "pillar3",
-        content: "Moving IT Forward defines First Mills’ IT operating model and provides a standardized organizational framework for IT governance, policies and processes. This pillar guarantees consistency in how technology services are delivered, managed and optimized across the organization. Its success depends on fostering a unified IT culture that follows shared standards, adheres to best practices and supports continuous improvement in service delivery and operational effectiveness.",
+        content:
+          "Moving IT Forward defines First Mills’ IT operating model and provides a standardized organizational framework for IT governance, policies and processes. This pillar guarantees consistency in how technology services are delivered, managed and optimized across the organization. Its success depends on fostering a unified IT culture that follows shared standards, adheres to best practices and supports continuous improvement in service delivery and operational effectiveness.",
       },
       {
         id: "pillar4",
-        content: "The AI-Powered Virtual Workforce establishes the foundation for an intelligent, adaptive and increasingly automated enterprise. AI agents enable advanced analytics, predictive insight and the creation of a digital twin of First Mills’ operations. This transformation supports a model of working that delivers more outcomes faster, more intelligently and with reduced reliance on manual intervention, while improving accuracy, consistency and responsiveness across the organization."
-      }
-    ]
-  }
+        content:
+          "The AI-Powered Virtual Workforce establishes the foundation for an intelligent, adaptive and increasingly automated enterprise. AI agents enable advanced analytics, predictive insight and the creation of a digital twin of First Mills’ operations. This transformation supports a model of working that delivers more outcomes faster, more intelligently and with reduced reliance on manual intervention, while improving accuracy, consistency and responsiveness across the organization.",
+      },
+    ],
+    section2: {
+      title:
+        "<span class='text-fm-yellow'>Achieving more, faster and smarter</span><br /> through existing resources.",
+      divs: [
+        {
+          title: "Driving Progress Throughout the Year",
+          paragraphs: [
+            "In 2025, First Mills achieved major milestones that strengthened its digital infrastructure and advanced its transformation agenda. The Company completed the rollout of a highly secure and resilient IT environment across all locations, ensuring operational continuity and stronger protection against evolving threats. It deployed RISE with SAP and SAP SuccessFactors, automating manual processes and improving data reliability across finance, HR, operations and supply chain activities.",
+            "Advanced analytics dashboards and performance indicators were introduced to enhance visibility, support data-driven decision-making and optimize production planning. First Mills also migrated its core systems to an in-country private cloud environment, improving scalability, enhancing cybersecurity and reducing long-term operating costs.",
+          ],
+        },
+        {
+          title: "Cybersecurity and Data Privacy",
+          paragraphs: [
+            "First Mills maintains a firm commitment to safeguarding its digital environment and ensuring the confidentiality, integrity and availability of its information assets. Its cybersecurity vision is centered on enabling a secure and reliable technology foundation that supports operational performance, strategic growth and long-term resilience.",
+            "The Company’s cybersecurity program is built around four world-class pillars: Cybersecurity Governance, Cybersecurity Defense, Cybersecurity Resilience and Third-Party and Cloud Computing Cybersecurity. These pillars guide all security activities and are fully aligned with requirements issued by the National Cybersecurity Authority, including ECC-2:2024 Essential Cybersecurity Controls, as well as other relevant regulatory and legal obligations. This structured framework enables First Mills to address evolving threats with discipline and clarity.",
+            "Throughout the year, First Mills continued strengthening its defenses by advancing policies, controls and monitoring capabilities across its technology landscape. The cybersecurity team remained focused on protecting the organization from emerging risks, elevating compliance maturity and guaranteeing all systems and processes adhere to the highest security standards.",
+          ],
+        },
+      ],
+    },
+    section3: {
+      title: "Technology Achievements in 2025",
+      subtitle:
+        "During 2025, First Mills achieved significant milestones that strengthened its digital foundation and advanced its transformation agenda.",
+      cards: [
+        "Successfully implemented a highly secure and resilient IT infrastructure across all locations, maintaining operational continuity and robust protection against evolving cyber threats.",
+        "Introduced advanced analytics dashboards and key performance indicators to improve visibility into production performance, support data-driven decision-making, predict market trends and optimize resource allocation.",
+        "Deployed RISE with SAP and SAP SuccessFactors to automate manual processes, enhance data reliability and improve efficiency across core business functions.",
+        "Migrated core IT systems to an in-country private cloud environment, improving scalability, enhancing security and reducing long-term operating costs.",
+      ],
+      outro: {
+        title: "Cybersecurity and Data Privacy Vision",
+        desc: "To enable First Mills to reach a secure and reliable technology environment able to sustain and grow.",
+      },
+    },
+  },
 };

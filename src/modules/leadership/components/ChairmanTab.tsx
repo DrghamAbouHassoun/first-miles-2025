@@ -88,7 +88,7 @@ const ChairmanTab = () => {
         </div>
 
         {/* Second half of sections with wheat decoration */}
-        <div className="relative bg-white overflow-hidden">
+        <div className="relative bg-white overflow-hidden pb-16">
           <Container className=" z-10">
             <div className="  space-y-3 mb-3 z-10">
               {secondHalf.map(
@@ -121,7 +121,6 @@ const ChairmanTab = () => {
             <GroupOfSpikes />
           </div>
         </div>
-        <div className="w-full bg-fm-green h-16"></div>
       </div>
     </>
   );

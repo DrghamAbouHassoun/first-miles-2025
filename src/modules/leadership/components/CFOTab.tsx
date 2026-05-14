@@ -155,7 +155,7 @@ const CFOTab = () => {
           />
         </Container>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden pb-16">
           <Container>
             <div className="py-16">
               {/* Tagline */}

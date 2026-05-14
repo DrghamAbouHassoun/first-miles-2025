@@ -72,10 +72,10 @@ const CFOBarChart = ({ labels }: { labels: CFOBarChartLabels }) => {
       {/* Title */}
       <p className="font-bold text-base text-fm-green mb-4">
         {labels.title}{" "}
-        (<span
+        <span
           className="font-normal text-sm text-fm-gray-300"
-          dangerouslySetInnerHTML={{ __html: labels.unit }}
-        ></span>)
+          dangerouslySetInnerHTML={{ __html: `(${labels.unit})` }}
+        ></span>
       </p>
       {/* <div className="h-1 mt-1 mb-5 w-full bg-[linear-gradient(90deg,#fcb44a_0%,#FFF5CC_20%,#FFFFFF_100%)]" /> */}
 

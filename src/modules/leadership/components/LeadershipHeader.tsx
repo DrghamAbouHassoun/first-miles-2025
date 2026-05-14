@@ -17,6 +17,7 @@ interface LeadershipHeaderProps {
   subtitle?: string;
   quotation?: string;
   isCEOorChairman?: boolean;
+  isCEO?: boolean;
 }
 
 const LeadershipHeader = ({
@@ -29,6 +30,7 @@ const LeadershipHeader = ({
   subtitle,
   quotation,
   isCEOorChairman = false,
+  isCEO = false,
 }: LeadershipHeaderProps) => {
   // const { width: screenWidth } = useWindowDimensions();
   const { lang } = useLocale();
@@ -45,7 +47,7 @@ const LeadershipHeader = ({
     useInView<HTMLDivElement>({});
 
   return (
-    <div className="w-full bg-fm-green text-white flex flex-col lg:items-center lg:flex-row overflow-x-clip relative min-h-100 pb-4 lg:pb-0 lg:max-h-40">
+    <div className="w-full bg-fm-green text-white flex flex-col-reverse lg:items-center lg:flex-row overflow-x-clip relative min-h-100 lg:max-h-40">
       {/* <img
         src={TwoLeavesVector}
         alt={SITE_NAME}
@@ -81,7 +83,7 @@ const LeadershipHeader = ({
           <img
             src={imageUrl}
             alt={`${title} | ${SITE_NAME}`}
-            className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? "lg:-translate-y-25.5" : "lg:-translate-y-23"} lg:translate-x-1`}
+            className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? isCEO ? "lg:-translate-y-24.5" : "lg:-translate-y-25.5" : "lg:-translate-y-23"} lg:translate-x-1`}
           />
         </div>
       </div>

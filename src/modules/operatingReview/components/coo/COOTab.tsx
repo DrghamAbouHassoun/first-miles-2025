@@ -11,16 +11,14 @@ import Service2Icon from "../../../../assets/icons/coo/services/manufacturing.sv
 import Service3Icon from "../../../../assets/icons/coo/services/storage.svg";
 import Service4Icon from "../../../../assets/icons/coo/services/retail.svg";
 import PopupAnimation from "../../../common/components/animations/PopupAnimation";
-import Timeline from "./Timeline";
 import ProductsSection from "./ProductsSection";
 import MillingSnapshotSection from "./MillingSnapshotSection";
 import ProductRevnewSection from "./ProductRevnewSection";
 import CFOQualitySection from "../../../leadership/components/CFOQualitySection";
 import { useContext } from "react";
 import { LangContext } from "../../../common/contexts/LangProvider";
-import TimelineDesktopEn from "./TimelineDesktopEn";
-import TimeLineDesktopAr from "./TimeLineDesktopAr";
 import PageTitle from "../../../common/components/typography/PageTitle";
+import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
 
 const services = [
   {
@@ -135,12 +133,12 @@ const COOTab = () => {
             </div>
           </Container>
         </section>
-        <section className="w-full relative">
-          <div className="absolute w-full h-full top-0 left-0 -z-10">
-            <img
+        <section className="w-full relative group">
+          <div className="absolute w-full h-full top-0 left-0 -z-10 overflow-hidden">
+            <ImageScaleAnimation
               src={ServiceBg}
               alt={`COO`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
             />
           </div>
           <Container>
@@ -172,14 +170,14 @@ const COOTab = () => {
             </Container>
           </div>
         </section>
-        <section className="bg-fm-yellow-200">
+        {/* <section className="bg-fm-yellow-200">
           <div className="w-full hidden md:block">
             {lang === "ar" ? <TimeLineDesktopAr /> : <TimelineDesktopEn />}
           </div>
           <div className="w-full block md:hidden">
             <Timeline />
           </div>
-        </section>
+        </section> */}
         <ProductsSection />
         <MillingSnapshotSection />
         <ProductRevnewSection />

@@ -61,6 +61,7 @@ export default {
         "Our People",
         "Our Communities",
       ],
+      hiddenSectionIndices: [6, 7],
     },
     {
       title: "Corporate Governance",
@@ -68,7 +69,14 @@ export default {
     },
     {
       title: "Financial Statements",
-      sections: [],
+      sections: [
+        "Independent Auditor's Report",
+        "Consolidated Statement of Financial Position",
+        "Consolidated Statement of Profit or Loss and Other Comprehensive Income",
+        "Consolidated Statement of Changes in Equity",
+        "Consolidated Statement of Cash Flows",
+        "Notes to the Consolidated Financial Statements",
+      ],
     },
   ],
 };

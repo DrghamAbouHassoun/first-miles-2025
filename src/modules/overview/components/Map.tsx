@@ -7,6 +7,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import CounterAnimation from "../../common/components/animations/CounterAnimation";
+import Container from "../../common/components/Container/Container";
 
 const SVG_WIDTH = 1011;
 const SVG_HEIGHT = 937;
@@ -127,15 +128,15 @@ type RegionKey = keyof typeof regionColors;
 
 const RevenueContributionChart = () => {
   const { t } = useTranslation("overview");
-  // const { lang } = useContext(LangContext);
+  const { lang } = useContext(LangContext);
   let cumulativeLength = 0;
 
   const regionKeys = Object.keys(regionColors) as RegionKey[];
 
   return (
-    <div className="w-full max-w-160">
+    <div className="w-full max-w-200">
       <div className="flex items-center flex-col md:flex-row gap-8 md:gap-4">
-        <div className="relative shrink-0 h-64 w-64">
+        <div className="relative shrink-0 h-72 w-72">
           <svg
             viewBox="0 0 140 140"
             className="h-full w-full drop-shadow-[0_12px_12px_rgba(0,0,0,0.55)]"
@@ -191,7 +192,7 @@ const RevenueContributionChart = () => {
                     strokeWidth="0.4"
                     paintOrder="stroke"
                   >
-                    {value}%
+                    {lang === "ar" ? `%${value}` : `${value}%`}
                   </text>
                 </g>
               );
@@ -259,19 +260,16 @@ const Map = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activeCountryIndex, setActiveCountryIndex] =
     useState<CountriesType>("uae");
-  const [activeType, setActiveType] = useState<"plant" | "country">("plant");
 
   const overviewLocale = translations[lang as "en" | "ar"].overview;
   const marketsData = overviewLocale.geographicPresenceContent.markets;
 
   const handleHover = (index: number) => {
     setActiveIndex(index);
-    setActiveType("plant");
   };
 
   const handleCountryHover = (id: CountriesType) => {
     setActiveCountryIndex(id);
-    setActiveType("country");
   };
 
   const activePlant = plantConfigs[activeIndex];
@@ -281,11 +279,34 @@ const Map = () => {
       dir={isRtl ? "rtl" : "ltr"}
       className="w-full bg-fm-green py-16 lg:min-h-250"
     >
+      <Container>
+        <div className="flex items-center flex-row-reverse gap-4 py-8">
+          <div className="flex items-center gap-2 text-white">
+            <div className="w-8 h-8 rounded-full bg-fm-yellow flex justify-center items-center p-1">
+              <img
+                src={PlantVector}
+                alt=""
+                className="w-5 h-5 object-contain"
+              />
+            </div>
+            <span>{t("map.mapKeys.plants")}</span>
+          </div>
+          <div className="flex items-center gap-2 text-white">
+            <img
+              src={CountryVector}
+              alt=""
+              className="w-8 h-8 object-contain"
+            />
+            <span>{t("map.mapKeys.exportMarkets")}</span>
+          </div>
+        </div>
+      </Container>
       <div className="relative mx-auto flex max-w-352.5 flex-col-reverse gap-8 px-4 sm:px-6 lg:flex-row">
         {/* Sidebar */}
         <div className="flex-1 max-w-130 shrink-0 text-white">
-          <div className="w-full h-full flex items-center justify-center ">
-            {activeType === "country" ? (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+            {/* Country panel */}
+            <div className="min-h-30 w-full flex justify-center items-center">
               <div
                 key={`country-${activeCountryIndex}`}
                 className="w-full max-w-70 animation-slide-top-50 active bg-fm-yellow-100 p-4 rounded-xl"
@@ -300,12 +321,14 @@ const Map = () => {
                   />
                 </p>
               </div>
-            ) : (
+            </div>
+            {/* Plant panel */}
+            <div className="min-h-120 w-full flex justify-center items-start">
               <div
                 className="w-full max-w-70 animation-slide-top-50 active"
                 key={`item-${activePlant.id}`}
               >
-                <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 mb-24 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
+                <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
                   <h3 className="text-fm-yellow font-bold text-lg mb-5 border-b-2 border-fm-gray-100 pb-2 text-center">
                     {t(`map.plants.${activePlant.id}.name`)}
                   </h3>
@@ -359,7 +382,7 @@ const Map = () => {
                   </ul>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
 
@@ -373,18 +396,38 @@ const Map = () => {
                 className="w-full h-auto"
               />
               {/* Overlay markers */}
-              {countryConfigs.map((plant) => {
-                const left = (plant.cx / SVG_WIDTH) * 100;
-                const top = (plant.cy / SVG_HEIGHT) * 100;
-                // const isActive = index === activeIndex;
+              {countryConfigs.map((country) => {
+                const left = (country.cx / SVG_WIDTH) * 100;
+                const top = (country.cy / SVG_HEIGHT) * 100;
+                const isActive = country.id === activeCountryIndex;
 
                 return (
                   <div
-                    key={plant.id}
+                    key={country.id}
                     className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
                     style={{ left: `${left}%`, top: `${top}%` }}
-                    onMouseEnter={() => handleCountryHover(plant.id)}
+                    onMouseEnter={() => handleCountryHover(country.id)}
                   >
+                    {/* Pulsing rings */}
+                    {isActive && (
+                      <>
+                        <span
+                          className="absolute w-8 h-8 inset-0 rounded-full bg-white opacity-75"
+                          style={{
+                            animation:
+                              "ping 1.8s cubic-bezier(0,0,0.2,1) infinite",
+                          }}
+                        />
+                        <span
+                          className="absolute w-8 h-8 inset-0 rounded-full bg-white opacity-50"
+                          style={{
+                            animation:
+                              "ping 1.8s cubic-bezier(0,0,0.2,1) infinite",
+                            animationDelay: "0.4s",
+                          }}
+                        />
+                      </>
+                    )}
                     {/* Dot */}
                     <span className="relative flex justify-center items-center rounded-full transition-all duration-300 w-8 h-8">
                       <img
@@ -440,7 +483,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-6 xl:right-1/6 bottom-34" : "-bottom-10 lg:bottom-34 left-12 lg:left-1/7"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-2/7 bottom-14" : "-bottom-10 lg:bottom-5 left-12 lg:left-1/3"}`}
       >
         <RevenueContributionChart />
       </div>

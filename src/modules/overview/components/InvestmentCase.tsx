@@ -75,16 +75,16 @@ const InvestmentCase = () => {
       <div className="py-16 bg-fm-yellow-100">
         <Container>
           <div>
-            <PageTitle className="mb-6">{t("investmentCaseContent.pageTitle")}</PageTitle>
+            <PageTitle className="mb-6">
+              {t("investmentCaseContent.pageTitle")}
+            </PageTitle>
             <SlideTopAnimation>
               <h2 className="text-fm-yellow mb-4 font-bold text-lg">
                 {t("investmentCaseContent.title")}
               </h2>
             </SlideTopAnimation>
             <SlideTopAnimation>
-              <p className="mb-4">
-                {t("investmentCaseContent.description")}
-              </p>
+              <p className="mb-4">{t("investmentCaseContent.description")}</p>
             </SlideTopAnimation>
           </div>
         </Container>
@@ -117,7 +117,14 @@ const InvestmentCase = () => {
                 <h3 className="text-fm-yellow font-bold text-2xl mb-6 leading-tight">
                   {currentLeaf.title}
                 </h3>
-
+                <ul className="mb-4">
+                  <li className="flex gap-3 text-sm leading-relaxed">
+                    <span className="text-fm-yellow mt-0.5 shrink-0">•</span>
+                    <span
+                      dangerouslySetInnerHTML={{ __html: currentLeaf.bullets[0] }}
+                    />
+                  </li>
+                </ul>
                 {currentLeaf.financials && (
                   <div className="mb-6">
                     <div className="grid grid-cols-3 gap-4 mb-4">
@@ -137,11 +144,8 @@ const InvestmentCase = () => {
                 )}
 
                 <ul className="space-y-4">
-                  {currentLeaf.bullets.map((bullet, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 text-sm leading-relaxed"
-                    >
+                  {(activeItem === 3 ? currentLeaf.bullets.splice(1) : currentLeaf.bullets).map((bullet, i) => (
+                    <li key={i} className="flex gap-3 text-sm leading-relaxed">
                       <span className="text-fm-yellow mt-0.5 shrink-0">•</span>
                       <span dangerouslySetInnerHTML={{ __html: bullet }} />
                     </li>

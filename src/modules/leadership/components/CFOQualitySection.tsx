@@ -105,8 +105,8 @@ const CFOQualitySection = ({ data }: Props) => {
       {/* Yellow stats panel */}
       <Container className="pb-16">
         <div className="">
-          <Container>
-            <div className="py-10 md:py-12">
+          <div>
+            <div className="">
               <SlideTopAnimation>
                 <p className="text-white font-semibold text-sm mb-8">
                   {data.highlightsLabel}
@@ -135,33 +135,33 @@ const CFOQualitySection = ({ data }: Props) => {
                         }}
                       />
                     </div>
-                    <div className="grid grid-cols-2  w-72 h-auto">
-                      <div className="p-1 h-16">
+                    <div className="grid grid-cols-2  w-56 gap-2 h-auto">
+                      <div className="p-1">
                         <img
                           src={Iso45001}
                           alt="ISO 45001"
-                          className="w-36 object-contain"
+                          className="w-24 h-auto object-contain"
                         />
                       </div>
-                      <div className="p-1 h-16">
+                      <div className="p-1">
                         <img
                           src={Iso9001}
                           alt="ISO 9001"
-                          className="w-36 object-contain"
+                          className="w-24 h-auto object-contain"
                         />
                       </div>
-                      <div className="p-1 h-16">
+                      <div className="p-1">
                         <img
                           src={Iso14001}
                           alt="ISO 14001"
-                          className="w-36 object-contain"
+                          className="w-24 h-auto object-contain"
                         />
                       </div>
-                      <div className="p-1 h-16">
+                      <div className="p-1">
                         <img
                           src={Iso22000}
                           alt="ISO 22000"
-                          className="w-36 object-contain"
+                          className="w-24 h-auto object-contain"
                         />
                       </div>
                     </div>
@@ -295,7 +295,7 @@ const CFOQualitySection = ({ data }: Props) => {
                 </SlideTopAnimation>
               </div>
             </div>
-          </Container>
+          </div>
         </div>
       </Container>
       <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-0 pointer-events-none">

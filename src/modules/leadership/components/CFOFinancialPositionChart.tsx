@@ -117,7 +117,7 @@ const GroupedBarChart = ({
 }) => (
   <div className="flex-1 min-w-0">
     <p className="font-bold text-sm text-fm-green mb-2">
-      {title}
+      {title}{" "}
       <span
         className="font-normal text-sm text-fm-gray-300"
         dangerouslySetInnerHTML={{ __html: `(${unit})` }}
