@@ -245,7 +245,7 @@ const TechnologyInnovationTab = () => {
           </div>
         </Container>
       </div>
-      <div className="relative">
+      <div className="relative w-full overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full -z-10">
           <ImageScaleAnimation
             src={lang === "ar" ? Section3BgAr : Section3BgEn}

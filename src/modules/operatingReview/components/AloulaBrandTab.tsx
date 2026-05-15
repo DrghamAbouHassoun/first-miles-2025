@@ -16,7 +16,7 @@ const AloulaBrandTab = () => {
       "aloulaContent.paragraphs",
     ) ?? [];
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <ORHeader
         pageTitle={t("tabs.aloulaBrand")}
         title={t("aloulaContent.title")}
@@ -46,7 +46,7 @@ const AloulaBrandTab = () => {
         </Container>
       </section>
       <div
-        className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+        className={`absolute w-fit bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
       >
         <GroupOfSpikes />
       </div>

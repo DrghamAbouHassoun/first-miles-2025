@@ -25,9 +25,9 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
   const { ref: flowerTwoRef, inView: flowerTwoInView } =
     useInView<HTMLImageElement>();
   return (
-    <div className="w-full h-screen relative overflow-y-hidden z-10">
+    <div className="w-full h-screen relative overflow-hidden z-10">
       <div
-        className={`absolute md:w-100 h-auto bottom-0 z-30 ${lang === "ar" ? "right-0" : "left-0"}`}
+        className={`absolute w-full md:w-100 h-auto bottom-0 z-30 ${lang === "ar" ? "right-0" : "left-0"}`}
       >
         <div
           className={`w-50 h-auto object-contain absolute bottom-0 ${lang === "ar" ? "rotate-y-180" : ""}`}

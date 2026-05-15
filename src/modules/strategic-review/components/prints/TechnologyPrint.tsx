@@ -58,7 +58,7 @@ const TechnologyPrint = (props: TechnologyPrintProps) => {
           fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}
         /> */}
 
-          <svg className={lang === "ar" ? "" : "hidden"} transform="translate(390,90)" width="133" height="39" viewBox="0 0 133 39" xmlns="http://www.w3.org/2000/svg" fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}>
+          <svg className={lang === "ar" ? "" : "hidden"} x="390" y="90" width="133" height="39" viewBox="0 0 133 39" xmlns="http://www.w3.org/2000/svg" fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}>
             <path d="M130.01 34.816V22.126H132.386V34.816H130.01Z" fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}/>
             <path d="M122.345 34.816V32.944H124.577V22.126H126.953V34.816H122.345Z" fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}/>
             <path d="M111.869 34.816V32.944H118.835C118.889 32.512 118.925 32.026 118.925 31.576C118.925 29.29 117.989 28.12 115.397 28.12C114.659 28.12 113.993 28.174 113.327 28.264V26.41C114.029 26.32 114.857 26.248 115.631 26.248C119.681 26.248 121.283 28.03 121.283 31.486C121.283 31.918 121.265 32.422 121.211 32.944H122.615V34.816H111.869ZM116.135 24.844C115.451 24.844 114.893 24.304 114.893 23.602C114.893 22.918 115.451 22.36 116.135 22.36C116.819 22.36 117.377 22.918 117.377 23.602C117.377 24.286 116.819 24.844 116.135 24.844Z" fill={props.activePillar === 0 ? "#FCB44A" : "#FFF"}/>

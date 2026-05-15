@@ -7,6 +7,7 @@ import SlideTopAnimation from "../../common/components/animations/SlideTopAnimat
 import PopupAnimation from "../../common/components/animations/PopupAnimation";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import PageTitle from "../../common/components/typography/PageTitle";
+import LargeContainer from "../../common/components/Container/LargeContainer";
 
 interface LeafFinancials {
   labels: string[];
@@ -91,7 +92,7 @@ const InvestmentCase = () => {
       </div>
 
       <div className="w-full min-h-screen bg-fm-green relative z-20">
-        <Container
+        <LargeContainer
           className={`flex items-center flex-col lg:flex-row gap-8 pt-8 pb-16 lg:min-h-200 z-30`}
         >
           {/* Spike with transparent hover overlay */}
@@ -154,7 +155,7 @@ const InvestmentCase = () => {
               </div>
             )}
           </div>
-        </Container>
+        </LargeContainer>
         <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 -z-10">
           <GroupOfSpikes />
         </div>

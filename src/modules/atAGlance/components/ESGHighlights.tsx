@@ -45,7 +45,7 @@ const ESGHighlights = () => {
                 }`}
               >
                 <PopupAnimation className="w-fit">
-                  <img src={icon} alt="" className={`w-14 h-14 object-contain ${isRtl ? "rotate-y-180" : ""}`} />
+                  <img src={icon} alt="" className={`w-18 h-auto object-contain ${isRtl ? "rotate-y-180" : ""}`} />
                 </PopupAnimation>
                 <SlideTopAnimation level="50">
                   <p

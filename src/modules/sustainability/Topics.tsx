@@ -155,7 +155,7 @@ const Topics = () => {
       <section className="py-16">
         <Container>
           {/* Chart */}
-          <div className="flex mb-16">
+          <div className="flex mb-16 w-full">
             {/* <img
               src={lang === "ar" ? TopicChartAr : TopicChartEn}
               alt="First Mills"
@@ -168,7 +168,7 @@ const Topics = () => {
 
           <div className="flex flex-col md:flex-row gap-6">
             {/* Tab buttons — vertical on the side */}
-            <div className="flex flex-row md:flex-col gap-3 md:w-64 shrink-0">
+            <div className="flex flex-col gap-3 md:w-64 shrink-0">
               {tableData.table.map((group) => {
                 const color = priorityColors[group.priority];
                 const isActive = activeTab === group.priority;
@@ -195,7 +195,7 @@ const Topics = () => {
             </div>
 
             {/* Tab content */}
-            <div className="overflow-y-auto pb-4 flex-1">
+            <div className="overflow-x-auto pb-4 flex-1">
               <div className="flex-1 min-w-130">
                 {/* Column headers */}
                 <div
@@ -246,7 +246,7 @@ const Topics = () => {
                             key={num}
                             src={icon}
                             alt={`UNSDG ${num}`}
-                            className="w-6 h-6"
+                            className="w-10 h-10"
                           />
                         ) : null;
                       })}

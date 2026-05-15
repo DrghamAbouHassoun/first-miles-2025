@@ -48,8 +48,11 @@ const HorizontalBarPanel = ({
   const maxVal = Math.max(...data.map((d) => d.value));
 
   return (
-    <div  className="flex-1 min-w-0" dir={lang === "ar" ? "rtl" : "ltr"}>
-      <p className="font-bold text-fm-green mb-3">{title}</p>
+    <div className="flex-1 min-w-0" dir={lang === "ar" ? "rtl" : "ltr"}>
+      <div className="w-fit">
+        <p className="font-bold text-fm-green mb-3">{title}</p>
+        <div className={`w-full h-1.5 ${lang === 'ar' ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow to-fm-yellow/0 mb-4`} />
+      </div>
       <div className="space-y-2">
         {data.map((d) => (
           <div key={d.year} className="flex items-center gap-0">
@@ -60,17 +63,22 @@ const HorizontalBarPanel = ({
               <div
                 className={`h-full flex items-center justify-end overflow-hidden `}
                 style={{
-                  width: inView && d.value !== 0 ? `${(d.value / maxVal) * 100}%` : "0%",
+                  width:
+                    inView && d.value !== 0
+                      ? `${(d.value / maxVal) * 100}%`
+                      : "0%",
                   backgroundColor: color,
                   transition: "width 0.7s ease-out 0s",
                   minWidth: d.value === 0 ? 0 : 42,
                 }}
               >
-                {d.value !== 0 && <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap select-none">
-                  {inView && (
-                    <CountUp end={d.value} decimals={1} duration={1.5} />
-                  )}
-                </span>}
+                {d.value !== 0 && (
+                  <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap select-none">
+                    {inView && (
+                      <CountUp end={d.value} decimals={1} duration={1.5} />
+                    )}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -96,7 +104,7 @@ const CFOKeyIndicatorsChart = ({
           dangerouslySetInnerHTML={{ __html: `(${labels.financialUnit})` }}
         ></span>
       </p>
-      <div ref={ref} dir="ltr" className="flex gap-6 mt-4">
+      <div ref={ref} dir="ltr" className="flex flex-col md:flex-row gap-6 mt-4">
         <HorizontalBarPanel
           data={CASH_DATA}
           color={LOANS_COLOR}

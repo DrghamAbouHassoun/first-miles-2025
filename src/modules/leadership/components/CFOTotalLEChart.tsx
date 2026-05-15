@@ -32,7 +32,10 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
   const { lang } = useContext(LangContext);
 
   return (
-    <div dir={lang === "ar" ? "rtl" : "ltr"} className="max-w-150 bg-fm-yellow-100 p-4">
+    <div
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      className="max-w-150 bg-fm-yellow-100 p-4"
+    >
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.totalLETitle}{" "}
         <span
@@ -65,7 +68,11 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
           const barWidthPct = (d.total / MAX_TOTAL) * 100;
 
           return (
-            <div dir={lang === "ar" ? "rtl" : "ltr"} key={d.year} className="flex items-center gap-2">
+            <div
+              dir={lang === "ar" ? "rtl" : "ltr"}
+              key={d.year}
+              className="flex items-center gap-2"
+            >
               {/* Year label */}
               <span className=" font-bold text-fm-green w-10 shrink-0 text-right">
                 {d.year}
@@ -86,6 +93,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                     style={{
                       width: `${liabPct}%`,
                       backgroundColor: LIAB_COLOR,
+                      minWidth: "50px",
                     }}
                   >
                     <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap">
@@ -104,6 +112,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                     style={{
                       width: `${equityPct}%`,
                       backgroundColor: EQUITY_COLOR,
+                      minWidth: "45px",
                     }}
                   >
                     <span className="text-[14px] font-bold text-white px-1 whitespace-nowrap">
@@ -111,7 +120,9 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                         <CountUp end={d.equity} decimals={1} duration={1.5} />
                       )}
                     </span>
-                    <span className={`text-[14px] font-bold text-black absolute ${lang === "ar" ? "-left-15" : "-right-15"} px-1 whitespace-nowrap`}>
+                    <span
+                      className={`text-[14px] font-bold text-black absolute ${lang === "ar" ? "-left-15" : "-right-15"} px-1 whitespace-nowrap`}
+                    >
                       {inView && (
                         <CountUp end={d.total} decimals={1} duration={1.5} />
                       )}

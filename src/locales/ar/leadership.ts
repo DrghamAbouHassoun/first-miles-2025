@@ -178,7 +178,7 @@ export default {
       keyIndicatorsTitle: "أبرز مؤشرات المركز المالي",
       cashTitle: "النقد وما في حكمه",
       loansTitle: "إجمالي القروض",
-      financialUnit: "<i class='riyal-icon'></i>",
+      financialUnit: "بالمليون <i class='riyal-icon'></i>",
     },
     sections: [
       {

@@ -131,7 +131,7 @@ const OperationalHighlights = () => {
                     <img
                       src={NoOfPlantsIcon}
                       alt=""
-                      className="w-18 h-18 object-contain"
+                      className="w-18 h-auto object-contain"
                     />
                   </PopupAnimation>
                   <span className="text-7xl font-bold text-white">
@@ -141,7 +141,7 @@ const OperationalHighlights = () => {
                   </span>
                 </div>
                 <SlideTopAnimation level="50">
-                  <span className="text-lg font-medium text-white">
+                  <span className=" font-medium text-white">
                     {t("operationalHighlights.plants.label")}
                   </span>
                 </SlideTopAnimation>
@@ -152,7 +152,7 @@ const OperationalHighlights = () => {
             </div>
             {/* Al Manar description */}
             <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
-              <p className="text-sm text-fm-gray-100 leading-relaxed">
+              <p className="text- text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation level="50" className="mb-0">
                   <span
                     dangerouslySetInnerHTML={{
@@ -180,7 +180,7 @@ const OperationalHighlights = () => {
 
             {/* Production capacity */}
             <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
-              <p className="text-sm text-fm-gray-100 leading-relaxed">
+              <p className=" text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation level="50" className="mb-0">
                   <span
                     dangerouslySetInnerHTML={{
@@ -219,7 +219,7 @@ const OperationalHighlights = () => {
 
             {/* Kenan stake */}
             <div className="relative flex items-start lg:col-span-1 h-full lg:px-12">
-              <p className="text-sm text-fm-gray-100 leading-relaxed">
+              <p className=" text-fm-gray-100 leading-relaxed">
                 <SlideTopAnimation>
                   {t("operationalHighlights.kenanStakeDescription")}
                 </SlideTopAnimation>
@@ -252,12 +252,12 @@ const OperationalHighlights = () => {
             {/* Mills */}
             <div className="flex flex-col gap-2 lg:px-8">
               <div className="flex gap-2 items-start">
-                <div className="w-20 h-20 relative">
-                  <PopupAnimation className="w-20 h-20">
+                <div className="w-18 h-auto relative">
+                  <PopupAnimation className="">
                     <img
                       src={NoOfMillsIcon}
                       alt=""
-                      className="w-20 h-20 object-contain"
+                      className="w-18 h-auto object-contain"
                     />
                   </PopupAnimation>
                 </div>
@@ -289,11 +289,11 @@ const OperationalHighlights = () => {
                 key={key}
                 className={`relative flex flex-col items-start h-full ${index === 0 ? "lg:pe-12" : "lg:px-12"}`}
               >
-                <PopupAnimation className="w-fit h-20 mb-2">
+                <PopupAnimation className="w-fit h-18 mb-2">
                   <img
                     src={icon}
                     alt=""
-                    className={`w-fit h-20 object-contain ${lang === "ar" ? "rotate-y-180" : ""}`}
+                    className={`w-auto h-18 object-contain ${lang === "ar" ? "rotate-y-180" : ""}`}
                   />
                 </PopupAnimation>
                 <SlideTopAnimation>
@@ -311,7 +311,7 @@ const OperationalHighlights = () => {
                 </p>
                 <SlideTopAnimation>
                   <p
-                    className="text-md text-fm-gray-100"
+                    className=" text-fm-gray-100"
                     dangerouslySetInnerHTML={{
                       __html: t(
                         `operationalHighlights.capacities.${key}.unit`,

@@ -26,7 +26,7 @@ const ORHeader = ({
 }: ORHeaderProps) => {
   const { lang } = useLocale();
   return (
-    <div className="w-full relative">
+    <div className="w-full relative overflow-hidden">
       <div className="absolute inset-0 -z-10 w-full h-full top-0 left-0">
         <img
           src={bgImage}

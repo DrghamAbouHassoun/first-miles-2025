@@ -2,8 +2,8 @@ const TopicsChartEn = () => {
   return (
     <div>
       <svg
-        width="666"
-        height="559"
+        width="100%"
+        height="auto"
         viewBox="0 0 666 559"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

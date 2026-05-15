@@ -201,7 +201,7 @@ const Social = () => {
         <Container>
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-8">
             {/* Tab list */}
-            <div className="flex flex-row overflow-x-auto lg:flex-col lg:overflow-visible lg:w-56 shrink-0 mb-6 lg:mb-0 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+            <div className="flex flex-col lg:w-56 shrink-0 mb-6 lg:mb-0 lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
               {tabs.map((tab) => (
                 <TabButton
                   key={tab.id}
@@ -312,7 +312,7 @@ const Social = () => {
                         }}
                       />
 
-                      <div className="max-w-140 pr-8">
+                      <div className="max-w-full sm:max-w-140 sm:pr-8">
                         <p className="font-bold text-fm-green mb-4">
                           {t("social.talentManagement.turnover.chart.title")}
                         </p>
@@ -328,7 +328,7 @@ const Social = () => {
                                 {lang === "ar" ? "م" : ""}
                               </p>
                               <div
-                                className={`w-full ${lang === "ar" ? "border-r" : "border-l"} border-gray-300`}
+                                className={`flex-1 min-w-0 ${lang === "ar" ? "border-r" : "border-l"} border-gray-300`}
                               >
                                 <div className="flex items-center gap-3">
                                   <div className="flex-1 h-5 relative">

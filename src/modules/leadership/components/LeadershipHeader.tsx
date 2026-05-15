@@ -111,8 +111,8 @@ const LeadershipHeader = ({
           </div>
         </div>
         <div className="flex-1 flex lg:justify-center items-center pr-4 text-lg">
-          <div ref={quotationRef} className="flex items-start gap-2 max-w-150">
-            <div className={`w-55 xl:mb-4 ${lang === "ar" ? "rotate-y-180" : ""}`}>
+          <div ref={quotationRef} className="flex flex-col sm:flex-row items-start gap-2 max-w-150">
+            <div className={`w-55 max-w-10 xl:mb-4 ${lang === "ar" ? "rotate-y-180" : ""}`}>
               <img
                 src={QuotationIcon}
                 alt={SITE_NAME}
@@ -120,7 +120,7 @@ const LeadershipHeader = ({
               />
             </div>
             <p
-              className={`font-bold animation-slide-top-50 ${isQuotationInView ? "active" : ""}`}
+              className={`font-bold animation-slide-top-50 text-base sm:text-lg ${isQuotationInView ? "active" : ""}`}
             >
               {quotation}
             </p>

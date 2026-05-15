@@ -138,9 +138,7 @@ const CFOTab = () => {
   return (
     <>
       <Container>
-        <PageTitle className="">
-           {data.pageTitle}
-        </PageTitle>
+        <PageTitle className="">{data.pageTitle}</PageTitle>
       </Container>
       <div className="pt-64">
         <Container>
@@ -228,9 +226,11 @@ const CFOTab = () => {
                                 التغير على <br />
                                 أساس سنوي %
                               </span>
-                            ) : 
-                              lang === "ar" ? `${y}م` : y
-                            }
+                            ) : lang === "ar" ? (
+                              `${y}م`
+                            ) : (
+                              y
+                            )}
                           </th>
                         ))}
                       </tr>
@@ -296,19 +296,20 @@ const CFOTab = () => {
               </div>
 
               {/* Bar Chart – Revenue */}
-              <div className="flex justify-center">
-              <div className="mb-14 min-w-110">
-                <CFOBarChart
-                  isRTL={lang === "ar"}
-                  labels={{
-                    title: charts.revenue ?? "Revenues",
-                    unit: charts.unit ?? "(<i class='riyal-icon'></i> million)",
-                    flour: charts.flour ?? "Flour",
-                    feed: charts.feed ?? "Feed",
-                    bran: charts.bran ?? "Bran",
-                  }}
-                />
-              </div>
+              <div className="flex justify-start w-full overflow-x-auto mb-14 ">
+                <div className="w-110 min-w-100">
+                  <CFOBarChart
+                    isRTL={lang === "ar"}
+                    labels={{
+                      title: charts.revenue ?? "Revenues",
+                      unit:
+                        charts.unit ?? "(<i class='riyal-icon'></i> million)",
+                      flour: charts.flour ?? "Flour",
+                      feed: charts.feed ?? "Feed",
+                      bran: charts.bran ?? "Bran",
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Sections 1 & 2 – Revenue drivers + Cash flow */}

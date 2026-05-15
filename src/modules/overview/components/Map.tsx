@@ -124,6 +124,41 @@ const regionValues = {
   northern: 11,
 } as const;
 
+const chartLegends = [
+  {
+    key: "jaddah",
+    title: {
+      en: "Jeddah Plant and Al Manar Feed Plant",
+      ar: "مصنع جدة ومصنع المنار للأعلاف",
+    },
+    color: regionColors.westernSouthern,
+  },
+  {
+    key: "alQassim",
+    title: {
+      en: "Al Qassim Plant",
+      ar: "مصنع القصيم",
+    },
+    color: regionColors.central,
+  },
+  {
+    key: "alAhsa",
+    title: {
+      en: "Al Ahsa Plant",
+      ar: "مصنع الأحساء",
+    },
+    color: regionColors.eastern,
+  },
+  {
+    key: "tabuk",
+    title: {
+      en: "Tabuk Plant",
+      ar: "مصنع تبوك",
+    },
+    color: regionColors.northern,
+  },
+];
+
 type RegionKey = keyof typeof regionColors;
 
 const RevenueContributionChart = () => {
@@ -134,91 +169,111 @@ const RevenueContributionChart = () => {
   const regionKeys = Object.keys(regionColors) as RegionKey[];
 
   return (
-    <div className="w-full max-w-200">
-      <div className="flex items-center flex-col md:flex-row gap-8 md:gap-4">
-        <div className="relative shrink-0 h-72 w-72">
-          <svg
-            viewBox="0 0 140 140"
-            className="h-full w-full drop-shadow-[0_12px_12px_rgba(0,0,0,0.55)]"
-            aria-hidden="true"
-          >
-            <circle
-              cx="70"
-              cy="70"
-              r={CHART_RADIUS}
-              fill="none"
-              stroke="#335148"
-              strokeWidth="16"
-              opacity="0.3"
-            />
-            {regionKeys.map((key) => {
-              const value = regionValues[key];
-              const dashLength = (value / 100) * CHART_CIRCUMFERENCE;
-              const dashGap = CHART_CIRCUMFERENCE - dashLength;
-              const dashOffset = -cumulativeLength;
+    <div className="flex items-center gap-4">
+      <div className="w-full max-w-200">
+        <div className="flex items-center flex-col md:flex-row gap-8 md:gap-4">
+          <div className="relative shrink-0 h-72 w-72">
+            <svg
+              viewBox="0 0 140 140"
+              className="h-full w-full drop-shadow-[0_12px_12px_rgba(0,0,0,0.55)]"
+              aria-hidden="true"
+            >
+              <circle
+                cx="70"
+                cy="70"
+                r={CHART_RADIUS}
+                fill="none"
+                stroke="#335148"
+                strokeWidth="16"
+                opacity="0.3"
+              />
+              {regionKeys.map((key) => {
+                const value = regionValues[key];
+                const dashLength = (value / 100) * CHART_CIRCUMFERENCE;
+                const dashGap = CHART_CIRCUMFERENCE - dashLength;
+                const dashOffset = -cumulativeLength;
 
-              const startAngle =
-                (cumulativeLength / CHART_CIRCUMFERENCE) * 360 - 92;
-              const midAngleRad =
-                ((startAngle + (value / 100) * 180) * Math.PI) / 180;
-              const lx = 70 + CHART_RADIUS * Math.cos(midAngleRad);
-              const ly = 70 + CHART_RADIUS * Math.sin(midAngleRad);
+                const startAngle =
+                  (cumulativeLength / CHART_CIRCUMFERENCE) * 360 - 92;
+                const midAngleRad =
+                  ((startAngle + (value / 100) * 180) * Math.PI) / 180;
+                const lx = 70 + CHART_RADIUS * Math.cos(midAngleRad);
+                const ly = 70 + CHART_RADIUS * Math.sin(midAngleRad);
 
-              cumulativeLength += dashLength;
+                cumulativeLength += dashLength;
 
-              return (
-                <g key={key}>
-                  <circle
-                    cx="70"
-                    cy="70"
-                    r={CHART_RADIUS}
-                    fill="none"
-                    stroke={regionColors[key]}
-                    strokeWidth="16"
-                    strokeDasharray={`${dashLength} ${dashGap}`}
-                    strokeDashoffset={dashOffset}
-                    strokeLinecap="butt"
-                    transform="rotate(-92 70 70)"
-                  />
-                  <text
-                    x={lx}
-                    y={ly}
-                    textAnchor="middle"
-                    dominantBaseline="central"
-                    fontSize="7.5"
-                    fontWeight="normal"
-                    fill={value === 46 ? "black" : "white"}
-                    // stroke="#1a3a30"
-                    strokeWidth="0.4"
-                    paintOrder="stroke"
-                  >
-                    {lang === "ar" ? `%${value}` : `${value}%`}
-                  </text>
-                </g>
-              );
-            })}
-          </svg>
+                return (
+                  <g key={key}>
+                    <circle
+                      cx="70"
+                      cy="70"
+                      r={CHART_RADIUS}
+                      fill="none"
+                      stroke={regionColors[key]}
+                      strokeWidth="16"
+                      strokeDasharray={`${dashLength} ${dashGap}`}
+                      strokeDashoffset={dashOffset}
+                      strokeLinecap="butt"
+                      transform="rotate(-92 70 70)"
+                    />
+                    <text
+                      x={lx}
+                      y={ly}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fontSize="7.5"
+                      fontWeight="normal"
+                      fill={value === 46 ? "black" : "white"}
+                      // stroke="#1a3a30"
+                      strokeWidth="0.4"
+                      paintOrder="stroke"
+                    >
+                      {lang === "ar" ? `%${value}` : `${value}%`}
+                    </text>
+                  </g>
+                );
+              })}
+            </svg>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-            <span className="text-xs leading-tight text-fm-yellow">
-              {t("map.chart.line1")}
-            </span>
-            <span className="text-xs leading-tight text-fm-yellow">
-              {t("map.chart.line2")}
-            </span>
-            <span className="mt-1 text-xs leading-tight text-white">
-              {t("map.chart.line3")}
-            </span>
-            <span className="text-xs leading-tight text-white">
-              {t("map.chart.line4")}
-            </span>
-            <span className="mt-2 text-xs leading-none text-white">
-              {t("map.chart.year")}
-            </span>
+            <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+              <span className="text-xs leading-tight text-fm-yellow">
+                {t("map.chart.line1")}
+              </span>
+              <span className="text-xs leading-tight text-fm-yellow">
+                {t("map.chart.line2")}
+              </span>
+              <span className="mt-1 text-xs leading-tight text-white">
+                {t("map.chart.line3")}
+              </span>
+              <span className="text-xs leading-tight text-white">
+                {t("map.chart.line4")}
+              </span>
+              <span className="mt-2 text-xs leading-none text-white">
+                {t("map.chart.year")}
+              </span>
+            </div>
           </div>
-        </div>
+          <div className="flex flex-col gap-2 max-w-70">
+            {chartLegends.map(({ key, title, color }) => (
+              <div key={key}>
+                <div className="flex items-center gap-2">
+                  <div
+                    className="h-4 w-4 min-w-4 block rounded-full"
+                    style={{ backgroundColor: color }}
+                  />
+                  <div
+                    className="h-4 w-px"
+                    style={{ backgroundColor: color }}
+                  />
+                  <span className="text-sm font-medium text-white">
+                    {lang === "ar" ? title.ar : title.en}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
 
-        {/* <ul className="space-y-1.5 text-xs text-white">
+          {/* <ul className="space-y-1.5 text-xs text-white">
           {regionKeys.map((key) => (
             <li key={key} className="flex items-center gap-2">
               <span
@@ -238,6 +293,7 @@ const RevenueContributionChart = () => {
             </li>
           ))}
         </ul> */}
+        </div>
       </div>
     </div>
   );
@@ -301,7 +357,7 @@ const Map = () => {
           </div>
         </div>
       </Container>
-      <div className="relative mx-auto flex max-w-352.5 flex-col-reverse gap-8 px-4 sm:px-6 lg:flex-row">
+      <div className="relative mx-auto flex max-w-352.5 flex-col-reverse gap-8 px-4 sm:px-6 lg:flex-row lg:pb-16">
         {/* Sidebar */}
         <div className="flex-1 max-w-130 shrink-0 text-white">
           <div className="w-full h-full flex flex-col items-center justify-center gap-4">
@@ -483,7 +539,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-2/7 bottom-14" : "-bottom-10 lg:bottom-5 left-12 lg:left-1/3"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-2/7 bottom-14" : "-bottom-10 lg:bottom-2 left-12 lg:left-1/4"}`}
       >
         <RevenueContributionChart />
       </div>

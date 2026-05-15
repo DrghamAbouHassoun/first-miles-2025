@@ -270,8 +270,8 @@ const InvestmentSpike = ({
       {/* Fourth Icon */}
       <svg
         id="fourth"
-        x="600"
-        y="380"
+        x="590"
+        y="375"
         width="268"
         height="151"
         viewBox="0 0 268 151"

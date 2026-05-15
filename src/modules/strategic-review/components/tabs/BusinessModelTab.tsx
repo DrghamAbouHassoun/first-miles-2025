@@ -78,7 +78,7 @@ const BusinessModelTab = () => {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <div className="relative z-20 text-white">
+        <div className="relative z-0 text-white">
           <Container className="py-24">
             <div id="tabs" className="flex flex-col">
               {/* Inputs */}
@@ -365,9 +365,9 @@ const BusinessModelTab = () => {
               </div>
             </div>
           </Container>
-          <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0">
-            <GroupOfSpikes />
-          </div>
+        </div>
+        <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-50 pointer-events-none">
+          <GroupOfSpikes isTransparentOnMobile={false} />
         </div>
       </div>
     </div>

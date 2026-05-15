@@ -46,7 +46,7 @@ const FirstMillsBrandTab = () => {
         </Container>
       </section>
       <div
-        className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+        className={`absolute w-fit bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
       >
         <GroupOfSpikes />
       </div>
