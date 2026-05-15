@@ -69,10 +69,11 @@ const InvestmentSpike = ({
       {/* First Icon */}
       <svg
         id="first"
+        x="200"
+        y="140"
         width="268"
         height="148"
         viewBox="0 0 268 148"
-        transform="translate(200, 140)"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onMouseEnter={width > 1024 ? () => handleLeafHover(0) : undefined}
@@ -129,10 +130,11 @@ const InvestmentSpike = ({
       {/* Second Icon */}
       <svg
         id="second"
+        x="200"
+        y="360"
         width="256"
         height="230"
         viewBox="0 0 256 230"
-        transform="translate(200, 360)"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onMouseEnter={width > 1024 ? () => handleLeafHover(1) : undefined}
@@ -192,9 +194,10 @@ const InvestmentSpike = ({
       {/* Third Icon */}
       <svg
         id="third"
+        x="600"
+        y="100"
         width="268"
         height="184"
-        transform="translate(600, 100)"
         viewBox="0 0 268 184"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -267,9 +270,10 @@ const InvestmentSpike = ({
       {/* Fourth Icon */}
       <svg
         id="fourth"
+        x="600"
+        y="380"
         width="268"
         height="151"
-        transform="translate(600, 380)"
         viewBox="0 0 268 151"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

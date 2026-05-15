@@ -27,7 +27,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
   return (
     <div className="w-full h-screen relative overflow-y-hidden z-10">
       <div
-        className={`absolute w-100 h-auto bottom-0 z-30 ${lang === "ar" ? "right-0" : "left-0"}`}
+        className={`absolute md:w-100 h-auto bottom-0 z-30 ${lang === "ar" ? "right-0" : "left-0"}`}
       >
         <div
           className={`w-50 h-auto object-contain absolute bottom-0 ${lang === "ar" ? "rotate-y-180" : ""}`}
@@ -55,7 +55,7 @@ const MainHeader = ({ image, title, subtitle }: MainHeaderProps) => {
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
       <div
-        className={`absolute h-full bottom-0 flex items-center  ${lang === "ar" ? "bg-linear-270 right-0 rounded-tl-2xl" : "bg-linear-90 left-0 rounded-tr-2xl"} z-20  from-fm-green/60 to-fm-green/0 gap-8 w-full max-w-200 pt-8`}
+        className={`absolute h-full bottom-0 flex items-center  ${lang === "ar" ? "bg-linear-270 right-0 rounded-tl-2xl" : "bg-linear-90 left-0 rounded-tr-2xl"} z-20 from-fm-green via-75% sm:from-fm-green/60 to-fm-green/0 gap-8 w-full max-w-200 pt-8`}
       >
         <div className="w-full sm:w-full sm:max-w-140  h-fit ">
           <Container>
