@@ -14,6 +14,13 @@ const SVG_HEIGHT = 937;
 const CHART_RADIUS = 60;
 const CHART_CIRCUMFERENCE = 2 * Math.PI * CHART_RADIUS;
 
+const regionColors = {
+  westernSouthern: "#F7E8CF",
+  central: "#FCB44A",
+  eastern: "#A5A8AA",
+  northern: "#1F6D64",
+} as const;
+
 interface PlantConfig {
   id: string;
   cx: number;
@@ -21,6 +28,7 @@ interface PlantConfig {
   hasMilling: boolean;
   hasFeed: boolean;
   hasDurum: boolean;
+  color: string;
 }
 
 const plantConfigs: PlantConfig[] = [
@@ -31,6 +39,7 @@ const plantConfigs: PlantConfig[] = [
     hasMilling: true,
     hasFeed: false,
     hasDurum: false,
+    color: regionColors.northern,
   },
   {
     id: "alQassim",
@@ -39,6 +48,7 @@ const plantConfigs: PlantConfig[] = [
     hasMilling: true,
     hasFeed: true,
     hasDurum: false,
+    color: regionColors.central,
   },
   {
     id: "alAhsa",
@@ -47,6 +57,7 @@ const plantConfigs: PlantConfig[] = [
     hasMilling: true,
     hasFeed: false,
     hasDurum: false,
+    color: regionColors.eastern,
   },
   {
     id: "jeddah",
@@ -55,6 +66,7 @@ const plantConfigs: PlantConfig[] = [
     hasMilling: true,
     hasFeed: true,
     hasDurum: true,
+    color: regionColors.westernSouthern,
   },
   {
     id: "alManar",
@@ -63,6 +75,7 @@ const plantConfigs: PlantConfig[] = [
     hasMilling: false,
     hasFeed: true,
     hasDurum: false,
+    color: regionColors.westernSouthern,
   },
 ];
 
@@ -109,13 +122,6 @@ const countryConfigs: CountrItem[] = [
     cy: 263,
   },
 ];
-
-const regionColors = {
-  westernSouthern: "#F7E8CF",
-  central: "#FCB44A",
-  eastern: "#A5A8AA",
-  northern: "#1F6D64",
-} as const;
 
 const regionValues = {
   westernSouthern: 46,
@@ -381,9 +387,13 @@ const Map = () => {
             {/* Plant panel */}
             <div className="min-h-120 w-full flex justify-center items-start">
               <div
-                className="w-full max-w-70 animation-slide-top-50 active"
+                className="w-full max-w-70 animation-slide-top-50 active relative"
                 key={`item-${activePlant.id}`}
               >
+                <div
+                  className={`w-6 h-6 rounded-full absolute -top-3 left-1/2 -translate-x-1/2 `}
+                  style={{ backgroundColor: activePlant.color }}
+                />
                 <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
                   <h3 className="text-fm-yellow font-bold text-lg mb-5 border-b-2 border-fm-gray-100 pb-2 text-center">
                     {t(`map.plants.${activePlant.id}.name`)}
