@@ -81,7 +81,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
               {/* Bar container */}
               <div className="flex-1 h-7 flex items-center">
                 <div
-                  className={`h-full flex overflow-hidden ${lang === "ar" ? "pl-14" : "pr-14"}`}
+                  className={`h-full flex overflow-vissible ${lang === "ar" ? "pl-14" : "pr-14"}`}
                   style={{
                     width: inView ? `${barWidthPct}%` : "0%",
                     transition: "width 0.8s ease-out 0s",
@@ -121,7 +121,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
                       )}
                     </span>
                     <span
-                      className={`text-[14px] font-bold text-black absolute ${lang === "ar" ? "-left-15" : "-right-15"} px-1 whitespace-nowrap`}
+                      className={`text-[14px] font-bold text-black absolute ${lang === "ar" ? "-left-13" : "-right-15"} px-1 whitespace-nowrap`}
                     >
                       {inView && (
                         <CountUp end={d.total} decimals={1} duration={1.5} />
