@@ -16,6 +16,7 @@ export default {
     },
     {
       title: "Overview",
+      chapterPdf: true,
       sections: [
         "About First Mills",
         "Growth Journey",
@@ -28,6 +29,7 @@ export default {
     },
     {
       title: "Strategic Review",
+      chapterPdf: true,
       sections: [
         "Chairman's Statement",
         "CEO's Message",
@@ -42,6 +44,7 @@ export default {
     },
     {
       title: "Operating Review",
+      chapterPdf: true,
       sections: [
         "COO's Review",
         "First Mills",
@@ -51,6 +54,7 @@ export default {
     },
     {
       title: "Sustainability Review",
+      chapterPdf: true,
       sections: [
         "Our Sustainability Approach",
         "Our Sustainability Strategy",
@@ -65,10 +69,12 @@ export default {
     },
     {
       title: "Corporate Governance",
+      chapterPdf: true,
       sections: [],
     },
     {
       title: "Financial Statements",
+      chapterPdf: true,
       sections: [
         "Independent Auditor's Report",
         "Consolidated Statement of Financial Position",

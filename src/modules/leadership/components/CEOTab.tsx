@@ -110,7 +110,7 @@ const CEOTab = () => {
                       <SlideTopAnimation key={j}>
                         <p
                           key={j}
-                          className="text-sm leading-relaxed mb-3"
+                          className="text-sm leading-relaxed"
                           dangerouslySetInnerHTML={{ __html: p }}
                         ></p>
                       </SlideTopAnimation>

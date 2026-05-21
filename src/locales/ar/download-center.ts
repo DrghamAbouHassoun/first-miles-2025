@@ -16,6 +16,7 @@ export default {
     },
     {
       title: "نظرة عامة",
+      chapterPdf: true,
       sections: [
         "لمحة عن شركة المطاحن الأولى",
         "مسيرة نمو الشركة",
@@ -28,6 +29,7 @@ export default {
     },
     {
       title: "المراجعة الاستراتيجية",
+      chapterPdf: true,
       sections: [
         "كلمة رئيس مجلس الإدارة",
         "رسالة الرئيس التنفيذي",
@@ -42,6 +44,7 @@ export default {
     },
     {
       title: "مراجعة العمليات التشغيلية",
+      chapterPdf: true,
       sections: [
         "كلمة رئيس قطاع العمليات التشغيلية",
         "علامة \"المطاحن الأولى\" التجارية",
@@ -51,6 +54,7 @@ export default {
     },
     {
       title: "مراجعة الاستدامة",
+      chapterPdf: true,
       sections: [
         "نهجنا في الاستدامة",
         "استراتيجيتنا للاستدامة",
@@ -65,10 +69,12 @@ export default {
     },
     {
       title: "حوكمة الشركات",
+      chapterPdf: true,
       sections: [],
     },
     {
       title: "القوائم المالية",
+      chapterPdf: true,
       sections: [
         "تقرير مراجع الحسابات المستقل",
         "قائمة المركز المالي الموحدة",

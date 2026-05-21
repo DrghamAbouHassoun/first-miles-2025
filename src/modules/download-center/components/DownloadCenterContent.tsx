@@ -8,6 +8,7 @@ type Chapter = {
   title: string;
   sections: string[];
   hiddenSectionIndices?: number[];
+  chapterPdf?: boolean;
 };
 
 type DownloadCenterTranslations = {
@@ -28,6 +29,10 @@ function getLanguageFolder(isAr: boolean) {
 
 function getSectionPdfName(chapterIndex: number, sectionIndex: number) {
   return `chapter_${chapterIndex + 1}_section_${sectionIndex + 1}.pdf`;
+}
+
+function getChapterPdfName(chapterIndex: number) {
+  return `chapter_${chapterIndex + 1}_full.pdf`;
 }
 
 function atLeastOneSelected(checked: boolean[][]): boolean {
@@ -81,15 +86,26 @@ const DownloadCenterContent = () => {
   const handleDownloadSelected = async () => {
     setIsLoading(true);
     const urls: string[] = [];
+    const langFolder = getLanguageFolder(isAr);
 
     checkedChapters.forEach((chapter, ci) => {
-      chapter.forEach((selected, si) => {
-        if (selected) {
-          urls.push(
-            `${URL_ENDPOINT}/${getLanguageFolder(isAr)}/${getSectionPdfName(ci, si)}`
-          );
-        }
-      });
+      const chapterDef = chapters[ci];
+      const hidden = new Set(chapterDef.hiddenSectionIndices ?? []);
+      const visibleIndices = chapter.map((_, i) => i).filter((i) => !hidden.has(i));
+      const allVisibleSelected =
+        visibleIndices.length > 0 && visibleIndices.every((i) => chapter[i]);
+      const wholeChapterSelected =
+        chapterDef.sections.length === 0 && chapter[0];
+
+      if (chapterDef.chapterPdf && (allVisibleSelected || wholeChapterSelected)) {
+        urls.push(`${URL_ENDPOINT}/${langFolder}/${getChapterPdfName(ci)}`);
+      } else {
+        chapter.forEach((selected, si) => {
+          if (selected) {
+            urls.push(`${URL_ENDPOINT}/${langFolder}/${getSectionPdfName(ci, si)}`);
+          }
+        });
+      }
     });
 
     try {
