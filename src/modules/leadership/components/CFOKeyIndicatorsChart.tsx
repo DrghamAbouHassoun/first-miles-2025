@@ -96,7 +96,7 @@ const CFOKeyIndicatorsChart = ({
   const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
-    <div className="max-w-150 bg-fm-yellow-100 p-4">
+    <div className=" bg-fm-yellow-100 p-4 h-full">
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.keyIndicatorsTitle}{" "}
         <span

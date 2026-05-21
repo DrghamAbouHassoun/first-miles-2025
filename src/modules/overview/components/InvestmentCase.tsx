@@ -128,9 +128,9 @@ const InvestmentCase = () => {
                 </ul>
                 {currentLeaf.financials && (
                   <div className="mb-6">
-                    <div className="grid grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-3 gap-4 mb-4 place-items-center">
                       {currentLeaf.financials.labels.map((label, i) => (
-                        <div key={i} className="flex flex-col justify-center text-center items-center">
+                        <div key={i} className={`flex flex-col justify-center text-center items-center${i === currentLeaf.financials!.labels.length - 1 && currentLeaf.financials!.labels.length % 3 === 1 ? " col-start-2" : ""}`}>
                           <p className="text-xs mb-1">{label}</p>
                           <p
                             className="text-fm-yellow font-bold text-lg"
@@ -145,7 +145,7 @@ const InvestmentCase = () => {
                 )}
 
                 <ul className="space-y-4">
-                  {(activeItem === 3 ? currentLeaf.bullets.splice(1) : currentLeaf.bullets).map((bullet, i) => (
+                  {(activeItem === 3 ? currentLeaf.bullets.slice(1, currentLeaf.bullets.length) : currentLeaf.bullets).map((bullet, i) => (
                     <li key={i} className="flex gap-3 text-sm leading-relaxed">
                       <span className="text-fm-yellow mt-0.5 shrink-0">•</span>
                       <span dangerouslySetInnerHTML={{ __html: bullet }} />
@@ -156,7 +156,7 @@ const InvestmentCase = () => {
             )}
           </div>
         </LargeContainer>
-        <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 -z-10">
+        <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 -z-10 opacity-60">
           <GroupOfSpikes />
         </div>
       </div>

@@ -297,7 +297,7 @@ const CFOTab = () => {
 
               {/* Bar Chart – Revenue */}
               <div className="flex justify-start w-full overflow-x-auto mb-14 ">
-                <div className="w-110 min-w-100">
+                <div className="w-110 min-w-100 mx-auto">
                   <CFOBarChart
                     isRTL={lang === "ar"}
                     labels={{
@@ -365,32 +365,35 @@ const CFOTab = () => {
                 />
               </div>
 
-              {/* Total Liabilities and Equity chart */}
-              <div className="mb-8">
-                <CFOTotalLEChart
-                  labels={{
-                    totalLETitle:
-                      charts.totalLETitle ?? "Total Liabilities and Equity",
-                    totalLiabilities:
-                      charts.totalLiabilities ?? "Total Liabilities",
-                    totalEquity: charts.totalEquity ?? "Total Equity",
-                    financialUnit: charts.financialUnit ?? "SAR mn",
-                  }}
-                />
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+                {/* Total Liabilities and Equity chart */}
+                <div className="flex-1 bg-fm-yellow-100">
+                  <CFOTotalLEChart
+                    labels={{
+                      totalLETitle:
+                        charts.totalLETitle ?? "Total Liabilities and Equity",
+                      totalLiabilities:
+                        charts.totalLiabilities ?? "Total Liabilities",
+                      totalEquity: charts.totalEquity ?? "Total Equity",
+                      financialUnit: charts.financialUnit ?? "SAR mn",
+                    }}
+                  />
+                </div>
 
-              {/* Key Balance Sheet Indicators chart */}
-              <div className="mb-14 w-full max-w-150">
-                <CFOKeyIndicatorsChart
-                  labels={{
-                    keyIndicatorsTitle:
-                      charts.keyIndicatorsTitle ??
-                      "Key Balance Sheet Indicators",
-                    cashTitle: charts.cashTitle ?? "Cash and Cash Equivalents",
-                    loansTitle: charts.loansTitle ?? "Total Loans",
-                    financialUnit: charts.financialUnit ?? "SAR mn",
-                  }}
-                />
+                {/* Key Balance Sheet Indicators chart */}
+                <div className="w-full h-full bg-fm-yellow-100 flex-1">
+                  <CFOKeyIndicatorsChart
+                    labels={{
+                      keyIndicatorsTitle:
+                        charts.keyIndicatorsTitle ??
+                        "Key Balance Sheet Indicators",
+                      cashTitle:
+                        charts.cashTitle ?? "Cash and Cash Equivalents",
+                      loansTitle: charts.loansTitle ?? "Total Loans",
+                      financialUnit: charts.financialUnit ?? "SAR mn",
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Sections 3–6 – Capital allocation, Shareholder returns, etc. */}

@@ -123,9 +123,18 @@ const BusinessModelTab = () => {
                     </ul>
                   </div>
                 </div>
+                 <div className="w-full flex justify-center items-center pt-2">
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-16 h-16 transition-transform duration-300 ${
+                      openTab === "inputs" ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
               </div>
               {/* Strengths */}
-              <div id="strengths" className="mt-8">
+              <div id="strengths" className="mt-4">
                 <button
                   onClick={() => toggle("strengths")}
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
@@ -146,13 +155,13 @@ const BusinessModelTab = () => {
                       {t("businessModelContent.strengths.title")}
                     </h4>
 
-                    <img
+                    {/* <img
                       src={AccordionArrow}
                       alt=""
                       className={`w-6 h-6 transition-transform duration-300 ${
                         openTab === "strengths" ? "rotate-180" : ""
                       }`}
-                    />
+                    /> */}
                   </div>
                 </button>
                 <div
@@ -166,9 +175,18 @@ const BusinessModelTab = () => {
                     </ul>
                   </div>
                 </div>
+                <div className="w-full flex justify-center items-center pt-2">
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-16 h-16 transition-transform duration-300 ${
+                      openTab === "strengths" ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
               </div>
               {/* Added Value */}
-              <div id="addedValue" className="mt-8">
+              <div id="addedValue" className="mt-4">
                 <button
                   onClick={() => toggle("addedValue")}
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
@@ -189,13 +207,13 @@ const BusinessModelTab = () => {
                       {t("businessModelContent.addedValue.title")}
                     </h4>
 
-                    <img
+                    {/* <img
                       src={AccordionArrow}
                       alt=""
                       className={`w-6 h-6 transition-transform duration-300 ${
                         openTab === "addedValue" ? "rotate-180" : ""
                       }`}
-                    />
+                    /> */}
                   </div>
                 </button>
                 <div
@@ -226,9 +244,18 @@ const BusinessModelTab = () => {
                     </ul>
                   </div>
                 </div>
+                <div className="w-full flex justify-center items-center pt-2">
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-16 h-16 transition-transform duration-300 ${
+                      openTab === "addedValue" ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
               </div>
               {/* Outputs */}
-              <div id="outputs" className="mt-8">
+              <div id="outputs" className="mt-4">
                 <button
                   onClick={() => toggle("outputs")}
                   className="relative w-full p-8 text-start cursor-pointer flex items-center justify-between group overflow-hidden"
@@ -248,14 +275,6 @@ const BusinessModelTab = () => {
                     <h4 className="text-fm-yellow font-bold text-xl">
                       {t("businessModelContent.outputs.title")}
                     </h4>
-
-                    <img
-                      src={AccordionArrow}
-                      alt=""
-                      className={`w-6 h-6 transition-transform duration-300 ${
-                        openTab === "outputs" ? "rotate-180" : ""
-                      }`}
-                    />
                   </div>
                 </button>
                 <div
@@ -329,7 +348,7 @@ const BusinessModelTab = () => {
                         }}
                       />
                     </ul>
-                    <p className="py-2">
+                    <p className="py-2 text-xs">
                       {t("businessModelContent.outputs.note")}
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8 px-4 pb-4">
@@ -362,11 +381,20 @@ const BusinessModelTab = () => {
                     </div>
                   </div>
                 </div>
+                <div className="w-full flex justify-center items-center">
+                  <img
+                    src={AccordionArrow}
+                    alt=""
+                    className={`w-16 h-16 transition-transform duration-300 ${
+                      openTab === "outputs" ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
               </div>
             </div>
           </Container>
         </div>
-        <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-50 pointer-events-none">
+        <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 z-0 pointer-events-none opacity-60">
           <GroupOfSpikes isTransparentOnMobile={false} />
         </div>
       </div>

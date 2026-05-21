@@ -2,7 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import ORHeader from "./ORHeader";
 import FirstMillsBg from "../../../assets/images/operating-review/bg/first-mills.jpg";
 import FirstMillsBrand from "../../../assets/images/operating-review/brands/first-mills.png";
-import FirstMillsLogo from "../../../assets/logo/first-mills-brand.svg";
+import FirstMillsLogo from "../../../assets/logo/first-mills-brand.png";
 import Container from "../../common/components/Container/Container";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../common/hooks/useLocale";

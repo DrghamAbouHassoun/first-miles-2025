@@ -17,7 +17,7 @@ const QualityNote = () => {
     useInView<HTMLImageElement>({});
   return (
     <FadeInAnimation>
-      <div className="relative w-full max-w-240 py-10 p-4 mx-auto bg-fm-green text-fm-yellow my-16 min-h-64 flex items-center">
+      <div className="relative w-full py-10 p-4 mx-auto bg-fm-green text-fm-yellow my-16 min-h-64 flex items-center">
         <p
           className="text-fm-yellow text-xl font-bold md:max-w-2/4 z-20 mb-20 md:mb-0"
           dangerouslySetInnerHTML={{

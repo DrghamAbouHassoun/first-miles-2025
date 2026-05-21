@@ -2,7 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import ORHeader from "./ORHeader";
 import naffaBg from "../../../assets/images/operating-review/bg/naffa.jpg";
 import naffaBrand from "../../../assets/images/operating-review/brands/naffa.png";
-import naffaLogo from "../../../assets/logo/naffa.svg";
+import naffaLogo from "../../../assets/logo/naffa.png";
 import Container from "../../common/components/Container/Container";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../common/hooks/useLocale";

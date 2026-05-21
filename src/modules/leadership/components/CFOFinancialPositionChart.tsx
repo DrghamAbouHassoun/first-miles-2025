@@ -8,7 +8,7 @@ const CountUp = ((CountUpModule as any).default ??
 
 /* ── Data ──────────────────────────────────────────────────────── */
 const ASSETS_DATA = [
-  { year: 2021, current: 298.7, nonCurrent: 857.7, total: 1156.4 },
+  { year: 2021, current: 298.7, nonCurrent: 857.8, total: 1156.4 },
   { year: 2022, current: 415.1, nonCurrent: 2011.2, total: 2426.4 },
   { year: 2023, current: 379.7, nonCurrent: 2091.0, total: 2470.7 },
   { year: 2024, current: 403.8, nonCurrent: 2091.8, total: 2495.5 },
@@ -146,7 +146,7 @@ const GroupedBarChart = ({
         >
           {yTicks.map((t) => (
             <span key={t} className="leading-none">
-              {t === 0 ? "0" : t >= 1000 ? `${t / 1000}K` : t}
+              {t}
             </span>
           ))}
         </div>

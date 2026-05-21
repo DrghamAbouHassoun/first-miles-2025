@@ -2,7 +2,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import ORHeader from "./ORHeader";
 import aloulaBg from "../../../assets/images/operating-review/bg/aloula.jpg";
 import aloulaBrand from "../../../assets/images/operating-review/brands/aloula.png";
-import aloulaLogo from "../../../assets/logo/aloula.svg";
+import aloulaLogo from "../../../assets/logo/aloula.png";
 import Container from "../../common/components/Container/Container";
 import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 import { useLocale } from "../../common/hooks/useLocale";

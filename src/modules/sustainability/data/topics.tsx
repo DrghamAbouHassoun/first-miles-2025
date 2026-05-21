@@ -27,7 +27,7 @@ export const topicsTableEn = {
           },
         ],
       },
-      unsdgs: [[12, 13], [12], [4], [8], [2, 3]],
+      unsdgs: [[2, 3], [12, 13], [12], [4], [8]],
       vision: ["t", "a", "t", "t", "v"],
     },
     {
@@ -126,7 +126,7 @@ export const topicsTableAr = {
           },
         ],
       },
-      unsdgs: [[12, 13], [12], [4], [8], [2, 3]],
+      unsdgs: [[2, 3], [12, 13], [12], [4], [8]],
       vision: ["t", "a", "t", "t", "v"],
     },
     {

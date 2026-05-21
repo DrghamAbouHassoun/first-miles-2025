@@ -549,7 +549,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-2/7 bottom-14" : "-bottom-10 lg:bottom-2 left-12 lg:left-1/4"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-1/6 bottom-14" : "-bottom-10 lg:bottom-2 left-12 lg:left-1/4"}`}
       >
         <RevenueContributionChart />
       </div>

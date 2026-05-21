@@ -4,6 +4,7 @@ import { useTranslation } from "../../common/hooks/useTranslation";
 import { LangContext } from "../../common/contexts/LangProvider";
 import AccordionArrowGreen from "../../../assets/icons/accordion-arrow-green.svg";
 import PageTitle from "../../common/components/typography/PageTitle";
+import GroupOfSpikes from "../../leadership/components/GroupOfSpikes";
 
 interface StakeholderSection {
   title: string;
@@ -161,6 +162,9 @@ const StakeholderEngagement = () => {
         </div>
       </div>
       </Container>
+      <div className="flex justify-end w-full h-auto absolute bottom-0 right-0 z-10 pointer-events-none">
+        <GroupOfSpikes />
+      </div>
     </div>
   );
 };

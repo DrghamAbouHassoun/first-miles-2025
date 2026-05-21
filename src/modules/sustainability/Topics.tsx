@@ -155,7 +155,7 @@ const Topics = () => {
       <section className="py-16">
         <Container>
           {/* Chart */}
-          <div className="flex mb-16 w-full">
+          <div className="mb-16 w-full max-w-180">
             {/* <img
               src={lang === "ar" ? TopicChartAr : TopicChartEn}
               alt="First Mills"

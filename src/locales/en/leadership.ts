@@ -9,7 +9,7 @@ export default {
   },
   chairman: {
     pageTitle: "Chairman’s Statement",
-    name: "Tariq Mutlaq Abdullah AlMutlaq",
+    name: "Tariq Mutlaq AlMutlaq",
     title: "Chairman of the Board",
     quote:
       "2025 marked a defining chapter in First Mills' journey. It was a year in which strong execution translated strategy into tangible progress across operations, portfolio diversification and market reach.",

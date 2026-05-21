@@ -54,7 +54,7 @@ const TabButton = ({
 }) => (
   <button
     onClick={onClick}
-    className="shrink-0 lg:shrink text-start cursor-pointer px-4 lg:px-0 lg:w-full py-3 lg:py-4 lg:pe-6"
+    className="shrink-0 lg:shrink text-start cursor-pointer px-4 lg:px-0 lg:w-full py-3 lg:py-4 lg:pe-6 outline-none"
   >
     <span
       className={`font-bold text-sm lg:text-base leading-tight transition-colors ${
@@ -99,6 +99,18 @@ const TabHeader = ({ desc, image }: TabHeaderProps) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const UnderLineTitle = ({ title }: { title: string }) => {
+  const { lang } = useLocale();
+  return (
+    <div className="w-fit mb-2 mt-4">
+      <h3 className="font-bold">{title}</h3>
+      <div
+        className={`w-full h-1 ${lang === "ar" ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow to-fm-yellow/0`}
+      ></div>
     </div>
   );
 };
@@ -191,14 +203,7 @@ const Nature = () => {
                     image={S1bg}
                   />
                   <FadeInAnimation>
-                    <div className="w-fit mb-2 mt-4">
-                      <h3 className="font-bold">
-                        {t("protectingNature.climateChange.t1")}
-                      </h3>
-                      <div
-                        className={`w-full h-1 ${lang === "ar" ? "bg-linear-to-l" : "bg-linear-to-r"} from-fm-yellow to-fm-yellow/0`}
-                      ></div>
-                    </div>
+                    <UnderLineTitle title={t("protectingNature.climateChange.t1")} />
                     <p
                       className="mb-4"
                       dangerouslySetInnerHTML={{
@@ -332,14 +337,7 @@ const Nature = () => {
                       __html: t("protectingNature.sustainablePackaging.desc"),
                     }}
                   /> */}
-                  <p
-                    className="font-bold mb-3 mt-6"
-                    dangerouslySetInnerHTML={{
-                      __html: t(
-                        "protectingNature.sustainablePackaging.sutitle",
-                      ),
-                    }}
-                  />
+                  <UnderLineTitle title={t("protectingNature.sustainablePackaging.sutitle")} />
                   <p
                     className="mb-4"
                     dangerouslySetInnerHTML={{
@@ -367,9 +365,7 @@ const Nature = () => {
                         __html: t("protectingNature.wastManagement.desc"),
                       }}
                     /> */}
-                    <h3 className="font-bold text-lg mb-3 mt-6">
-                      {t("protectingNature.wastManagement.ourProduct.title")}
-                    </h3>
+                    <UnderLineTitle title={t("protectingNature.wastManagement.title")} />
                     <p
                       className="mb-6"
                       dangerouslySetInnerHTML={{

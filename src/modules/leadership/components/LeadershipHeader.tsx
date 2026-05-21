@@ -83,7 +83,7 @@ const LeadershipHeader = ({
           <img
             src={imageUrl}
             alt={`${title} | ${SITE_NAME}`}
-            className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? isCEO ? "lg:-translate-y-24.5" : "lg:-translate-y-25.5" : "lg:-translate-y-23"} lg:translate-x-1`}
+            className={`w-full h-auto object-contain object-bottom ${isCEOorChairman ? isCEO ? "lg:-translate-y-[99.3px]" : "lg:-translate-y-[102.5px]" : "lg:-translate-y-22.75"} lg:translate-x-1`}
           />
         </div>
       </div>

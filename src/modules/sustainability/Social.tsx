@@ -487,7 +487,7 @@ const Social = () => {
                         </div>
                         <div className="flex flex-col w-full h-auto bg-fm-green/80 p-8 gap-9">
                           {/* Workforce table */}
-                          <div className="w-full max-w-180">
+                          <div className="w-full ">
                             <p className="font-bold text-fm-yellow mb-3 w-full">
                               {t("social.diversity.table.title")}
                             </p>
@@ -784,7 +784,7 @@ const Social = () => {
                           </div>
                           <div
                             dir={isAr ? "rtl" : "ltr"}
-                            className="flex-1 w-full max-w-180"
+                            className="flex-1 w-full max-w-140 mx-auto"
                           >
                             <p className="font-bold text-fm-yellow mb-4">
                               {t("social.diversity.chart.title")}
@@ -807,7 +807,7 @@ const Social = () => {
                                           transform: "rotate(180deg)",
                                         }}
                                       >
-                                        {isAr ? `م${year}` : year}
+                                        {isAr ? `${year}م` : year}
                                       </span>
                                     </div>
                                     <div className="flex-1 border-s border-gray-500 ps-0 space-y-1">

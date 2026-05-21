@@ -34,7 +34,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
   return (
     <div
       dir={lang === "ar" ? "rtl" : "ltr"}
-      className="max-w-150 bg-fm-yellow-100 p-4"
+      className="bg-fm-yellow-100 p-4"
     >
       <p className="font-bold text-base text-fm-green mb-1">
         {labels.totalLETitle}{" "}
@@ -74,8 +74,8 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
               className="flex items-center gap-2"
             >
               {/* Year label */}
-              <span className=" font-bold text-fm-green w-10 shrink-0 text-right">
-                {d.year}
+              <span className={` font-bold text-fm-green ${lang === "ar" ? "w-11" : "w-10"} shrink-0 text-right`}>
+                {lang === "ar" ? `${d.year}م` : d.year}
               </span>
 
               {/* Bar container */}
