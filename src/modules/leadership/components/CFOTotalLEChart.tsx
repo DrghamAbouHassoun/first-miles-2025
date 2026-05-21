@@ -74,7 +74,7 @@ const CFOTotalLEChart = ({ labels }: { labels: CFOTotalLELabels }) => {
               className="flex items-center gap-2"
             >
               {/* Year label */}
-              <span className={` font-bold text-fm-green ${lang === "ar" ? "w-11" : "w-10"} shrink-0 text-right`}>
+              <span className={` font-bold text-fm-green rotate-z-270  origin-center text-[10px] pt-5 text-center ${lang === "ar" ? "w-6 -translate-x-3" : "w-6"} shrink-0 text-right`}>
                 {lang === "ar" ? `${d.year}م` : d.year}
               </span>
 
