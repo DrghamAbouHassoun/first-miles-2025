@@ -192,9 +192,9 @@ const Social = () => {
   ];
 
   return (
-    <div>
+    <div className="relative">
       {/* ── Tabbed sections ───────────────────────────────────────────────── */}
-      <section className="pb-16" ref={tabSectionRef}>
+      <section className="relative pb-16 isolate" ref={tabSectionRef}>
         <Container>
           <PageTitle className="mb-16">{t("tabs.social")}</PageTitle>
         </Container>
@@ -1717,7 +1717,7 @@ const Social = () => {
           </div>
         </Container>
       </section>
-      <div className="flex justify-end items-end w-full h-auto absolute bottom-0 right-0 z-0">
+      <div className="flex justify-end items-end w-full h-auto absolute bottom-0 right-0 -z-20">
         <GroupOfSpikes />
       </div>
     </div>

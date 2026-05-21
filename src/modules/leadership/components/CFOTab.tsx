@@ -439,7 +439,7 @@ const CFOTab = () => {
           </Container>
 
           <div
-            className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+            className={`absolute bottom-0 -z-10 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
           >
             <GroupOfSpikes />
           </div>

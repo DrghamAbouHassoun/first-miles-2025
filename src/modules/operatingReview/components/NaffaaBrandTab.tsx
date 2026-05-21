@@ -26,7 +26,7 @@ const NaffaaBrandTab = () => {
         brandImage={naffaBrand}
         brandLogo={naffaLogo}
       />
-      <section className="py-16">
+      <section className="relative py-16 isolate">
         <Container>
           <div className="text-fm-green">
             <SlideTopAnimation>
@@ -46,7 +46,7 @@ const NaffaaBrandTab = () => {
         </Container>
       </section>
       <div
-        className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+        className={`absolute w-fit bottom-0 -z-20 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
       >
         <GroupOfSpikes />
       </div>

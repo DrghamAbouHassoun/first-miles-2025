@@ -132,9 +132,9 @@ const Strategy = () => {
   const enablers = tArray("sustainabilityStrategy.enablersSection.divisions");
 
   return (
-    <div>
+    <div className="relative">
       {/* Intro Paragraphs */}
-      <section className="py-16">
+      <section className="relative py-16 isolate">
         <Container>
           <div className="">
             <PageTitle className="mb-4">
@@ -153,7 +153,7 @@ const Strategy = () => {
       </section>
 
       {/* Accordion */}
-      <section className="pb-16">
+      <section className="relative pb-16 isolate">
         <Container>
           <SlideTopAnimation>
             <h3 className="text-xl font-bold mb-4">
@@ -252,7 +252,7 @@ const Strategy = () => {
           </div>
         </Container>
       </section>
-      <div className="flex justify-end items-end  w-full h-auto absolute bottom-0 right-0 -z-10">
+      <div className="flex justify-end items-end w-full h-auto absolute bottom-0 right-0 -z-20">
         <GroupOfSpikes />
       </div>
     </div>

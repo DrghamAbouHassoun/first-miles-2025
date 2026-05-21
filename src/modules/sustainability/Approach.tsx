@@ -10,7 +10,7 @@ const Approach = () => {
   const { lang } = useLocale();
   return (
     <div className="relative">
-      <div className="py-16">
+      <div className="relative py-16 isolate">
         <Container>
           <div className="">
             <PageTitle className="mb-4">
@@ -48,7 +48,7 @@ const Approach = () => {
         </Container>
       </div>
       <div
-        className={`absolute bottom-0 z-0 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+        className={`absolute w-fit bottom-0 -z-20 ${lang === "ar" ? "left-8" : "right-8"} pointer-events-none opacity-80`}
       >
         <GroupOfSpikes />
       </div>

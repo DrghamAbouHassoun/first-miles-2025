@@ -88,8 +88,8 @@ const ChairmanTab = () => {
         </div>
 
         {/* Second half of sections with wheat decoration */}
-        <div className="relative bg-white overflow-hidden pb-16">
-          <Container className=" z-10">
+        <div className="relative overflow-hidden pb-16">
+          <Container className=" z-20">
             <div className="  space-y-3 mb-3 z-10">
               {secondHalf.map(
                 (
@@ -116,7 +116,7 @@ const ChairmanTab = () => {
             </div>
           </Container>
           <div
-            className={`absolute bottom-0 z-0 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
+            className={`absolute bottom-0 -z-10 ${isRtl ? "left-8" : "right-8"} pointer-events-none opacity-80`}
           >
             <GroupOfSpikes />
           </div>

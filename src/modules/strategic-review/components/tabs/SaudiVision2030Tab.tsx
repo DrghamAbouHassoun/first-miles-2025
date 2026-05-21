@@ -34,7 +34,7 @@ const SaudiVision2030Tab = () => {
           className="absolute top-0 left-0 h-full w-full object-cover object-center"
         />
       </div>
-      <div className="py-16">
+      <div className="relative py-16 isolate">
         <Container>
           <PageTitle className="mb-6" color="white">
             {t("tabs.saudiVision2030")}
@@ -51,7 +51,7 @@ const SaudiVision2030Tab = () => {
           </SlideTopAnimation>
         </Container>
       </div>
-      <div className="">
+      <div className="relative isolate">
         <Container>
           <div className="flex flex-col lg:flex-row gap-8 min-h-screen py-24">
             <div className="flex-1 w-full lg:max-w-75 flex flex-col gap-4">
@@ -113,7 +113,7 @@ const SaudiVision2030Tab = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 z-10">
+          <div className="flex justify-end absolute w-full h-auto bottom-0 right-0 -z-20">
             <GroupOfSpikes />
           </div>
         </Container>

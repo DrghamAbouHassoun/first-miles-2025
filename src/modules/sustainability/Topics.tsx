@@ -259,7 +259,7 @@ const Topics = () => {
                           <img
                             src={visionIconsMap[activeGroup.vision[i]]}
                             alt="Vision 2030"
-                            className="w-8 h-8"
+                            className="w-12 h-12"
                           />
                         )}
                     </div>

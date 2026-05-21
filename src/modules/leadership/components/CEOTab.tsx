@@ -93,7 +93,7 @@ const CEOTab = () => {
 
         {/* Second half of sections with wheat decoration */}
         <div className="relative overflow-hidden pb-32">
-          <Container>
+          <Container className=" z-20">
             <div className=" space-y-3 mb-3">
               {secondHalf.map(
                 (
