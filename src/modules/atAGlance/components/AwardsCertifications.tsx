@@ -79,18 +79,18 @@ const AwardsCertifications = () => {
       dir={isRtl ? "rtl" : "ltr"}
     >
       <div className="sticky top-0 h-screen min-h-150 overflow-hidden">
-        <div className="flex justify-end absolute w-full h-auto bottom-0 z-20">
-          <GroupOfSpikes />
-        </div>
         {/* Background image with dark overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: `url(${BgImage})` }}
         />
         <div className="absolute inset-0 bg-linear-180 from-fm-green to-fm-green/0" />
+        <div className="flex justify-end absolute w-full h-auto bottom-0 z-0 pointer-events-none">
+          <GroupOfSpikes />
+        </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center px-4 md:px-32 py-12 ">
+        <div className="relative z-10 isolate h-full flex flex-col justify-center px-4 md:px-32 py-12 ">
           {/* Section title */}
           <h2 className="text-3xl font-bold text-white mb-10">
             {t("awards.title")} {lang === "en" ? <span className="text-fm-yellow">and</span> : ""}{" "}

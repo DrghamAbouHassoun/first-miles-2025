@@ -52,7 +52,7 @@ const CFOQualitySection = ({ data }: Props) => {
         <div className="absolute inset-0 bg-fm-green/85" />
       </div>
       {/* Dark background section with cfo.jpg */}
-      <div className="relative overflow-hidden">
+      <div className="relative z-10 overflow-hidden isolate">
         <Container>
           <div className="relative z-10 py-16 md:py-20">
             <SlideTopAnimation>
@@ -103,7 +103,7 @@ const CFOQualitySection = ({ data }: Props) => {
       </div>
 
       {/* Yellow stats panel */}
-      <Container className="pb-16">
+      <Container className="relative z-10 pb-16 isolate">
         <div className="">
           <div>
             <div className="">

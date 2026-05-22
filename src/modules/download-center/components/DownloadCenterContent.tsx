@@ -238,9 +238,9 @@ const DownloadCenterContent = () => {
             const visibleIndices = chapter.sections
               .map((_, i) => i)
               .filter((i) => !hidden.has(i));
-            const allSelected =
-              visibleIndices.length > 0 &&
-              visibleIndices.every((i) => chapterChecked[i]);
+            const allSelected = hasSubSections
+              ? visibleIndices.length > 0 && visibleIndices.every((i) => chapterChecked[i])
+              : (chapterChecked[0] ?? false);
 
             return (
               <div key={ci}>

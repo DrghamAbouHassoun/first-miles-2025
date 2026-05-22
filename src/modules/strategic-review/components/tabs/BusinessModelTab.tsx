@@ -103,13 +103,13 @@ const BusinessModelTab = () => {
                       {t("businessModelContent.inputs.title")}
                     </h4>
 
-                    <img
+                    {/* <img
                       src={AccordionArrow}
                       alt=""
                       className={`w-6 h-6 transition-transform duration-300 ${
                         openTab === "inputs" ? "rotate-180" : ""
                       }`}
-                    />
+                    /> */}
                   </div>
                 </button>
                 <div

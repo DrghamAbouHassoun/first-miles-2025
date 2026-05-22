@@ -25,7 +25,7 @@ const SaudiVision2030Tab = () => {
   return (
     <div className="relative w-full">
       <div
-        className="sticky top-0 left-0 h-screen w-full -z-10"
+        className="sticky top-0 left-0 h-screen w-full -z-10 "
         style={{ marginBottom: "-100vh" }}
       >
         <img
@@ -33,6 +33,7 @@ const SaudiVision2030Tab = () => {
           alt={`Saudi Vision 2030 | ${SITE_NAME}`}
           className="absolute top-0 left-0 h-full w-full object-cover object-center"
         />
+        <div className="absolute top-0 left-0 h-full w-full bg-linear-to-b from-fm-green via-50% to-fm-green/0" />
       </div>
       <div className="relative py-16 isolate">
         <Container>
