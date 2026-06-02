@@ -438,7 +438,7 @@ const Social = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex gap-6 mb-6 text-sm flex-wrap">
+                        <div className="flex gap-6 mb-6 text-sm flex-wrap justify-center">
                           <div className="flex items-center gap-2">
                             <span className="inline-block w-3 h-3 bg-fm-green shrink-0" />
                             <span>
@@ -899,7 +899,7 @@ const Social = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="flex items-center gap-6 mt-3">
+                            <div className="flex items-center justify-center gap-6 mt-3">
                               <div className="flex items-center gap-2">
                                 <span className="inline-block w-4 h-4 bg-fm-yellow-100 shrink-0" />
                                 <span className="text-sm">
@@ -950,7 +950,7 @@ const Social = () => {
                       <p className="font-bold text-fm-yellow mb-3">
                         {t("social.nationalization.table.title")}
                       </p>
-                      <div className="overflow-auto max-w-220">
+                      <div className="overflow-auto ">
                         <table className="w-full text-sm">
                           <thead>
                             <tr className="border-b border-b-fm-yellow">
@@ -1176,7 +1176,7 @@ const Social = () => {
                       <p className="font-bold text-fm-green mb-3">
                         {t("social.occupational.table.title")}
                       </p>
-                      <div className="flex flex-col gap-4 max-w-180">
+                      <div className="flex flex-col gap-4">
                         <div>
                           <h3 className="text-fm-yellow font-bold">
                             {lang === "ar" ? "التدريب" : "Training"}

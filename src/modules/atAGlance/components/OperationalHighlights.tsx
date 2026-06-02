@@ -115,7 +115,7 @@ const OperationalHighlights = () => {
         {/* Operational Highlights */}
         <div className="px-4 md:px-16 pt-12 pb-10">
           <div className="w-fit overflow-y-hidden">
-            <SlideTopAnimation level="50" className="mb-8">
+            <SlideTopAnimation level="50" className="mb-16">
               <h2 className="text-3xl font-bold mb-8 text-white">
                 {t("operationalHighlights.title")}
               </h2>
@@ -141,7 +141,7 @@ const OperationalHighlights = () => {
                   </span>
                 </div>
                 <SlideTopAnimation level="50">
-                  <span className=" font-medium text-white">
+                  <span className=" font-medium text-white text-2xl">
                     {t("operationalHighlights.plants.label")}
                   </span>
                 </SlideTopAnimation>
@@ -268,7 +268,7 @@ const OperationalHighlights = () => {
                 </span>
               </div>
               <SlideTopAnimation level="50">
-                <span className="text-lg font-medium text-white">
+                <span className="text-2xl font-medium text-white">
                   {t("operationalHighlights.mills.label")}
                 </span>
               </SlideTopAnimation>
@@ -279,7 +279,7 @@ const OperationalHighlights = () => {
         {/* Capacities */}
         <div className="px-4 md:px-16 py-10">
           <SlideTopAnimation>
-            <h2 className="text-3xl font-bold mb-8 text-white">
+            <h2 className="text-3xl font-bold mb-16 text-white">
               {t("operationalHighlights.capacities.title")}
             </h2>
           </SlideTopAnimation>
@@ -331,7 +331,7 @@ const OperationalHighlights = () => {
 
         {/* Market Share + Customers */}
         <div className="px-4 md:px-16 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div className="flex flex-col sm:flex-row justify-center gap-10">
             {/* Market Share */}
             <div>
               <SlideTopAnimation>
@@ -397,7 +397,7 @@ const OperationalHighlights = () => {
           <h2 className="text-3xl font-bold mb-8 text-white">
             {t("operationalHighlights.productSales.title")}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div className="flex flex-col sm:flex-row justify-center gap-10">
             <CircularStat
               value={{
                 number: t(

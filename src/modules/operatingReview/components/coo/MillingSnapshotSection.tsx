@@ -53,16 +53,16 @@ const MillingSnapshotSection = () => {
           </h2>
         </SlideTopAnimation>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 lg:min-h-80">
           {/* Capacity and network */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 group">
             <SlideTopAnimation>
-              <h3 className="font-bold text-fm-green text-base">
+              <h3 className="font-bold text-fm-green text-base lg:cursor-default">
                 {t("cooContent.snapshot.capacity.title")}
               </h3>
             </SlideTopAnimation>
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
-            <ul className="space-y-3 text-sm text-fm-green">
+            <ul className="space-y-3 text-sm text-fm-green lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-[500px] lg:transition-[max-height] lg:duration-500 lg:ease-in-out">
               {capacityBullets.map((bullet, i) => (
                 <SlideTopAnimation key={i}>
                   <li className="flex gap-2">
@@ -75,14 +75,14 @@ const MillingSnapshotSection = () => {
           </div>
 
           {/* Daily production capacities */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 group">
             <SlideTopAnimation>
-              <h3 className="font-bold text-fm-green">
+              <h3 className="font-bold text-fm-green lg:cursor-default">
                 {t("cooContent.snapshot.daily.title")}
               </h3>
             </SlideTopAnimation>
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
-            <ul className="space-y-3 text-sm text-fm-green">
+            <ul className="space-y-3 text-sm text-fm-green lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-[500px] lg:transition-[max-height] lg:duration-500 lg:ease-in-out">
               {dailyBullets.map((bullet, i) => (
                 <SlideTopAnimation key={i}>
                   <li className="flex gap-2">
@@ -95,14 +95,14 @@ const MillingSnapshotSection = () => {
           </div>
 
           {/* Performance and utilization */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 group">
             <SlideTopAnimation>
-              <h3 className="font-bold text-fm-green text-base">
+              <h3 className="font-bold text-fm-green text-base lg:cursor-default">
                 {t("cooContent.snapshot.performance.title")}
               </h3>
             </SlideTopAnimation>
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
-            <ul className="space-y-3 text-sm text-fm-green">
+            <ul className="space-y-3 text-sm text-fm-green lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-[500px] lg:transition-[max-height] lg:duration-500 lg:ease-in-out">
               {performanceBullets.map((bullet, i) => (
                 <SlideTopAnimation key={i}>
                   <li className="flex gap-2">
@@ -115,14 +115,14 @@ const MillingSnapshotSection = () => {
           </div>
 
           {/* Flour product mix chart */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 group">
             <SlideTopAnimation>
-              <h3 className="font-bold text-fm-green text-base">
+              <h3 className="font-bold text-fm-green text-base lg:cursor-default">
                 {t("cooContent.snapshot.chart.title")}
               </h3>
             </SlideTopAnimation>
             <div className="w-full h-0.5 bg-linear-to-r from-fm-yellow to-fm-yellow/0" />
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4 lg:max-h-0 lg:overflow-hidden lg:group-hover:max-h-[500px] lg:transition-[max-height] lg:duration-500 lg:ease-in-out">
               {/* Donut chart */}
               <div className="w-64 h-64 relative" ref={ref}>
                 <svg
@@ -184,16 +184,16 @@ const MillingSnapshotSection = () => {
               </div>
 
               {/* Legend */}
-              <ul className="flex flex-col gap-2 text-xs text-fm-green w-full">
-                <li className="flex items-center gap-2">
+              <ul className="flex flex-col justify-center items-center gap-2 text-xs text-fm-green w-full">
+                <li className="flex items-center gap-2 w-full max-w-36">
                   <span className="inline-block w-4 h-4 shrink-0 bg-fm-yellow" />
                   <span>{t("cooContent.snapshot.chart.superior")}</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 w-full max-w-36">
                   <span className="inline-block w-4 h-4 shrink-0 bg-fm-green" />
                   <span>{t("cooContent.snapshot.chart.bakery")}</span>
                 </li>
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 w-full max-w-36">
                   <span className="inline-block w-4 h-4 shrink-0 bg-fm-gray-200" />
                   <span>{t("cooContent.snapshot.chart.brown")}</span>
                 </li>

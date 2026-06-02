@@ -64,15 +64,24 @@ const ProductsSection = () => {
             {t("cooContent.productsSection.title2")}
           </h1>
         </SlideTopAnimation>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-          {products.map((item) => (
-            <PopupAnimation key={item.title}>
-              <ProductCard
-                title={t(item.title)}
-                desc={t(item.desc)}
-                image={item.image}
-              />
-            </PopupAnimation>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {products.map((item, index) => (
+            <div
+              key={item.title}
+              className={
+                products.length % 2 !== 0 && index === products.length - 1
+                  ? "col-span-1 md:col-span-2 flex justify-center"
+                  : ""
+              }
+            >
+              <PopupAnimation>
+                <ProductCard
+                  title={t(item.title)}
+                  desc={t(item.desc)}
+                  image={item.image}
+                />
+              </PopupAnimation>
+            </div>
           ))}
         </div>
       </Container>

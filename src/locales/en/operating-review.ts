@@ -117,21 +117,21 @@ export default {
     servicesTitle: "Key Activities of the First Milling Company",
     services: [
       {
-        title: "Grinding and packaging:",
+        title: "Grinding and packaging",
         subtitle: " Wheat, corn, soybean, semolina and durum",
       },
       {
-        title: "Manufacturing:",
+        title: "Manufacturing",
         subtitle:
           "Flour and dough for bakeries; livestock feed, concentrated animal feed, poultry feed, bird feed and plant by-products used as animal feed",
       },
       {
-        title: "Storage:",
+        title: "Storage",
         subtitle:
           "Flour and agricultural products, including food and animal feed and dry foods",
       },
       {
-        title: "Retail and wholesale distribution: ",
+        title: "Retail and wholesale distribution",
         subtitle: "Flour, bran, ready mixes, durum and feed",
       },
     ],

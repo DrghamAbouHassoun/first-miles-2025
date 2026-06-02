@@ -19,6 +19,9 @@ import { useContext } from "react";
 import { LangContext } from "../../../common/contexts/LangProvider";
 import PageTitle from "../../../common/components/typography/PageTitle";
 import ImageScaleAnimation from "../../../common/components/animations/ImageScaleAnimation";
+import Timeline from "./Timeline";
+import TimelineDesktopEn from "./TimelineDesktopEn";
+import TimeLineDesktopAr from "./TimeLineDesktopAr";
 
 const services = [
   {
@@ -170,14 +173,14 @@ const COOTab = () => {
             </Container>
           </div>
         </section>
-        {/* <section className="bg-fm-yellow-200">
+        <section className="bg-fm-yellow-200">
           <div className="w-full hidden md:block">
             {lang === "ar" ? <TimeLineDesktopAr /> : <TimelineDesktopEn />}
           </div>
           <div className="w-full block md:hidden">
             <Timeline />
           </div>
-        </section> */}
+        </section>
         <ProductsSection />
         <MillingSnapshotSection />
         <ProductRevnewSection />

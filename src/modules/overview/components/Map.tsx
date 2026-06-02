@@ -94,7 +94,7 @@ const countryConfigs: CountrItem[] = [
   {
     id: "jordan",
     cx: 320,
-    cy: 370,
+    cy: 372,
   },
   {
     id: "qatar",
@@ -104,7 +104,7 @@ const countryConfigs: CountrItem[] = [
   {
     id: "iraq",
     cx: 492,
-    cy: 298,
+    cy: 302,
   },
   {
     id: "kuwait",
@@ -119,7 +119,7 @@ const countryConfigs: CountrItem[] = [
   {
     id: "syria",
     cx: 368,
-    cy: 263,
+    cy: 265,
   },
 ];
 
@@ -175,7 +175,7 @@ const RevenueContributionChart = () => {
   const regionKeys = Object.keys(regionColors) as RegionKey[];
 
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4 max-w-220 mx-auto">
       <div className="w-full max-w-200">
         <div className="flex items-center flex-col md:flex-row gap-8 md:gap-4">
           <div className="relative shrink-0 h-72 w-72">
@@ -314,27 +314,37 @@ type CountriesType =
   | "syria"
   | "uae";
 
+const getPopupPosition = (cx: number, cy: number) => {
+  const xPct = cx / SVG_WIDTH;
+  const yPct = cy / SVG_HEIGHT;
+  const showBelow = yPct < 0.4;
+  const vertical = showBelow ? "top-full mt-2" : "bottom-full mb-2";
+  const horizontal =
+    xPct < 0.15 ? "left-0" : xPct > 0.85 ? "right-0" : "left-1/2 -translate-x-1/2";
+  return { vertical, horizontal, showBelow };
+};
+
 const Map = () => {
   const { t } = useTranslation("overview");
   const { lang, translations } = useContext(LangContext);
   const isRtl = lang === "ar";
 
-  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeCountryIndex, setActiveCountryIndex] =
-    useState<CountriesType>("uae");
+    useState<CountriesType | null>(null);
 
   const overviewLocale = translations[lang as "en" | "ar"].overview;
   const marketsData = overviewLocale.geographicPresenceContent.markets;
 
-  const handleHover = (index: number) => {
+  const handlePlantHover = (index: number) => {
     setActiveIndex(index);
+    setActiveCountryIndex(null);
   };
 
   const handleCountryHover = (id: CountriesType) => {
     setActiveCountryIndex(id);
+    setActiveIndex(null);
   };
-
-  const activePlant = plantConfigs[activeIndex];
 
   return (
     <div
@@ -363,97 +373,9 @@ const Map = () => {
           </div>
         </div>
       </Container>
-      <div className="relative mx-auto flex max-w-352.5 flex-col-reverse gap-8 px-4 sm:px-6 lg:flex-row lg:pb-16">
-        {/* Sidebar */}
-        <div className="flex-1 max-w-130 shrink-0 text-white">
-          <div className="w-full h-full flex flex-col items-center justify-center gap-4">
-            {/* Country panel */}
-            <div className="min-h-30 w-full flex justify-center items-center">
-              <div
-                key={`country-${activeCountryIndex}`}
-                className="w-full max-w-70 animation-slide-top-50 active bg-fm-yellow-100 p-4 rounded-xl"
-              >
-                <p className="text-fm-yellow font-bold text-base">
-                  {marketsData[activeCountryIndex].name}
-                </p>
-                <p className="text-fm-gray-400 font-bold text-xl leading-tight">
-                  <CounterAnimation
-                    end={parseInt(marketsData[activeCountryIndex].tons.value)}
-                    suffix={marketsData[activeCountryIndex].tons.suffix}
-                  />
-                </p>
-              </div>
-            </div>
-            {/* Plant panel */}
-            <div className="min-h-120 w-full flex justify-center items-start">
-              <div
-                className="w-full max-w-70 animation-slide-top-50 active relative"
-                key={`item-${activePlant.id}`}
-              >
-                <div
-                  className={`w-6 h-6 rounded-full absolute -top-3 left-1/2 -translate-x-1/2 `}
-                  style={{ backgroundColor: activePlant.color }}
-                />
-                <div className="flex text-center items-center flex-col max-w-70 w-full rounded-lg p-2 px-4 min-h-65 transition-all duration-500 bg-linear-180 from-fm-gray-200/30 to-fm-yellow-100/0">
-                  <h3 className="text-fm-yellow font-bold text-lg mb-5 border-b-2 border-fm-gray-100 pb-2 text-center">
-                    {t(`map.plants.${activePlant.id}.name`)}
-                  </h3>
-                  <ul className="space-y-3 text-sm">
-                    <li className="flex flex-col">
-                      <span className="text-md tracking-wide mb-0.5">
-                        {t("map.labels.silosStorage")}
-                      </span>
-                      <span className="text-white font-semibold">
-                        {t(`map.plants.${activePlant.id}.silosStorage`)}
-                      </span>
-                    </li>
-                    {activePlant.hasMilling && (
-                      <li className="flex flex-col">
-                        <span className="tracking-wide mb-0.5">
-                          {t("map.labels.millingCapacity")}
-                        </span>
-                        <span className="text-white font-semibold">
-                          {t(`map.plants.${activePlant.id}.millingCapacity`)}
-                        </span>
-                      </li>
-                    )}
-                    {activePlant.hasFeed && (
-                      <li className="flex flex-col">
-                        <span className="tracking-wide mb-0.5">
-                          {t("map.labels.feedCapacity")}
-                        </span>
-                        <span className="text-white font-semibold">
-                          {t(`map.plants.${activePlant.id}.feedCapacity`)}
-                        </span>
-                      </li>
-                    )}
-                    {activePlant.hasDurum && (
-                      <li className="flex flex-col">
-                        <span className="tracking-wide mb-0.5">
-                          {t("map.labels.durumCapacity")}
-                        </span>
-                        <span className="text-white font-semibold">
-                          {t(`map.plants.${activePlant.id}.durumCapacity`)}
-                        </span>
-                      </li>
-                    )}
-                    {t(`map.plants.${activePlant.id}.note`) !==
-                      `map.plants.${activePlant.id}.note` && (
-                      <li className="flex flex-col">
-                        <span className="text-white text-sm">
-                          {t(`map.plants.${activePlant.id}.note`)}
-                        </span>
-                      </li>
-                    )}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div className="relative mx-auto flex max-w-352.5 flex-col gap-8 px-4 sm:px-6 lg:pb-46">
         {/* Map */}
-        <div className="flex-1 h-full relative">
+        <div className="w-full h-full relative max-w-220 mx-auto">
           <PopupAnimation>
             <div className="relative w-full">
               <img
@@ -466,11 +388,15 @@ const Map = () => {
                 const left = (country.cx / SVG_WIDTH) * 100;
                 const top = (country.cy / SVG_HEIGHT) * 100;
                 const isActive = country.id === activeCountryIndex;
+                const { vertical, horizontal, showBelow } = getPopupPosition(
+                  country.cx,
+                  country.cy
+                );
 
                 return (
                   <div
                     key={country.id}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                    className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer ${isActive ? "z-50" : "z-10"}`}
                     style={{ left: `${left}%`, top: `${top}%` }}
                     onMouseEnter={() => handleCountryHover(country.id)}
                   >
@@ -502,6 +428,36 @@ const Map = () => {
                         className="w-5 h-5"
                       />
                     </span>
+                    {/* Popup */}
+                    {isActive && (
+                      <div
+                        key={`country-popup-${country.id}`}
+                        className={`absolute ${vertical} ${horizontal} z-50 pointer-events-none animation-slide-top-50 active`}
+                      >
+                        {showBelow && (
+                          <div
+                            className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto mb-[-6px]"
+                            style={{ boxShadow: "none" }}
+                          />
+                        )}
+                        <div className="bg-fm-yellow-100 p-3 rounded-xl shadow-xl w-48">
+                          <p className="text-fm-yellow font-bold text-sm mb-1">
+                            {marketsData[country.id].name}
+                          </p>
+                          <p className="text-fm-gray-400 font-bold text-lg leading-tight">
+                            <CounterAnimation
+                              end={parseInt(
+                                marketsData[country.id].tons.value
+                              )}
+                              suffix={marketsData[country.id].tons.suffix}
+                            />
+                          </p>
+                        </div>
+                        {!showBelow && (
+                          <div className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto mt-[-6px]" />
+                        )}
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -509,13 +465,17 @@ const Map = () => {
                 const left = (plant.cx / SVG_WIDTH) * 100;
                 const top = (plant.cy / SVG_HEIGHT) * 100;
                 const isActive = index === activeIndex;
+                const { vertical, horizontal, showBelow } = getPopupPosition(
+                  plant.cx,
+                  plant.cy
+                );
 
                 return (
                   <div
                     key={plant.id}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+                    className={`absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer ${isActive ? "z-50" : "z-10"}`}
                     style={{ left: `${left}%`, top: `${top}%` }}
-                    onMouseEnter={() => handleHover(index)}
+                    onMouseEnter={() => handlePlantHover(index)}
                   >
                     {/* Pulsing rings */}
                     {isActive && (
@@ -541,6 +501,96 @@ const Map = () => {
                     <span className="relative flex justify-center items-center rounded-full transition-all duration-300 w-8 h-8 bg-fm-yellow">
                       <img src={PlantVector} alt="Plant" className="w-5 h-5" />
                     </span>
+                    {/* Popup */}
+                    {isActive && (
+                      <div
+                        key={`plant-popup-${plant.id}`}
+                        className={`absolute ${vertical} ${horizontal} z-50 pointer-events-none animation-slide-top-50 active`}
+                      >
+                        {showBelow && (
+                          <div
+                            className="w-3 h-3 rotate-45 mx-auto mb-[-6px]"
+                            style={{ backgroundColor: plant.color }}
+                          />
+                        )}
+                        <div
+                          className="rounded-xl shadow-xl w-56 overflow-hidden text-white text-center"
+                          style={{
+                            background:
+                              "linear-gradient(180deg, rgba(50,80,70,0.97) 0%, rgba(20,55,45,0.97) 100%)",
+                            border: `1px solid ${plant.color}55`,
+                          }}
+                        >
+                          <div
+                            className="w-full h-1"
+                            style={{ backgroundColor: plant.color }}
+                          />
+                          <div className="p-3 px-4">
+                            <h3 className="text-fm-yellow font-bold text-sm mb-3 border-b border-white/20 pb-2">
+                              {t(`map.plants.${plant.id}.name`)}
+                            </h3>
+                            <ul className="space-y-2 text-xs text-left">
+                              <li className="flex flex-col">
+                                <span className="text-white/70 mb-0.5">
+                                  {t("map.labels.silosStorage")}
+                                </span>
+                                <span className="text-white font-semibold">
+                                  {t(`map.plants.${plant.id}.silosStorage`)}
+                                </span>
+                              </li>
+                              {plant.hasMilling && (
+                                <li className="flex flex-col">
+                                  <span className="text-white/70 mb-0.5">
+                                    {t("map.labels.millingCapacity")}
+                                  </span>
+                                  <span className="text-white font-semibold">
+                                    {t(
+                                      `map.plants.${plant.id}.millingCapacity`
+                                    )}
+                                  </span>
+                                </li>
+                              )}
+                              {plant.hasFeed && (
+                                <li className="flex flex-col">
+                                  <span className="text-white/70 mb-0.5">
+                                    {t("map.labels.feedCapacity")}
+                                  </span>
+                                  <span className="text-white font-semibold">
+                                    {t(`map.plants.${plant.id}.feedCapacity`)}
+                                  </span>
+                                </li>
+                              )}
+                              {plant.hasDurum && (
+                                <li className="flex flex-col">
+                                  <span className="text-white/70 mb-0.5">
+                                    {t("map.labels.durumCapacity")}
+                                  </span>
+                                  <span className="text-white font-semibold">
+                                    {t(
+                                      `map.plants.${plant.id}.durumCapacity`
+                                    )}
+                                  </span>
+                                </li>
+                              )}
+                              {t(`map.plants.${plant.id}.note`) !==
+                                `map.plants.${plant.id}.note` && (
+                                <li>
+                                  <span className="text-white/80 text-xs">
+                                    {t(`map.plants.${plant.id}.note`)}
+                                  </span>
+                                </li>
+                              )}
+                            </ul>
+                          </div>
+                        </div>
+                        {!showBelow && (
+                          <div
+                            className="w-3 h-3 rotate-45 mx-auto mt-[-6px]"
+                            style={{ backgroundColor: plant.color }}
+                          />
+                        )}
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -549,7 +599,7 @@ const Map = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-0  ${isRtl ? "lg:left-auto lg:right-1/6 bottom-14" : "-bottom-10 lg:bottom-2 left-12 lg:left-1/4"}`}
+        className={`flex justify-center px-2 sm:px-0 lg:absolute pt-8 lg:pt-16  ${isRtl ? "lg:left-auto lg:right-4 bottom-14" : "-bottom-10 lg:bottom-2 left-12 lg:left-4"}`}
       >
         <RevenueContributionChart />
       </div>

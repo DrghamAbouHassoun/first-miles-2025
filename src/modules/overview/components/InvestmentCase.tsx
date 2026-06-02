@@ -145,7 +145,7 @@ const InvestmentCase = () => {
                 )}
 
                 <ul className="space-y-4">
-                  {(activeItem === 3 ? currentLeaf.bullets.slice(1, currentLeaf.bullets.length) : currentLeaf.bullets).map((bullet, i) => (
+                  {(currentLeaf.bullets.slice(1, currentLeaf.bullets.length)).map((bullet, i) => (
                     <li key={i} className="flex gap-3 text-sm leading-relaxed">
                       <span className="text-fm-yellow mt-0.5 shrink-0">•</span>
                       <span dangerouslySetInnerHTML={{ __html: bullet }} />

@@ -146,7 +146,7 @@ const Achievement = ({
       {prefix && <span dangerouslySetInnerHTML={{ __html: prefix }}></span>}{" "}
       {highlight && (
         <span
-          className=" font-bold"
+          className=" font-bold "
           dangerouslySetInnerHTML={{ __html: highlight }}
         ></span>
       )}
@@ -155,7 +155,7 @@ const Achievement = ({
       )}
     </p>
     {large && (
-      <p className="mt-1">
+      <p className="mt-1 text-fm-yellow">
         <span className="text-3xl " dangerouslySetInnerHTML={{ __html: large }}></span>
         {""}
         {suffix && (

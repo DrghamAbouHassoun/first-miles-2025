@@ -235,7 +235,7 @@ const Topics = () => {
 
                     {/* UNSDGs icons */}
                     <div
-                      className={`w-full max-w-48 flex flex-wrap gap-1 justify-start px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
+                      className={`w-full max-w-48 flex flex-wrap gap-1 justify-center px-2 py-2 h-full min-h-12 border-l border-r border-gray-700 `}
                     >
                       {activeGroup.unsdgs[i]?.map((num) => {
                         const icon = (
