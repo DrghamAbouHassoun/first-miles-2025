@@ -7,22 +7,27 @@ export const topicsTableEn = {
         list: [
           {
             index: 1,
+            color: "orange",
             title: "Food quality and safety",
           },
           {
             index: 2,
+            color: "green",
             title: "Climate change and energy management",
           },
           {
             index: 3,
+            color: "green",
             title: "Sustainable packaging",
           },
           {
             index: 4,
+            color: "orange",
             title: "Talent management and development",
           },
           {
             index: 5,
+            color: "orange",
             title: "Occupational health and safety",
           },
         ],
@@ -37,30 +42,37 @@ export const topicsTableEn = {
         list: [
           {
             index: 6,
+            color: "orange",
             title: "Nutrition and health",
           },
           {
             index: 7,
+            color: "green",
             title: "Water management",
           },
           {
             index: 8,
+            color: "gray",
             title: "Business ethics and human rights",
           },
           {
             index: 9,
+            color: "green",
             title: "Waste management and circular economy",
           },
           {
             index: 10,
+            color: "gray",
             title: "Responsible sourcing",
           },
           {
             index: 11,
+            color: "gray",
             title: "Corporate governance",
           },
           {
             index: 12,
+            color: "orange",
             title: "Community support",
           },
         ],
@@ -75,18 +87,22 @@ export const topicsTableEn = {
         list: [
           {
             index: 13,
+            color: "orange",
             title: "Diversity, equity and Inclusion",
           },
           {
             index: 14,
+            color: "orange",
             title: "Nationalization",
           },
           {
             index: 15,
+            color: "green",
             title: "Sustainable agriculture",
           },
           {
             index: 16,
+            color: "gray",
             title: "Customer satisfaction and responsible labeling",
           },
         ],
@@ -106,22 +122,27 @@ export const topicsTableAr = {
         list: [
           {
             index: 1,
+            color: "orange",
             title: "جودة الغذاء وسلامته",
           },
           {
             index: 2,
+            color: "green",
             title: "التغير المناخي وإدارة الطاقة",
           },
           {
             index: 3,
+            color: "green",
             title: "التغليف المستدام",
           },
           {
             index: 4,
+            color: "orange",
             title: "إدارة المواهب وتطويرها",
           },
           {
             index: 5,
+            color: "orange",
             title: "الصحة والسلامة المهنية",
           },
         ],
@@ -136,30 +157,37 @@ export const topicsTableAr = {
         list: [
           {
             index: 6,
+            color: "orange",
             title: "التغذية والصحة",
           },
           {
             index: 7,
+            color: "green",
             title: "إدارة المياه",
           },
           {
             index: 8,
+            color: "gray",
             title: "أخلاقيات العمل وحقوق الإنسان",
           },
           {
             index: 9,
+            color: "green",
             title: "إدارة النفايات والاقتصاد الدائري",
           },
           {
             index: 10,
+            color: "gray",
             title: "التوريد المسؤول",
           },
           {
             index: 11,
+            color: "gray",
             title: "حوكمة الشركات",
           },
           {
             index: 12,
+            color: "orange",
             title: "دعم المجتمع",
           },
         ],
@@ -174,18 +202,22 @@ export const topicsTableAr = {
         list: [
           {
             index: 13,
+            color: "orange",
             title: "التنوع والمساواة والإدماج",
           },
           {
             index: 14,
+            color: "orange",
             title: "التوطين",
           },
           {
             index: 15,
+            color: "green",
             title: "الزراعة المستدامة",
           },
           {
             index: 16,
+            color: "gray",
             title: "رضا العملاء والتصنيف المسؤول",
           },
         ],

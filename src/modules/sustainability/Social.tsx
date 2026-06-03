@@ -312,12 +312,15 @@ const Social = () => {
                         }}
                       />
 
-                      <div className="max-w-full sm:max-w-140 sm:pr-8">
+                      <div className="max-w-full  sm:pr-8">
                         <p className="font-bold text-fm-green mb-4">
                           {t("social.talentManagement.turnover.chart.title")}
                         </p>
 
-                        <div className="mb-6" ref={chartRef}>
+                        <div
+                          className="mb-6 w-full mx-auto sm:max-w-140"
+                          ref={chartRef}
+                        >
                           {TURNOVER_DATA.map((row, i) => (
                             <div
                               key={row.year}
@@ -519,7 +522,9 @@ const Social = () => {
                                     </th>
                                   </tr>
                                   <tr>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? (
                                           <>
@@ -532,7 +537,9 @@ const Social = () => {
                                         )}
                                       </SlideTopAnimation>
                                     </th>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? (
                                           <>
@@ -547,12 +554,16 @@ const Social = () => {
                                         )}
                                       </SlideTopAnimation>
                                     </th>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? "الإجمالي" : "Totoal"}
                                       </SlideTopAnimation>
                                     </th>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? (
                                           <>
@@ -565,7 +576,9 @@ const Social = () => {
                                         )}
                                       </SlideTopAnimation>
                                     </th>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? (
                                           <>
@@ -580,7 +593,9 @@ const Social = () => {
                                         )}
                                       </SlideTopAnimation>
                                     </th>
-                                    <th className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}>
+                                    <th
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} font-bold text-fm-yellow border-b border-fm-yellow`}
+                                    >
                                       <SlideTopAnimation>
                                         {lang === "ar" ? "الإجمالي" : "Totoal"}
                                       </SlideTopAnimation>
@@ -596,22 +611,34 @@ const Social = () => {
                                           : "Head Office Total"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>49</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>19</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>68</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>53</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>20</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>73</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -623,22 +650,34 @@ const Social = () => {
                                           : "Jeddah Plant"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>62</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>164</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>226</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>59</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>145</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>204</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -650,22 +689,34 @@ const Social = () => {
                                           : "Al-Qassim Plant"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>44</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>73</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>117</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>46</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>75</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>121</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -677,22 +728,34 @@ const Social = () => {
                                           : "Tabuk Plant"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>30</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>59</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start": "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>89</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>26</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>50</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>76</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -704,22 +767,34 @@ const Social = () => {
                                           : "Al-Asha Plant"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>34</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>67</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>101</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>29</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>58</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>87</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -731,22 +806,34 @@ const Social = () => {
                                           : "Plants total"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>170</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>363</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>533</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>160</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>328</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>488</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -756,22 +843,34 @@ const Social = () => {
                                         {lang === "ar" ? "الإجمالي" : "Total"}
                                       </SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>219</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>382</SlideTopAnimation>
                                     </td>
-                                    <td className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>601</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>213</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>348</SlideTopAnimation>
                                     </td>
-                                    <td className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}>
+                                    <td
+                                      className={`bg-fm-yellow-100 font-bold text-black ${lang === "ar" ? "text-start" : "text-end"} border-b border-gray-400`}
+                                    >
                                       <SlideTopAnimation>561</SlideTopAnimation>
                                     </td>
                                   </tr>
@@ -1254,12 +1353,16 @@ const Social = () => {
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2`}
                                   >
-                                    <SlideTopAnimation>1,440,000</SlideTopAnimation>
+                                    <SlideTopAnimation>
+                                      1,440,000
+                                    </SlideTopAnimation>
                                   </td>
                                   <td
                                     className={`${lang === "ar" ? "text-start" : "text-end"} p-2 font-bold bg-fm-yellow-100`}
                                   >
-                                    <SlideTopAnimation>1,200,278</SlideTopAnimation>
+                                    <SlideTopAnimation>
+                                      1,200,278
+                                    </SlideTopAnimation>
                                   </td>
                                 </tr>
                               </tbody>

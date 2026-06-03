@@ -7,22 +7,22 @@ import { topicsTableEn, topicsTableAr } from "./data/topics";
 import { useLocale } from "../common/hooks/useLocale";
 
 // Index Icons
-import IndexIcon1 from "../../assets/icons/sustainability/topics/numbers/1.png";
-import IndexIcon2 from "../../assets/icons/sustainability/topics/numbers/2.png";
-import IndexIcon3 from "../../assets/icons/sustainability/topics/numbers/3.png";
-import IndexIcon4 from "../../assets/icons/sustainability/topics/numbers/4.png";
-import IndexIcon5 from "../../assets/icons/sustainability/topics/numbers/5.png";
-import IndexIcon6 from "../../assets/icons/sustainability/topics/numbers/6.png";
-import IndexIcon7 from "../../assets/icons/sustainability/topics/numbers/7.png";
-import IndexIcon8 from "../../assets/icons/sustainability/topics/numbers/8.png";
-import IndexIcon9 from "../../assets/icons/sustainability/topics/numbers/9.png";
-import IndexIcon10 from "../../assets/icons/sustainability/topics/numbers/10.png";
-import IndexIcon11 from "../../assets/icons/sustainability/topics/numbers/11.png";
-import IndexIcon12 from "../../assets/icons/sustainability/topics/numbers/12.png";
-import IndexIcon13 from "../../assets/icons/sustainability/topics/numbers/13.png";
-import IndexIcon14 from "../../assets/icons/sustainability/topics/numbers/14.png";
-import IndexIcon15 from "../../assets/icons/sustainability/topics/numbers/15.png";
-import IndexIcon16 from "../../assets/icons/sustainability/topics/numbers/16.png";
+// import IndexIcon1 from "../../assets/icons/sustainability/topics/numbers/1.png";
+// import IndexIcon2 from "../../assets/icons/sustainability/topics/numbers/2.png";
+// import IndexIcon3 from "../../assets/icons/sustainability/topics/numbers/3.png";
+// import IndexIcon4 from "../../assets/icons/sustainability/topics/numbers/4.png";
+// import IndexIcon5 from "../../assets/icons/sustainability/topics/numbers/5.png";
+// import IndexIcon6 from "../../assets/icons/sustainability/topics/numbers/6.png";
+// import IndexIcon7 from "../../assets/icons/sustainability/topics/numbers/7.png";
+// import IndexIcon8 from "../../assets/icons/sustainability/topics/numbers/8.png";
+// import IndexIcon9 from "../../assets/icons/sustainability/topics/numbers/9.png";
+// import IndexIcon10 from "../../assets/icons/sustainability/topics/numbers/10.png";
+// import IndexIcon11 from "../../assets/icons/sustainability/topics/numbers/11.png";
+// import IndexIcon12 from "../../assets/icons/sustainability/topics/numbers/12.png";
+// import IndexIcon13 from "../../assets/icons/sustainability/topics/numbers/13.png";
+// import IndexIcon14 from "../../assets/icons/sustainability/topics/numbers/14.png";
+// import IndexIcon15 from "../../assets/icons/sustainability/topics/numbers/15.png";
+// import IndexIcon16 from "../../assets/icons/sustainability/topics/numbers/16.png";
 
 // UNSDGs Icons
 import UNSDGSIcon2 from "../../assets/icons/sustainability/topics/unsdgs/2.svg";
@@ -62,24 +62,24 @@ import SlideTopAnimation from "../common/components/animations/SlideTopAnimation
 import TopicsChartEn from "./Charts/TopicsChartEn";
 import TopicsChartAr from "./Charts/TopicsChartAr";
 
-const indexIconsArray = [
-  IndexIcon1,
-  IndexIcon2,
-  IndexIcon3,
-  IndexIcon4,
-  IndexIcon5,
-  IndexIcon6,
-  IndexIcon7,
-  IndexIcon8,
-  IndexIcon9,
-  IndexIcon10,
-  IndexIcon11,
-  IndexIcon12,
-  IndexIcon13,
-  IndexIcon14,
-  IndexIcon15,
-  IndexIcon16,
-];
+// const indexIconsArray = [
+//   IndexIcon1,
+//   IndexIcon2,
+//   IndexIcon3,
+//   IndexIcon4,
+//   IndexIcon5,
+//   IndexIcon6,
+//   IndexIcon7,
+//   IndexIcon8,
+//   IndexIcon9,
+//   IndexIcon10,
+//   IndexIcon11,
+//   IndexIcon12,
+//   IndexIcon13,
+//   IndexIcon14,
+//   IndexIcon15,
+//   IndexIcon16,
+// ];
 
 const unsdgsIcons = [
   { index: 2, icon: UNSDGSIcon2 },
@@ -177,13 +177,15 @@ const Topics = () => {
                     key={group.priority}
                     onClick={() => setActiveTab(group.priority)}
                     className={`flex items-center justify-between px-4 py-3 bg-linear-to-r rounded-2xl text-start text-xl transition-colors cursor-pointer text-white ${
-                      group.priority === "01" ?
-                      "bg-[#173029]" :
-                      group.priority === "02" ?
-                      "bg-[#326C5E]" :
-                      "bg-[#9FC7BB]"
+                      group.priority === "01"
+                        ? "bg-[#173029]"
+                        : group.priority === "02"
+                          ? "bg-[#326C5E]"
+                          : "bg-[#9FC7BB]"
                     } ${
-                      isActive ? "border-2 border-fm-green" : "border-2 border-transparent"  
+                      isActive
+                        ? "border-2 border-fm-green"
+                        : "border-2 border-transparent"
                     }`}
                     style={{ borderColor: isActive ? color : "transparent" }}
                   >
@@ -224,12 +226,17 @@ const Topics = () => {
                 {activeGroup.importance.list.map((item, i) => (
                   <div key={item.index} className="flex">
                     {/* Number + Title */}
-                    <div className={`flex-1 flex  gap-2 pr-3 py-2`}>
-                      <img
+                    <div className={`flex-1 flex items-center gap-2 pr-3 py-2`}>
+                      {/* <img
                         src={indexIconsArray[item.index - 1]}
                         alt={String(item.index)}
                         className="w-7 h-7 object-contain shrink-0"
-                      />
+                      /> */}
+                      <div className={`w-7 h-7 flex justify-center items-center ${item.color === "orange" ? "bg-[#FCB44A]" : item.color === "green" ? "bg-[#6FB445]" : "bg-[#9D9FA2]"} text-white font-bold rounded-full`}>
+                        <span className="text-sm font-extrabold text-white">
+                          {item.index}
+                        </span>
+                      </div>
                       <span className={` leading-tight`}>{item.title}</span>
                     </div>
 

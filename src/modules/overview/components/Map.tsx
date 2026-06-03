@@ -436,7 +436,7 @@ const Map = () => {
                       >
                         {showBelow && (
                           <div
-                            className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto mb-[-6px]"
+                            className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto -mb-1.5"
                             style={{ boxShadow: "none" }}
                           />
                         )}
@@ -454,7 +454,7 @@ const Map = () => {
                           </p>
                         </div>
                         {!showBelow && (
-                          <div className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto mt-[-6px]" />
+                          <div className="w-3 h-3 bg-fm-yellow-100 rotate-45 mx-auto -mt-1.5" />
                         )}
                       </div>
                     )}
@@ -509,7 +509,7 @@ const Map = () => {
                       >
                         {showBelow && (
                           <div
-                            className="w-3 h-3 rotate-45 mx-auto mb-[-6px]"
+                            className="w-3 h-3 rotate-45 mx-auto -mb-1.5"
                             style={{ backgroundColor: plant.color }}
                           />
                         )}

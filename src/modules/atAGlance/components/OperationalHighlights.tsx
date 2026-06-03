@@ -331,7 +331,7 @@ const OperationalHighlights = () => {
 
         {/* Market Share + Customers */}
         <div className="px-4 md:px-16 py-10">
-          <div className="flex flex-col sm:flex-row justify-center gap-10">
+          <div className="flex flex-col sm:flex-row justify-between gap-10">
             {/* Market Share */}
             <div>
               <SlideTopAnimation>
